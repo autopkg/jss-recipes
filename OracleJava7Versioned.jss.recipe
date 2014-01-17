@@ -19,7 +19,7 @@ All Oracle JRE install packages have a version number of 1, so the actual plugin
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
         <key>SELFSERVE_POLICY</key>
-        <string>SelfServeLatest_%NAME%</string>
+        <string>Latest_%NAME%</string>
         <key>ARB_GROUP_NAME</key>
         <string>Testing</string>
     </dict>
@@ -40,7 +40,8 @@ All Oracle JRE install packages have a version number of 1, so the actual plugin
 				<string>%POLICY_CATEGORY%</string>
 				<key>selfserve_policy</key>
 				<string>%SELFSERVE_POLICY%</string>
-				<key>arb_group_name</key><string>%ARB_GROUP_NAME%</string>
+				<key>arb_group_name</key>
+				<string>%ARB_GROUP_NAME%</string>
 			</dict>
 			<key>Processor</key>
 			<string>JSSImporter</string>
