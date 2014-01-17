@@ -3,46 +3,45 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads Adobe Flash Player installer and extracts the embedded package. No repackaging done.</string>
+    <string>Downloads Adobe Flash Player installer and extracts the embedded package, uploads to JSS.</string>
     <key>Identifier</key>
-    <string>com.github.autopkg.pkg.FlashPlayerExtractPackage</string>
+    <string>com.github.autopkg.jss.FlashPlayerExtractPackage</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
         <string>AdobeFlashPlayer</string>
+        <key>CATEGORY</key>
+        <string>Media Plugins and Viewers</string>
+        <key>POLICY_CATEGORY</key>
+        <string>Testing</string>
+        <key>SELFSERVE_POLICY</key>
+        <string>Latest_%NAME%</string>
+        <key>ARB_GROUP_NAME</key>
+		<string>Testing</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.autopkg.download.FlashPlayer</string>
+    <string>com.github.autopkg.pkg.FlashPlayerExtractPackage</string>
     <key>Process</key>
     <array>
+    <dict>
+        <key>Arguments</key>
         <dict>
-            <key>Comment</key>
-            <string>Get Adobe Flash version from the pkg</string>
-            <key>Processor</key>
-            <string>Versioner</string>
-            <key>Arguments</key>
-            <dict>
-                <key>input_plist_path</key>
-                <string>%pathname%/Install Adobe Flash Player.app/Contents/Info.plist</string>
-                <key>plist_version_key</key>
-                <string>CFBundleVersion</string>
-            </dict>
+            <key>prod_name</key>
+            <string>%NAME%</string>
+            <key>category</key>
+            <string>%CATEGORY%</string>
+            <key>policy_category</key>
+            <string>%POLICY_CATEGORY%</string>
+            <key>selfserve_policy</key>
+            <string>%SELFSERVE_POLICY%</string>
+            <key>arb_group_name</key>
+            <string>%ARB_GROUP_NAME%</string>
         </dict>
-        <dict>
-            <key>Comment</key>
-            <string>Copy the embedded package out of the application bundle in the disk image.</string>
-            <key>Arguments</key>
-            <dict>
-                <key>source_pkg</key>
-                <string>%pathname%/Install Adobe Flash Player.app/Contents/Resources/Adobe Flash Player.pkg</string>
-                <key>pkg_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
-            </dict>
-            <key>Processor</key>
-            <string>PkgCopier</string>
-        </dict>
+        <key>Processor</key>
+        <string>JSSImporter</string>
+    </dict>
     </array>
 </dict>
 </plist>
