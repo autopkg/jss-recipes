@@ -3,82 +3,44 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest Handbrake disk image and creates a package.</string>
+    <string>Downloads the latest Handbrake disk image, creates a package and uploads it to the jss.</string>
     <key>Identifier</key>
-    <string>com.github.autopkg.pkg.Handbrake</string>
+    <string>com.github.autopkg.jss.Handbrake</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
         <string>Handbrake</string>
+        <key>CATEGORY</key>
+        <string>Media Plugins and Viewers</string>
+        <key>POLICY_CATEGORY</key>
+        <string>Testing</string>
+        <key>SELFSERVE_POLICY</key>
+        <string>Latest_%NAME%</string>
+        <key>ARB_GROUP_NAME</key>
+        <string>Testing</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.autopkg.download.Handbrake</string>
+    <string>com.github.autopkg.pkg.Handbrake</string>
     <key>Process</key>
     <array>
+		<dict>
+		<key>Arguments</key>
         <dict>
-            <key>Processor</key>
-            <string>AppDmgVersioner</string>
-            <key>Arguments</key>
-            <dict>
-                <key>dmg_path</key>
-                <string>%pathname%</string>
-            </dict>
+            <key>prod_name</key>
+            <string>%NAME%</string>
+            <key>category</key>
+            <string>%CATEGORY%</string>
+            <key>policy_category</key>
+            <string>%POLICY_CATEGORY%</string>
+            <key>selfserve_policy</key>
+            <string>%SELFSERVE_POLICY%</string>
+            <key>arb_group_name</key>
+            <string>%ARB_GROUP_NAME%</string>
         </dict>
-        <dict>
-            <key>Processor</key>
-            <string>PkgRootCreator</string>
-            <key>Arguments</key>
-            <dict>
-                <key>pkgroot</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%</string>
-                <key>pkgdirs</key>
-                <dict>
-                    <key>Applications</key>
-                    <string>0775</string>
-                </dict>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>Copier</string>
-            <key>Arguments</key>
-            <dict>
-                <key>source_path</key>
-                <string>%pathname%/%app_name%</string>
-                <key>destination_path</key>
-                <string>%pkgroot%/Applications/%app_name%</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>PkgCreator</string>
-            <key>Arguments</key>
-            <dict>
-                <key>pkg_request</key>
-                <dict>
-                    <key>pkgname</key>
-                    <string>%NAME%-%version%</string>
-                    <key>version</key>
-                    <string>%version%</string>
-                    <key>id</key>
-                    <string>%bundleid%</string>
-                    <key>options</key>
-                    <string>purge_ds_store</string>
-                    <key>chown</key>
-                    <array>
-                        <dict>
-                            <key>path</key>
-                            <string>Applications</string>
-                            <key>user</key>
-                            <string>root</string>
-                            <key>group</key>
-                            <string>admin</string>
-                        </dict>
-                    </array>
-                </dict>
-            </dict>
+        <key>Processor</key>
+        <string>JSSImporter</string>
         </dict>
     </array>
 </dict>
