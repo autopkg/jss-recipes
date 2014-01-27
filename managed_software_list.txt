@@ -3,6 +3,7 @@ AdobeFlashPlayer.jss
 Evernote.jss
 Firefox.jss
 Flip4Mac-3.jss
+Geogebra.jss
 GoogleChrome.jss
 GoogleEarth.jss
 Handbrake.jss
