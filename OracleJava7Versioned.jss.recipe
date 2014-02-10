@@ -22,6 +22,8 @@ All Oracle JRE install packages have a version number of 1, so the actual plugin
         <string>Latest_%NAME%</string>
         <key>ARB_GROUP_NAME</key>
         <string>Testing</string>
+		<key>version</key>
+		<string></string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.5</string>
@@ -39,7 +41,7 @@ All Oracle JRE install packages have a version number of 1, so the actual plugin
 				<key>policy_category</key>
 				<string>%POLICY_CATEGORY%</string>
 				<key>selfserve_policy</key>
-				<string>%SELFSERVE_POLICY%</string>
+				<string>Install Latest %NAME%-%version%</string>
 				<key>arb_group_name</key>
 				<string>%ARB_GROUP_NAME%</string>
 			</dict>

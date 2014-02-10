@@ -37,7 +37,7 @@
             <key>policy_category</key>
             <string>%POLICY_CATEGORY%</string>
             <key>selfserve_policy</key>
-            <string>%SELFSERVE_POLICY%</string>
+            <string>Install Latest %NAME%-%version%</string>
             <key>arb_group_name</key>
             <string>%ARB_GROUP_NAME%</string>
         </dict>
