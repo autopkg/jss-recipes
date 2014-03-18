@@ -1,5 +1,6 @@
 #List of software we are interested in maintaining via autopkg
 AdobeFlashPlayer.jss
+AirServer.jss
 Evernote.jss
 Firefox.jss
 Flip4Mac-3.jss
