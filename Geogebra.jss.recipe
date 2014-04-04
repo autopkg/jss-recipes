@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads latest Geogebra disk image, builds a package, and uploads to the JSS.</string>
     <key>Identifier</key>
-    <string>com.github.sheagcraig.sheagcraig-recipes.jss.Geogebra</string>
+    <string>com.github.sheagcraig.jss.Geogebra</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
@@ -24,7 +24,7 @@
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.sheagcraig.sheagcraig-recipes.pkg.Geogebra</string>
+    <string>com.github.sheagcraig.pkg.Geogebra</string>
     <key>Process</key>
     <array>
 		<dict>

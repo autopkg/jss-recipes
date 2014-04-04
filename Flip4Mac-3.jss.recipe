@@ -13,10 +13,12 @@
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>SELFSERVE_POLICY</key>
-		<string>Latest_%NAME%</string>
+		<string>Install Latest %NAME%-%version%</string>
 		<key>ARB_GROUP_NAME</key>
 		<string>Testing</string>
 		<key>version</key>
+		<string></string>
+		<key>pkg_path</key>
 		<string></string>
 	</dict>
 	<key>MinimumVersion</key>
@@ -35,7 +37,7 @@
 			<key>policy_category</key>
 			<string>%POLICY_CATEGORY%</string>
 			<key>selfserve_policy</key>
-			<string>Install Latest %NAME%-%version%</string>
+			<string>%SELFSERVE_POLICY%</string>
 			<key>arb_group_name</key>
 			<string>%ARB_GROUP_NAME%</string>
 		</dict>

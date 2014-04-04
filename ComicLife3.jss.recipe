@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-	<string>Downloads the latest version of SketchUpMake, makes a pkg of it, and uploads to the JSS.</string>
+	<string>Downloads the latest version of Comic Life 3 and makes a pkg of it, uploaded to the JSS.</string>
     <key>Identifier</key>
-    <string>com.github.sheagcraig.jss.SketchUpMake</string>
+    <string>com.github.sheagcraig.jss.ComicLife3</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>SketchUpMake</string>
-		<key>PKG_ID</key>
-		<string>com.sketchup.SketchUp</string>
+        <string>ComicLife3</string>
+        <key>PKG_ID</key>
+        <string>com.plasq.comiclife3</string>
         <key>CATEGORY</key>
         <string>Productivity</string>
         <key>POLICY_CATEGORY</key>
@@ -19,18 +19,16 @@
         <key>SELFSERVE_POLICY</key>
         <string>Latest_%NAME%</string>
         <key>ARB_GROUP_NAME</key>
-        <string>Testing</string>
-        <key>version</key>
-        <string></string>
+		<string>Testing</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.5</string>
     <key>ParentRecipe</key>
-	<string>com.github.sheagcraig.pkg.SketchUpMake</string>
+	<string>com.github.sheagcraig.pkg.ComicLife3</string>
     <key>Process</key>
     <array>
-		<dict>
-		<key>Arguments</key>
+	<dict>
+        <key>Arguments</key>
         <dict>
             <key>prod_name</key>
             <string>%NAME%</string>
@@ -45,7 +43,7 @@
         </dict>
         <key>Processor</key>
         <string>JSSImporter</string>
-        </dict>
+	</dict>
     </array>
 </dict>
 </plist>

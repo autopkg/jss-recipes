@@ -1,9 +1,11 @@
 #List of software we are interested in maintaining via autopkg
 AdobeFlashPlayer.jss
 AirServer.jss
+ComicLife3.jss
 Evernote.jss
 Firefox.jss
-Flip4Mac-3.jss
+#Temporarily (hopefully) not uploading correctly
+#Flip4Mac-3.jss
 Geogebra.jss
 GoogleChrome.jss
 GoogleEarth.jss
