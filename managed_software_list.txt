@@ -17,4 +17,4 @@ SketchUpMake.jss
 Skitch.jss
 Skype.jss
 VLC.jss
-
+VirtualBox.jss
