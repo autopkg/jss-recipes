@@ -9,6 +9,7 @@ Firefox.jss
 #Geogebra.jss
 GoogleChrome.jss
 GoogleEarth.jss
+Greenfoot.jss
 Handbrake.jss
 OracleJava7Versioned.jss
 Jin.jss.recipe
