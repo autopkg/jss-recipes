@@ -1,6 +1,7 @@
 #List of software we are interested in maintaining via autopkg
 AdobeFlashPlayer.jss
 AirServer.jss
+Atom.jss
 ComicLife3.jss
 Evernote.jss
 Firefox.jss
