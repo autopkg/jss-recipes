@@ -4,14 +4,12 @@ AirServer.jss
 ComicLife3.jss
 Evernote.jss
 Firefox.jss
-#Temporarily (hopefully) not uploading correctly
-#Flip4Mac-3.jss
-#Geogebra.jss
+Geogebra.jss
 GoogleChrome.jss
 GoogleEarth.jss
 Greenfoot.jss
 Handbrake.jss
-OracleJava7Versioned.jss
+OracleJava7.jss
 Jin.jss.recipe
 Silverlight.jss
 SketchUpMake.jss
