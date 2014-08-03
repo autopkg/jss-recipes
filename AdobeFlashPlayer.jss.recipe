@@ -14,9 +14,7 @@
         <string>Media Plugins and Viewers</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
-        <key>ARB_GROUP_NAME</key>
-		<string>Testing</string>
-    </dict>
+	</dict>
     <key>MinimumVersion</key>
     <string>0.2.5</string>
     <key>ParentRecipe</key>
@@ -42,7 +40,7 @@
 					<key>smart</key>
 					<true/>
 					<key>template_path</key>
-					<string>AdobeFlashPlayer-smartgroup.xml</string>
+					<string>AdobeFlashSmartGroupTemplate.xml</string>
 				</dict>
 			</array>
         </dict>
