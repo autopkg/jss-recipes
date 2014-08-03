@@ -10,16 +10,15 @@
     <dict>
         <key>NAME</key>
         <string>ComicLife3</string>
-        <key>PKG_ID</key>
-        <string>com.plasq.comiclife3</string>
         <key>CATEGORY</key>
         <string>Productivity</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
-        <key>SELFSERVE_POLICY</key>
-        <string>Latest_%NAME%</string>
-        <key>ARB_GROUP_NAME</key>
-		<string>Testing</string>
+		<key>JSSINVENTORY_NAME</key>
+		<string>Comic Life 3.app</string>
+		<!--PlistReader w/o variable injection in AutoPkg requires this-->
+        <key>version</key>
+        <string></string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.5</string>
@@ -32,14 +31,25 @@
         <dict>
             <key>prod_name</key>
             <string>%NAME%</string>
+			<key>jss_inventory_name</key>
+			<string>%JSSINVENTORY_NAME%</string>
             <key>category</key>
             <string>%CATEGORY%</string>
             <key>policy_category</key>
             <string>%POLICY_CATEGORY%</string>
-            <key>selfserve_policy</key>
-            <string>Install Latest %NAME%-%version%</string>
-            <key>arb_group_name</key>
-            <string>%ARB_GROUP_NAME%</string>
+			<key>policy_template</key>
+			<string>PolicyTemplate.xml</string>
+            <key>groups</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>%NAME%-update-smart</string>
+					<key>smart</key>
+					<true/>
+					<key>template_path</key>
+					<string>SmartGroupTemplate.xml</string>
+				</dict>
+			</array>
         </dict>
         <key>Processor</key>
         <string>JSSImporter</string>

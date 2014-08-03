@@ -1,6 +1,6 @@
 <policy>
     <general>
-        <name>Install %PROD_NAME%-%VERSION%</name>
+        <name>Install Latest: %PROD_NAME%-%VERSION%</name>
         <enabled>true</enabled>
         <frequency>Once per computer</frequency>
         <category>
