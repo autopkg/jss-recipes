@@ -14,10 +14,6 @@
         <string>Media Plugins and Viewers</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
-        <key>SELFSERVE_POLICY</key>
-        <string>Latest_%NAME%</string>
-        <key>ARB_GROUP_NAME</key>
-        <string>Testing</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
@@ -34,10 +30,19 @@
             <string>%CATEGORY%</string>
             <key>policy_category</key>
             <string>%POLICY_CATEGORY%</string>
-            <key>selfserve_policy</key>
-            <string>Install Latest %NAME%-%version%</string>
-            <key>arb_group_name</key>
-            <string>%ARB_GROUP_NAME%</string>
+			<key>policy_template</key>
+			<string>PolicyTemplate.xml</string>
+            <key>groups</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>%NAME%-update-smart</string>
+					<key>smart</key>
+					<true/>
+					<key>template_path</key>
+					<string>SilverlightSmartGroupTemplate.xml</string>
+				</dict>
+			</array>
         </dict>
         <key>Processor</key>
         <string>JSSImporter</string>
