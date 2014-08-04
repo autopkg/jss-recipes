@@ -10,8 +10,6 @@
     <dict>
         <key>NAME</key>
         <string>Atom</string>
-		<key>JSSINVENTORY_NAME</key>
-		<string>Atom.app</string>
         <key>CATEGORY</key>
         <string>Programming</string>
         <key>POLICY_CATEGORY</key>
@@ -31,8 +29,6 @@
         <dict>
             <key>prod_name</key>
             <string>%NAME%</string>
-			<key>jss_inventory_name</key>
-			<string>%JSSINVENTORY_NAME%</string>
             <key>category</key>
             <string>%CATEGORY%</string>
             <key>policy_category</key>
