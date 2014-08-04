@@ -9,7 +9,7 @@
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>SketchUpMake</string>
+        <string>SketchUp</string>
 		<key>PKG_ID</key>
 		<string>com.sketchup.SketchUp</string>
         <key>CATEGORY</key>

@@ -14,6 +14,9 @@
         <string>Science and Math</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
+		<!--PlistReader w/o variable injection in AutoPkg requires this-->
+        <key>version</key>
+        <string></string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
