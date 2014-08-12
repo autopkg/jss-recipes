@@ -29,7 +29,7 @@
             <key>policy_category</key>
             <string>%POLICY_CATEGORY%</string>
 			<key>policy_template</key>
-			<string>PolicyTemplate.xml</string>
+			<string>../PolicyTemplate.xml</string>
             <key>groups</key>
 			<array>
 				<dict>
@@ -38,7 +38,7 @@
 					<key>smart</key>
 					<true/>
 					<key>template_path</key>
-					<string>SmartGroupTemplate.xml</string>
+					<string>../SmartGroupTemplate.xml</string>
 				</dict>
 			</array>
         </dict>
