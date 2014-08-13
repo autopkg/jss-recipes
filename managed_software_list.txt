@@ -18,3 +18,4 @@ Skitch.jss
 Skype.jss
 VLC.jss
 VirtualBox.jss
+XQuartz.jss

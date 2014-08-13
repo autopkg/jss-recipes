@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+	<string>Downloads the latest version of XQuartz, makes a pkg of it, and uploads to the JSS.</string>
+    <key>Identifier</key>
+    <string>com.github.sheagcraig.jss.Xquartz</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>XQuartz</string>
+        <key>CATEGORY</key>
+        <string>Programming</string>
+        <key>POLICY_CATEGORY</key>
+        <string>Testing</string>
+		<!--PlistReader w/o variable injection in AutoPkg requires this-->
+        <key>version</key>
+        <string></string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.9</string>
+    <key>ParentRecipe</key>
+    <string>com.github.scriptingosx.pkg.XQuartz</string>
+    <key>Process</key>
+    <array>
+		<dict>
+		<key>Arguments</key>
+        <dict>
+            <key>prod_name</key>
+            <string>%NAME%</string>
+            <key>category</key>
+            <string>%CATEGORY%</string>
+            <key>policy_category</key>
+            <string>%POLICY_CATEGORY%</string>
+			<key>policy_template</key>
+			<string>PolicyTemplate.xml</string>
+            <key>groups</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>%NAME%-update-smart</string>
+					<key>smart</key>
+					<true/>
+					<key>template_path</key>
+					<string>SmartGroupTemplate.xml</string>
+				</dict>
+			</array>
+        </dict>
+        <key>Processor</key>
+        <string>JSSImporter</string>
+        </dict>
+    </array>
+</dict>
+</plist>
