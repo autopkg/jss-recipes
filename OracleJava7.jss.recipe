@@ -38,7 +38,7 @@ All Oracle JRE install packages have a version number of 1, so the actual plugin
 				<key>policy_category</key>
 				<string>%POLICY_CATEGORY%</string>
 				<key>policy_template</key>
-				<string>PolicyTemplate.xml</string>
+				<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
 				<key>groups</key>
 				<array>
 					<dict>
@@ -47,7 +47,7 @@ All Oracle JRE install packages have a version number of 1, so the actual plugin
 						<key>smart</key>
 						<true/>
 						<key>template_path</key>
-						<string>OracleJavaSmartGroupTemplate.xml</string>
+						<string>%RECIPE_DIR%/OracleJavaSmartGroupTemplate.xml</string>
 					</dict>
 				</array>
 			</dict>
