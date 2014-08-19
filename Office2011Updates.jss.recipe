@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads latest MS Office 2011 installer, , and uploads to the JSS.</string>
+    <key>Identifier</key>
+    <string>com.github.sheagcraig.jss.Office2011Updates</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>Office2011Update</string>
+        <key>CATEGORY</key>
+        <string>Microsoft</string>
+        <key>POLICY_CATEGORY</key>
+        <string>Testing</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.autopkg.pkg.Office2011Updates</string>
+    <key>Process</key>
+    <array>
+		<dict>
+		<key>Processor</key>
+		<string>Office2011Versioner</string>
+		</dict>
+		<dict>
+        <key>Processor</key>
+        <string>JSSImporter</string>
+		<key>Arguments</key>
+        <dict>
+            <key>prod_name</key>
+            <string>%NAME%</string>
+            <key>category</key>
+            <string>%CATEGORY%</string>
+            <key>policy_category</key>
+            <string>%POLICY_CATEGORY%</string>
+			<key>policy_template</key>
+			<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+            <key>groups</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>%NAME%-update-smart</string>
+					<key>smart</key>
+					<true/>
+					<key>template_path</key>
+					<string>%RECIPE_DIR%/Office2011UpdatesSmartGroupTemplate.xml</string>
+				</dict>
+			</array>
+			<key>extension_attributes</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>Office2011OutOfDate</string>
+					<key>ext_attribute_path</key>
+					<string>Office2011ExtensionAttribute.xml</string>
+				</dict>
+			</array>
+        </dict>
+        </dict>
+    </array>
+</dict>
+</plist>
