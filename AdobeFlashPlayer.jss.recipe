@@ -43,6 +43,15 @@
 					<string>%RECIPE_DIR%/AdobeFlashSmartGroupTemplate.xml</string>
 				</dict>
 			</array>
+			<key>extension_attributes</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>AdobeFlashVersion</string>
+					<key>ext_attribute_path</key>
+					<string>%RECIPE_DIR%/AdobeFlashPlayerExtensionAttribute.xml</string>
+				</dict>
+			</array>
         </dict>
         <key>Processor</key>
         <string>JSSImporter</string>
