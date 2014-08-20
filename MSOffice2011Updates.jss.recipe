@@ -46,7 +46,7 @@
 					<key>smart</key>
 					<true/>
 					<key>template_path</key>
-					<string>%RECIPE_DIR%/Office2011UpdatesSmartGroupTemplate.xml</string>
+					<string>%RECIPE_DIR%/MSOffice2011UpdatesSmartGroupTemplate.xml</string>
 				</dict>
 			</array>
 			<key>extension_attributes</key>
