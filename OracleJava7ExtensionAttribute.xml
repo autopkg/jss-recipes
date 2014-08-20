@@ -1,5 +1,5 @@
 <computer_extension_attribute>
-    <name>AdobeFlashVersion</name>
+    <name>OracleJavaVersion</name>
     <description />
     <data_type>String</data_type>
     <input_type>
@@ -7,9 +7,9 @@
         <platform>Mac</platform>
         <script>#!/bin/bash
 
-FlashVersion=$(defaults read /Library/Internet\ Plug-Ins/Flash\ Player.plugin/Contents/Info.plist CFBundleShortVersionString)
+JavaVersion=$(defaults read /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Info.plist CFBundleVersion)
 
-echo "&lt;result&gt;$FlashVersion&lt;/result&gt;"
+echo "&lt;result&gt;$JavaVersion&lt;/result&gt;"
 
 exit 0</script>
     </input_type>

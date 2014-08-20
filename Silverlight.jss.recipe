@@ -46,6 +46,15 @@
 					<string>%RECIPE_DIR%/SilverlightSmartGroupTemplate.xml</string>
 				</dict>
 			</array>
+			<key>extension_attributes</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>SilverlightVersion</string>
+					<key>ext_attribute_path</key>
+					<string>%RECIPE_DIR%/SilverlightExtensionAttribute.xml</string>
+				</dict>
+			</array>
         </dict>
         <key>Processor</key>
         <string>JSSImporter</string>

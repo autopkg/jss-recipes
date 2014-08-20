@@ -50,6 +50,15 @@ All Oracle JRE install packages have a version number of 1, so the actual plugin
 						<string>%RECIPE_DIR%/OracleJavaSmartGroupTemplate.xml</string>
 					</dict>
 				</array>
+				<key>extension_attributes</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>OracleJavaVersion</string>
+						<key>ext_attribute_path</key>
+						<string>%RECIPE_DIR%/OracleJava7ExtensionAttribute.xml</string>
+					</dict>
+				</array>
 			</dict>
 			<key>Processor</key>
 			<string>JSSImporter</string>

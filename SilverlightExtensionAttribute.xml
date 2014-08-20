@@ -1,5 +1,5 @@
 <computer_extension_attribute>
-    <name>AdobeFlashVersion</name>
+    <name>SilverlightVersion</name>
     <description />
     <data_type>String</data_type>
     <input_type>
@@ -7,9 +7,9 @@
         <platform>Mac</platform>
         <script>#!/bin/bash
 
-FlashVersion=$(defaults read /Library/Internet\ Plug-Ins/Flash\ Player.plugin/Contents/Info.plist CFBundleShortVersionString)
+SilverlightVersion=$(defaults read /Library/Internet\ Plug-Ins/Silverlight.plugin/Contents/Info.plist CFBundleShortVersionString)
 
-echo "&lt;result&gt;$FlashVersion&lt;/result&gt;"
+echo "&lt;result&gt;$SilverlightVersion&lt;/result&gt;"
 
 exit 0</script>
     </input_type>
