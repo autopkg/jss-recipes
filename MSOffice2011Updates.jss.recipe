@@ -55,7 +55,7 @@
 					<key>name</key>
 					<string>MSOffice2011OutOfDate</string>
 					<key>ext_attribute_path</key>
-					<string>MSOffice2011ExtensionAttribute.xml</string>
+					<string>%RECIPE_DIR%/MSOffice2011ExtensionAttribute.xml</string>
 				</dict>
 			</array>
         </dict>
