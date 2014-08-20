@@ -23,7 +23,7 @@
     <array>
 		<dict>
 		<key>Processor</key>
-		<string>Office2011Versioner</string>
+		<string>MSOffice2011Versioner</string>
 		</dict>
 		<dict>
         <key>Processor</key>
@@ -53,9 +53,9 @@
 			<array>
 				<dict>
 					<key>name</key>
-					<string>Office2011OutOfDate</string>
+					<string>MSOffice2011OutOfDate</string>
 					<key>ext_attribute_path</key>
-					<string>Office2011ExtensionAttribute.xml</string>
+					<string>MSOffice2011ExtensionAttribute.xml</string>
 				</dict>
 			</array>
         </dict>

@@ -13,16 +13,16 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-"""See docstring for Office2011Versioner class"""
+"""See docstring for MSOffice2011Versioner class"""
 
 
 from autopkglib import Processor, ProcessorError
 
 
-__all__ = ["Office2011Versioner"]
+__all__ = ["MSOffice2011Versioner"]
 
 
-class Office2011Versioner(Processor):
+class MSOffice2011Versioner(Processor):
     """Uses the pkginfo data from update provider to derive version."""
     description = __doc__
 
@@ -42,7 +42,6 @@ class Office2011Versioner(Processor):
 
     def main(self):
         """Get information about an update"""
-        #self.get_mso2011update_info()
         version_info = [item["CFBundleVersion"] for item in
                         self.env["additional_pkginfo"]["installs"] if
                         type(item) is dict and
@@ -52,5 +51,5 @@ class Office2011Versioner(Processor):
 
 
 if __name__ == "__main__":
-    PROCESSOR = Office2011Versioner()
+    PROCESSOR = MSOffice2011Versioner()
     PROCESSOR.execute_shell()

@@ -3,7 +3,7 @@
     <is_smart>true</is_smart>
     <criteria>
         <criterion>
-            <name>Office2011OutOfDate</name>
+            <name>MSOffice2011OutOfDate</name>
             <priority>0</priority>
             <and_or>and</and_or>
             <search_type>is</search_type>
