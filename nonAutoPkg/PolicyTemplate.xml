@@ -2,7 +2,7 @@
     <general>
         <name>Install Latest %PROD_NAME%</name>
         <enabled>true</enabled>
-        <frequency>Once per computer</frequency>
+        <frequency>Ongoing</frequency>
         <category>
             <name>%POLICY_CATEGORY%</name>
         </category>
