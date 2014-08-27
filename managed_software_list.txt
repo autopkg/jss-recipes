@@ -10,6 +10,7 @@ GoogleChrome.jss
 GoogleEarth.jss
 Greenfoot.jss
 Handbrake.jss
+MSOffice2011Updates.jss
 OracleJava7.jss
 Jin.jss.recipe
 Silverlight.jss
