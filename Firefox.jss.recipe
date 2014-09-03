@@ -20,6 +20,12 @@ combination is offered.</string>
         <string>Web Browsers and Internet Utilities</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
+		<key>POLICY_TEMPLATE</key>
+		<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+		<key>GROUP_TEMPLATE</key>
+		<string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
+		<key>GROUP_NAME</key>
+		<string>%NAME%-update-smart</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.5</string>
@@ -37,16 +43,16 @@ combination is offered.</string>
             <key>policy_category</key>
             <string>%POLICY_CATEGORY%</string>
 			<key>policy_template</key>
-			<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+			<string>%POLICY_TEMPLATE%</string>
             <key>groups</key>
 			<array>
 				<dict>
 					<key>name</key>
-					<string>%NAME%-update-smart</string>
+					<string>%GROUP_NAME%</string>
 					<key>smart</key>
 					<true/>
 					<key>template_path</key>
-					<string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
+					<string>%GROUP_TEMPLATE%</string>
 				</dict>
 			</array>
         </dict>
