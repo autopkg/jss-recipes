@@ -16,8 +16,6 @@
         <string>Google</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
-        <key>DOWNLOAD_URL</key>
-        <string>http://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
 		<key>ICON</key>
