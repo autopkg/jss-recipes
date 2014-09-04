@@ -18,6 +18,16 @@
         <string>Testing</string>
         <key>DOWNLOAD_URL</key>
         <string>http://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg</string>
+		<key>POLICY_TEMPLATE</key>
+		<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+		<key>ICON</key>
+		<string>%RECIPE_DIR%/GoogleChrome.png</string>
+		<key>GROUP_NAME</key>
+		<string>%NAME%-update-smart</string>
+		<key>GROUP_TEMPLATE</key>
+		<string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
+		<key>DESCRIPTION</key>
+		<string>Google Chrome is a browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier.</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.5</string>
@@ -37,16 +47,20 @@
             <key>policy_category</key>
             <string>%POLICY_CATEGORY%</string>
 			<key>policy_template</key>
-			<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+			<string>%POLICY_TEMPLATE%</string>
+			<key>self_service_icon</key>
+			<string>%ICON%</string>
+			<key>self_service_description</key>
+			<string>%DESCRIPTION%</string>
             <key>groups</key>
 			<array>
 				<dict>
 					<key>name</key>
-					<string>%NAME%-update-smart</string>
+					<string>%GROUP_NAME%</string>
 					<key>smart</key>
 					<true/>
 					<key>template_path</key>
-					<string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
+					<string>%GROUP_TEMPLATE%</string>
 				</dict>
 			</array>
         </dict>

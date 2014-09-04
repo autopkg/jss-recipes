@@ -41,7 +41,7 @@
             <key>policy_category</key>
             <string>%POLICY_CATEGORY%</string>
 			<key>policy_template</key>
-			<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+			<string>%POLICY_TEMPLATE%</string>
 			<key>self_service_icon</key>
 			<string>%ICON%</string>
 			<key>self_service_description</key>
