@@ -14,6 +14,14 @@
         <string>Media Plugins and Viewers</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
+		<key>POLICY_TEMPLATE</key>
+		<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+		<key>GROUP_NAME</key>
+		<string>AdobeFlashPlayerUpdate-smart</string>
+		<key>GROUP_TEMPLATE</key>
+		<string>%RECIPE_DIR%/AdobeFlashSmartGroupTemplate.xml</string>
+		<key>ICON</key>
+		<string>%RECIPE_DIR%/AdobeFlashPlayer.jpg</string>
 	</dict>
     <key>MinimumVersion</key>
     <string>0.2.5</string>
@@ -31,16 +39,18 @@
             <key>policy_category</key>
             <string>%POLICY_CATEGORY%</string>
 			<key>policy_template</key>
-			<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+			<string>%POLICY_TEMPLATE%</string>
+			<key>self_service_icon</key>
+			<string>%ICON%</string>
             <key>groups</key>
 			<array>
 				<dict>
 					<key>name</key>
-					<string>AdobeFlashPlayerUpdate-smart</string>
+					<string>%GROUP_NAME%</string>
 					<key>smart</key>
 					<true/>
 					<key>template_path</key>
-					<string>%RECIPE_DIR%/AdobeFlashSmartGroupTemplate.xml</string>
+					<string>%GROUP_TEMPLATE%</string>
 				</dict>
 			</array>
 			<key>extension_attributes</key>
