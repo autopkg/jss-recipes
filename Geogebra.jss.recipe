@@ -17,8 +17,6 @@
 		<!--PlistReader w/o variable injection in AutoPkg requires this-->
         <key>version</key>
         <string></string>
-		<key>self_service_description</key>
-		<string>This is a test of the description field.</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
 		<key>ICON</key>
