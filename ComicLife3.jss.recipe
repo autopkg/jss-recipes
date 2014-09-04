@@ -14,7 +14,7 @@
         <string>Productivity</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
-		<key>JSSINVENTORY_NAME</key>
+		<key>JSS_INVENTORY_NAME</key>
 		<string>Comic Life 3.app</string>
 		<!--PlistReader w/o variable injection in AutoPkg requires this-->
         <key>version</key>
@@ -32,7 +32,7 @@
             <key>prod_name</key>
             <string>%NAME%</string>
 			<key>jss_inventory_name</key>
-			<string>%JSSINVENTORY_NAME%</string>
+			<string>%JSS_INVENTORY_NAME%</string>
             <key>category</key>
             <string>%CATEGORY%</string>
             <key>policy_category</key>
