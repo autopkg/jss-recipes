@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-	<string>Downloads the latest version of SketchUpMake, makes a pkg of it, and uploads to the JSS.</string>
+	<string>Downloads the latest version of SketchUpMake (The free Educational Use version), makes a pkg of it, and uploads to the JSS.</string>
     <key>Identifier</key>
     <string>com.github.sheagcraig.jss.SketchUpMake</string>
     <key>Input</key>
