@@ -3,9 +3,13 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest Oracle Java 7 JRE and builds a new package with correct version information.
+	<string>Downloads the latest Oracle Java 7 JRE and builds a new package
+with correct version information.
 
-All Oracle JRE install packages have a version number of 1, so the actual plugin version is used to replace the installer version, taken from the CFBundleVersion of the bundle at /Library/Internet Plug-Ins/JavaAppletPlugin.plugin.</string>
+All Oracle JRE install packages have a version number of 1, so the actual
+plugin version is used to replace the installer version, taken from the
+CFBundleVersion of the bundle at /Library/Internet
+Plug-Ins/JavaAppletPlugin.plugin.</string>
     <key>Identifier</key>
     <string>com.github.sheagcraig.jss.OracleJava7</string>
     <key>Input</key>
@@ -20,6 +24,16 @@ All Oracle JRE install packages have a version number of 1, so the actual plugin
         <string>Testing</string>
 		<!--PlistReader w/o variable injection in AutoPkg requires this-->
 		<key>version</key>
+		<string></string>
+		<key>POLICY_TEMPLATE</key>
+		<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+		<key>ICON</key>
+		<string>%RECIPE_DIR%/OracleJava7.png</string>
+		<key>GROUP_NAME</key>
+		<string>%NAME%-update-smart</string>
+		<key>GROUP_TEMPLATE</key>
+		<string>%RECIPE_DIR%/OracleJavaSmartGroupTemplate.xml</string>
+		<key>DESCRIPTION</key>
 		<string></string>
     </dict>
     <key>MinimumVersion</key>
@@ -38,16 +52,20 @@ All Oracle JRE install packages have a version number of 1, so the actual plugin
 				<key>policy_category</key>
 				<string>%POLICY_CATEGORY%</string>
 				<key>policy_template</key>
-				<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+				<string>%POLICY_TEMPLATE%</string>
+				<key>self_service_icon</key>
+				<string>%ICON%</string>
+				<key>self_service_description</key>
+				<string>%DESCRIPTION%</string>
 				<key>groups</key>
 				<array>
 					<dict>
 						<key>name</key>
-						<string>OracleJavaUpdate-smart</string>
+						<string>%GROUP_NAME%</string>
 						<key>smart</key>
 						<true/>
 						<key>template_path</key>
-						<string>%RECIPE_DIR%/OracleJavaSmartGroupTemplate.xml</string>
+						<string>%GROUP_TEMPLATE%</string>
 					</dict>
 				</array>
 				<key>extension_attributes</key>
