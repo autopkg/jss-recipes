@@ -14,6 +14,16 @@
         <string>Media Plugins and Viewers</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
+		<key>POLICY_TEMPLATE</key>
+		<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+		<key>ICON</key>
+		<string>%RECIPE_DIR%/VLC.png</string>
+		<key>GROUP_NAME</key>
+		<string>%NAME%-update-smart</string>
+		<key>GROUP_TEMPLATE</key>
+		<string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
+		<key>DESCRIPTION</key>
+		<string>VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVDs, Audio CDs, VCDs, and various streaming protocols.</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
@@ -31,16 +41,20 @@
             <key>policy_category</key>
             <string>%POLICY_CATEGORY%</string>
 			<key>policy_template</key>
-			<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+			<string>%POLICY_TEMPLATE%</string>
+			<key>self_service_icon</key>
+			<string>%ICON%</string>
+			<key>self_service_description</key>
+			<string>%DESCRIPTION%</string>
             <key>groups</key>
 			<array>
 				<dict>
 					<key>name</key>
-					<string>%NAME%-update-smart</string>
+					<string>%GROUP_NAME%</string>
 					<key>smart</key>
 					<true/>
 					<key>template_path</key>
-					<string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
+					<string>%GROUP_TEMPLATE%</string>
 				</dict>
 			</array>
         </dict>
