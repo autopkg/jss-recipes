@@ -3,21 +3,21 @@
 <plist version="1.0">
     <dict>
         <key>Description</key>
-        <string>Uploads the latest XCode package, created with repackage, to the JSS</string>
+        <string>Checks for iBooks Author update, packages, and adds to the JSS</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.sheagcraig-recipes.jss.XCode</string>
+        <string>com.github.sheagcraig.jss.iBooksAuthor</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
-            <string>XCode</string>
+            <string>iBooks Author</string>
             <key>CATEGORY</key>
-            <string>Programming</string>
+            <string>Apple</string>
             <key>POLICY_CATEGORY</key>
             <string>Testing</string>
             <key>POLICY_TEMPLATE</key>
             <string>%RECIPE_DIR%/PolicyTemplate.xml</string>
             <key>ICON</key>
-            <string>%RECIPE_DIR%/Xcode.png</string>
+            <string>%RECIPE_DIR%/iBooksAuthor.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
@@ -26,7 +26,9 @@
             <string/>
         </dict>
         <key>MinimumVersion</key>
-        <string>0.2.0</string>
+        <string>0.4.0</string>
+        <key>ParentRecipe</key>
+        <string>com.github.nmcspadden.pkg.appstore</string>
         <key>Process</key>
         <array>
             <dict>
