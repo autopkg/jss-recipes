@@ -31,7 +31,7 @@
             <string>Get your point across with fewer words using annotation, shapes and sketches, so that your ideas become reality faster.</string>
         </dict>
         <key>MinimumVersion</key>
-        <string>0.2.5</string>
+        <string>0.4.0</string>
         <key>ParentRecipe</key>
         <string>com.github.sheagcraig.pkg.Skitch</string>
         <key>Process</key>

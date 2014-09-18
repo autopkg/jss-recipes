@@ -28,7 +28,7 @@
             <string>Google Chrome is a browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier.</string>
         </dict>
         <key>MinimumVersion</key>
-        <string>0.2.5</string>
+        <string>0.4.0</string>
         <key>ParentRecipe</key>
         <string>com.github.autopkg.pkg.googlechrome</string>
         <key>Process</key>

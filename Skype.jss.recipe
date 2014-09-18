@@ -26,7 +26,7 @@
             <string>Skype is a freemium voice over IP service and instant messaging client, currently developed by Microsoft-owned Skype Technologies.</string>
         </dict>
         <key>MinimumVersion</key>
-        <string>0.2.0</string>
+        <string>0.4.0</string>
         <key>ParentRecipe</key>
         <string>com.github.autopkg.pkg.Skype</string>
         <key>Process</key>

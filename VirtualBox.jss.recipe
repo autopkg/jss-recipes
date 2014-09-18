@@ -26,7 +26,7 @@
             <string>VirtualBox is a powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use.</string>
         </dict>
         <key>MinimumVersion</key>
-        <string>0.2.9</string>
+        <string>0.4.0</string>
         <key>ParentRecipe</key>
         <string>com.github.sheagcraig.pkg.VirtualBox</string>
         <key>Process</key>

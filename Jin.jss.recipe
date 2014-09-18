@@ -31,7 +31,7 @@
             <string>Graphical client for chess servers.</string>
         </dict>
         <key>MinimumVersion</key>
-        <string>0.2.5</string>
+        <string>0.4.0</string>
         <key>ParentRecipe</key>
         <string>com.github.sheagcraig.pkg.Jin</string>
         <key>Process</key>

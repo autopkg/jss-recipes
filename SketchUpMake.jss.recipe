@@ -31,7 +31,7 @@
             <string>The easiest way to draw in 3D.</string>
         </dict>
         <key>MinimumVersion</key>
-        <string>0.2.5</string>
+        <string>0.4.0</string>
         <key>ParentRecipe</key>
         <string>com.github.sheagcraig.pkg.SketchUpMake</string>
         <key>Process</key>

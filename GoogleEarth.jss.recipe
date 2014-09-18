@@ -29,7 +29,7 @@
             <string>Google Earth lets you fly anywhere on Earth to view satellite imagery, maps, terrain, 3D buildings, from galaxies in outer space to the canyons of the ocean.</string>
         </dict>
         <key>MinimumVersion</key>
-        <string>0.2.0</string>
+        <string>0.4.0</string>
         <key>ParentRecipe</key>
         <string>com.github.autopkg.pkg.google-earth</string>
         <key>Process</key>

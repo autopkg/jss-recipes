@@ -24,7 +24,7 @@
             <string>%RECIPE_DIR%/AdobeFlashPlayer.jpg</string>
         </dict>
         <key>MinimumVersion</key>
-        <string>0.2.5</string>
+        <string>0.4.0</string>
         <key>ParentRecipe</key>
         <string>com.github.autopkg.pkg.FlashPlayerExtractPackage</string>
         <key>Process</key>

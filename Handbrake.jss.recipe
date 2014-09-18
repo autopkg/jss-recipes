@@ -26,7 +26,7 @@
             <string>HandBrake is a tool for converting video from nearly any format to a selection of modern, widely supported codecs.</string>
         </dict>
         <key>MinimumVersion</key>
-        <string>0.2.0</string>
+        <string>0.4.0</string>
         <key>ParentRecipe</key>
         <string>com.github.autopkg.pkg.Handbrake</string>
         <key>Process</key>
