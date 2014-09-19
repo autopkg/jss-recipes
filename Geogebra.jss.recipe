@@ -4,6 +4,10 @@
     <dict>
         <key>Description</key>
         <string>Downloads latest Geogebra disk image, builds a package, and uploads to the JSS.</string>
+		<!--Geogebra 5 changes the package ID. The installer app ignores a
+			 previously installed Geogebra 4 and makes a subfolder to install
+			 into. This is not what is desired, thus, a preinstall script will
+			 remove old versions.-->
         <key>Identifier</key>
         <string>com.github.sheagcraig.jss.Geogebra</string>
         <key>Input</key>
@@ -49,6 +53,15 @@
                     <string>%ICON%</string>
                     <key>self_service_description</key>
                     <string>%DESCRIPTION%</string>
+					<key>scripts</key>
+					<array>
+						<dict>
+							<key>name</key>
+							<string>GeogebraPreinstall.sh</string>
+							<key>template_path</key>
+							<string>GeogebraScriptTemplate.xml</string>
+						</dict>
+					</array>
                     <key>groups</key>
                     <array>
                         <dict>
