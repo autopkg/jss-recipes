@@ -17,7 +17,9 @@ Prerequisites, and Installing
 
 These recipes are intended to be used with my [jss-autopkg-addon](https://github.com/sheagcraig/jss-autopkg-addon/releases). Grab the package installer from the releases section, and you're good to go.
 
-Some of these recipes are for applications distributed through the Apple App Store. For these recipes to work, you'll need to add [Nick McSpadden's AppStoreApp recipes](https://github.com/autopkg/nmcspadden-recipes.git), which in turn require the [pyasn1](http://pyasn1.sourceforge.net) package to check for updates.
+* NOTE These recipes do not work with Allister Banks' jss-autopkg-addon fork, and his recipes will not work with the release listed above.
+
+Some of these recipes are for applications distributed through the Apple App Store. For these recipes to work, you'll need to add [Nick McSpadden's AppStoreApp recipes](https://github.com/autopkg/nmcspadden-recipes.git), which in turn require the [pyasn1](http://pyasn1.sourceforge.net) package to check for updates. Furthermore, you need to have the apps installed on the machine you are running AutoPkg on.
 
 To add these:
 ```
@@ -26,4 +28,4 @@ autopkg repo-add nmcspadden-recipes
 pip install --user git+https://github.com/geertj/python-asn1.git#egg=pyasn1
 ```
 
-Obviously, make sure you meet the Licensing requirements for any App Store Apps you intend on distributing.
+Obviously, make sure you meet the Licensing requirements for any App Store Apps you intend on distributing. Further, if you don't _own_ a copy of FinalCutPro, for example, you will not be able to run the recipe! (Because you need the app installed on your machine to build the package).
