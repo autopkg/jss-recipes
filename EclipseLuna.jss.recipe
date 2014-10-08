@@ -19,6 +19,8 @@
             <string/>
             <key>POLICY_TEMPLATE</key>
             <string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+            <key>SCRIPT_TEMPLATE</key>
+            <string>%RECIPE_DIR%/EclipseScriptTemplate.xml</string>
             <key>ICON</key>
             <string>%RECIPE_DIR%/Eclipse.png</string>
             <key>GROUP_NAME</key>
@@ -57,7 +59,7 @@
 							<key>name</key>
 							<string>EclipseLunaPreinstall.sh</string>
 							<key>template_path</key>
-							<string>EclipseScriptTemplate.xml</string>
+							<string>%SCRIPT_TEMPLATE%</string>
 						</dict>
 					</array>
                     <key>groups</key>
