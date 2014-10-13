@@ -21,7 +21,7 @@
             <key>GROUP_TEMPLATE</key>
             <string>%RECIPE_DIR%/AdobeFlashSmartGroupTemplate.xml</string>
             <key>ICON</key>
-            <string>%RECIPE_DIR%/AdobeFlashPlayer.jpg</string>
+            <string>%RECIPE_DIR%/AdobeFlashPlayer.png</string>
         </dict>
         <key>MinimumVersion</key>
         <string>0.4.0</string>
