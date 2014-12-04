@@ -57,7 +57,7 @@
 					<array>
 						<dict>
 							<key>name</key>
-							<string>%RECIPE_DIR%/EclipseLunaPreinstall.sh</string>
+							<string>EclipseLunaPreinstall.sh</string>
 							<key>template_path</key>
 							<string>%SCRIPT_TEMPLATE%</string>
 						</dict>
