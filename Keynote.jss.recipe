@@ -24,6 +24,8 @@
             <string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
             <key>DESCRIPTION</key>
             <string/>
+            <key>OS_REQUIREMENTS</key>
+            <string>10.10.x</string>
         </dict>
         <key>MinimumVersion</key>
         <string>0.4.0</string>
@@ -40,6 +42,8 @@
                     <string>%CATEGORY%</string>
                     <key>policy_category</key>
                     <string>%POLICY_CATEGORY%</string>
+                    <key>os_requirements</key>
+                    <string>%OS_REQUIREMENTS%</string>
                     <key>policy_template</key>
                     <string>%POLICY_TEMPLATE%</string>
                     <key>self_service_icon</key>
