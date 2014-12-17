@@ -52,6 +52,7 @@
                     <key>self_service_icon</key>
                     <string>%ICON%</string>
                     <key>self_service_description</key>
+                    <string>%DESCRIPTION%</string>
 					<key>scripts</key>
 					<array>
 						<dict>
@@ -61,7 +62,6 @@
 							<string>%SCRIPT_TEMPLATE%</string>
 						</dict>
 					</array>
-                    <string>%DESCRIPTION%</string>
                     <key>groups</key>
                     <array>
                         <dict>
