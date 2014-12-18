@@ -57,7 +57,7 @@
 					<array>
 						<dict>
 							<key>name</key>
-							<string>SketchUpPreinstall.sh</string>
+							<string>%RECIPE_DIR%/SketchUpPreinstall.sh</string>
 							<key>template_path</key>
 							<string>%SCRIPT_TEMPLATE%</string>
 						</dict>
