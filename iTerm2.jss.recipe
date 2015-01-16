@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>
+This AutoPkg recipe was created using JSSRecipeCreator: 
+https://github.com/sheagcraig/JSSRecipeCreator
+
+It is meant to be used with JSSImporter: 
+https://github.com/sheagcraig/JSSImporter
+
+For tips on integrating JSSImporter into your Casper environment, check out Auto Update Magic:
+https://github.com/homebysix/auto-update-magic</string>
+	<key>Description</key>
+	<string>Downloads the current release version of iTerm 2 and makes a package. Then, uploads to the JSS.</string>
+	<key>Identifier</key>
+	<string>io.github.hjuutilainen.jss.iTerm2</string>
+	<key>Input</key>
+	<dict>
+		<key>CATEGORY</key>
+		<string>Management</string>
+		<key>DESCRIPTION</key>
+		<string>iTerm2 is a replacement for Terminal.</string>
+		<key>GROUP_NAME</key>
+		<string>%NAME%-update-smart</string>
+		<key>GROUP_TEMPLATE</key>
+		<string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
+		<key>ICON</key>
+		<string>%RECIPE_DIR%/iTerm2.png</string>
+		<key>NAME</key>
+		<string>iTerm2</string>
+		<key>JSS_INVENTORY_NAME</key>
+		<string>iTerm</string>
+		<key>POLICY_CATEGORY</key>
+		<string>Testing</string>
+		<key>POLICY_TEMPLATE</key>
+		<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+		<!--PlistReader w/o variable injection in AutoPkg requires this-->
+		<key>version</key>
+		<string/>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.3.1</string>
+	<key>ParentRecipe</key>
+	<string>io.github.hjuutilainen.pkg.iTerm2</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>category</key>
+				<string>%CATEGORY%</string>
+				<key>groups</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>%GROUP_NAME%</string>
+						<key>smart</key>
+						<true/>
+						<key>template_path</key>
+						<string>%GROUP_TEMPLATE%</string>
+					</dict>
+				</array>
+				<key>policy_category</key>
+				<string>%POLICY_CATEGORY%</string>
+				<key>policy_template</key>
+				<string>%POLICY_TEMPLATE%</string>
+				<key>prod_name</key>
+				<string>%NAME%</string>
+				<key>jss_inventory_name</key>
+				<string>%JSS_INVENTORY_NAME%</string>
+				<key>self_service_description</key>
+				<string>%DESCRIPTION%</string>
+				<key>self_service_icon</key>
+				<string>%ICON%</string>
+			</dict>
+			<key>Processor</key>
+			<string>JSSImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
