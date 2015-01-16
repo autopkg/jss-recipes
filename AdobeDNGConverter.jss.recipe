@@ -4,8 +4,6 @@
 <dict>
 	<key>Comment</key>
 	<string>
-This recipe is currently BROKEN, due to the CFShortBundleVersion being an invalid version number. I'll write an extension attribute soon.
-
 This AutoPkg recipe was created using JSSRecipeCreator: 
 https://github.com/sheagcraig/JSSRecipeCreator
 
@@ -15,32 +13,34 @@ https://github.com/sheagcraig/JSSImporter
 For tips on integrating JSSImporter into your Casper environment, check out Auto Update Magic:
 https://github.com/homebysix/auto-update-magic</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Github and builds a pkg. Then, uploads to the JSS.</string>
+	<string>Downloads the latest version of Adobe DNG Converter and makes a pkg of it. Then, uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.autopkg.cgerke-recipes.jss.GitHub</string>
+	<string>com.github.sheagcraig.jss.AdobeDNGConverter</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
-		<string>Programming</string>
+		<string>Adobe</string>
 		<key>DESCRIPTION</key>
-		<string>Dedicated GitHub client app.</string>
+		<string>Convert proprietary RAW files to the Digital Negative format.</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
-		<string>%RECIPE_DIR%/GitHubSmartGroupTemplate.xml</string>
+		<string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
 		<key>ICON</key>
-		<string>%RECIPE_DIR%/GitHub.png</string>
+		<string>%RECIPE_DIR%/AdobeDNGConverter.png</string>
 		<key>NAME</key>
-		<string>GitHub</string>
+		<string>AdobeDNGConverter</string>
+		<key>JSS_INVENTORY_NAME</key>
+		<string>Adobe DNG Converter</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>0.2.9</string>
 	<key>ParentRecipe</key>
-	<string>com.github.autopkg.cgerke-recipes.pkg.GitHub</string>
+	<string>com.github.sheagcraig.pkg.AdobeDNGConverter</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -59,21 +59,14 @@ https://github.com/homebysix/auto-update-magic</string>
 						<string>%GROUP_TEMPLATE%</string>
 					</dict>
 				</array>
-				<key>extension_attributes</key>
-				<array>
-					<dict>
-						<key>name</key>
-						<string>GitHubVersion</string>
-						<key>ext_attribute_path</key>
-						<string>%RECIPE_DIR%/GitHubExtensionAttribute.xml</string>
-					</dict>
-				</array>
 				<key>policy_category</key>
 				<string>%POLICY_CATEGORY%</string>
 				<key>policy_template</key>
 				<string>%POLICY_TEMPLATE%</string>
 				<key>prod_name</key>
 				<string>%NAME%</string>
+				<key>jss_inventory_name</key>
+				<string>%JSS_INVENTORY_NAME%</string>
 				<key>self_service_description</key>
 				<string>%DESCRIPTION%</string>
 				<key>self_service_icon</key>
