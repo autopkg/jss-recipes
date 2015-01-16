@@ -4,6 +4,8 @@
 <dict>
 	<key>Comment</key>
 	<string>
+This recipe is currently BROKEN, due to the CFShortBundleVersion being an invalid version number. I'll write an extension attribute soon.
+
 This AutoPkg recipe was created using JSSRecipeCreator: 
 https://github.com/sheagcraig/JSSRecipeCreator
 
