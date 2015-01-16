@@ -7,7 +7,7 @@
         <platform>Mac</platform>
         <script>#!/bin/bash
 
-GitHubVersion=$(defaults read /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Info.plist CFBundleVersion)
+GitHubVersion=$(defaults read /Applications/GitHub.app/Contents/Info.plist CFBundleVersion)
 
 echo "&lt;result&gt;$GitHubVersion&lt;/result&gt;"
 
