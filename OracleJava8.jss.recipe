@@ -68,6 +68,15 @@ http://www.oracle.com/technetwork/java/javase/terms/license/index.html
                             <string>%GROUP_TEMPLATE%</string>
                         </dict>
                     </array>
+                    <key>extension_attributes</key>
+                    <array>
+                        <dict>
+                            <key>name</key>
+                            <string>OracleJavaVersion</string>
+                            <key>ext_attribute_path</key>
+                            <string>%RECIPE_DIR%/OracleJava8ExtensionAttribute.xml</string>
+                        </dict>
+                    </array>
                 </dict>
                 <key>Processor</key>
                 <string>JSSImporter</string>
