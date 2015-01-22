@@ -32,8 +32,8 @@
         <key>Process</key>
         <array>
             <!--The parent recipe results in a bundle-style package, which can be
-			problematic for non-AFP repos; eventually fix to wrap in a flat-pkg
-		-->
+            problematic for non-AFP repos; eventually fix to wrap in a flat-pkg
+        -->
             <dict>
                 <key>Arguments</key>
                 <dict>

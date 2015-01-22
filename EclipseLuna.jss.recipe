@@ -53,15 +53,15 @@
                     <string>%DESCRIPTION%</string>
                     <key>jss_inventory_name</key>
                     <string>Eclipse.app</string>
-					<key>scripts</key>
-					<array>
-						<dict>
-							<key>name</key>
-							<string>EclipseLunaPreinstall.sh</string>
-							<key>template_path</key>
-							<string>%SCRIPT_TEMPLATE%</string>
-						</dict>
-					</array>
+                    <key>scripts</key>
+                    <array>
+                        <dict>
+                            <key>name</key>
+                            <string>EclipseLunaPreinstall.sh</string>
+                            <key>template_path</key>
+                            <string>%SCRIPT_TEMPLATE%</string>
+                        </dict>
+                    </array>
                     <key>groups</key>
                     <array>
                         <dict>

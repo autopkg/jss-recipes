@@ -53,15 +53,15 @@
                     <string>%ICON%</string>
                     <key>self_service_description</key>
                     <string>%DESCRIPTION%</string>
-					<key>scripts</key>
-					<array>
-						<dict>
-							<key>name</key>
-							<string>%RECIPE_DIR%/SketchUpPreinstall.sh</string>
-							<key>template_path</key>
-							<string>%SCRIPT_TEMPLATE%</string>
-						</dict>
-					</array>
+                    <key>scripts</key>
+                    <array>
+                        <dict>
+                            <key>name</key>
+                            <string>%RECIPE_DIR%/SketchUpPreinstall.sh</string>
+                            <key>template_path</key>
+                            <string>%SCRIPT_TEMPLATE%</string>
+                        </dict>
+                    </array>
                     <key>groups</key>
                     <array>
                         <dict>
