@@ -21,7 +21,7 @@ https://github.com/homebysix/auto-update-magic</string>
     <key>Input</key>
     <dict>
         <key>CATEGORY</key>
-        <string>Programming</string>
+        <string>Computer Science</string>
         <key>DESCRIPTION</key>
         <string>Dedicated GitHub client app.</string>
         <key>GROUP_NAME</key>

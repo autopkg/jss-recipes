@@ -19,7 +19,7 @@ https://github.com/homebysix/auto-update-magic</string>
     <key>Input</key>
     <dict>
         <key>CATEGORY</key>
-        <string>Remote Access</string>
+        <string>Utility</string>
         <key>DESCRIPTION</key>
         <string>Citrix Receiver is client software that provides access to your XenApp server.</string>
         <key>GROUP_NAME</key>

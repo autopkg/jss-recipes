@@ -11,7 +11,7 @@
             <key>NAME</key>
             <string>EclipseLuna</string>
             <key>CATEGORY</key>
-            <string>Programming</string>
+            <string>Computer Science</string>
             <key>POLICY_CATEGORY</key>
             <string>Testing</string>
             <!--PlistReader w/o variable injection in AutoPkg requires this-->

@@ -11,7 +11,7 @@
             <key>NAME</key>
             <string>Microsoft Remote Desktop</string>
             <key>CATEGORY</key>
-            <string>Microsoft</string>
+            <string>Utility</string>
             <key>POLICY_CATEGORY</key>
             <string>Testing</string>
             <key>POLICY_TEMPLATE</key>

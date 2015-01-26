@@ -19,7 +19,7 @@ https://github.com/homebysix/auto-update-magic</string>
     <key>Input</key>
     <dict>
         <key>CATEGORY</key>
-        <string>Adobe</string>
+        <string>Digital Media</string>
         <key>DESCRIPTION</key>
         <string>Convert proprietary RAW files to the Digital Negative format.</string>
         <key>GROUP_NAME</key>

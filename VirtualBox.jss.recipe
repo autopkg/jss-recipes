@@ -11,7 +11,7 @@
             <key>NAME</key>
             <string>VirtualBox</string>
             <key>CATEGORY</key>
-            <string>Virtualization</string>
+            <string>Utility</string>
             <key>POLICY_CATEGORY</key>
             <string>Testing</string>
             <key>POLICY_TEMPLATE</key>

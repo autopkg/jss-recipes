@@ -19,7 +19,7 @@ Plug-Ins/JavaAppletPlugin.plugin.</string>
             <key>PKG_ID</key>
             <string>com.oracle.jre</string>
             <key>CATEGORY</key>
-            <string>Media Plugins and Viewers</string>
+            <string>Digital Media</string>
             <key>POLICY_CATEGORY</key>
             <string>Testing</string>
             <!--PlistReader w/o variable injection in AutoPkg requires this-->

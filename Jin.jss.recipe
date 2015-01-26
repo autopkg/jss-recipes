@@ -13,7 +13,7 @@
             <key>PKG_ID</key>
             <string>com.jinchess.Jin</string>
             <key>CATEGORY</key>
-            <string>Productivity</string>
+            <string>Games</string>
             <key>POLICY_CATEGORY</key>
             <string>Testing</string>
             <!--PlistReader w/o variable injection in AutoPkg requires this-->

@@ -19,7 +19,7 @@ https://github.com/homebysix/auto-update-magic</string>
     <key>Input</key>
     <dict>
         <key>CATEGORY</key>
-        <string>Management</string>
+        <string>Computer Science</string>
         <key>DESCRIPTION</key>
         <string>iTerm2 is a replacement for Terminal.</string>
         <key>GROUP_NAME</key>
