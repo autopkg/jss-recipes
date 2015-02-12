@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Downloads latest MS Office 2011 installer, makes a pkg (disabling the All Quit package), and uploads to the JSS.</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.Office2011Updates</string>
+        <string>com.github.sheagcraig.jss.Office2011UpdatesDisabledAllQuit</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
