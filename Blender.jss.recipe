@@ -34,6 +34,8 @@ https://github.com/homebysix/auto-update-magic</string>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+		<key>version</key>
+		<string></string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>
