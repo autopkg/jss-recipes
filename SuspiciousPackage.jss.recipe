@@ -15,7 +15,7 @@ https://github.com/homebysix/auto-update-magic</string>
 	<key>Description</key>
 	<string>Downloads latest Suspicious Package installer, unpacks it, and re-labels the installer. Then, uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.novaksam.jss.SuspiciousPackage</string>
+	<string>com.github.sheagcraig.jss.SuspiciousPackage</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
