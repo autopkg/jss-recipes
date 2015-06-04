@@ -22,6 +22,8 @@
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
             <string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
+            <key>version</key>
+            <string></string>
             <key>DESCRIPTION</key>
             <string>Skype is a freemium voice over IP service and instant messaging client, currently developed by Microsoft-owned Skype Technologies.</string>
         </dict>
