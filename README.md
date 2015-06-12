@@ -25,7 +25,7 @@ Users familiar with the recommendations developed by the [Munki](https://munki.o
 It is the standpoint of this repo's collaborators that AutoPkg/JSSImporter is best used to facilitate the *testing* of software updates, *not to deploy them to production*, and as such, focuses on making that task more streamlined, error-free, and automated. However, one of the further goals of the [Styleguide](#styleguide) is to provide maximum access to the recipe from override recipes so that inviduals choosing to deviate from this workflow can rely on the presence of and stability of those elements of the recipe that they need to modify across *all* recipes.
 
 ## Prerequisites, and Installing
-These recipes are intended to be used with [JSSImporter](https://github.com/sheagcraig/JSSImporter/releases). Grab the package installer from the releases section, and you're good to go.
+These recipes are intended to be used with [JSSImporter](https://github.com/sheagcraig/JSSImporter/releases). Grab the package installer from the releases section, configure your API user and distribution points following the instructions in that project's README, and you're good to go.
 
 * NOTE These recipes do not work with Allister Banks' jss-autopkg-addon fork, and his recipes will not work with the release listed above.
 
@@ -41,14 +41,81 @@ pip install --user git+https://github.com/geertj/python-asn1.git#egg=pyasn1
 ```
 Obviously, make sure you meet the Licensing requirements for any App Store Apps you intend on distributing. Further, if you don't _own_ a copy of FinalCutPro, for example, you will not be able to run the recipe! (Because you need the app installed on your machine to build the package).
 
+## Configuration
+As these recipes all scope to a smart group which requires membership in the group "Testing" as a condition for inclusion, add all desired testing computers, users, or groups to a group named "Testing" on your JSS. It is up to you to manage this group as you see fit. This group could include anything from a handful of IT coworkers to an entire class of devices, and can be a smart or static group. Further, if a static group, any number of subgroups may be included for more fine control.
+
 ## Styleguide
-- No private parent recipes.
+Recipes included in this repo will follow the following workflow and rules.
 
-### Old stuff to edit out.
-Specifically, this creates policies in the "Testing" category which scope installation of the AutoPkg-created package to smart groups named after the application. These smart groups, in most cases, look for computers which do not have this version of the app, and which are members of the "Testing" group.
+### Workflow
+The recipes in this repo conform to the following workflow. Packages are uploaded to the distribution points and made available through a self-service policy to members of the Testing group who have out-of-date software.
 
-The "Testing" group is NOT created by these policies. You can populate that group with hand-picked power-users, or make it a smart group that nests several other groups. For most of these recipes, even if a computer is a member of the Testing group, they still need to 1.) Have the application in question installed to begin with, and 2.) It must be out of date AND a recon done post-creation of the smart group reports an out-of-date version number.
+The criteria for inclusion in the scope for this policy are that the computer has the software in question installed, that software is not the version provided by the self-service policy, and that the computer is a member of the "Testing" group. The "Testing" group is not managed or manipulated in any way by these recipes; this is the manner in which scoping per-organization is encapsulated away from the scoping set in these recipes.
 
-The policy created is for self-service only, and may be run as many times as the user desires; however, it includes a "Recon" at the conclusion of the package installation, which, if the install was successful, will drop the computer out of the smart group. This way, when the next update comes out, they will be able to run the policy through Self Service again (as opposed to a "Once Per Computer" frequency).
+These recipes result in policies which will group themselves under the "Testing" category on the Policies page of the JSS web interface to separate and distinguish them from other policies.
 
-A few of the recipes demonstrate methods to deal with tricky typees of Applications: Adobe Flash Player, for example, cannot use the same smart group criteria since it is not installed into the /Applications folder, and thus, "Application Title" and "Application Version" recon data is not available.
+Software categories are chosen from a limited list. Of course, users may override this to their heart's desire, but a relatively concise list of categories is used to classify software included in this repository.
+
+Both policy and package categories, as per the function of JSSImporter, will be created if needed. Otherwise, they will be left alone.
+
+The self-service policy has an execution frequency of "Ongoing" to allow multiple runs should tests fail. However, following a successful installation, the self-service policy performs a recon run, which will drop the computer out of the smart group, thus preventing further executions until the next update is made available. This also enables reuse of the same policy without needing to "Flush All" the policy logs.
+
+### Rules
+- The recipe's `Identifier` should be `com.github.autopkg.jssrecipes.<product-name>`, where "product-name" is that used consistently throughout the parent recipe and the JSS recipe to identify the product in question.
+- All arguments to the JSSImporter processor should be capable of being overriden by an `Input` section variable.
+	- In the `Arguments` section of the `JSSImporter` processor, all values should be text-replacement variables; for example, the value of `policy_category` should be: `%POLICY_CATEGORY%`.
+	- In the `Input` section of the recipe, the variable should be defined with an ALL_CAPS name set to the values desired (and in many cases, as defined later in the styleguide). Following on the previous example, the input variable would be named `POLICY_CATEGORY`, and should have the value `Testing`.
+- The recipe should have a single processor stage: `JSSImporter`.
+- The `JSSImporter` processor will include at least the following arguments, and values (as specified in the `Input` section:
+	- `prod_name`
+		- The name used consistently throughout all recipes in the chain.
+	- `category`
+		- One of the categories below:
+			- Computer Science
+			- Digital Media
+			- Games
+			- Management
+			- Print and Scan
+			- Productivity
+			- Science and Math
+			- Utility
+	- `policy_category` (Set to `Testing`)
+	- `policy_template` (Set to `%RECIPE_DIR%/PolicyTemplate.xml`)
+	- `self_service_icon`
+		- Icon should be named the same as the product.
+		- Icon should be a png file.
+		- Icon should be 128 x 128 pixels as per the current recommendations of JAMF.
+	- `self_service_description`
+		- A short description, minus hyperbolics or sales-speak, describing what the software *does*.
+	- `groups`:
+		- Argument value should be an array exactly as per below:
+			"""
+			<key>groups</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>%GROUP_NAME%</string>
+					<key>smart</key>
+					<true/>
+					<key>template_path</key>
+					<string>%GROUP_TEMPLATE%</string>
+				</dict>
+			</array>
+			"""
+		- `Input` section variables exactly as:
+		"""
+		<key>GROUP_NAME</key>
+		<string>%NAME%-update-smart</string>
+		<key>GROUP_TEMPLATE</key>
+		<string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
+		"""
+		- In the case of a product requiring an extension attribute, a differing smart group template will be specified.
+- Other arguments are optional and desired only if necessary (`extension_attribute`).
+- The recipe must use this repo's standard `PolicyTemplate.xml` for it's policy template.
+- The recipe's `ParentRecipe` must be publicly available via a shared recipe repository that is part of the AutoPkg organization.
+
+### Extension Attributes
+While the Casper Suite can include internet plugins, or other arbitrary paths in its inventory collection, it is not the *default* behavior. Therefore, for apps that live outside of the `/Applications` folder, an extension attribute should be included to manage group inclusion. Examples of this can be seen in the repository for more information (examples include Adobe Flash Player and Silverlight).
+
+### Finally
+Further, a final check with `plutil -lint <recipe_name>` should pass.
