@@ -73,10 +73,7 @@ It is the viewpoint of this repo's collaborators that AutoPkg/JSSImporter is bes
 ### JSSImporter
 These recipes are intended to be used with [JSSImporter](https://github.com/sheagcraig/JSSImporter/releases/latest). Grab the latest package installer from the releases section, configure your API user and distribution points following the instructions in that project's README, and you're good to go.
 
-<p style="border: 1px solid #dedede; border-radius: 5px; padding: 15
-px; background-color: #fff1f2;">
 __Compatibility note__: These recipes do not work with Allister Banks' [jss-autopkg-addon](https://github.com/arubdesu/jss-autopkg-addon) fork, and the recipes in his repo will not work with JSSImporter.
-</p>
 
 ### Parent recipes
 All JSS recipes rely on parent recipes found elsewhere. If you want to run a JSS recipe `SoftwareName.jss.recipe`, then you will need to ensure that the repository hosting it's parent recipe is also included in your AutoPkg configuration with `autopkg repo-add`.
