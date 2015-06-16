@@ -24,6 +24,8 @@ Users familiar with the recommendations developed by the [Munki](https://munki.o
 
 It is the standpoint of this repo's collaborators that AutoPkg/JSSImporter is best used to facilitate the *testing* of software updates, *not to deploy them to production*, and as such, focuses on making that task more streamlined, error-free, and automated. However, one of the further goals of the [Styleguide](#styleguide) is to provide maximum access to the recipe from override recipes so that inviduals choosing to deviate from this workflow can rely on the presence of and stability of those elements of the recipe that they need to modify across *all* recipes.
 
+JSSImporter provides the tools for a wide-range of possible workflows. Users and organizations who need greather customization are encouraged to see how far the above-workflow can be tailored with overrides prior to writing their own recipes. These recipes should be something that can be recommended to AutoPkg newbies and casual users; they can also be used as a starting point for users with more involved needs.
+
 ## Prerequisites, and Installing
 These recipes are intended to be used with [JSSImporter](https://github.com/sheagcraig/JSSImporter/releases). Grab the package installer from the releases section, configure your API user and distribution points following the instructions in that project's README, and you're good to go.
 
