@@ -107,6 +107,10 @@ This group could include anything from a handful of IT coworkers to an entire cl
 
 Recipes included in this repo will follow these rules:
 
+### Product Subfolder
+
+Each recipe, as well as any product-specific support files, will reside in a subfolder of the main repository. Support files like icons, product-specific template files, or scripts, will be referenced as arguments by their filename only, and JSSImporter's search-path methods will locate them correctly should the recipe be overridden.
+
 ### Parent recipe
 
 The recipe's `ParentRecipe` must be publicly available via a shared recipe repository that is part of the AutoPkg organization.
@@ -168,7 +172,7 @@ The `JSSImporter` processor will include at least the following arguments, and v
 	<key>GROUP_NAME</key>
 	<string>%NAME%-update-smart</string>
 	<key>GROUP_TEMPLATE</key>
-	<string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
+	<string>SmartGroupTemplate.xml</string>
 	```
 	- In the case of a product requiring an extension attribute, a different smart group template will be specified.
 
@@ -181,6 +185,10 @@ The recipe must use this repo's standard `PolicyTemplate.xml` for its policy tem
 ### Extension Attributes
 
 While the Casper Suite can include internet plugins, or other arbitrary paths in its inventory collection, it is not the *default* behavior. Therefore, for apps that live outside of the `/Applications` folder, an extension attribute should be included to manage group inclusion. Examples of this can be seen in the repository for more information (examples include Adobe Flash Player and Silverlight).
+
+### Scripts
+
+Likewise, scripts should only be included when absolutely necessary for package installation.
 
 ### Linting
 
