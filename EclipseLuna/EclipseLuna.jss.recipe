@@ -3,32 +3,39 @@
 <plist version="1.0">
     <dict>
         <key>Description</key>
-        <string>Downloads latest VLC disk image, and builds a package, and uploads to the JSS.</string>
+        <string>Downloads the latest version of Eclipse Luna, makes a pkg of it, and uploads to the JSS.</string>
         <key>Identifier</key>
-        <string>com.github.autopkg.jss.VLC</string>
+        <string>com.github.sheagcraig.jss.EclipseLuna</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
-            <string>VLC</string>
+            <string>EclipseLuna</string>
             <key>CATEGORY</key>
-            <string>Digital Media</string>
+            <string>Computer Science</string>
             <key>POLICY_CATEGORY</key>
             <string>Testing</string>
+            <!--PlistReader w/o variable injection in AutoPkg requires this-->
+            <key>version</key>
+            <string/>
             <key>POLICY_TEMPLATE</key>
-            <string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+            <string>PolicyTemplate.xml</string>
+            <key>SCRIPT_FILENAME</key>
+            <string>EclipseLunaPreinstall.sh</string>
+            <key>SCRIPT_TEMPLATE</key>
+            <string>EclipseScriptTemplate.xml</string>
             <key>ICON</key>
-            <string>%RECIPE_DIR%/VLC.png</string>
+            <string>Eclipse.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
-            <string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
+            <string>SmartGroupTemplate.xml</string>
             <key>DESCRIPTION</key>
-            <string>VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVDs, Audio CDs, VCDs, and various streaming protocols.</string>
+            <string>Programming development environment.</string>
         </dict>
         <key>MinimumVersion</key>
         <string>0.4.0</string>
         <key>ParentRecipe</key>
-        <string>com.github.autopkg.pkg.VLC</string>
+        <string>com.github.sheagcraig.pkg.EclipseLuna</string>
         <key>Process</key>
         <array>
             <dict>
@@ -46,6 +53,17 @@
                     <string>%ICON%</string>
                     <key>self_service_description</key>
                     <string>%DESCRIPTION%</string>
+                    <key>jss_inventory_name</key>
+                    <string>Eclipse.app</string>
+                    <key>scripts</key>
+                    <array>
+                        <dict>
+                            <key>name</key>
+                            <string>%SCRIPT_FILENAME%</string>
+                            <key>template_path</key>
+                            <string>%SCRIPT_TEMPLATE%</string>
+                        </dict>
+                    </array>
                     <key>groups</key>
                     <array>
                         <dict>
