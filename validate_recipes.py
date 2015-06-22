@@ -32,10 +32,10 @@ import argparse
 import os
 
 # pylint: disable=no-name-in-module
-#from Foundation import (NSData,
-#                        NSPropertyListSerialization,
-#                        NSPropertyListMutableContainersAndLeaves,
-#                        NSPropertyListXMLFormat_v1_0)
+from Foundation import (NSData,
+                        NSPropertyListSerialization,
+                        NSPropertyListMutableContainersAndLeaves,
+                        NSPropertyListXMLFormat_v1_0)
 # pylint: enable=no-name-in-module
 
 
@@ -121,16 +121,19 @@ class Plist(dict):
 class Results(object):
     """Collects test results and manages their output."""
 
-    def __init__():
+    def __init__(self):
         self.results = []
 
-    def add_result(result):
+    def add_result(self, result):
         self.results.append(result)
 
-    def report():
-        for result in self.results:
-            if not result[0]:
-                print result[1]
+    def report(self, ):
+        if all((result[0] for result in self.results)):
+            print "Ok."
+        else:
+            for result in self.results:
+                if not result[0]:
+                    print result[1]
 
 
 def get_argument_parser():
@@ -159,23 +162,24 @@ def validate_recipe(recipe_path):
     results.add_result(test_filename(recipe_path))
 
     tests = (test_recipe_parsing,
-             test_is_in_subfolder(recipe_path, recipe),
-             test_parent_recipe(recipe),
-             test_identifier(recipe),
-             test_single_processor(recipe),
-             test_arguments(recipe),
-             test_input_section(recipe),
-             test_support_file_references(recipe),
-             test_extension_attributes(recipe),
-             test_scripts(recipe),
-             test_icon(recipe),
-             test_lint(recipe))
+             test_is_in_subfolder,
+             test_parent_recipe,
+             test_identifier,
+             test_single_processor,
+             test_arguments,
+             test_input_section,
+             test_support_file_references,
+             test_extension_attributes,
+             test_scripts,
+             test_icon,
+             test_lint)
 
     for test in tests:
         result = test(recipe)
         results.add_result(result)
 
     results.report()
+
 
 def get_recipe(recipe_path):
     """Open a recipe file as an ElementTree.
@@ -234,7 +238,7 @@ def test_recipe_parsing(recipe):
     return (test, result)
 
 
-def test_is_in_subfolder(recipe_path, recipe):
+def test_is_in_subfolder(recipe):
     """Determine whether recipe file exists and parses.
     Args:
         recipe: Recipe object.
@@ -243,7 +247,7 @@ def test_is_in_subfolder(recipe_path, recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    return (None, "Not implemeneted.")
+    return (None, "Not implemented.")
 
 
 def test_parent_recipe(recipe):
@@ -255,7 +259,7 @@ def test_parent_recipe(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    return (None, "Not implemeneted.")
+    return (None, "Not implemented.")
 
 
 def test_identifier(recipe):
@@ -267,7 +271,7 @@ def test_identifier(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    return (None, "Not implemeneted.")
+    return (None, "Not implemented.")
 
 
 def test_single_processor(recipe):
@@ -279,7 +283,7 @@ def test_single_processor(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    return (None, "Not implemeneted.")
+    return (None, "Not implemented.")
 
 
 def test_arguments(recipe):
@@ -291,7 +295,7 @@ def test_arguments(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    return (None, "Not implemeneted.")
+    return (None, "Not implemented.")
 
 
 def test_input_section(recipe):
@@ -303,7 +307,7 @@ def test_input_section(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    return (None, "Not implemeneted.")
+    return (None, "Not implemented.")
 
 
 def test_support_file_references(recipe):
@@ -325,7 +329,7 @@ def test_support_file_references(recipe):
     # Build a list of potential xpaths to check.
     search_paths = ["Input"]
     # TODO: Not finished
-    return (None, "Not implemeneted.")
+    return (None, "Not implemented.")
 
 
 def test_extension_attributes(recipe):
@@ -337,7 +341,7 @@ def test_extension_attributes(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    return (None, "Not implemeneted.")
+    return (None, "Not implemented.")
 
 
 def test_scripts(recipe):
@@ -349,7 +353,7 @@ def test_scripts(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    return (None, "Not implemeneted.")
+    return (None, "Not implemented.")
 
 
 def test_icon(recipe):
@@ -361,7 +365,7 @@ def test_icon(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    return (None, "Not implemeneted.")
+    return (None, "Not implemented.")
 
 
 def test_lint(recipe):
@@ -373,7 +377,7 @@ def test_lint(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    return (None, "Not implemeneted.")
+    return (None, "Not implemented.")
 
 
 def print_bar():
