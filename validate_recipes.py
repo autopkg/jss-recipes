@@ -233,7 +233,9 @@ def test_is_in_subfolder(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    return (None, "Not implemented.")
+    result = None
+    description = "Not implemented."
+    return (result, description)
 
 # TODO: Should ensure all files in current folder have same prefix.
 # TODO: And probably that none of them are PolicyTemplate,
@@ -288,7 +290,7 @@ def test_identifier(recipe):
 
 
 def test_single_processor(recipe):
-    """Determine whether recipe file exists and parses.
+    """Test for recipe having a single processor.
     Args:
         recipe: Recipe object.
 
@@ -296,7 +298,19 @@ def test_single_processor(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    return (None, "Not implemented.")
+    description = "Recipe has only a single processor, of type 'JSSImporter'."
+    result = False
+    processors = recipe.get("Process")
+    if len(processors) == 1:
+        processor = processors[0].get("Processor")
+        if processor and processor == "JSSImporter":
+            result = True
+        else:
+            description += " (Processor is not 'JSSImporter')"
+    else:
+        description += " (Too many processors)"
+
+    return (result, description)
 
 
 def test_arguments(recipe):
@@ -308,7 +322,9 @@ def test_arguments(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    return (None, "Not implemented.")
+    result = None
+    description = "Not implemented."
+    return (result, description)
 
 # TODO: All values should be %ALL_CAPS%
 
@@ -321,7 +337,9 @@ def test_input_section(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    return (None, "Not implemented.")
+    result = None
+    description = "Not implemented."
+    return (result, description)
 
 # TODO: All keys should be ALL_CAPS, and used by args, AND match the
 # style guide.
@@ -345,7 +363,9 @@ def test_support_file_references(recipe):
     # Build a list of potential xpaths to check.
     search_paths = ["Input"]
     # TODO: Not finished
-    return (None, "Not implemented.")
+    result = None
+    description = "Not implemented."
+    return (result, description)
 
 # TODO: Make sure all input values are os.path.basename() only (uses
 # search).
@@ -359,7 +379,9 @@ def test_extension_attributes(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    return (None, "Not implemented.")
+    result = None
+    description = "Not implemented."
+    return (result, description)
 
 # TODO: Warn if ext attr. Test for all required files. Lint 'em.
 
@@ -372,7 +394,9 @@ def test_scripts(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    return (None, "Not implemented.")
+    result = None
+    description = "Not implemented."
+    return (result, description)
 
 # TODO: Warn if scripts. Test for existence of referenced files. Lint
 # the template.
@@ -386,7 +410,9 @@ def test_icon(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    return (None, "Not implemented.")
+    result = None
+    description = "Not implemented."
+    return (result, description)
 
 # TODO: Test icon for correct size, format. Use pillow?
 
@@ -399,7 +425,9 @@ def test_lint(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    return (None, "Not implemented.")
+    result = None
+    description = "Not implemented."
+    return (result, description)
 
 # TODO: Should probably use plutil -lint.
 
