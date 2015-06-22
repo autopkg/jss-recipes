@@ -43,30 +43,6 @@ from Foundation import (NSData,
 __version__ = "0.1.0"
 
 
-# TODO: Should ensure all files in current folder have same prefix.
-# TODO: And probably that none of them are PolicyTemplate,
-#  SmartGroupTemplate, etc (so you don't cheat the search).
-#test_is_in_subfolder(recipe_path, recipe)
-#test_identifier(recipe)
-#test_single_processor(recipe)
-# TODO: All values should be %ALL_CAPS%
-#test_arguments(recipe)
-# TODO: All keys should be ALL_CAPS, and used by args, AND match the
-# style guide.
-#test_input_section(recipe)
-# Make sure all input values are os.path.basename() only (uses search).
-#test_support_file_references(recipe)
-# TODO: Warn if ext attr. Test for all required files. Lint 'em.
-#test_extension_attributes(recipe)
-# TODO: Warn if scripts. Test for existence of referenced files. Lint
-# the template.
-#test_scripts(recipe)
-# TODO: Test icon for correct size, format. Use pillow?
-#test_icon(recipe)
-# TODO: Should probably use plutil -lint.
-#lint(recipe)
-
-
 class Error(Exception):
     """Module base exception."""
     pass
@@ -259,6 +235,9 @@ def test_is_in_subfolder(recipe):
     """
     return (None, "Not implemented.")
 
+# TODO: Should ensure all files in current folder have same prefix.
+# TODO: And probably that none of them are PolicyTemplate,
+#  SmartGroupTemplate, etc (so you don't cheat the search).
 
 def test_parent_recipe(recipe):
     """Determine whether parent recipe is in AutoPkg org and not None.
@@ -316,6 +295,7 @@ def test_arguments(recipe):
     """
     return (None, "Not implemented.")
 
+# TODO: All values should be %ALL_CAPS%
 
 def test_input_section(recipe):
     """Determine whether recipe file exists and parses.
@@ -328,6 +308,8 @@ def test_input_section(recipe):
     """
     return (None, "Not implemented.")
 
+# TODO: All keys should be ALL_CAPS, and used by args, AND match the
+# style guide.
 
 def test_support_file_references(recipe):
     """Report whether all support files are referenced by filename only.
@@ -350,6 +332,8 @@ def test_support_file_references(recipe):
     # TODO: Not finished
     return (None, "Not implemented.")
 
+# TODO: Make sure all input values are os.path.basename() only (uses
+# search).
 
 def test_extension_attributes(recipe):
     """Determine whether recipe file exists and parses.
@@ -362,6 +346,7 @@ def test_extension_attributes(recipe):
     """
     return (None, "Not implemented.")
 
+# TODO: Warn if ext attr. Test for all required files. Lint 'em.
 
 def test_scripts(recipe):
     """Determine whether recipe file exists and parses.
@@ -374,6 +359,8 @@ def test_scripts(recipe):
     """
     return (None, "Not implemented.")
 
+# TODO: Warn if scripts. Test for existence of referenced files. Lint
+# the template.
 
 def test_icon(recipe):
     """Determine whether recipe file exists and parses.
@@ -386,6 +373,7 @@ def test_icon(recipe):
     """
     return (None, "Not implemented.")
 
+# TODO: Test icon for correct size, format. Use pillow?
 
 def test_lint(recipe):
     """Determine whether recipe file exists and parses.
@@ -398,6 +386,7 @@ def test_lint(recipe):
     """
     return (None, "Not implemented.")
 
+# TODO: Should probably use plutil -lint.
 
 def print_bar():
     """Print 79 '-'s."""
