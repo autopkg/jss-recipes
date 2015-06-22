@@ -30,6 +30,7 @@ optional arguments:
 
 import argparse
 import os
+import subprocess
 
 # pylint: disable=no-name-in-module
 from Foundation import (NSData,
@@ -46,8 +47,6 @@ __version__ = "0.1.0"
 # TODO: And probably that none of them are PolicyTemplate,
 #  SmartGroupTemplate, etc (so you don't cheat the search).
 #test_is_in_subfolder(recipe_path, recipe)
-# TODO: Make sure in AutoPkg org, and value is set!
-#test_parent_recipe(recipe)
 #test_identifier(recipe)
 #test_single_processor(recipe)
 # TODO: All values should be %ALL_CAPS%
@@ -127,13 +126,19 @@ class Results(object):
     def add_result(self, result):
         self.results.append(result)
 
-    def report(self, ):
-        if all((result[0] for result in self.results)):
-            print "Ok."
-        else:
+    def report(self, verbose=False):
+        if verbose or not all((result[0] for result in self.results)):
             for result in self.results:
-                if not result[0]:
-                    print result[1]
+                if verbose or not result[0]:
+                    self._print_result(result)
+        else:
+            print "Ok."
+
+    def report_all(self):
+        self.report(verbose=True)
+
+    def _print_result(self, line):
+        print "Test: %s Result: %s" % (line[1], line[0])
 
 
 def get_argument_parser():
@@ -142,10 +147,12 @@ def get_argument_parser():
                                      "with the jss-recipe style guide.")
     parser.add_argument("recipe", nargs="+", help="Path to a recipe to "
                         "validate.")
+    parser.add_argument("-v", "--verbose", help="Display results of all "
+                        "tests.", action="store_true")
     return parser
 
 
-def validate_recipe(recipe_path):
+def validate_recipe(recipe_path, verbose=False):
     """Test a recipe for compliance, printing progress.
 
     Args:
@@ -178,7 +185,10 @@ def validate_recipe(recipe_path):
         result = test(recipe)
         results.add_result(result)
 
-    results.report()
+    if verbose:
+        results.report_all()
+    else:
+        results.report()
 
 
 def get_recipe(recipe_path):
@@ -212,7 +222,7 @@ def test_filename(recipe_path):
         test and result.
     """
     test = recipe_path.endswith(".jss.recipe")
-    result = "Recipe has correct ending (.jss.recipe): %s" % test
+    result = "Recipe has correct ending (.jss.recipe)"
     return (test, result)
 
 
@@ -226,14 +236,14 @@ def test_recipe_parsing(recipe):
         test and result.
     """
     test =False
+    result = "Recipe parses correctly."
     if not recipe:
-        result = "Recipe file not found!"
+        result += " (Recipe file not found!)"
     elif isinstance(recipe, unicode):
         # There was a parsing error. Print the message and finish.
-        result = recipe
+        result += " (%s)" % recipe
     else:
         test = True
-        result = "Recipe parses correctly."
 
     return (test, result)
 
@@ -251,7 +261,7 @@ def test_is_in_subfolder(recipe):
 
 
 def test_parent_recipe(recipe):
-    """Determine whether recipe file exists and parses.
+    """Determine whether parent recipe is in AutoPkg org and not None.
     Args:
         recipe: Recipe object.
 
@@ -259,7 +269,16 @@ def test_parent_recipe(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    return (None, "Not implemented.")
+    # TODO: Make sure in AutoPkg org, and value is set!
+    parent = recipe["ParentRecipe"]
+    search_results = subprocess.check_output(["autopkg", "search", parent])
+
+    test = False
+
+    if ".pkg.recipe" in search_results:
+        test =True
+
+    return (test, "Parent Recipe is in AutoPkg org, and is set.")
 
 
 def test_identifier(recipe):
@@ -392,7 +411,7 @@ def main():
     # TODO: Add handling for no args (all recipes in subfolders, or
     # possibly a -r arg.
     for recipe in args.recipe:
-        validate_recipe(recipe)
+        validate_recipe(recipe, args.verbose)
 
 
 if __name__ == "__main__":
