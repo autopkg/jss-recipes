@@ -15,13 +15,13 @@
             <key>POLICY_CATEGORY</key>
             <string>Testing</string>
             <key>POLICY_TEMPLATE</key>
-            <string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+            <string>PolicyTemplate.xml</string>
             <key>SELF_SERVICE_ICON</key>
-            <string>%RECIPE_DIR%/Handbrake.png</string>
+            <string>HandBrake.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
-            <string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
+            <string>SmartGroupTemplate.xml</string>
             <key>SELF_SERVICE_DESCRIPTION</key>
             <string>HandBrake is a tool for converting video from nearly any format to a selection of modern, widely supported codecs.</string>
         </dict>
