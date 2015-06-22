@@ -117,7 +117,7 @@ The recipe's `ParentRecipe` must be publicly available via a shared recipe repos
 
 ### Identifier
 
-The recipe's `Identifier` should be `com.github.autopkg.jss-recipes.<product-name>`, where "product-name" is that used consistently throughout the parent recipe and the JSS recipe to identify the product in question.
+The recipe's `Identifier` should be `com.github.jss-recipes.<product-name>`, where "product-name" is that used consistently throughout the parent recipe and the JSS recipe to identify the product in question.
 
 ### Processing
 

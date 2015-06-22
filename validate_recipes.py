@@ -197,9 +197,9 @@ def test_filename(recipe_path):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    test = recipe_path.endswith(".jss.recipe")
-    result = "Recipe has correct ending (.jss.recipe)"
-    return (test, result)
+    result = recipe_path.endswith(".jss.recipe")
+    description = "Recipe has correct ending (.jss.recipe)"
+    return (result, description)
 
 
 def test_recipe_parsing(recipe):
@@ -211,17 +211,17 @@ def test_recipe_parsing(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    test =False
-    result = "Recipe parses correctly."
+    result = False
+    description = "Recipe parses correctly."
     if not recipe:
-        result += " (Recipe file not found!)"
+        description += " (Recipe file not found!)"
     elif isinstance(recipe, unicode):
         # There was a parsing error. Print the message and finish.
-        result += " (%s)" % recipe
+        description += " (%s)" % recipe
     else:
-        test = True
+        result = True
 
-    return (test, result)
+    return (result, description)
 
 
 def test_is_in_subfolder(recipe):
@@ -248,20 +248,21 @@ def test_parent_recipe(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    # TODO: Make sure in AutoPkg org, and value is set!
-    parent = recipe["ParentRecipe"]
-    search_results = subprocess.check_output(["autopkg", "search", parent])
+    parent = recipe.get("ParentRecipe")
+    result = False
+    description = "Parent Recipe is in AutoPkg org, and is set."
+    if parent:
+        search_results = subprocess.check_output(["autopkg", "search", parent])
+        if ".pkg.recipe" in search_results:
+            result = True
+    else:
+        description += " (ParentRecipe not set)"
 
-    test = False
-
-    if ".pkg.recipe" in search_results:
-        test =True
-
-    return (test, "Parent Recipe is in AutoPkg org, and is set.")
+    return (result, description)
 
 
 def test_identifier(recipe):
-    """Determine whether recipe file exists and parses.
+    """Test recipe identifier for proper construction.
     Args:
         recipe: Recipe object.
 
@@ -269,7 +270,21 @@ def test_identifier(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    return (None, "Not implemented.")
+    description = "Recipe identifier follows convention."
+    result = False
+
+    identifier = recipe.get("Identifier")
+    name = recipe["Input"].get("NAME")
+    if identifier and name:
+        if (str(identifier).startswith("com.github.jss-recipes.jss.") and
+            str(identifier).endswith(name)):
+            result = True
+        else:
+            description += " (Identifier malformed)"
+    else:
+        description += " (No identifier or NAME)"
+
+    return (result, description)
 
 
 def test_single_processor(recipe):

@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Downloads the latest Handbrake disk image, creates a package and uploads it to the jss.</string>
         <key>Identifier</key>
-        <string>com.github.autopkg.jss.Handbrake</string>
+        <string>com.github.jss-recipes.jss.HandBrake</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
