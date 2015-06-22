@@ -145,7 +145,7 @@ The `JSSImporter` processor will include at least the following arguments, and v
 		- Utility
 	- Admins may create overrides to specify package categories that aren't included in the standard list above.
 - `policy_category` (Set to `Testing`)
-- `policy_template` (Set to `%RECIPE_DIR%/PolicyTemplate.xml`)
+- `policy_template` (Set to `PolicyTemplate.xml`)
 - `self_service_icon`
 	- Icon should be named the same as the product.
 	- Icon should be a PNG file.

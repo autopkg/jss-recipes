@@ -41,17 +41,30 @@ from Foundation import (NSData,
 
 
 __version__ = "0.1.0"
-REQUIRED_ARGUMENTS = ("self_service_description",
-                      "category",
-                      "policy_template",
-                      "self_service_icon",
-                      "policy_category")
+REQUIRED_ARGUMENTS = (
+    "self_service_description",
+    "category",
+    "policy_template",
+    "self_service_icon",
+    "policy_category")
 
-OPTIONAL_ARGUMENTS = ("jss_inventory_name",
-                      "os_requirements")
+OPTIONAL_ARGUMENTS = (
+    "jss_inventory_name",
+    "os_requirements")
 
-PROHIBITED_ARGUMENTS = ("site_name",
-                        "site_id")
+PROHIBITED_ARGUMENTS = (
+    "site_name",
+    "site_id")
+
+VALID_CATEGORIES =  (
+    "Computer Science",
+    "Digital Media",
+    "Games",
+    "Management",
+    "Print and Scan",
+    "Productivity",
+    "Science and Math",
+    "Utility")
 
 
 class Error(Exception):
@@ -164,6 +177,12 @@ def validate_recipe(recipe_path, verbose=False):
              test_argument_values,
              test_no_prohibited_arguments,
              test_input_section,
+             test_category_value,
+             test_policy_category_value,
+             test_policy_template_value,
+             test_icon_name,
+             test_group_name,
+             test_group_template,
              test_support_file_references,
              test_extension_attributes,
              test_scripts,
@@ -368,7 +387,8 @@ def test_name_prod_name(recipe):
     result = False
     description = "NAME is set, and prod_name is %NAME%."
 
-    if "NAME" in recipe["Input"] and recipe["Process"][0]["Arguments"].get("prod_name") == "%NAME%":
+    if ("NAME" in recipe["Input"] and
+        recipe["Process"][0]["Arguments"].get("prod_name") == "%NAME%"):
         result = True
 
     return (result, description)
@@ -392,7 +412,6 @@ def test_no_prohibited_arguments(recipe):
         result = True
 
     return (result, description)
-
 
 
 def test_input_section(recipe):
@@ -429,6 +448,117 @@ def test_input_section(recipe):
     return (result, description)
 
 
+def test_category_value(recipe):
+    """Test for valid category.
+
+    Args:
+        recipe: Recipe object.
+
+    Returns:
+        Tuple of Bool: Failure or success, and a string describing the
+        test and result.
+    """
+    result = False
+    description = "CATEGORY is in approved list."
+
+    result = recipe["Input"].get("CATEGORY") in VALID_CATEGORIES
+
+    return (result, description)
+
+
+def test_policy_category_value(recipe):
+    """Test that policy category is Testing.
+
+    Args:
+        recipe: Recipe object.
+
+    Returns:
+        Tuple of Bool: Failure or success, and a string describing the
+        test and result.
+    """
+    result = False
+    description = "POLICY_CATEGORY is 'Testing'."
+
+    result  = (recipe["Input"].get("POLICY_CATEGORY") == "Testing")
+
+    return (result, description)
+
+
+def test_policy_template_value(recipe):
+    """Test that policy template is valid.
+
+    Args:
+        recipe: Recipe object.
+
+    Returns:
+        Tuple of Bool: Failure or success, and a string describing the
+        test and result.
+    """
+    result = False
+    description = "POLICY_TEMPLATE is 'PolicyTemplate.xml'."
+
+    result = recipe["Input"].get("POLICY_TEMPLATE") == "PolicyTemplate.xml"
+
+    return (result, description)
+
+
+def test_icon_name(recipe):
+    """Test that icon name is valid.
+
+    Args:
+        recipe: Recipe object.
+
+    Returns:
+        Tuple of Bool: Failure or success, and a string describing the
+        test and result.
+    """
+    result = False
+    description = "SELF_SERVICE_ICON name is NAME.png"
+
+    result  = (recipe["Input"].get("SELF_SERVICE_ICON") ==
+               recipe["Input"].get("NAME") + ".png")
+
+    return (result, description)
+
+
+def test_group_name(recipe):
+    """Test that group name is valid.
+
+    Args:
+        recipe: Recipe object.
+
+    Returns:
+        Tuple of Bool: Failure or success, and a string describing the
+        test and result.
+    """
+    result = False
+    description = "GROUP_NAME is '%NAME%-update-smart'."
+
+    result = recipe["Input"].get("GROUP_NAME") == "%NAME%-update-smart"
+
+    return (result, description)
+
+
+def test_group_template(recipe):
+    """Test that group template is valid.
+
+    Args:
+        recipe: Recipe object.
+
+    Returns:
+        Tuple of Bool: Failure or success, and a string describing the
+        test and result.
+    """
+    #TODO: This isn't technically the required value.
+    result = False
+    description = "GROUP_TEMPLATE is 'SmartGroupTemplate.xml'."
+
+    result  = (recipe["Input"].get("GROUP_TEMPLATE") ==
+               "SmartGroupTemplate.xml")
+
+    return (result, description)
+
+
 def test_support_file_references(recipe):
     """Report whether all support files are referenced by filename only.
 
@@ -453,7 +583,7 @@ def test_support_file_references(recipe):
     return (result, description)
 
 # TODO: Make sure all input values are os.path.basename() only (uses
-# search).
+# search). (I don't think this is needed any more)
 
 def test_extension_attributes(recipe):
     """Determine whether recipe file exists and parses.
