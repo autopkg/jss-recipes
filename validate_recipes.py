@@ -41,6 +41,17 @@ from Foundation import (NSData,
 
 
 __version__ = "0.1.0"
+REQUIRED_ARGUMENTS = ("self_service_description",
+                      "category",
+                      "policy_template",
+                      "self_service_icon",
+                      "policy_category")
+
+OPTIONAL_ARGUMENTS = ("jss_inventory_name",
+                      "os_requirements")
+
+PROHIBITED_ARGUMENTS = ("site_name",
+                        "site_id")
 
 
 class Error(Exception):
@@ -149,7 +160,9 @@ def validate_recipe(recipe_path, verbose=False):
              test_parent_recipe,
              test_identifier,
              test_single_processor,
-             test_arguments,
+             test_name_prod_name,
+             test_argument_values,
+             test_no_prohibited_arguments,
              test_input_section,
              test_support_file_references,
              test_extension_attributes,
@@ -313,8 +326,8 @@ def test_single_processor(recipe):
     return (result, description)
 
 
-def test_arguments(recipe):
-    """Determine whether recipe file exists and parses.
+def test_argument_values(recipe):
+    """Test for all arguments to JSSImporter being replacement vars.
     Args:
         recipe: Recipe object.
 
@@ -322,14 +335,73 @@ def test_arguments(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    result = None
-    description = "Not implemented."
+    result = False
+    description = ("All required and optional arguments to JSSImporter are "
+                   "%ALL_CAPS% replacement variables, and are present.")
+
+    required_argument_values = (recipe["Process"][0]["Arguments"].get(
+        argument) for argument in REQUIRED_ARGUMENTS)
+    optional_argument_values = (recipe["Process"][0]["Arguments"].get(
+        argument) for argument in OPTIONAL_ARGUMENTS)
+
+    valid_required_values = all((val and val.isupper() and val.startswith("%")
+                                 and val.endswith("%") for val in
+                                 required_argument_values))
+    valid_optional_values = all((val.isupper() and val.startswith("%") and
+                                 val.endswith("%") for val in
+                                 required_argument_values if val))
+    if valid_required_values and valid_optional_values:
+        result = True
+
     return (result, description)
 
-# TODO: All values should be %ALL_CAPS%
+
+def test_name_prod_name(recipe):
+    """Test for name Input and prod_name arg.
+    Args:
+        recipe: Recipe object.
+
+    Returns:
+        Tuple of Bool: Failure or success, and a string describing the
+        test and result.
+    """
+    result = False
+    description = "NAME is set, and prod_name is %NAME%."
+
+    if "NAME" in recipe["Input"] and recipe["Process"][0]["Arguments"].get("prod_name") == "%NAME%":
+        result = True
+
+    return (result, description)
+
+
+def test_no_prohibited_arguments(recipe):
+    """Tests for prohibited arguments.
+    Args:
+        recipe: Recipe object.
+
+    Returns:
+        Tuple of Bool: Failure or success, and a string describing the
+        test and result.
+    """
+    result = False
+    description = "No prohibited arguments."
+
+    arguments = recipe["Process"][0]["Arguments"]
+    if all((not prohibited_arg in arguments for prohibited_arg in
+            PROHIBITED_ARGUMENTS)):
+        result = True
+
+    return (result, description)
+
+
 
 def test_input_section(recipe):
-    """Determine whether recipe file exists and parses.
+    """Test for all required and optional args in input section.
+
+    All args should have actual values set in input section. Also,
+    names must follow the convention of being ALL_CAPS equivalent of
+    JSSImporter argument.
+
     Args:
         recipe: Recipe object.
 
@@ -337,12 +409,25 @@ def test_input_section(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    result = None
-    description = "Not implemented."
+    result = False
+    description = ("All required and optional arguments to JSSImporter are "
+                   "set in 'Input' section with ALL_CAPS keys.")
+
+    required_input_keys = (recipe["Input"].get(argument.upper()) for argument
+                           in REQUIRED_ARGUMENTS)
+    # Optional key must be present in JSSImporter args also!
+    optional_input_keys = (recipe["Input"].get(argument.upper()) for argument
+                           in OPTIONAL_ARGUMENTS if
+                           recipe["Process"][0]["Arguments"].get(argument))
+
+    valid_required_keys = all((key is not None for key in required_input_keys))
+    valid_optional_keys = all((key is not None for key in optional_input_keys))
+
+    if valid_required_keys and valid_optional_keys:
+        result = True
+
     return (result, description)
 
-# TODO: All keys should be ALL_CAPS, and used by args, AND match the
-# style guide.
 
 def test_support_file_references(recipe):
     """Report whether all support files are referenced by filename only.
