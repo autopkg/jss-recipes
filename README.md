@@ -184,10 +184,14 @@ Other arguments are optional and desired only if necessary (`extension_attribute
 The recipe must use this repo's standard `PolicyTemplate.xml` for its policy template.
 
 ### Extension Attributes
-While the Casper Suite can include internet plugins, or other arbitrary paths in its inventory collection, it is not the *default* behavior. Therefore, for apps that live outside of the `/Applications` folder, an extension attribute should be included to manage group inclusion. Examples of this can be seen in the repository for more information (examples include Adobe Flash Player and Silverlight).
+While the Casper Suite can include internet plugins, or other arbitrary paths in its inventory collection, it is not the *default* behavior. Therefore, for apps that live outside of the `/Applications` folder, an extension attribute should be included to manage group inclusion. This way, recipes from this repo will work immediately for admins who have not set up inventory collection beyond the default. Examples of this can be seen in the repository for more information (examples include Adobe Flash Player and Silverlight).
+
+Extension attributes arguments should be specified in the `JSSImporter/Arguments` section only.
 
 ### Scripts
 Likewise, scripts should only be included when absolutely necessary for package installation.
+
+Script's arguments should be specified in the `JSSImporter/Arguments` section only.
 
 ### Linting
 Finally, a check with `plutil -lint <recipe_name>` should pass.
