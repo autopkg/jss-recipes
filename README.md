@@ -109,7 +109,7 @@ Recipes included in this repo will follow these rules:
 
 ### Product Subfolder
 
-Each recipe, as well as any product-specific support files, will reside in a subfolder of the main repository. Support files like icons, product-specific template files, or scripts, will be referenced as arguments by their filename only, and JSSImporter's search-path methods will locate them correctly should the recipe be overridden.
+Each recipe, as well as any product-specific support files, will reside in a subfolder of the main repository. The name of the subfolder should be the value used for the product `NAME`. Support files like icons, product-specific template files, or scripts, will be referenced as arguments by their filename only, and JSSImporter's search-path methods will locate them correctly should the recipe be overridden. Their filenames should all have the product name as a prefix, e.g. `NetHackScriptTemplate.xml`.
 
 ### Parent recipe
 

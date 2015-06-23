@@ -91,6 +91,7 @@ class Plist(dict):
         else:
             dict.__init__(self)
             self.new_plist()
+        self.filename = os.path.abspath(filename)
 
     def read_file(self, path):
         """Replace internal XML dict with data from plist at path.
@@ -168,26 +169,29 @@ def validate_recipe(recipe_path, verbose=False):
     # Test filename and get recipe object.
     results.add_result(test_filename(recipe_path))
 
-    tests = (test_recipe_parsing,
-             test_is_in_subfolder,
-             test_parent_recipe,
-             test_identifier,
-             test_single_processor,
-             test_name_prod_name,
-             test_argument_values,
-             test_no_prohibited_arguments,
-             test_input_section,
-             test_category_value,
-             test_policy_category_value,
-             test_policy_template_value,
-             test_icon_name,
-             test_group_name,
-             test_group_template,
-             test_support_file_references,
-             test_extension_attributes,
-             test_scripts,
-             test_icon,
-             test_lint)
+    tests = (
+        test_recipe_parsing,
+        test_is_in_subfolder,
+        test_folder_contents_have_common_prefix,
+        test_no_restricted_files_in_folder,
+        test_parent_recipe,
+        test_identifier,
+        test_single_processor,
+        test_name_prod_name,
+        test_argument_values,
+        test_no_prohibited_arguments,
+        test_input_section,
+        test_category_value,
+        test_policy_category_value,
+        test_policy_template_value,
+        test_icon_name,
+        test_group_name,
+        test_group_template,
+        test_support_file_references,
+        test_extension_attributes,
+        test_scripts,
+        test_icon,
+        test_lint)
 
     for test in tests:
         result = test(recipe)
@@ -229,6 +233,7 @@ def test_filename(recipe_path):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
+    # TODO: This should match the NAME value!
     result = recipe_path.endswith(".jss.recipe")
     description = "Recipe has correct ending (.jss.recipe)"
     return (result, description)
@@ -257,7 +262,7 @@ def test_recipe_parsing(recipe):
 
 
 def test_is_in_subfolder(recipe):
-    """Determine whether recipe file exists and parses.
+    """Determine whether recipe file is in a product subfolder.
     Args:
         recipe: Recipe object.
 
@@ -266,12 +271,52 @@ def test_is_in_subfolder(recipe):
         test and result.
     """
     result = None
-    description = "Not implemented."
+    description = "Recipe is in a subfolder named 'NAME'."
+    name = recipe["Input"]["NAME"]
+    dirname = os.path.dirname(recipe.filename).rsplit("/", 1)[1]
+
+    result = dirname == name
+
     return (result, description)
 
-# TODO: Should ensure all files in current folder have same prefix.
-# TODO: And probably that none of them are PolicyTemplate,
-#  SmartGroupTemplate, etc (so you don't cheat the search).
+
+def test_folder_contents_have_common_prefix(recipe):
+    """Determine whether folder contents have a common prefix of NAME.
+    Args:
+        recipe: Recipe object.
+
+    Returns:
+        Tuple of Bool: Failure or success, and a string describing the
+        test and result.
+    """
+    result = None
+    description = "All files have prefix of product 'NAME'."
+    name = recipe["Input"]["NAME"]
+    files = os.listdir(os.path.dirname(recipe.filename))
+    result = all((filename.startswith(name) for filename in files))
+
+    return (result, description)
+
+
+def test_no_restricted_files_in_folder(recipe):
+    """Determine whether folder contents have a common prefix of NAME.
+    Args:
+        recipe: Recipe object.
+
+    Returns:
+        Tuple of Bool: Failure or success, and a string describing the
+        test and result.
+    """
+    result = None
+    restricted_files = ["PolicyTemplate.xml", "SmartGroupTemplate.xml"]
+    description = ("None of the restricted templates %s are in recipe's "
+                   "folder." % restricted_files)
+    files = os.listdir(os.path.dirname(recipe.filename))
+    result = all(restricted_file not in files for restricted_file in
+                 restricted_files)
+
+    return (result, description)
+
 
 def test_parent_recipe(recipe):
     """Determine whether parent recipe is in AutoPkg org and not None.
