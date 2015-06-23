@@ -159,17 +159,17 @@ def validate_recipe(recipe_path, verbose=False):
     Args:
         recipe_path: String path to recipe file.
     """
-    print_bar()
-    print "Testing recipe: %s" % recipe_path
+    header = "Testing recipe: %s" % recipe_path
+    print_bar(len(header))
+    print header
+    print_bar(len(header))
 
     recipe = get_recipe(recipe_path)
-
     results = Results()
 
-    # Test filename and get recipe object.
-    results.add_result(test_filename(recipe_path))
-
     tests = (
+        test_filename_prefix,
+        test_filename_suffix,
         test_recipe_parsing,
         test_is_in_subfolder,
         test_folder_contents_have_common_prefix,
@@ -223,7 +223,23 @@ def get_recipe(recipe_path):
     return recipe
 
 
-def test_filename(recipe_path):
+def test_filename_prefix(recipe):
+    """Tests filename for correct prefix.
+
+    Args:
+        recipe_path: String path to a recipe file.
+
+    Returns:
+        Tuple of Bool: Failure or success, and a string describing the
+        test and result.
+    """
+    name = recipe["Input"]["NAME"]
+    result = recipe.filename.startswith(name)
+    description = "Recipe has correct prefix (NAME: %s)" % name
+    return (result, description)
+
+
+def test_filename_suffix(recipe):
     """Tests filename for correct ending.
 
     Args:
@@ -233,8 +249,8 @@ def test_filename(recipe_path):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    # TODO: This should match the NAME value!
-    result = recipe_path.endswith(".jss.recipe")
+    name = recipe["Input"]["NAME"]
+    result = recipe.filename.endswith(".jss.recipe")
     description = "Recipe has correct ending (.jss.recipe)"
     return (result, description)
 
@@ -691,9 +707,9 @@ def test_lint(recipe):
 
 # TODO: Should probably use plutil -lint.
 
-def print_bar():
-    """Print 79 '-'s."""
-    print 79 * "-"
+def print_bar(length=79):
+    """Print a line of '-'s."""
+    print length * "-"
 
 
 def main():
