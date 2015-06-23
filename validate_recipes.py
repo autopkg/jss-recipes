@@ -154,6 +154,28 @@ def get_argument_parser():
     return parser
 
 
+def get_recipes(recipes):
+    """Build a list of recipes from filename or dirname.
+
+    Args:
+        recipes: A string filename or path to a directory. Directories
+            will be recursively searched for files ending with
+            '.jss.recipe'.
+
+    Returns:
+        List of recipe files.
+    """
+    result = []
+    if os.path.isfile(recipes):
+        result.append(recipes)
+    elif os.path.isdir(recipes):
+        for root, dirs, files in os.walk(recipes):
+            for filename in files:
+                if filename.endswith(".jss.recipe"):
+                    result.append(os.path.join(root, filename))
+    return result
+
+
 def validate_recipe(recipe_path, verbose=False):
     """Test a recipe for compliance, printing progress.
 
@@ -751,7 +773,9 @@ def main():
 
     # TODO: Add handling for no args (all recipes in subfolders, or
     # possibly a -r arg.
-    for recipe in args.recipe:
+    for recipes_arg in args.recipe:
+        recipes = get_recipes(recipes_arg)
+    for recipe in recipes:
         validate_recipe(recipe, args.verbose)
 
 
