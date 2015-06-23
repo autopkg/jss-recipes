@@ -15,18 +15,18 @@ https://github.com/homebysix/auto-update-magic</string>
 	<key>Description</key>
 	<string>Downloads latest Suspicious Package installer, unpacks it, and re-labels the installer. Then, uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.sheagcraig.jss.SuspiciousPackage</string>
+	<string>com.github.jss-recipes.jss.SuspiciousPackage</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
 		<string>Management</string>
-		<key>DESCRIPTION</key>
+		<key>SELF_SERVICE_DESCRIPTION</key>
 		<string>Quick Look Plug-in for OS X installer packages.</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
-		<key>ICON</key>
+		<key>SELF_SERVICE_ICON</key>
 		<string>Suspicious Package.png</string>
 		<key>NAME</key>
 		<string>Suspicious Package</string>
