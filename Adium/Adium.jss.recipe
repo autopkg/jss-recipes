@@ -15,7 +15,7 @@ https://github.com/homebysix/auto-update-magic</string>
         <key>Description</key>
         <string>Downloads latest version of Adium and builds an Apple installer pkg. Then, uploads to the JSS.</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.Adium</string>
+        <string>com.github.jss-recipes.jss.Adium</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
@@ -25,14 +25,14 @@ https://github.com/homebysix/auto-update-magic</string>
             <key>POLICY_CATEGORY</key>
             <string>Testing</string>
             <key>POLICY_TEMPLATE</key>
-            <string>%RECIPE_DIR%/PolicyTemplate.xml</string>
-            <key>ICON</key>
-            <string>%RECIPE_DIR%/Adium.png</string>
+            <string>PolicyTemplate.xml</string>
+            <key>SELF_SERVICE_ICON</key>
+            <string>Adium.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
-            <string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
-            <key>DESCRIPTION</key>
+            <string>SmartGroupTemplate.xml</string>
+            <key>SELF_SERVICE_DESCRIPTION</key>
             <string>Popular instant messaging client supports a plethora of services.</string>
         </dict>
         <key>MinimumVersion</key>
@@ -53,9 +53,9 @@ https://github.com/homebysix/auto-update-magic</string>
                     <key>policy_template</key>
                     <string>%POLICY_TEMPLATE%</string>
                     <key>self_service_icon</key>
-                    <string>%ICON%</string>
+                    <string>%SELF_SERVICE_ICON%</string>
                     <key>self_service_description</key>
-                    <string>%DESCRIPTION%</string>
+                    <string>%SELF_SERVICE_DESCRIPTION%</string>
                     <key>groups</key>
                     <array>
                         <dict>
