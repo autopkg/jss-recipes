@@ -16,15 +16,17 @@
 
 """validate_recipes.py
 
-usage: validate_recipes.py [-h] recipe [recipe ...]
+usage: validate_recipes.py [-h] [-v] recipe [recipe ...]
 
 Test recipes for compliance with the jss-recipe style guide.
 
 positional arguments:
-  recipe      Path to a recipe to validate.
+  recipe         Path to a recipe to validate, or to a folder, to recursively
+                 test all contained recipes.
 
 optional arguments:
-  -h, --help  show this help message and exit
+  -h, --help     show this help message and exit
+  -v, --verbose  Display results of all tests.
 """
 
 
@@ -41,7 +43,8 @@ from Foundation import (NSData,
 # pylint: enable=no-name-in-module
 
 
-__version__ = "0.1.0"
+__version__ = "1.0.0"
+
 REQUIRED_ARGUMENTS = (
     "self_service_description",
     "category",
@@ -148,7 +151,8 @@ def get_argument_parser():
     parser = argparse.ArgumentParser(description="Test recipes for compliance "
                                      "with the jss-recipe style guide.")
     parser.add_argument("recipe", nargs="+", help="Path to a recipe to "
-                        "validate.")
+                        "validate, or to a folder, to recursively test all "
+                        "contained recipes.")
     parser.add_argument("-v", "--verbose", help="Display results of all "
                         "tests.", action="store_true")
     return parser
@@ -886,8 +890,6 @@ def main():
     parser = get_argument_parser()
     args = parser.parse_args()
 
-    # TODO: Add handling for no args (all recipes in subfolders, or
-    # possibly a -r arg.
     for recipes_arg in args.recipe:
         recipes = get_recipes(recipes_arg)
     for recipe in recipes:
