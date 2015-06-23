@@ -202,7 +202,7 @@ def validate_recipe(recipe_path, verbose=False):
         test_icon_name,
         test_group_name,
         test_group_template,
-        test_support_file_references,
+        test_groups_argument,
         test_extension_attributes,
         test_scripts,
         test_icon,
@@ -675,15 +675,9 @@ def test_group_template(recipe):
     return (result, description)
 
 
-def test_support_file_references(recipe):
-    """Report whether all support files are referenced by filename only.
+def test_groups_argument(recipe):
+    """Test that groups argument is as specified in style-guide.
 
-    Product Subfolder rules.
-
-    Args:
-        recipe: Recipe xml.
-    """
-    """Determine whether recipe file exists and parses.
     Args:
         recipe: Recipe object.
 
@@ -691,18 +685,27 @@ def test_support_file_references(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    # Build a list of potential xpaths to check.
-    search_paths = ["Input"]
-    # TODO: Not finished
-    result = None
-    description = "Not implemented."
+    result = False
+
+    description = "'groups' argument to JSSImporter is correct."
+
+    groups_args = get_jssimporter(recipe)["Arguments"]["groups"]
+    groups_len_compliant = len(groups_args) == 1
+    if groups_len_compliant:
+        group = groups_args[0]
+        group_name_compliant = group["name"] == "%GROUP_NAME%"
+        group_smart_compliant = group["smart"] == True
+        group_template_compliant = group["template_path"] == "%GROUP_TEMPLATE%"
+
+        if all((group_name_compliant, group_smart_compliant,
+                group_template_compliant)):
+            result = True
+
     return (result, description)
 
-# TODO: Make sure all input values are os.path.basename() only (uses
-# search). (I don't think this is needed any more)
 
 def test_extension_attributes(recipe):
-    """Determine whether recipe file exists and parses.
+    """Determine whether extension attributes are configured.
     Args:
         recipe: Recipe object.
 
@@ -710,14 +713,53 @@ def test_extension_attributes(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    result = None
-    description = "Not implemented."
+    result = False
+    description = "Recipe has no extension attributes."
+    extension_attributes = get_jssimporter(
+        recipe)["Arguments"].get("extension_attributes")
+    if not extension_attributes:
+        result = True
+    else:
+        description += (" (WARNING: Extension attributes only allowed when "
+                        "absolutely necessary.")
+        result, description = test_extension_attribute_arguments(recipe)
     return (result, description)
 
-# TODO: Warn if ext attr. Test for all required files. Lint 'em.
+
+def test_extension_attribute_arguments(recipe):
+    """Determine whether extension attributes are configured correctly.
+    Args:
+        recipe: Recipe object.
+
+    Returns:
+        Tuple of Bool: Failure or success, and a string describing the
+        test and result.
+    """
+    result = False
+    name = recipe["Input"].get("NAME")
+    description = ("WARNING: Recipe has extension attributes. Extension "
+                   "attributes meet style guidelines.")
+
+    extension_attributes = get_jssimporter(
+        recipe)["Arguments"].get("extension_attributes")
+
+    ext_attr_templates = [ext_attr.get("ext_attribute_path") for ext_attr in
+                          extension_attributes]
+    template_names_compliant = all((filename.startswith(name) and
+                                    filename.endswith("ExtensionAttribute.xml")
+                                    for filename in ext_attr_templates))
+    directory = os.path.dirname(recipe.filename)
+    templates_exist = all((os.path.isfile(os.path.join(directory, filename))
+                           for filename in ext_attr_templates))
+    print template_names_compliant, templates_exist
+
+    result = template_names_compliant and templates_exist
+
+    return (result, description)
+
 
 def test_scripts(recipe):
-    """Determine whether recipe file exists and parses.
+    """Determine whether scripts are configured.
     Args:
         recipe: Recipe object.
 
@@ -725,12 +767,51 @@ def test_scripts(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    result = None
-    description = "Not implemented."
+    result = False
+    description = "Recipe has no scripts."
+    scripts = get_jssimporter(
+        recipe)["Arguments"].get("scripts")
+    if not scripts:
+        result = True
+    else:
+        description += (" (WARNING: Scripts only allowed when absolutely "
+                        "necessary.")
+        result, description = test_scripts_arguments(recipe)
     return (result, description)
 
-# TODO: Warn if scripts. Test for existence of referenced files. Lint
-# the template.
+
+def test_scripts_arguments(recipe):
+    """Determine whether scripts are configured correctly.
+    Args:
+        recipe: Recipe object.
+
+    Returns:
+        Tuple of Bool: Failure or success, and a string describing the
+        test and result.
+    """
+    result = False
+    name = recipe["Input"].get("NAME")
+    description = ("WARNING: Recipe has scripts. Scripts arguments meet "
+                   "style guidelines.")
+
+    scripts = get_jssimporter(recipe)["Arguments"].get("scripts")
+
+    script_templates = [script.get("template_path") for script in scripts]
+    template_names_compliant = all((filename.startswith(name) and
+                                    filename.endswith("ScriptTemplate.xml") for
+                                    filename in script_templates))
+    directory = os.path.dirname(recipe.filename)
+    templates_exist = all((os.path.isfile(os.path.join(directory, filename))
+                           for filename in script_templates))
+    script_names = [script.get("name") for script in scripts]
+    script_names_compliant = all((filename.startswith(name) for filename in
+                                  script_names))
+
+    result = (template_names_compliant and templates_exist and
+              script_names_compliant)
+
+    return (result, description)
+
 
 def test_icon(recipe):
     """Determine whether recipe file exists and parses.
