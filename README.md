@@ -14,11 +14,14 @@ A collection of [AutoPkg](https://autopkg.github.io/autopkg/) recipes that helps
 	- [App Store apps](#app-store-apps)
 	- [Testing group](#testing-group)
 - [Style guide](#style-guide)
+	- [Filename](#filename)
+	- [Product Subfolder[(#product-subfolder)
 	- [Parent recipe](#parent-recipe)
 	- [Identifier](#identifier)
 	- [Processing](#processing)
 	- [Policy Template](#policy-template)
 	- [Extension Attributes](#extension-attributes)
+	- [Scripts](#scripts)
 	- [Linting](#linting)
 - [Getting help](#getting-help)
 
@@ -107,21 +110,20 @@ This group could include anything from a handful of IT coworkers to an entire cl
 
 Recipes included in this repo will follow these rules:
 
-### Product Subfolder
+### Filename
+The recipe filename should be `<NAME>.jss.recipe`, where `<NAME>` is the product's name as specified throughout the entire chain of recipes to identify the product. An optional extra-description may be added after the name, by adding a hyphen, for example `MicrosoftOffice2011Updates-DisabledAllQuit.jss.recipe`.
 
+### Product Subfolder
 Each recipe, as well as any product-specific support files, will reside in a subfolder of the main repository. The name of the subfolder should be the value used for the product `NAME`. Support files like icons, product-specific template files, or scripts, will be referenced as arguments by their filename only, and JSSImporter's search-path methods will locate them correctly should the recipe be overridden. Their filenames should all have the product name as a prefix, e.g. `NetHackScriptTemplate.xml`.
 
 ### Parent recipe
-
 The recipe's `ParentRecipe` must be publicly available via a shared recipe repository that is part of the AutoPkg organization.
 
 ### Identifier
-
-The recipe's `Identifier` should be `com.github.jss-recipes.<product-name>`, where "product-name" is that used consistently throughout the parent recipe and the JSS recipe to identify the product in question.
+The recipe's `Identifier` should be `com.github.jss-recipes..jss.<product-name>`, where "product-name" is that used consistently throughout the parent recipe and the JSS recipe to identify the product in question. In special cases, like where multiple recipes for the same product are desired, an optional suffix of a hypen and a descriptor may be added (e.g. `com.github.jss-recipes.jss.MicrosoftOffice2011-DisabledAllQuit`).
 
 ### Processing
-
-The recipe should have a single processor stage: `JSSImporter`.
+The recipe should have a single processor stage: `JSSImporter`. This rule may in special circumstances be lifted, due to missing data in the `ParentRecipe`, like no `version` information being provided. However, recipe authors should endeavor to get the `ParentRecipe` author to include this information so as to benefit other downstream recipes.
 
 All arguments to the JSSImporter processor should be capable of being overriden by an `Input` section variable.
 
@@ -179,25 +181,20 @@ The `JSSImporter` processor will include at least the following arguments, and v
 Other arguments are optional and desired only if necessary (`extension_attribute`).
 
 ### Policy Template
-
 The recipe must use this repo's standard `PolicyTemplate.xml` for its policy template.
 
 ### Extension Attributes
-
 While the Casper Suite can include internet plugins, or other arbitrary paths in its inventory collection, it is not the *default* behavior. Therefore, for apps that live outside of the `/Applications` folder, an extension attribute should be included to manage group inclusion. Examples of this can be seen in the repository for more information (examples include Adobe Flash Player and Silverlight).
 
 ### Scripts
-
 Likewise, scripts should only be included when absolutely necessary for package installation.
 
 ### Linting
-
 Finally, a check with `plutil -lint <recipe_name>` should pass.
 
 ---
 
 ## Getting help
-
 Here are some basic steps for determining where to troubleshoot:
 <!-- TODO: Common errors and what they mean? -->
 
