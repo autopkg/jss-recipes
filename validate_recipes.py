@@ -31,6 +31,7 @@ optional arguments:
 import argparse
 import os
 import subprocess
+import sys
 
 # pylint: disable=no-name-in-module
 from Foundation import (NSData,
@@ -159,14 +160,6 @@ def validate_recipe(recipe_path, verbose=False):
     Args:
         recipe_path: String path to recipe file.
     """
-    header = "Testing recipe: %s" % recipe_path
-    print_bar(len(header))
-    print header
-    print_bar(len(header))
-
-    recipe = get_recipe(recipe_path)
-    results = Results()
-
     tests = (
         test_filename_prefix,
         test_filename_suffix,
@@ -193,8 +186,27 @@ def validate_recipe(recipe_path, verbose=False):
         test_icon,
         test_lint)
 
+    header = "Testing recipe: %s" % recipe_path
+    print_bar(len(header))
+    print header
+    print_bar(len(header))
+
+    if os.path.exists(recipe_path):
+        recipe = get_recipe(recipe_path)
+    else:
+        print "File not found."
+        sys.exit(1)
+
+    results = Results()
+
     for test in tests:
-        result = test(recipe)
+        try:
+            result = test(recipe)
+        # Handle missing plist keys rather than try to test for each
+        # bit of a recipe.
+        except KeyError as err:
+            result = (False, "'%s' failed with missing Key: '%s'" %
+                      (test.__name__, err.message))
         results.add_result(result)
 
     if verbose:
@@ -219,6 +231,8 @@ def get_recipe(recipe_path):
         recipe = None
     except PlistParseError as err:
         recipe = err.message
+    except ValueError:
+        recipe = u"File does not exist."
 
     return recipe
 
@@ -233,9 +247,9 @@ def test_filename_prefix(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    name = recipe["Input"]["NAME"]
+    name = recipe["Input"].get("NAME")
     result = recipe.filename.startswith(name)
-    description = "Recipe has correct prefix (NAME: %s)" % name
+    description = "Recipe has correct prefix (NAME: '%s')" % name
     return (result, description)
 
 
@@ -249,9 +263,8 @@ def test_filename_suffix(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    name = recipe["Input"]["NAME"]
     result = recipe.filename.endswith(".jss.recipe")
-    description = "Recipe has correct ending (.jss.recipe)"
+    description = "Recipe has correct ending ('.jss.recipe')"
     return (result, description)
 
 
@@ -287,8 +300,8 @@ def test_is_in_subfolder(recipe):
         test and result.
     """
     result = None
-    description = "Recipe is in a subfolder named 'NAME'."
-    name = recipe["Input"]["NAME"]
+    name = recipe["Input"].get("NAME")
+    description = "Recipe is in a subfolder named (NAME: '%s')." % name
     dirname = os.path.dirname(recipe.filename).rsplit("/", 1)[1]
 
     result = dirname == name
@@ -306,8 +319,8 @@ def test_folder_contents_have_common_prefix(recipe):
         test and result.
     """
     result = None
-    description = "All files have prefix of product 'NAME'."
-    name = recipe["Input"]["NAME"]
+    name = recipe["Input"].get("NAME")
+    description = "All files have prefix of product (NAME: '%s')." % name
     files = os.listdir(os.path.dirname(recipe.filename))
     result = all((filename.startswith(name) for filename in files))
 
@@ -345,7 +358,7 @@ def test_parent_recipe(recipe):
     """
     parent = recipe.get("ParentRecipe")
     result = False
-    description = "Parent Recipe is in AutoPkg org, and is set."
+    description = "Parent Recipe is in AutoPkg org."
     if parent:
         search_results = subprocess.check_output(["autopkg", "search", parent])
         if ".pkg.recipe" in search_results:
@@ -365,19 +378,16 @@ def test_identifier(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    description = "Recipe identifier follows convention."
+    name = recipe["Input"].get("NAME")
+    description = ("Recipe identifier follows convention. "
+                   "('com.github.jss-recipes.jss.%s')" % name)
     result = False
 
     identifier = recipe.get("Identifier")
-    name = recipe["Input"].get("NAME")
     if identifier and name:
         if (str(identifier).startswith("com.github.jss-recipes.jss.") and
-            str(identifier).endswith(name)):
+            str(identifier).rsplit("-")[0].endswith(name)):
             result = True
-        else:
-            description += " (Identifier malformed)"
-    else:
-        description += " (No identifier or NAME)"
 
     return (result, description)
 
@@ -401,9 +411,20 @@ def test_single_processor(recipe):
         else:
             description += " (Processor is not 'JSSImporter')"
     else:
-        description += " (Too many processors)"
+        description += " (Too many processors: %s > 1)" % len(processors)
 
     return (result, description)
+
+
+def get_jssimporter(recipe):
+    """Return the JSSImporter processor section or None."""
+    processors = [processor for processor in recipe["Process"] if
+                  processor.get("Processor") == "JSSImporter"]
+    if len(processors) == 1:
+        result = processors.pop()
+    else:
+        result = None
+    return result
 
 
 def test_argument_values(recipe):
@@ -419,9 +440,9 @@ def test_argument_values(recipe):
     description = ("All required and optional arguments to JSSImporter are "
                    "%ALL_CAPS% replacement variables, and are present.")
 
-    required_argument_values = (recipe["Process"][0]["Arguments"].get(
+    required_argument_values = (get_jssimporter(recipe)["Arguments"].get(
         argument) for argument in REQUIRED_ARGUMENTS)
-    optional_argument_values = (recipe["Process"][0]["Arguments"].get(
+    optional_argument_values = (get_jssimporter(recipe)["Arguments"].get(
         argument) for argument in OPTIONAL_ARGUMENTS)
 
     valid_required_values = all((val and val.isupper() and val.startswith("%")
@@ -449,7 +470,7 @@ def test_name_prod_name(recipe):
     description = "NAME is set, and prod_name is %NAME%."
 
     if ("NAME" in recipe["Input"] and
-        recipe["Process"][0]["Arguments"].get("prod_name") == "%NAME%"):
+        get_jssimporter(recipe)["Arguments"].get("prod_name") == "%NAME%"):
         result = True
 
     return (result, description)
@@ -467,7 +488,7 @@ def test_no_prohibited_arguments(recipe):
     result = False
     description = "No prohibited arguments."
 
-    arguments = recipe["Process"][0]["Arguments"]
+    arguments = get_jssimporter(recipe)["Arguments"]
     if all((not prohibited_arg in arguments for prohibited_arg in
             PROHIBITED_ARGUMENTS)):
         result = True
@@ -498,7 +519,7 @@ def test_input_section(recipe):
     # Optional key must be present in JSSImporter args also!
     optional_input_keys = (recipe["Input"].get(argument.upper()) for argument
                            in OPTIONAL_ARGUMENTS if
-                           recipe["Process"][0]["Arguments"].get(argument))
+                           get_jssimporter(recipe)["Arguments"].get(argument))
 
     valid_required_keys = all((key is not None for key in required_input_keys))
     valid_optional_keys = all((key is not None for key in optional_input_keys))
@@ -610,12 +631,24 @@ def test_group_template(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    #TODO: This isn't technically the required value.
     result = False
-    description = "GROUP_TEMPLATE is 'SmartGroupTemplate.xml'."
+    required_template = "SmartGroupTemplate.xml"
+    description = "GROUP_TEMPLATE is '%s'." % required_template
+    name = recipe["Input"].get("NAME")
+    group_template = recipe["Input"].get("GROUP_TEMPLATE")
 
-    result  = (recipe["Input"].get("GROUP_TEMPLATE") ==
-               "SmartGroupTemplate.xml")
+    if group_template == required_template:
+        result = True
+    else:
+        # Check to see if there is an extension attribute, requiring a
+        # custom group template.
+        has_ext_attrs = get_jssimporter(recipe)["Arguments"].get(
+            "extension_attributes")
+        if has_ext_attrs and group_template == name + required_template:
+            result = True
+            description = ("GROUP_TEMPLATE is '%s' (Properly formed "
+                           "extension-attribute-supporting smart group "
+                           "template provided." % (name + required_template))
 
     return (result, description)
 
