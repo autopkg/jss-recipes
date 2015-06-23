@@ -229,6 +229,9 @@ def validate_recipe(recipe_path, verbose=False):
         except KeyError as err:
             result = (False, "'%s' failed with missing Key: '%s'" %
                       (test.__name__, err.message))
+        except AttributeError as err:
+            result = (False, "'%s' failed with missing attribute" %
+                      test.__name__)
         results.add_result(result)
 
     if verbose:
@@ -822,14 +825,41 @@ def test_icon(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    result = None
-    description = "Not implemented."
+    result = False
+    description = "Icon is a 128x128px PNG file."
+    directory = os.path.dirname(recipe.filename)
+    icon_path = os.path.join(directory,
+                             recipe["Input"].get("SELF_SERVICE_ICON"))
+    width, height, format = get_image_properties(icon_path)
+
+    if width == 128 and height == 128 and format.upper() == "PNG":
+        result = True
+    else:
+        description += " (Image is %ix%i of type %s)" % (width, height, format)
+
     return (result, description)
 
-# TODO: Test icon for correct size, format. Use pillow?
+
+def get_image_properties(path):
+    """Get the width, height, and format of an image using sips.
+
+    Args:
+        path: String path to image file.
+
+    Returns:
+        Tuple of (int: width, int: height, and string: image format)
+    """
+    args = ["/usr/bin/sips", "-g", "pixelWidth", "-g", "pixelHeight", "-g",
+            "format", path]
+    output = subprocess.check_output(args).splitlines()
+    width = int(output[1].rsplit()[-1])
+    height = int(output[2].rsplit()[-1])
+    format = output[3].rsplit()[-1]
+    return width, height, format
+
 
 def test_lint(recipe):
-    """Determine whether recipe file exists and parses.
+    """Determine whether recipe file lints.
     Args:
         recipe: Recipe object.
 
@@ -837,11 +867,15 @@ def test_lint(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    result = None
-    description = "Not implemented."
+    result = False
+    description = "Recipe file passes plutil -lint test."
+    args = ["/usr/bin/plutil", "-lint", recipe.filename]
+    output = subprocess.check_output(args)
+    if output.rsplit()[-1] == "OK":
+        result = True
+
     return (result, description)
 
-# TODO: Should probably use plutil -lint.
 
 def print_bar(length=79):
     """Print a line of '-'s."""
