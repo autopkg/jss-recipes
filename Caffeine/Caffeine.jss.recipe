@@ -4,41 +4,41 @@
 <dict>
 	<key>Comment</key>
 	<string>
-This AutoPkg recipe was created using JSSRecipeCreator: 
+This AutoPkg recipe was created using JSSRecipeCreator:
 https://github.com/sheagcraig/JSSRecipeCreator
 
-It is meant to be used with JSSImporter: 
+It is meant to be used with JSSImporter:
 https://github.com/sheagcraig/JSSImporter
 
 For tips on integrating JSSImporter into your Casper environment, check out Auto Update Magic:
 https://github.com/homebysix/auto-update-magic</string>
 	<key>Description</key>
-	<string>Downloads the latest AutoDMG and creates a package. Then, uploads to the JSS.</string>
+	<string>Downloads the current release version of Caffeine and builds a package. Then, uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.scriptingosx.jss.AutoDMG</string>
+	<string>com.github.jss-recipes.jss.Caffeine</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
-		<string>Management</string>
+		<string>Utility</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Build OS Installer images.</string>
+		<string>Menubar item prevents your Mac from sleeping.</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>AutoDMG.png</string>
+		<string>Caffeine.png</string>
 		<key>NAME</key>
-		<string>AutoDMG</string>
+		<string>Caffeine</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.9</string>
+	<string>0.2.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.scriptingosx.pkg.AutoDMG</string>
+	<string>com.github.homebysix.pkg.Caffeine</string>
 	<key>Process</key>
 	<array>
 		<dict>

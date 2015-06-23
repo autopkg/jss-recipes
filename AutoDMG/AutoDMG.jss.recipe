@@ -13,34 +13,32 @@ https://github.com/sheagcraig/JSSImporter
 For tips on integrating JSSImporter into your Casper environment, check out Auto Update Magic:
 https://github.com/homebysix/auto-update-magic</string>
 	<key>Description</key>
-	<string>Downloads the current release version of Blender and builds a package. Then, uploads to the JSS.</string>
+	<string>Downloads the latest AutoDMG and creates a package. Then, uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>io.github.hjuutilainen.jss.Blender</string>
+	<string>com.github.jss-recipes.jss.AutoDMG</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
-		<string>Digital Media</string>
+		<string>Management</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Open source 3D graphics and animation software.</string>
+		<string>Build OS Installer images.</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>Blender.png</string>
+		<string>AutoDMG.png</string>
 		<key>NAME</key>
-		<string>Blender</string>
+		<string>AutoDMG</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
-		<key>version</key>
-		<string></string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.0</string>
+	<string>0.2.9</string>
 	<key>ParentRecipe</key>
-	<string>io.github.hjuutilainen.pkg.Blender</string>
+	<string>com.github.scriptingosx.pkg.AutoDMG</string>
 	<key>Process</key>
 	<array>
 		<dict>
