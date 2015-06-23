@@ -277,7 +277,7 @@ def test_filename_prefix(recipe):
         test and result.
     """
     name = recipe["Input"].get("NAME")
-    result = recipe.filename.startswith(name)
+    result = os.path.basename(recipe.filename).startswith(name)
     description = "Recipe has correct prefix (NAME: '%s')" % name
     return (result, description)
 
@@ -292,7 +292,7 @@ def test_filename_suffix(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    result = recipe.filename.endswith(".jss.recipe")
+    result = os.path.basename(recipe.filename).endswith(".jss.recipe")
     description = "Recipe has correct ending ('.jss.recipe')"
     return (result, description)
 
