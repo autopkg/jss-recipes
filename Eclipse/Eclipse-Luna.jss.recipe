@@ -5,11 +5,11 @@
         <key>Description</key>
         <string>Downloads the latest version of Eclipse Luna, makes a pkg of it, and uploads to the JSS.</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.EclipseLuna</string>
+        <string>com.github.jss-recipes.jss.Eclipse-Luna</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
-            <string>EclipseLuna</string>
+            <string>Eclipse</string>
             <key>CATEGORY</key>
             <string>Computer Science</string>
             <key>POLICY_CATEGORY</key>
@@ -19,17 +19,13 @@
             <string/>
             <key>POLICY_TEMPLATE</key>
             <string>PolicyTemplate.xml</string>
-            <key>SCRIPT_FILENAME</key>
-            <string>EclipseLunaPreinstall.sh</string>
-            <key>SCRIPT_TEMPLATE</key>
-            <string>EclipseScriptTemplate.xml</string>
-            <key>ICON</key>
+            <key>SELF_SERVICE_ICON</key>
             <string>Eclipse.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
             <string>SmartGroupTemplate.xml</string>
-            <key>DESCRIPTION</key>
+            <key>SELF_SERVICE_DESCRIPTION</key>
             <string>Programming development environment.</string>
         </dict>
         <key>MinimumVersion</key>
@@ -50,18 +46,16 @@
                     <key>policy_template</key>
                     <string>%POLICY_TEMPLATE%</string>
                     <key>self_service_icon</key>
-                    <string>%ICON%</string>
+                    <string>%SELF_SERVICE_ICON%</string>
                     <key>self_service_description</key>
-                    <string>%DESCRIPTION%</string>
-                    <key>jss_inventory_name</key>
-                    <string>Eclipse.app</string>
+                    <string>%SELF_SERVICE_DESCRIPTION%</string>
                     <key>scripts</key>
                     <array>
                         <dict>
                             <key>name</key>
-                            <string>%SCRIPT_FILENAME%</string>
+                            <string>Eclipse-LunaPreinstall.sh</string>
                             <key>template_path</key>
-                            <string>%SCRIPT_TEMPLATE%</string>
+                            <string>Eclipse-LunaScriptTemplate.xml</string>
                         </dict>
                     </array>
                     <key>groups</key>
