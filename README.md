@@ -116,6 +116,8 @@ The recipe filename should be `<NAME>.jss.recipe`, where `<NAME>` is the product
 ### Product Subfolder
 Each recipe, as well as any product-specific support files, will reside in a subfolder of the main repository. The name of the subfolder should be the value used for the product `NAME`. Support files like icons, product-specific template files, or scripts, will be referenced as arguments by their filename only, and JSSImporter's search-path methods will locate them correctly should the recipe be overridden. Their filenames should all have the product name as a prefix, e.g. `NetHackScriptTemplate.xml`.
 
+No copies of the jss-recipes mandated files `PolicyTemplate.xml` or `SmartGroupTemplate.xml` may be present in this subfolder.
+
 ### Parent recipe
 The recipe's `ParentRecipe` must be publicly available via a shared recipe repository that is part of the AutoPkg organization.
 
@@ -135,6 +137,10 @@ The `JSSImporter` processor will include at least the following arguments, and v
 
 - `prod_name`
 	- The name used consistently throughout all recipes in the chain.
+	- `prod_name` should use the `NAME` input variable commonly used throughout AutoPkg recipes. This is an exception to the casing rules above.
+- `jss_inventory_name`
+	- Optional, but required if the `NAME` and the filename of the app bundle differ.
+	- Use spaces in `NAME` if that's how the application is named. It's 2015. Filenames can have spaces.
 - `category`
 	- Recipes included in this repository use a limited list of package categories:
 		- Computer Science
@@ -149,7 +155,7 @@ The `JSSImporter` processor will include at least the following arguments, and v
 - `policy_category` (Set to `Testing`)
 - `policy_template` (Set to `PolicyTemplate.xml`)
 - `self_service_icon`
-	- Icon should be named the same as the product.
+	- Icon should be named the same as the product (e.g. `NetHack.png`).
 	- Icon should be a PNG file.
 	- Icon should be 128 x 128 pixels as per the current recommendations of JAMF.
 - `self_service_description`
@@ -186,12 +192,12 @@ The recipe must use this repo's standard `PolicyTemplate.xml` for its policy tem
 ### Extension Attributes
 While the Casper Suite can include internet plugins, or other arbitrary paths in its inventory collection, it is not the *default* behavior. Therefore, for apps that live outside of the `/Applications` folder, an extension attribute should be included to manage group inclusion. This way, recipes from this repo will work immediately for admins who have not set up inventory collection beyond the default. Examples of this can be seen in the repository for more information (examples include Adobe Flash Player and Silverlight).
 
-Extension attributes arguments should be specified in the `JSSImporter/Arguments` section only.
+Extension attributes arguments should be specified in the `JSSImporter/Arguments` section only, as they are not intended to be overridden.
 
 ### Scripts
 Likewise, scripts should only be included when absolutely necessary for package installation.
 
-Script's arguments should be specified in the `JSSImporter/Arguments` section only.
+Script's arguments should be specified in the `JSSImporter/Arguments` section only, as they are not intended to be overridden.
 
 ### Linting
 Finally, a check with `plutil -lint <recipe_name>` should pass.
