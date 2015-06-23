@@ -15,27 +15,25 @@ https://github.com/homebysix/auto-update-magic</string>
     <key>Description</key>
     <string>Downloads the latest version of Adobe DNG Converter and makes a pkg of it. Then, uploads to the JSS.</string>
     <key>Identifier</key>
-    <string>com.github.sheagcraig.jss.AdobeDNGConverter</string>
+    <string>com.github.jss-recipes.jss.AdobeDNGConverter</string>
     <key>Input</key>
     <dict>
         <key>CATEGORY</key>
         <string>Digital Media</string>
-        <key>DESCRIPTION</key>
+        <key>SELF_SERVICE_DESCRIPTION</key>
         <string>Convert proprietary RAW files to the Digital Negative format.</string>
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
-        <string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
-        <key>ICON</key>
-        <string>%RECIPE_DIR%/AdobeDNGConverter.png</string>
+        <string>SmartGroupTemplate.xml</string>
+        <key>SELF_SERVICE_ICON</key>
+        <string>Adobe DNG Converter.png</string>
         <key>NAME</key>
-        <string>AdobeDNGConverter</string>
-        <key>JSS_INVENTORY_NAME</key>
         <string>Adobe DNG Converter</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
         <key>POLICY_TEMPLATE</key>
-        <string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+        <string>PolicyTemplate.xml</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.9</string>
@@ -65,12 +63,10 @@ https://github.com/homebysix/auto-update-magic</string>
                 <string>%POLICY_TEMPLATE%</string>
                 <key>prod_name</key>
                 <string>%NAME%</string>
-                <key>jss_inventory_name</key>
-                <string>%JSS_INVENTORY_NAME%</string>
                 <key>self_service_description</key>
-                <string>%DESCRIPTION%</string>
+                <string>%SELF_SERVICE_DESCRIPTION%</string>
                 <key>self_service_icon</key>
-                <string>%ICON%</string>
+                <string>%SELF_SERVICE_ICON%</string>
             </dict>
             <key>Processor</key>
             <string>JSSImporter</string>
