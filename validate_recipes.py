@@ -408,6 +408,9 @@ def test_identifier(recipe):
         test and result.
     """
     name = recipe["Input"].get("NAME")
+    if name:
+        # The identifier may not have spaces.
+        name = name.replace(" ", "")
     description = ("Recipe identifier follows convention. "
                    "('com.github.jss-recipes.jss.%s')" % name)
     result = False
