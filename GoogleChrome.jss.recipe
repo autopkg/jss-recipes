@@ -18,13 +18,13 @@
             <string>Testing</string>
             <key>POLICY_TEMPLATE</key>
             <string>PolicyTemplate.xml</string>
-            <key>ICON</key>
+            <key>SELF_SERVICE_ICON</key>
             <string>GoogleChrome.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
             <string>SmartGroupTemplate.xml</string>
-            <key>DESCRIPTION</key>
+            <key>SELF_SERVICE_DESCRIPTION</key>
             <string>Google Chrome is a browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier.</string>
         </dict>
         <key>MinimumVersion</key>
@@ -47,9 +47,9 @@
                     <key>policy_template</key>
                     <string>%POLICY_TEMPLATE%</string>
                     <key>self_service_icon</key>
-                    <string>%ICON%</string>
+                    <string>%SELF_SERVICE_ICON%</string>
                     <key>self_service_description</key>
-                    <string>%DESCRIPTION%</string>
+                    <string>%SELF_SERVICE_DESCRIPTION%</string>
                     <key>groups</key>
                     <array>
                         <dict>

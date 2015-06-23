@@ -16,7 +16,7 @@
             <string>Testing</string>
             <key>POLICY_TEMPLATE</key>
             <string>PolicyTemplate.xml</string>
-            <key>ICON</key>
+            <key>SELF_SERVICE_ICON</key>
             <string>Skype.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
@@ -24,7 +24,7 @@
             <string>SmartGroupTemplate.xml</string>
             <key>version</key>
             <string></string>
-            <key>DESCRIPTION</key>
+            <key>SELF_SERVICE_DESCRIPTION</key>
             <string>Skype is a freemium voice over IP service and instant messaging client, currently developed by Microsoft-owned Skype Technologies.</string>
         </dict>
         <key>MinimumVersion</key>
@@ -45,9 +45,9 @@
                     <key>policy_template</key>
                     <string>%POLICY_TEMPLATE%</string>
                     <key>self_service_icon</key>
-                    <string>%ICON%</string>
+                    <string>%SELF_SERVICE_ICON%</string>
                     <key>self_service_description</key>
-                    <string>%DESCRIPTION%</string>
+                    <string>%SELF_SERVICE_DESCRIPTION%</string>
                     <key>groups</key>
                     <array>
                         <dict>

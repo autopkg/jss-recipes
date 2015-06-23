@@ -20,9 +20,9 @@ https://github.com/homebysix/auto-update-magic</string>
 	<dict>
 		<key>CATEGORY</key>
 		<string>Utility</string>
-		<key>DESCRIPTION</key>
+		<key>SELF_SERVICE_DESCRIPTION</key>
 		<string>Network protocol analyzer.</string>
-		<key>ICON</key>
+		<key>SELF_SERVICE_ICON</key>
 		<string>Wireshark.png</string>
 		<key>NAME</key>
 		<string>Wireshark</string>
@@ -49,9 +49,9 @@ https://github.com/homebysix/auto-update-magic</string>
 				<key>prod_name</key>
 				<string>%NAME%</string>
 				<key>self_service_description</key>
-				<string>%DESCRIPTION%</string>
+				<string>%SELF_SERVICE_DESCRIPTION%</string>
 				<key>self_service_icon</key>
-				<string>%ICON%</string>
+				<string>%SELF_SERVICE_ICON%</string>
 			</dict>
 			<key>Processor</key>
 			<string>JSSImporter</string>

@@ -20,13 +20,13 @@ https://github.com/homebysix/auto-update-magic</string>
     <dict>
         <key>CATEGORY</key>
         <string>Computer Science</string>
-        <key>DESCRIPTION</key>
+        <key>SELF_SERVICE_DESCRIPTION</key>
         <string>iTerm2 is a replacement for Terminal.</string>
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
         <string>SmartGroupTemplate.xml</string>
-        <key>ICON</key>
+        <key>SELF_SERVICE_ICON</key>
         <string>iTerm2.png</string>
         <key>NAME</key>
         <string>iTerm2</string>
@@ -71,9 +71,9 @@ https://github.com/homebysix/auto-update-magic</string>
                 <key>jss_inventory_name</key>
                 <string>%JSS_INVENTORY_NAME%</string>
                 <key>self_service_description</key>
-                <string>%DESCRIPTION%</string>
+                <string>%SELF_SERVICE_DESCRIPTION%</string>
                 <key>self_service_icon</key>
-                <string>%ICON%</string>
+                <string>%SELF_SERVICE_ICON%</string>
             </dict>
             <key>Processor</key>
             <string>JSSImporter</string>

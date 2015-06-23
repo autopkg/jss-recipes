@@ -20,13 +20,13 @@ https://github.com/homebysix/auto-update-magic</string>
 	<dict>
 		<key>CATEGORY</key>
 		<string>Management</string>
-		<key>DESCRIPTION</key>
+		<key>SELF_SERVICE_DESCRIPTION</key>
 		<string>Build OS Installer images.</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
-		<key>ICON</key>
+		<key>SELF_SERVICE_ICON</key>
 		<string>AutoDMG.png</string>
 		<key>NAME</key>
 		<string>AutoDMG</string>
@@ -64,9 +64,9 @@ https://github.com/homebysix/auto-update-magic</string>
 				<key>prod_name</key>
 				<string>%NAME%</string>
 				<key>self_service_description</key>
-				<string>%DESCRIPTION%</string>
+				<string>%SELF_SERVICE_DESCRIPTION%</string>
 				<key>self_service_icon</key>
-				<string>%ICON%</string>
+				<string>%SELF_SERVICE_ICON%</string>
 			</dict>
 			<key>Processor</key>
 			<string>JSSImporter</string>

@@ -21,13 +21,13 @@
             <string/>
             <key>POLICY_TEMPLATE</key>
             <string>PolicyTemplate.xml</string>
-            <key>ICON</key>
+            <key>SELF_SERVICE_ICON</key>
             <string>ComicLife3.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
             <string>SmartGroupTemplate.xml</string>
-            <key>DESCRIPTION</key>
+            <key>SELF_SERVICE_DESCRIPTION</key>
             <string>Easy comic book creation.</string>
         </dict>
         <key>MinimumVersion</key>
@@ -50,9 +50,9 @@
                     <key>policy_template</key>
                     <string>%POLICY_TEMPLATE%</string>
                     <key>self_service_icon</key>
-                    <string>%ICON%</string>
+                    <string>%SELF_SERVICE_ICON%</string>
                     <key>self_service_description</key>
-                    <string>%DESCRIPTION%</string>
+                    <string>%SELF_SERVICE_DESCRIPTION%</string>
                     <key>groups</key>
                     <array>
                         <dict>
