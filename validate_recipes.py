@@ -761,7 +761,6 @@ def test_extension_attribute_arguments(recipe):
     directory = os.path.dirname(recipe.filename)
     templates_exist = all((os.path.isfile(os.path.join(directory, filename))
                            for filename in ext_attr_templates))
-    print template_names_compliant, templates_exist
 
     result = template_names_compliant and templates_exist
 
