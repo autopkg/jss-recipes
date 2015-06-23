@@ -21,11 +21,11 @@ combination is offered.</string>
             <key>POLICY_CATEGORY</key>
             <string>Testing</string>
             <key>POLICY_TEMPLATE</key>
-            <string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+            <string>PolicyTemplate.xml</string>
             <key>ICON</key>
-            <string>%RECIPE_DIR%/Firefox.png</string>
+            <string>Firefox.png</string>
             <key>GROUP_TEMPLATE</key>
-            <string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
+            <string>SmartGroupTemplate.xml</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>DESCRIPTION</key>

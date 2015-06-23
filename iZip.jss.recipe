@@ -23,13 +23,13 @@ https://github.com/homebysix/auto-update-magic</string>
 		<key>DESCRIPTION</key>
 		<string>Free application for managing archives.</string>
 		<key>ICON</key>
-		<string>%RECIPE_DIR%/iZip.png</string>
+		<string>iZip.png</string>
 		<key>NAME</key>
 		<string>iZip</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
-		<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+		<string>PolicyTemplate.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>

@@ -22,15 +22,15 @@
             <key>version</key>
             <string/>
             <key>POLICY_TEMPLATE</key>
-            <string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+            <string>PolicyTemplate.xml</string>
             <key>ICON</key>
-            <string>%RECIPE_DIR%/Geogebra.png</string>
+            <string>Geogebra.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
-            <string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
+            <string>SmartGroupTemplate.xml</string>
             <key>SCRIPT_TEMPLATE</key>
-            <string>%RECIPE_DIR%/GeogebraScriptTemplate.xml</string>
+            <string>GeogebraScriptTemplate.xml</string>
             <key>DESCRIPTION</key>
             <string>Dynamic mathematics and science for learning and teaching.</string>
         </dict>
@@ -59,7 +59,7 @@
                     <array>
                         <dict>
                             <key>name</key>
-                            <string>%RECIPE_DIR%/GeogebraPreinstall.sh</string>
+                            <string>GeogebraPreinstall.sh</string>
                             <key>template_path</key>
                             <string>%SCRIPT_TEMPLATE%</string>
                         </dict>

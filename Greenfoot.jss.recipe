@@ -20,13 +20,13 @@
             <key>version</key>
             <string/>
             <key>POLICY_TEMPLATE</key>
-            <string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+            <string>PolicyTemplate.xml</string>
             <key>ICON</key>
-            <string>%RECIPE_DIR%/Greenfoot.png</string>
+            <string>Greenfoot.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
-            <string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
+            <string>SmartGroupTemplate.xml</string>
             <key>DESCRIPTION</key>
             <string>Teach and Learn Java Programming.</string>
         </dict>

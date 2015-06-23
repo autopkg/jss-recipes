@@ -25,15 +25,15 @@ https://github.com/homebysix/auto-update-magic</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
-		<string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
+		<string>SmartGroupTemplate.xml</string>
 		<key>ICON</key>
-		<string>%RECIPE_DIR%/Caffeine.png</string>
+		<string>Caffeine.png</string>
 		<key>NAME</key>
 		<string>Caffeine</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
-		<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+		<string>PolicyTemplate.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>

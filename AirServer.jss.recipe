@@ -18,13 +18,13 @@
             <key>version</key>
             <string/>
             <key>POLICY_TEMPLATE</key>
-            <string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+            <string>PolicyTemplate.xml</string>
             <key>ICON</key>
-            <string>%RECIPE_DIR%/AirServer.png</string>
+            <string>AirServer.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
-            <string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
+            <string>SmartGroupTemplate.xml</string>
             <key>DESCRIPTION</key>
             <string>Mirror your display and stream content from your iOS devices.</string>
         </dict>

@@ -27,15 +27,15 @@ https://github.com/homebysix/auto-update-magic</string>
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
-        <string>%RECIPE_DIR%/GitHubSmartGroupTemplate.xml</string>
+        <string>GitHubSmartGroupTemplate.xml</string>
         <key>ICON</key>
-        <string>%RECIPE_DIR%/GitHub.png</string>
+        <string>GitHub.png</string>
         <key>NAME</key>
         <string>GitHub</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
         <key>POLICY_TEMPLATE</key>
-        <string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+        <string>PolicyTemplate.xml</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.4.0</string>
@@ -65,7 +65,7 @@ https://github.com/homebysix/auto-update-magic</string>
                         <key>name</key>
                         <string>GitHubVersion</string>
                         <key>ext_attribute_path</key>
-                        <string>%RECIPE_DIR%/GitHubExtensionAttribute.xml</string>
+                        <string>GitHubExtensionAttribute.xml</string>
                     </dict>
                 </array>
                 <key>policy_category</key>

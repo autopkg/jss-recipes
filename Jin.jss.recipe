@@ -20,13 +20,13 @@
             <key>version</key>
             <string/>
             <key>POLICY_TEMPLATE</key>
-            <string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+            <string>PolicyTemplate.xml</string>
             <key>ICON</key>
-            <string>%RECIPE_DIR%/Jin.png</string>
+            <string>Jin.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
-            <string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
+            <string>SmartGroupTemplate.xml</string>
             <key>DESCRIPTION</key>
             <string>Graphical client for chess servers.</string>
         </dict>
