@@ -11,7 +11,7 @@ To use this recipe, you must accept the Oracle Binary Code License Agreement for
 http://www.oracle.com/technetwork/java/javase/terms/license/index.html
  Then, uploads to the JSS.</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.OracleJava8</string>
+        <string>com.github.jss-recipes.jss.OracleJava8</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
@@ -23,18 +23,18 @@ http://www.oracle.com/technetwork/java/javase/terms/license/index.html
             <key>POLICY_CATEGORY</key>
             <string>Testing</string>
             <key>POLICY_TEMPLATE</key>
-            <string>%RECIPE_DIR%/PolicyTemplate.xml</string>
-            <key>ICON</key>
-            <string>%RECIPE_DIR%/OracleJava8.png</string>
+            <string>PolicyTemplate.xml</string>
+            <key>SELF_SERVICE_ICON</key>
+            <string>OracleJava8.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
-            <string>%RECIPE_DIR%/OracleJava8SmartGroupTemplate.xml</string>
-            <key>DESCRIPTION</key>
+            <string>OracleJava8SmartGroupTemplate.xml</string>
+            <key>SELF_SERVICE_DESCRIPTION</key>
             <string></string>
             <!--PlistReader w/o variable injection in AutoPkg requires this-->
             <key>version</key>
-            <string/>
+            <string>Browser plugin to allow execution of Java applets.</string>
         </dict>
         <key>MinimumVersion</key>
         <string>0.2.9</string>
@@ -54,9 +54,9 @@ http://www.oracle.com/technetwork/java/javase/terms/license/index.html
                     <key>policy_template</key>
                     <string>%POLICY_TEMPLATE%</string>
                     <key>self_service_icon</key>
-                    <string>%ICON%</string>
+                    <string>%SELF_SERVICE_ICON%</string>
                     <key>self_service_description</key>
-                    <string>%DESCRIPTION%</string>
+                    <string>%SELF_SERVICE_DESCRIPTION%</string>
                     <key>groups</key>
                     <array>
                         <dict>
@@ -71,10 +71,8 @@ http://www.oracle.com/technetwork/java/javase/terms/license/index.html
                     <key>extension_attributes</key>
                     <array>
                         <dict>
-                            <key>name</key>
-                            <string>OracleJavaVersion</string>
                             <key>ext_attribute_path</key>
-                            <string>%RECIPE_DIR%/OracleJava8ExtensionAttribute.xml</string>
+                            <string>OracleJava8ExtensionAttribute.xml</string>
                         </dict>
                     </array>
                 </dict>

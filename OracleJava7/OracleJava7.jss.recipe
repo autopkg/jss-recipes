@@ -11,7 +11,7 @@ plugin version is used to replace the installer version, taken from the
 CFBundleVersion of the bundle at /Library/Internet
 Plug-Ins/JavaAppletPlugin.plugin.</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.OracleJava7</string>
+        <string>com.github.jss-recipes.jss.OracleJava7</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
@@ -26,15 +26,15 @@ Plug-Ins/JavaAppletPlugin.plugin.</string>
             <key>version</key>
             <string/>
             <key>POLICY_TEMPLATE</key>
-            <string>%RECIPE_DIR%/PolicyTemplate.xml</string>
-            <key>ICON</key>
-            <string>%RECIPE_DIR%/OracleJava7.png</string>
+            <string>PolicyTemplate.xml</string>
+            <key>SELF_SERVICE_ICON</key>
+            <string>OracleJava7.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
-            <string>%RECIPE_DIR%/OracleJava7SmartGroupTemplate.xml</string>
-            <key>DESCRIPTION</key>
-            <string/>
+            <string>OracleJava7SmartGroupTemplate.xml</string>
+            <key>SELF_SERVICE_DESCRIPTION</key>
+            <string>Browser plugin to allow execution of Java applets.</string>
         </dict>
         <key>MinimumVersion</key>
         <string>0.4.0</string>
@@ -54,9 +54,9 @@ Plug-Ins/JavaAppletPlugin.plugin.</string>
                     <key>policy_template</key>
                     <string>%POLICY_TEMPLATE%</string>
                     <key>self_service_icon</key>
-                    <string>%ICON%</string>
+                    <string>%SELF_SERVICE_ICON%</string>
                     <key>self_service_description</key>
-                    <string>%DESCRIPTION%</string>
+                    <string>%SELF_SERVICE_DESCRIPTION%</string>
                     <key>groups</key>
                     <array>
                         <dict>
@@ -71,10 +71,8 @@ Plug-Ins/JavaAppletPlugin.plugin.</string>
                     <key>extension_attributes</key>
                     <array>
                         <dict>
-                            <key>name</key>
-                            <string>OracleJavaVersion</string>
                             <key>ext_attribute_path</key>
-                            <string>%RECIPE_DIR%/OracleJava7ExtensionAttribute.xml</string>
+                            <string>OracleJava7ExtensionAttribute.xml</string>
                         </dict>
                     </array>
                 </dict>
