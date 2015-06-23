@@ -415,7 +415,7 @@ def test_identifier(recipe):
     identifier = recipe.get("Identifier")
     if identifier and name:
         if (str(identifier).startswith("com.github.jss-recipes.jss.") and
-            str(identifier).rsplit("-")[0].endswith(name)):
+            str(identifier).rsplit(".", 1)[1].startswith(name)):
             result = True
 
     return (result, description)
