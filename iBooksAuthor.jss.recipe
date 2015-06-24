@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Checks for iBooks Author update, packages, and adds to the JSS</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.iBooksAuthor</string>
+        <string>com.github.jss-recipes.jss.iBooksAuthor</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>

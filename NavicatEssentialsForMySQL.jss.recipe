@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Checks for Navicat Essentials for MySQL update, packages, and adds to the JSS</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.NavicatEssentialsForMySQL</string>
+        <string>com.github.jss-recipes.jss.NavicatEssentialsForMySQL</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>

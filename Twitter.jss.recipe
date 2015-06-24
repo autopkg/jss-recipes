@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Checks for Twitter update, packages, and adds to the JSS</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.Twitter</string>
+        <string>com.github.jss-recipes.jss.Twitter</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>

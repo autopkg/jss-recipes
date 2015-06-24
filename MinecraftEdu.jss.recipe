@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Downloads the latest version of Minecraftedu, makes a pkg of it, and uploads to the JSS.</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.MinecraftEdu</string>
+        <string>com.github.jss-recipes.jss.MinecraftEdu</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>

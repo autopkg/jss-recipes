@@ -15,7 +15,7 @@ https://github.com/homebysix/auto-update-magic</string>
     <key>Description</key>
     <string>Downloads the latest CitrixReceiver version and extracts the package. Then, uploads to the JSS.</string>
     <key>Identifier</key>
-    <string>com.github.autopkg.cgerke-recipes.jss.CitrixReceiver</string>
+    <string>com.github.jss-recipes.jss.CitrixReceiver</string>
     <key>Input</key>
     <dict>
         <key>CATEGORY</key>
@@ -27,10 +27,10 @@ https://github.com/homebysix/auto-update-magic</string>
         <key>GROUP_TEMPLATE</key>
         <string>SmartGroupTemplate.xml</string>
         <key>SELF_SERVICE_ICON</key>
-        <string>CitrixReceiver.png</string>
+        <string>Citrix Receiver.png</string>
+        <key>SELF_SERVICE_DESCRIPTION</key>
+        <string>Citrix Receiver is client software that allows universal access to virtual applications and desktops.</string>
         <key>NAME</key>
-        <string>CitrixReceiver</string>
-        <key>JSS_INVENTORY_NAME</key>
         <string>Citrix Receiver</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
@@ -65,8 +65,6 @@ https://github.com/homebysix/auto-update-magic</string>
                 <string>%POLICY_TEMPLATE%</string>
                 <key>prod_name</key>
                 <string>%NAME%</string>
-                <key>jss_inventory_name</key>
-                <string>%JSS_INVENTORY_NAME%</string>
                 <key>self_service_description</key>
                 <string>%SELF_SERVICE_DESCRIPTION%</string>
                 <key>self_service_icon</key>

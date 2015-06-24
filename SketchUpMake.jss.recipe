@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Downloads the latest version of SketchUpMake (The free Educational Use version), makes a pkg of it, and uploads to the JSS.</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.SketchUpMake</string>
+        <string>com.github.jss-recipes.jss.SketchUpMake</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>

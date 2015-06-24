@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Checks for iPhoto update, packages, and adds to the JSS</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.iPhoto</string>
+        <string>com.github.jss-recipes.jss.iPhoto</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>

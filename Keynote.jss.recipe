@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Checks for Keynote update, packages, and adds to the JSS</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.Keynote</string>
+        <string>com.github.jss-recipes.jss.Keynote</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>

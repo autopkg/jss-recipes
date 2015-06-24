@@ -9,7 +9,7 @@
              into. This is not what is desired, thus, a preinstall script will
              remove old versions.-->
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.Geogebra</string>
+        <string>com.github.jss-recipes.jss.Geogebra</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>

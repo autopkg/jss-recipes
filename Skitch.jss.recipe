@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Downloads the latest version of Skitch, makes a pkg of it, and uploads to the JSS.</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.Skitch</string>
+        <string>com.github.jss-recipes.jss.Skitch</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>

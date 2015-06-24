@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Downloads the latest version of OpenEmu and makes a pkg of it. Then, uploads to the JSS.</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.OpenEmu</string>
+        <string>com.github.jss-recipes.jss.OpenEmu</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>

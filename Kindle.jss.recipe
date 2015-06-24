@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Checks for Kindle update, packages, and adds to the JSS</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.Kindle</string>
+        <string>com.github.jss-recipes.jss.Kindle</string>
         <key>Comment</key>
         <string>This recipe is for the Apple App Store version of Amazon Kindle. It must already be present on your computer to function.</string>
         <key>Input</key>

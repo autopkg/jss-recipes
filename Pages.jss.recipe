@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Uploads the latest Pages package, created with repackage, to the JSS</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.Pages</string>
+        <string>com.github.jss-recipes.jss.Pages</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>

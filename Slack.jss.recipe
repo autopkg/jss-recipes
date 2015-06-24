@@ -15,7 +15,7 @@ https://github.com/homebysix/auto-update-magic</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Slack and makes a pkg of it Then, uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.sheagcraig.jss.Slack</string>
+	<string>com.github.jss-recipes.jss.Slack</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>

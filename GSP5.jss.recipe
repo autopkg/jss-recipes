@@ -15,7 +15,7 @@ https://github.com/homebysix/auto-update-magic</string>
     <key>Description</key>
     <string>Downloads the latest version of Geometer's Sketchpad 5 and makes a pkg of it. Then, uploads to the JSS.</string>
     <key>Identifier</key>
-    <string>com.github.sheagcraig.jss.GSP5</string>
+    <string>com.github.jss-recipes.jss.GSP5</string>
     <key>Input</key>
     <dict>
         <key>CATEGORY</key>

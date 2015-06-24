@@ -15,7 +15,7 @@ https://github.com/homebysix/auto-update-magic</string>
 	<key>Description</key>
 	<string>Downloads the current release version of HipChat and converts it into a pkg. Then, uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.sheagcraig.jss.HipChat</string>
+	<string>com.github.jss-recipes.jss.HipChat</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>

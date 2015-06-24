@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Checks for Final Cut Pro update, packages, and adds to the JSS</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.FinalCutPro</string>
+        <string>com.github.jss-recipes.jss.FinalCutPro</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>

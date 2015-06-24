@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Checks for Compressor update, packages, and adds to the JSS</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.Compressor</string>
+        <string>com.github.jss-recipes.jss.Compressor</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>

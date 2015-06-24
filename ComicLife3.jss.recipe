@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Downloads the latest version of Comic Life 3 and makes a pkg of it, uploaded to the JSS.</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.ComicLife3</string>
+        <string>com.github.jss-recipes.jss.ComicLife3</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>

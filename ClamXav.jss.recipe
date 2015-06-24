@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Checks for ClamXav update, packages, and adds to the JSS</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.ClamXav</string>
+        <string>com.github.jss-recipes.jss.ClamXav</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>

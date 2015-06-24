@@ -836,12 +836,15 @@ def test_icon(recipe):
     directory = os.path.dirname(recipe.filename)
     icon_path = os.path.join(directory,
                              recipe["Input"].get("SELF_SERVICE_ICON"))
-    width, height, format = get_image_properties(icon_path)
-
-    if width == 128 and height == 128 and format.upper() == "PNG":
-        result = True
+    if os.path.exists(icon_path):
+        width, height, format = get_image_properties(icon_path)
+        if width == 128 and height == 128 and format.upper() == "PNG":
+            result = True
+        else:
+            description += " (Image is %ix%i of type %s)" % (width, height,
+                                                             format)
     else:
-        description += " (Image is %ix%i of type %s)" % (width, height, format)
+        description += " (Icon not found)"
 
     return (result, description)
 

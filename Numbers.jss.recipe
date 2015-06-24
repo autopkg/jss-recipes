@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Checks for Numbers update, packages, and adds to the JSS</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.Numbers</string>
+        <string>com.github.jss-recipes.jss.Numbers</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>

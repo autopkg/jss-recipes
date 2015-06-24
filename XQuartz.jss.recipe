@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Downloads the latest version of XQuartz, makes a pkg of it, and uploads to the JSS.</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.Xquartz</string>
+        <string>com.github.jss-recipes.jss.Xquartz</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>

@@ -15,7 +15,7 @@ https://github.com/homebysix/auto-update-magic</string>
 	<key>Description</key>
 	<string>Downloads the latest version of iZip and builds a package. Then, uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.sheagcraig.jss.iZip</string>
+	<string>com.github.jss-recipes.jss.iZip</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>

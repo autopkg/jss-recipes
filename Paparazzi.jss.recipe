@@ -15,7 +15,7 @@ https://github.com/homebysix/auto-update-magic</string>
         <key>Description</key>
         <string>Downloads the current release version of Paparazzi and builds a package. Then, uploads to the JSS.</string>
         <key>Identifier</key>
-        <string>com.github.sheagcraig.jss.Paparazzi</string>
+        <string>com.github.jss-recipes.jss.Paparazzi</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
