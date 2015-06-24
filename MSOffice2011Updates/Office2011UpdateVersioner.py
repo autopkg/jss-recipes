@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #
-# Copyright 2014 Shea G Craig
+# Copyright 2014-2015 Shea G Craig
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,16 +13,16 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-"""See docstring for MSOffice2011Versioner class"""
+"""See docstring for Office2011UpdateVersioner class"""
 
 
 from autopkglib import Processor, ProcessorError
 
 
-__all__ = ["MSOffice2011Versioner"]
+__all__ = ["Office2011UpdateVersioner"]
 
 
-class MSOffice2011Versioner(Processor):
+class Office2011UpdateVersioner(Processor):
     """Uses the pkginfo data from update provider to derive version."""
     description = __doc__
 
@@ -51,5 +51,5 @@ class MSOffice2011Versioner(Processor):
 
 
 if __name__ == "__main__":
-    PROCESSOR = MSOffice2011Versioner()
+    PROCESSOR = Office2011UpdateVersioner()
     PROCESSOR.execute_shell()

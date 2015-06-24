@@ -3,35 +3,41 @@
 <plist version="1.0">
     <dict>
         <key>Description</key>
-        <string>Checks for Logic Pro X update, packages, and adds to the JSS</string>
+        <string>Downloads latest MS Office 2011 installer, makes a pkg (disabling the All Quit package), and uploads to the JSS.</string>
         <key>Identifier</key>
-        <string>com.github.jss-recipes.jss.LogicProX</string>
+        <string>com.github.jss-recipes.jss.Office2011Update-DisabledAllQuit</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
-            <string>Logic Pro X</string>
+            <string>Office2011Update</string>
             <key>CATEGORY</key>
-            <string>Digital Media</string>
+            <string>Productivity</string>
             <key>POLICY_CATEGORY</key>
             <string>Testing</string>
             <key>POLICY_TEMPLATE</key>
             <string>PolicyTemplate.xml</string>
             <key>SELF_SERVICE_ICON</key>
-            <string>LogicProX.png</string>
+            <string>Office2011Update.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
-            <string>SmartGroupTemplate.xml</string>
+            <string>Office2011UpdateSmartGroupTemplate.xml</string>
             <key>SELF_SERVICE_DESCRIPTION</key>
-            <string/>
+            <string>Updates for MS Office 2011.</string>
         </dict>
         <key>MinimumVersion</key>
         <string>0.4.0</string>
         <key>ParentRecipe</key>
-        <string>com.github.nmcspadden.pkg.appstore</string>
+        <string>com.github.sheagcraig.pkg.Office2011UpdatesDisabledAllQuit</string>
         <key>Process</key>
         <array>
             <dict>
+                <key>Processor</key>
+                <string>Office2011UpdateVersioner</string>
+            </dict>
+            <dict>
+                <key>Processor</key>
+                <string>JSSImporter</string>
                 <key>Arguments</key>
                 <dict>
                     <key>prod_name</key>
@@ -57,9 +63,14 @@
                             <string>%GROUP_TEMPLATE%</string>
                         </dict>
                     </array>
+                    <key>extension_attributes</key>
+                    <array>
+                        <dict>
+                            <key>ext_attribute_path</key>
+                            <string>Office2011UpdateExtensionAttribute.xml</string>
+                        </dict>
+                    </array>
                 </dict>
-                <key>Processor</key>
-                <string>JSSImporter</string>
             </dict>
         </array>
     </dict>

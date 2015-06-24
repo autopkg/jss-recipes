@@ -3,9 +3,9 @@
 <plist version="1.0">
     <dict>
         <key>Description</key>
-        <string>Downloads latest MS Office 2011 installer, makes a pkg (disabling the All Quit package), and uploads to the JSS.</string>
+        <string>Downloads latest MS Office 2011 installer, and uploads to the JSS.</string>
         <key>Identifier</key>
-        <string>com.github.jss-recipes.jss.Office2011UpdatesDisabledAllQuit</string>
+        <string>com.github.jss-recipes.jss.Office2011Update</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
@@ -17,23 +17,23 @@
             <key>POLICY_TEMPLATE</key>
             <string>PolicyTemplate.xml</string>
             <key>SELF_SERVICE_ICON</key>
-            <string>MSOffice.png</string>
+            <string>Office2011Update.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
-            <string>MSOffice2011UpdatesSmartGroupTemplate.xml</string>
+            <string>Office2011UpdateSmartGroupTemplate.xml</string>
             <key>SELF_SERVICE_DESCRIPTION</key>
-            <string>Updates to MS Office 2011.</string>
+            <string>Updates for MS Office 2011.</string>
         </dict>
         <key>MinimumVersion</key>
         <string>0.4.0</string>
         <key>ParentRecipe</key>
-        <string>com.github.sheagcraig.pkg.Office2011UpdatesDisabledAllQuit</string>
+        <string>com.github.autopkg.pkg.Office2011Updates</string>
         <key>Process</key>
         <array>
             <dict>
                 <key>Processor</key>
-                <string>MSOffice2011Versioner</string>
+                <string>Office2011Versioner</string>
             </dict>
             <dict>
                 <key>Processor</key>
@@ -66,10 +66,8 @@
                     <key>extension_attributes</key>
                     <array>
                         <dict>
-                            <key>name</key>
-                            <string>MSOffice2011OutOfDate</string>
                             <key>ext_attribute_path</key>
-                            <string>MSOffice2011ExtensionAttribute.xml</string>
+                            <string>Office2011UpdateExtensionAttribute.xml</string>
                         </dict>
                     </array>
                 </dict>
