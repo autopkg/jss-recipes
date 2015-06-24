@@ -3,13 +3,13 @@
 <plist version="1.0">
     <dict>
         <key>Description</key>
-        <string>Downloads the latest version PyCharm, and makes a package of it. Then, uploads to the JSS.</string>
+        <string>Downloads the latest version PyCharm CE, and makes a package of it. Then, uploads to the JSS.</string>
         <key>Identifier</key>
-        <string>com.github.jss-recipes.jss.pycharm</string>
+        <string>com.github.jss-recipes.jss.PyCharmCE</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
-            <string>PyCharm</string>
+            <string>PyCharm CE</string>
             <key>CATEGORY</key>
             <string>Computer Science</string>
             <key>POLICY_CATEGORY</key>
@@ -17,7 +17,7 @@
             <key>POLICY_TEMPLATE</key>
             <string>PolicyTemplate.xml</string>
             <key>SELF_SERVICE_ICON</key>
-            <string>PyCharm.png</string>
+            <string>PyCharm CE.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
@@ -44,8 +44,6 @@ with Django.
                 <dict>
                     <key>prod_name</key>
                     <string>%NAME%</string>
-                    <key>jss_inventory_name</key>
-                    <string>PyCharm CE.app</string>
                     <key>category</key>
                     <string>%CATEGORY%</string>
                     <key>policy_category</key>

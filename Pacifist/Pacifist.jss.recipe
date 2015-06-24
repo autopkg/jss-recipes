@@ -15,7 +15,7 @@ https://github.com/homebysix/auto-update-magic</string>
 	<key>Description</key>
 	<string>Downloads the current release version of Pacifist and builds a package. Then, uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.arubdesu.jss.Pacifist</string>
+	<string>com.github.jss-recipes.jss.Pacifist</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
