@@ -3,32 +3,37 @@
 <plist version="1.0">
     <dict>
         <key>Description</key>
-        <string>Checks for iBooks Author update, packages, and adds to the JSS</string>
+        <string>Downloads the latest version of SketchUp (The free Educational Use version), makes a pkg of it, and uploads to the JSS.</string>
         <key>Identifier</key>
-        <string>com.github.jss-recipes.jss.iBooksAuthor</string>
+        <string>com.github.jss-recipes.jss.SketchUp</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
-            <string>iBooks Author</string>
+            <string>SketchUp</string>
+            <key>PKG_ID</key>
+            <string>com.sketchup.SketchUp</string>
             <key>CATEGORY</key>
             <string>Productivity</string>
             <key>POLICY_CATEGORY</key>
             <string>Testing</string>
+            <!--PlistReader w/o variable injection in AutoPkg requires this-->
+            <key>version</key>
+            <string/>
             <key>POLICY_TEMPLATE</key>
             <string>PolicyTemplate.xml</string>
             <key>SELF_SERVICE_ICON</key>
-            <string>iBooksAuthor.png</string>
+            <string>SketchUp.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
             <string>SmartGroupTemplate.xml</string>
             <key>SELF_SERVICE_DESCRIPTION</key>
-            <string/>
+            <string>The easiest way to draw in 3D.</string>
         </dict>
         <key>MinimumVersion</key>
         <string>0.4.0</string>
         <key>ParentRecipe</key>
-        <string>com.github.nmcspadden.pkg.appstore</string>
+        <string>com.github.sheagcraig.pkg.SketchUpMake</string>
         <key>Process</key>
         <array>
             <dict>
@@ -46,6 +51,15 @@
                     <string>%SELF_SERVICE_ICON%</string>
                     <key>self_service_description</key>
                     <string>%SELF_SERVICE_DESCRIPTION%</string>
+                    <key>scripts</key>
+                    <array>
+                        <dict>
+                            <key>name</key>
+                            <string>SketchUpPreinstall.sh</string>
+                            <key>template_path</key>
+                            <string>SketchUpScriptTemplate.xml</string>
+                        </dict>
+                    </array>
                     <key>groups</key>
                     <array>
                         <dict>

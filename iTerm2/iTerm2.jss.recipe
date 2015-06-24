@@ -15,7 +15,7 @@ https://github.com/homebysix/auto-update-magic</string>
     <key>Description</key>
     <string>Downloads the current release version of iTerm 2 and makes a package. Then, uploads to the JSS.</string>
     <key>Identifier</key>
-    <string>io.github.hjuutilainen.jss.iTerm2</string>
+    <string>com.github.jss-recipes.jss.iTerm2</string>
     <key>Input</key>
     <dict>
         <key>CATEGORY</key>
