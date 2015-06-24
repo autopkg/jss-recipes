@@ -17,7 +17,7 @@
             <key>POLICY_TEMPLATE</key>
             <string>PolicyTemplate.xml</string>
             <key>SELF_SERVICE_ICON</key>
-            <string>MicrosoftRemoteDesktop.png</string>
+            <string>Microsoft Remote Desktop.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>

@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Checks for Navicat Essentials for MySQL update, packages, and adds to the JSS</string>
         <key>Identifier</key>
-        <string>com.github.jss-recipes.jss.NavicatEssentialsForMySQL</string>
+        <string>com.github.jss-recipes.jss.NavicatEssentialsforMySQL</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
@@ -17,7 +17,7 @@
             <key>POLICY_TEMPLATE</key>
             <string>PolicyTemplate.xml</string>
             <key>SELF_SERVICE_ICON</key>
-            <string>NavicatEssentials.png</string>
+            <string>Navicat Essentials for MySQL.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
