@@ -9,20 +9,18 @@
         <key>Input</key>
         <dict>
             <key>NAME</key>
-            <string>ComicLife3</string>
+            <string>Comic Life 3</string>
             <key>CATEGORY</key>
             <string>Productivity</string>
             <key>POLICY_CATEGORY</key>
             <string>Testing</string>
-            <key>JSS_INVENTORY_NAME</key>
-            <string>Comic Life 3.app</string>
             <!--PlistReader w/o variable injection in AutoPkg requires this-->
             <key>version</key>
             <string/>
             <key>POLICY_TEMPLATE</key>
             <string>PolicyTemplate.xml</string>
             <key>SELF_SERVICE_ICON</key>
-            <string>ComicLife3.png</string>
+            <string>Comic Life 3.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
@@ -41,8 +39,6 @@
                 <dict>
                     <key>prod_name</key>
                     <string>%NAME%</string>
-                    <key>jss_inventory_name</key>
-                    <string>%JSS_INVENTORY_NAME%</string>
                     <key>category</key>
                     <string>%CATEGORY%</string>
                     <key>policy_category</key>
