@@ -3,34 +3,33 @@
 <plist version="1.0">
     <dict>
         <key>Description</key>
-        <string>Checks for Final Cut Pro update, packages, and adds to the JSS</string>
+        <string>Downloads latest Google Earth disk image, makes a pkg, and uploads
+    to the jss.</string>
         <key>Identifier</key>
-        <string>com.github.jss-recipes.jss.FinalCutPro</string>
+        <string>com.github.jss-recipes.jss.GoogleEarth</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
-            <string>Final Cut Pro</string>
-            <key>JSS_INVENTORY_NAME</key>
-            <string>Final Cut Pro.app</string>
+            <string>Google Earth</string>
             <key>CATEGORY</key>
-            <string>Digital Media</string>
+            <string>Productivity</string>
             <key>POLICY_CATEGORY</key>
             <string>Testing</string>
             <key>POLICY_TEMPLATE</key>
             <string>PolicyTemplate.xml</string>
             <key>SELF_SERVICE_ICON</key>
-            <string>FinalCutPro.png</string>
+            <string>Google Earth.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
             <string>SmartGroupTemplate.xml</string>
             <key>SELF_SERVICE_DESCRIPTION</key>
-            <string/>
+            <string>Google Earth lets you fly anywhere on Earth to view satellite imagery, maps, terrain, 3D buildings, from galaxies in outer space to the canyons of the ocean.</string>
         </dict>
         <key>MinimumVersion</key>
         <string>0.4.0</string>
         <key>ParentRecipe</key>
-        <string>com.github.nmcspadden.pkg.appstore</string>
+        <string>com.github.autopkg.pkg.google-earth</string>
         <key>Process</key>
         <array>
             <dict>

@@ -3,32 +3,32 @@
 <plist version="1.0">
     <dict>
         <key>Description</key>
-        <string>Downloads the latest version of Evernote and makes a pkg of it then uploads it to the JSS.</string>
+        <string>Checks for Final Cut Pro update, packages, and adds to the JSS</string>
         <key>Identifier</key>
-        <string>com.github.autopkg.jss.Evernote</string>
+        <string>com.github.jss-recipes.jss.FinalCutPro</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
-            <string>Evernote</string>
+            <string>Final Cut Pro</string>
             <key>CATEGORY</key>
-            <string>Productivity</string>
+            <string>Digital Media</string>
             <key>POLICY_CATEGORY</key>
             <string>Testing</string>
             <key>POLICY_TEMPLATE</key>
             <string>PolicyTemplate.xml</string>
             <key>SELF_SERVICE_ICON</key>
-            <string>Evernote.png</string>
+            <string>Final Cut Pro.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
             <string>SmartGroupTemplate.xml</string>
             <key>SELF_SERVICE_DESCRIPTION</key>
-            <string>Note-taking workspace.</string>
+            <string>Final Cut Pro X (pronounced "Final Cut Pro Ten") is a video editing application for OS X from Apple Inc.</string>
         </dict>
         <key>MinimumVersion</key>
         <string>0.4.0</string>
         <key>ParentRecipe</key>
-        <string>com.github.autopkg.pkg.Evernote</string>
+        <string>com.github.nmcspadden.pkg.appstore</string>
         <key>Process</key>
         <array>
             <dict>

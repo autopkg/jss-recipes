@@ -3,15 +3,19 @@
 <plist version="1.0">
     <dict>
         <key>Description</key>
-        <string>Uses parent pkg recipe to download latest GoogleChrome and import it into the JSS.</string>
+        <string>Downloads Firefox disk image and builds a package, then uploads to the JSS.
+Values for FIREFOX_BUILD correspond to directories here: http://download-origin.cdn.mozilla.net/pub/mozilla.org/firefox/releases/
+Some useful values are: 'latest', 'latest-10.0esr', 'latest-esr', 'latest-3.6', 'latest-beta'
+LOCALE corresponds to directories at http://download-origin.cdn.mozilla.net/pub/mozilla.org/firefox/releases/$FIREFOX_BUILD/mac/
+Examples include 'en-US', 'de', 'ja-JP-mac', 'sv-SE', and 'zh-TW'
+No idea if all Firefox builds are available in all the same localizations, so you may need to verify that any particular
+combination is offered.</string>
         <key>Identifier</key>
-        <string>com.github.autopkg.jss.googlechrome</string>
+        <string>com.github.jss-recipes.jss.Firefox_EN</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
-            <string>GoogleChrome</string>
-            <key>JSS_INVENTORY_NAME</key>
-            <string>Google Chrome.app</string>
+            <string>Firefox</string>
             <key>CATEGORY</key>
             <string>Productivity</string>
             <key>POLICY_CATEGORY</key>
@@ -19,18 +23,18 @@
             <key>POLICY_TEMPLATE</key>
             <string>PolicyTemplate.xml</string>
             <key>SELF_SERVICE_ICON</key>
-            <string>GoogleChrome.png</string>
-            <key>GROUP_NAME</key>
-            <string>%NAME%-update-smart</string>
+            <string>Firefox.png</string>
             <key>GROUP_TEMPLATE</key>
             <string>SmartGroupTemplate.xml</string>
+            <key>GROUP_NAME</key>
+            <string>%NAME%-update-smart</string>
             <key>SELF_SERVICE_DESCRIPTION</key>
-            <string>Google Chrome is a browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier.</string>
+            <string>Web Browser.</string>
         </dict>
         <key>MinimumVersion</key>
         <string>0.4.0</string>
         <key>ParentRecipe</key>
-        <string>com.github.autopkg.pkg.googlechrome</string>
+        <string>com.github.autopkg.pkg.Firefox_EN</string>
         <key>Process</key>
         <array>
             <dict>
@@ -38,8 +42,6 @@
                 <dict>
                     <key>prod_name</key>
                     <string>%NAME%</string>
-                    <key>jss_inventory_name</key>
-                    <string>%JSS_INVENTORY_NAME%</string>
                     <key>category</key>
                     <string>%CATEGORY%</string>
                     <key>policy_category</key>

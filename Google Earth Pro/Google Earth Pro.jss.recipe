@@ -15,21 +15,21 @@ https://github.com/homebysix/auto-update-magic</string>
 	<key>Description</key>
 	<string>Downloads latest Google Earth disk image and makes a pkg. Then, uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.autopkg.sheagcraig.jss.google-earth-pro</string>
+	<string>com.github.jss-recipes.jss.GoogleEarthPro</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
 		<string>Productivity</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string></string>
+            <string>Google Earth Pro lets you fly anywhere on Earth to view satellite imagery, maps, terrain, 3D buildings, from galaxies in outer space to the canyons of the ocean.</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>GoogleEarthPro.png</string>
+		<string>Google Earth Pro.png</string>
 		<key>NAME</key>
-		<string>GoogleEarthPro</string>
+		<string>Google Earth Pro</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>

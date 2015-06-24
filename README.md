@@ -122,7 +122,7 @@ No copies of the jss-recipes mandated files `PolicyTemplate.xml` or `SmartGroupT
 The recipe's `ParentRecipe` must be publicly available via a shared recipe repository that is part of the AutoPkg organization.
 
 ### Identifier
-The recipe's `Identifier` should be `com.github.jss-recipes..jss.<product-name>`, where "product-name" is that used consistently throughout the parent recipe and the JSS recipe to identify the product in question. In special cases, like where multiple recipes for the same product are desired, an optional suffix of a hypen and a descriptor may be added (e.g. `com.github.jss-recipes.jss.MicrosoftOffice2011-DisabledAllQuit`).
+The recipe's `Identifier` should be `com.github.jss-recipes.jss.<product-name>`, where "product-name" is that used consistently throughout the parent recipe and the JSS recipe to identify the product in question. In special cases, like where multiple recipes for the same product are desired, an optional suffix of a hypen or underscore and a descriptor may be added (e.g. `com.github.jss-recipes.jss.MicrosoftOffice2011-DisabledAllQuit`).
 
 ### Processing
 The recipe should have a single processor stage: `JSSImporter`. This rule may in special circumstances be lifted, due to missing data in the `ParentRecipe`, like no `version` information being provided. However, recipe authors should endeavor to get the `ParentRecipe` author to include this information so as to benefit other downstream recipes.

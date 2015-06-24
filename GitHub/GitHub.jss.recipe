@@ -17,7 +17,7 @@ https://github.com/homebysix/auto-update-magic</string>
     <key>Description</key>
     <string>Downloads the latest version of Github and builds a pkg. Then, uploads to the JSS.</string>
     <key>Identifier</key>
-    <string>com.github.autopkg.cgerke-recipes.jss.GitHub</string>
+    <string>com.github.jss-recipes.jss.GitHub</string>
     <key>Input</key>
     <dict>
         <key>CATEGORY</key>
@@ -62,8 +62,6 @@ https://github.com/homebysix/auto-update-magic</string>
                 <key>extension_attributes</key>
                 <array>
                     <dict>
-                        <key>name</key>
-                        <string>GitHubVersion</string>
                         <key>ext_attribute_path</key>
                         <string>GitHubExtensionAttribute.xml</string>
                     </dict>

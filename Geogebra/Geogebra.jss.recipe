@@ -29,8 +29,6 @@
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
             <string>SmartGroupTemplate.xml</string>
-            <key>SCRIPT_TEMPLATE</key>
-            <string>GeogebraScriptTemplate.xml</string>
             <key>SELF_SERVICE_DESCRIPTION</key>
             <string>Dynamic mathematics and science for learning and teaching.</string>
         </dict>
@@ -61,7 +59,7 @@
                             <key>name</key>
                             <string>GeogebraPreinstall.sh</string>
                             <key>template_path</key>
-                            <string>%SCRIPT_TEMPLATE%</string>
+                            <string>GeogebraScriptTemplate.xml</string>
                         </dict>
                     </array>
                     <key>groups</key>

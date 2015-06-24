@@ -3,16 +3,13 @@
 <plist version="1.0">
     <dict>
         <key>Description</key>
-        <string>Downloads latest Google Earth disk image, makes a pkg, and uploads
-    to the jss.</string>
+        <string>Uses parent pkg recipe to download latest GoogleChrome and import it into the JSS.</string>
         <key>Identifier</key>
-        <string>com.github.autopkg.jss.google-earth</string>
+        <string>com.github.jss-recipes.jss.GoogleChrome</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
-            <string>GoogleEarth</string>
-            <key>JSS_INVENTORY_NAME</key>
-            <string>Google Earth.app</string>
+            <string>Google Chrome</string>
             <key>CATEGORY</key>
             <string>Productivity</string>
             <key>POLICY_CATEGORY</key>
@@ -20,18 +17,18 @@
             <key>POLICY_TEMPLATE</key>
             <string>PolicyTemplate.xml</string>
             <key>SELF_SERVICE_ICON</key>
-            <string>GoogleEarth.png</string>
+            <string>Google Chrome.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
             <string>SmartGroupTemplate.xml</string>
             <key>SELF_SERVICE_DESCRIPTION</key>
-            <string>Google Earth lets you fly anywhere on Earth to view satellite imagery, maps, terrain, 3D buildings, from galaxies in outer space to the canyons of the ocean.</string>
+            <string>Google Chrome is a browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier.</string>
         </dict>
         <key>MinimumVersion</key>
         <string>0.4.0</string>
         <key>ParentRecipe</key>
-        <string>com.github.autopkg.pkg.google-earth</string>
+        <string>com.github.autopkg.pkg.googlechrome</string>
         <key>Process</key>
         <array>
             <dict>
@@ -39,8 +36,6 @@
                 <dict>
                     <key>prod_name</key>
                     <string>%NAME%</string>
-                    <key>jss_inventory_name</key>
-                    <string>%JSS_INVENTORY_NAME%</string>
                     <key>category</key>
                     <string>%CATEGORY%</string>
                     <key>policy_category</key>
