@@ -3,35 +3,32 @@
 <plist version="1.0">
     <dict>
         <key>Description</key>
-        <string>Downloads the latest version of XQuartz, makes a pkg of it, and uploads to the JSS.</string>
+        <string>Checks for XCode update, packages, and adds to the JSS</string>
         <key>Identifier</key>
-        <string>com.github.jss-recipes.jss.Xquartz</string>
+        <string>com.github.jss-recipes.jss.Xcode</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
-            <string>XQuartz</string>
+            <string>Xcode</string>
             <key>CATEGORY</key>
             <string>Computer Science</string>
             <key>POLICY_CATEGORY</key>
             <string>Testing</string>
-            <!--PlistReader w/o variable injection in AutoPkg requires this-->
-            <key>version</key>
-            <string/>
             <key>POLICY_TEMPLATE</key>
             <string>PolicyTemplate.xml</string>
             <key>SELF_SERVICE_ICON</key>
-            <string>XQuartz.png</string>
+            <string>Xcode.png</string>
             <key>GROUP_NAME</key>
             <string>%NAME%-update-smart</string>
             <key>GROUP_TEMPLATE</key>
             <string>SmartGroupTemplate.xml</string>
             <key>SELF_SERVICE_DESCRIPTION</key>
-            <string>The XQuartz project is an open-source effort to develop a version of the X.Org X Window System that runs on OS X. Together with supporting libraries and applications, it forms the X11.app that Apple has shipped with OS X since version 10.5.</string>
+            <string/>
         </dict>
         <key>MinimumVersion</key>
         <string>0.4.0</string>
         <key>ParentRecipe</key>
-        <string>com.github.scriptingosx.pkg.XQuartz</string>
+        <string>com.github.nmcspadden.pkg.appstore</string>
         <key>Process</key>
         <array>
             <dict>
