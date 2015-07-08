@@ -2,16 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Comment</key>
-    <string>
-This AutoPkg recipe was created using JSSRecipeCreator: 
-https://github.com/sheagcraig/JSSRecipeCreator
-
-It is meant to be used with JSSImporter: 
-https://github.com/sheagcraig/JSSImporter
-
-For tips on integrating JSSImporter into your Casper environment, check out Auto Update Magic:
-https://github.com/homebysix/auto-update-magic</string>
     <key>Description</key>
     <string>Downloads latest Google Earth disk image and makes a pkg. Then, uploads to the JSS.</string>
     <key>Identifier</key>
