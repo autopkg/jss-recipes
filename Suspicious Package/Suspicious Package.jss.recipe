@@ -25,7 +25,7 @@ https://github.com/homebysix/auto-update-magic</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
-		<string>SmartGroupTemplate.xml</string>
+		<string>Suspicious PackageSmartGroupTemplate.xml</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Suspicious Package.png</string>
 		<key>NAME</key>
@@ -44,8 +44,18 @@ https://github.com/homebysix/auto-update-magic</string>
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>prod_name</key>
+				<string>%NAME%</string>
 				<key>category</key>
 				<string>%CATEGORY%</string>
+				<key>policy_category</key>
+				<string>%POLICY_CATEGORY%</string>
+				<key>policy_template</key>
+				<string>%POLICY_TEMPLATE%</string>
+				<key>self_service_icon</key>
+				<string>%SELF_SERVICE_ICON%</string>
+				<key>self_service_description</key>
+				<string>%SELF_SERVICE_DESCRIPTION%</string>
 				<key>groups</key>
 				<array>
 					<dict>
@@ -57,16 +67,13 @@ https://github.com/homebysix/auto-update-magic</string>
 						<string>%GROUP_TEMPLATE%</string>
 					</dict>
 				</array>
-				<key>policy_category</key>
-				<string>%POLICY_CATEGORY%</string>
-				<key>policy_template</key>
-				<string>%POLICY_TEMPLATE%</string>
-				<key>prod_name</key>
-				<string>%NAME%</string>
-				<key>self_service_description</key>
-				<string>%SELF_SERVICE_DESCRIPTION%</string>
-				<key>self_service_icon</key>
-				<string>%SELF_SERVICE_ICON%</string>
+				<key>extension_attributes</key>
+				<array>
+					<dict>
+						<key>ext_attribute_path</key>
+						<string>Suspicious PackageExtensionAttribute.xml</string>
+					</dict>
+				</array>
 			</dict>
 			<key>Processor</key>
 			<string>JSSImporter</string>
