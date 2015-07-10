@@ -42,8 +42,6 @@
 				<string>%POLICY_CATEGORY%</string>
 				<key>policy_template</key>
 				<string>%POLICY_TEMPLATE%</string>
-				<key>policy_trigger</key>
-				<string>%POLICY_TRIGGER%</string>
 				<key>self_service_icon</key>
 				<string>%SELF_SERVICE_ICON%</string>
 				<key>self_service_description</key>
