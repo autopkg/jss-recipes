@@ -12,6 +12,8 @@
         <string>Final Cut Pro</string>
         <key>CATEGORY</key>
         <string>Digital Media</string>
+        <key>OS_REQUIREMENTS</key>
+        <string>10.10.x,10.11.x</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
         <key>POLICY_TEMPLATE</key>
@@ -21,7 +23,9 @@
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
-        <string>SmartGroupTemplate.xml</string>
+        <string>Final Cut ProSmartGroupTemplate.xml</string>
+        <key>SELF_SERVICE_ICON</key>
+		<string>Final Cut Pro.png</string>
         <key>SELF_SERVICE_DESCRIPTION</key>
         <string>Final Cut Pro X (pronounced "Final Cut Pro Ten") is a video editing application for OS X from Apple Inc.</string>
     </dict>
@@ -38,6 +42,8 @@
                 <string>%NAME%</string>
                 <key>category</key>
                 <string>%CATEGORY%</string>
+                <key>os_requirements</key>
+				<string>%OS_REQUIREMENTS%</string>
                 <key>policy_category</key>
                 <string>%POLICY_CATEGORY%</string>
                 <key>policy_template</key>
