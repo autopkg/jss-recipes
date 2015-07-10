@@ -35,6 +35,8 @@ Then, uploads to the JSS.</string>
         <!--PlistReader w/o variable injection in AutoPkg requires this-->
         <key>version</key>
         <string>Browser plugin to allow execution of Java applets.</string>
+        <key>OS_REQUIREMENTS</key>
+        <string>10.11.x,10.10.x,10.9.x,10.8.x</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.9</string>
@@ -51,6 +53,8 @@ Then, uploads to the JSS.</string>
                 <string>%CATEGORY%</string>
                 <key>policy_category</key>
                 <string>%POLICY_CATEGORY%</string>
+                <key>os_requirements</key>
+				<string>%OS_REQUIREMENTS%</string>
                 <key>policy_template</key>
                 <string>%POLICY_TEMPLATE%</string>
                 <key>self_service_icon</key>

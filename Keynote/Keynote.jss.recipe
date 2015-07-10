@@ -21,11 +21,11 @@
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
-        <string>SmartGroupTemplate.xml</string>
+        <string>KeynoteSmartGroupTemplate.xml</string>
         <key>SELF_SERVICE_DESCRIPTION</key>
         <string/>
         <key>OS_REQUIREMENTS</key>
-        <string>10.10.x</string>
+        <string>10.11.x,10.10.x</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.4.0</string>

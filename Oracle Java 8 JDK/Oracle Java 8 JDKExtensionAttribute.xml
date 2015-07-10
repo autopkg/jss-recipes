@@ -1,0 +1,32 @@
+<computer_extension_attribute>
+    <name>%PROD_NAME%</name>
+    <description>Returns the installed version of %PROD_NAME%</description>
+    <data_type>string</data_type>
+    <input_type>
+        <type>script</type>
+        <platform>Mac</platform>
+        <script>#!/bin/bash
+
+ExtensionVersion=""
+# Find all the JDKs
+# Cut out the directory slashes from the find command
+# Sort the results in reverse order
+# Get the first result from the sort
+# Cut that value to a "1.8.0_45" format
+if [ -d /Library/Java/JavaVirtualMachines ]; then
+    cd /Library/Java/JavaVirtualMachines
+    ExtensionVersion=$(find ./  -d 1 -name "*.jdk" | cut -d '/' -f3 | sort -r | head -n 1 | cut -b 4-11)
+fi
+
+if [ "$ExtensionVersion" == "" ]
+    then
+        ExtensionVerision="Not Installed"
+fi
+
+echo "&lt;result&gt;$ExtensionVersion&lt;/result&gt;"
+
+exit 0</script>
+    </input_type>
+    <inventory_display>Extension Attributes</inventory_display>
+    <recon_display>Extension Attributes</recon_display>
+</computer_extension_attribute>
