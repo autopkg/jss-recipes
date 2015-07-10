@@ -2,38 +2,30 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>
-This AutoPkg recipe was created using JSSRecipeCreator: 
-https://github.com/sheagcraig/JSSRecipeCreator
-
-It is meant to be used with JSSImporter: 
-https://github.com/sheagcraig/JSSImporter
-
-For tips on integrating JSSImporter into your Casper environment, check out Auto Update Magic:
-https://github.com/homebysix/auto-update-magic</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Oracle Java 8 JDK and creates a package. Then, uploads to the JSS.</string>
+	<string>Downloads Oracle Java 8 JDK installer and extracts the embedded package, uploads to JSS.</string>
 	<key>Identifier</key>
 	<string>com.github.jss-recipes.jss.OracleJava8JDK</string>
 	<key>Input</key>
 	<dict>
-		<key>CATEGORY</key>
-		<string>Computer Science</string>
-		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>The Java Developement Toolkit version 8.</string>
-		<key>GROUP_NAME</key>
-		<string>%NAME%-update-smart</string>
-		<key>GROUP_TEMPLATE</key>
-		<string>SmartGroupTemplate.xml</string>
-		<key>SELF_SERVICE_ICON</key>
-		<string>Oracle Java 8 JDK.png</string>
 		<key>NAME</key>
 		<string>Oracle Java 8 JDK</string>
+		<key>CATEGORY</key>
+		<string>Computer Science</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
+		<key>GROUP_NAME</key>
+		<string>%NAME%-update-smart</string>
+		<key>GROUP_TEMPLATE</key>
+		<string>Oracle Java 8 JDKSmartGroupTemplate.xml</string>
+		<key>SELF_SERVICE_ICON</key>
+		<string>Oracle Java 8 JDK.png</string>
+		<key>SELF_SERVICE_DESCRIPTION</key>
+		<string>The Java Developement Toolkit version 8.</string>
+		<key>OS_REQUIREMENTS</key>
+        <string>10.11.x,10.10.x,10.9.x,10.8.x</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
@@ -42,10 +34,33 @@ https://github.com/homebysix/auto-update-magic</string>
 	<key>Process</key>
 	<array>
 		<dict>
+			<key>Processor</key>
+			<string>Versioner</string>
 			<key>Arguments</key>
 			<dict>
+				<key>input_plist_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleVersion</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>prod_name</key>
+				<string>%NAME%</string>
 				<key>category</key>
 				<string>%CATEGORY%</string>
+				<key>policy_category</key>
+				<string>%POLICY_CATEGORY%</string>
+				<key>os_requirements</key>
+                <string>%OS_REQUIREMENTS%</string>
+				<key>policy_template</key>
+				<string>%POLICY_TEMPLATE%</string>
+				<key>self_service_icon</key>
+				<string>%SELF_SERVICE_ICON%</string>
+				<key>self_service_description</key>
+				<string>%SELF_SERVICE_DESCRIPTION%</string>
 				<key>groups</key>
 				<array>
 					<dict>
@@ -57,16 +72,13 @@ https://github.com/homebysix/auto-update-magic</string>
 						<string>%GROUP_TEMPLATE%</string>
 					</dict>
 				</array>
-				<key>policy_category</key>
-				<string>%POLICY_CATEGORY%</string>
-				<key>policy_template</key>
-				<string>%POLICY_TEMPLATE%</string>
-				<key>prod_name</key>
-				<string>%NAME%</string>
-				<key>self_service_description</key>
-				<string>%SELF_SERVICE_DESCRIPTION%</string>
-				<key>self_service_icon</key>
-				<string>%SELF_SERVICE_ICON%</string>
+				<key>extension_attributes</key>
+				<array>
+					<dict>
+						<key>ext_attribute_path</key>
+						<string>Oracle Java 8 JDKExtensionAttribute.xml</string>
+					</dict>
+				</array>
 			</dict>
 			<key>Processor</key>
 			<string>JSSImporter</string>
