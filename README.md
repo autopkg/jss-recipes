@@ -162,19 +162,19 @@ The `JSSImporter` processor will include at least the following arguments, and v
 	- A short description, minus hyperbolics or sales-speak, describing what the software *does*.
 - `groups`
 	- Argument value should be an array exactly as per below:
-		```
-		<key>groups</key>
-		<array>
-			<dict>
-				<key>name</key>
-				<string>%GROUP_NAME%</string>
-				<key>smart</key>
-				<true/>
-				<key>template_path</key>
-				<string>%GROUP_TEMPLATE%</string>
-			</dict>
-		</array>
-		```
+	```
+	<key>groups</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>%GROUP_NAME%</string>
+			<key>smart</key>
+			<true/>
+			<key>template_path</key>
+			<string>%GROUP_TEMPLATE%</string>
+		</dict>
+	</array>
+	```
 	- `Input` section variables exactly as:
 	```
 	<key>GROUP_NAME</key>
