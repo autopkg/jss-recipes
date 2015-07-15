@@ -1,0 +1,18 @@
+<computer_extension_attribute>
+    <name>SkypeVersion</name>
+    <description />
+    <data_type>String</data_type>
+    <input_type>
+        <type>script</type>
+        <platform>Mac</platform>
+        <script>#!/bin/bash
+
+SkypeVersion=$(defaults read /Applications/Skype.app/Contents/Info.plist CFBundleVersion)
+
+echo "&lt;result&gt;$SkypeVersion&lt;/result&gt;"
+
+exit 0</script>
+    </input_type>
+    <inventory_display>Extension Attributes</inventory_display>
+    <recon_display>Extension Attributes</recon_display>
+</computer_extension_attribute>

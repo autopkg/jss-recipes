@@ -21,7 +21,7 @@
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
-        <string>SmartGroupTemplate.xml</string>
+        <string>SkypeSmartGroupTemplate.xml</string>
         <key>version</key>
         <string></string>
         <key>SELF_SERVICE_DESCRIPTION</key>
@@ -57,6 +57,13 @@
                         <true/>
                         <key>template_path</key>
                         <string>%GROUP_TEMPLATE%</string>
+                    </dict>
+                </array>
+                <key>extension_attributes</key>
+                <array>
+                    <dict>
+                        <key>ext_attribute_path</key>
+                        <string>SkypeExtensionAttribute.xml</string>
                     </dict>
                 </array>
             </dict>
