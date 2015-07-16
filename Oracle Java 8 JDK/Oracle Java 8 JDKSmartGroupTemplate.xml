@@ -17,6 +17,13 @@
             <value>JDKNotInstalled</value>
         </criterion>
         <criterion>
+            <name>Oracle Java 8 JDKVersion</name>
+            <priority>0</priority>
+            <and_or>and</and_or>
+            <search_type>is not</search_type>
+            <value></value>
+        </criterion>
+        <criterion>
             <name>Computer Group</name>
             <priority>1</priority>
             <and_or>and</and_or>
