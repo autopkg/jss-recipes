@@ -22,7 +22,7 @@ to the jss.</string>
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
-        <string>SmartGroupTemplate.xml</string>
+        <string>CFBundleVersionSmartGroupTemplate.xml</string>
         <key>SELF_SERVICE_DESCRIPTION</key>
         <string>Google Earth lets you fly anywhere on Earth to view satellite imagery, maps, terrain, 3D buildings, from galaxies in outer space to the canyons of the ocean.</string>
     </dict>
@@ -56,6 +56,13 @@ to the jss.</string>
                         <true/>
                         <key>template_path</key>
                         <string>%GROUP_TEMPLATE%</string>
+                    </dict>
+                </array>
+                <key>extension_attributes</key>
+                <array>
+                    <dict>
+                        <key>ext_attribute_path</key>
+                        <string>CFBundleVersionExtensionAttribute.xml</string>
                     </dict>
                 </array>
             </dict>
