@@ -15,7 +15,7 @@
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
-        <string>SmartGroupTemplate.xml</string>
+        <string>Google Earth ProSmartGroupTemplate.xml</string>
         <key>SELF_SERVICE_ICON</key>
         <string>Google Earth Pro.png</string>
         <key>NAME</key>
@@ -47,6 +47,13 @@
                         <true/>
                         <key>template_path</key>
                         <string>%GROUP_TEMPLATE%</string>
+                    </dict>
+                </array>
+                <key>extension_attributes</key>
+                <array>
+                    <dict>
+                        <key>ext_attribute_path</key>
+                        <string>Google Earth ProExtensionAttribute.xml</string>
                     </dict>
                 </array>
                 <key>policy_category</key>
