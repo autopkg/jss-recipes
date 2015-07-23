@@ -676,6 +676,7 @@ def test_group_template(recipe):
     """
     result = False
     required_template = "SmartGroupTemplate.xml"
+    cfbundletemplate = "CFBundleVersionSmartGroupTemplate.xml"
     description = "GROUP_TEMPLATE is '%s'." % required_template
     name = recipe["Input"].get("NAME")
     group_template = recipe["Input"].get("GROUP_TEMPLATE")
@@ -687,7 +688,8 @@ def test_group_template(recipe):
         # custom group template.
         has_ext_attrs = get_jssimporter(recipe)["Arguments"].get(
             "extension_attributes")
-        if has_ext_attrs and group_template == name + required_template:
+        if has_ext_attrs and group_template in [name + required_template,
+                                                cfbundletemplate]:
             result = True
             description = ("GROUP_TEMPLATE is '%s' (Properly formed "
                            "extension-attribute-supporting smart group "
