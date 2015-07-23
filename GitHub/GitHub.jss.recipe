@@ -28,7 +28,7 @@
     <key>MinimumVersion</key>
     <string>0.4.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.autopkg.homebysix-recipes.pkg.GitHub</string>
+    <string>com.github.homebysix.pkg.GitHub</string>
     <key>Process</key>
     <array>
         <dict>
