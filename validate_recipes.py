@@ -391,9 +391,20 @@ def test_parent_recipe(recipe):
     if parent:
         search_results = subprocess.check_output(["autopkg", "search", parent])
         if ".pkg.recipe" in search_results:
-            result = True
+            info_process = subprocess.Popen(["autopkg", "info", parent],
+                                            stdin=subprocess.PIPE,
+                                            stdout=subprocess.PIPE)
+            # Send an "n" in case it didn't find anything.
+            info_results = info_process.communicate("n")
+
+            if "Didn't find a recipe for" in info_results[0]:
+                description += (" (ParentRecipe repo not available. Add and "
+                                "retry.)")
+            else:
+                # Assume that since it found something, it's good.
+                result = True
     else:
-        description += " (ParentRecipe not set)"
+        description += " (ParentRecipe not set.)"
 
     return (result, description)
 
