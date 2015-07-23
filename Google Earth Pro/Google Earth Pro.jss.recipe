@@ -15,7 +15,7 @@
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
-        <string>Google Earth ProSmartGroupTemplate.xml</string>
+        <string>CFBundleVersionSmartGroupTemplate.xml</string>
         <key>SELF_SERVICE_ICON</key>
         <string>Google Earth Pro.png</string>
         <key>NAME</key>
@@ -53,7 +53,7 @@
                 <array>
                     <dict>
                         <key>ext_attribute_path</key>
-                        <string>Google Earth ProExtensionAttribute.xml</string>
+                        <string>CFBundleVersionExtensionAttribute.xml</string>
                     </dict>
                 </array>
                 <key>policy_category</key>
