@@ -63,7 +63,7 @@ The following pieces work together to accomplish this workflow:
 	- category is Testing. This groups policies together under the Testing category on the Policies page of the JSS web interface to separate and distinguish them from other policies. If the Testing category doesn't exist, it will be created.
 	- has an execution frequency of "Ongoing" to allow multiple runs should tests fail. However, following a successful installation, the Self Service policy performs a recon run, which will drop the computer out of the smart group, thus preventing further executions until the next update is made available. This also enables reuse of the same policy without needing to "Flush All" the policy logs.
 - No groups other than the smart group mentioned above are created or modified.
-- In the rare case of needing an extension attribute to determine whether a package is out-of-date, and thus used to determine membership in the smart group, extension attributes will be created and/or updated. A separate [SoftwareName]ExtensionAttribute.xml file is required for this.
+- In the rare case of needing an extension attribute to determine whether a package is out-of-date, and thus used to determine membership in the smart group, extension attributes will be created and/or updated. A separate [SoftwareName]ExtensionAttribute.xml file is required for this. This is most commonly the case with apps that either don't live in `/Applications` or report different version numbers for `CFBundleShortVersionString` and `CFBundleVersion` (Casper only uses `CFBundleShortVersionString` for inventory).
 
 The cumulative effect of all this is that software managed with AutoPkg and JSSImporter will be uploaded and configured for deployment only to computers which have clearance to install it, and will require user interaction to install.
 
@@ -191,6 +191,10 @@ The recipe must use this repo's standard `PolicyTemplate.xml` for its policy tem
 
 ### Extension Attributes
 While the Casper Suite can include internet plugins, or other arbitrary paths in its inventory collection, it is not the *default* behavior. Therefore, for apps that live outside of the `/Applications` folder, an extension attribute should be included to manage group inclusion. This way, recipes from this repo will work immediately for admins who have not set up inventory collection beyond the default. Examples of this can be seen in the repository for more information (examples include Adobe Flash Player and Silverlight).
+
+Also, Casper's inventory uses an app's `CFBundleShortVersionString` for version bookkeeping. However, some apps use that as a shortened version, and rather put the full version number in `CFBundleVersion` in their `Info.plist`. For example, Skype, according to Casper, may be version 7.10, but in fact the full version number is 7.10.0.776. For testing purposes, obviously 7.10 will not work, so an extension attribute is required.
+
+For these purposes, a generic extension attribute and smart group template are provided at `CFBundleVersionExtensionAttribute.xml` and `CFBundleVersionSmartGroupTemplate.xml` and should be used unless further scripting is required to accurately target the product.
 
 Extension attributes arguments should be specified in the `JSSImporter/Arguments` section only, as they are not intended to be overridden.
 
