@@ -23,6 +23,7 @@ A collection of [AutoPkg](https://autopkg.github.io/autopkg/) recipes that helps
 	- [Extension Attributes](#extension-attributes)
 	- [Scripts](#scripts)
 	- [Linting](#linting)
+- [Upgrading from the old jss-recipes](#upgrading-from-the-old-jss-recipes)
 - [Getting help](#getting-help)
 
 <!-- /MarkdownTOC -->
@@ -207,6 +208,10 @@ Script's arguments should be specified in the `JSSImporter/Arguments` section on
 Finally, a check with `plutil -lint <recipe_name>` should pass.
 
 ---
+
+## Upgrading from the old jss-recipes
+
+If you're currently subscribed to the old [sheagcraig/jss-recipes](https://github.com/sheagcraig/jss-recipes) repository and would like to smoothly transition to this new autopkg/jss-recipes repository, [we've prepared some instructions here which will assist you with that transition](https://github.com/autopkg/jss-recipes/blob/master/UPGRADE.md).
 
 ## Getting help
 Here are some basic steps for determining where to troubleshoot:
