@@ -9,21 +9,22 @@ A collection of [AutoPkg](https://autopkg.github.io/autopkg/) recipes that helps
 - [Introduction](#introduction)
 - [Standard workflow for JSS recipes](#standard-workflow-for-jss-recipes)
 - [Requirements and configuration](#requirements-and-configuration)
-	- [JSSImporter](#jssimporter)
-	- [Parent recipes](#parent-recipes)
-	- [App Store apps](#app-store-apps)
-	- [Testing group](#testing-group)
+    - [JSSImporter](#jssimporter)
+    - [Parent recipes](#parent-recipes)
+    - [App Store apps](#app-store-apps)
+    - [Testing group](#testing-group)
 - [Style guide](#style-guide)
-	- [Filename](#filename)
-	- [Product Subfolder](#product-subfolder)
-	- [Parent recipe](#parent-recipe)
-	- [Identifier](#identifier)
-	- [Processing](#processing)
-	- [Policy Template](#policy-template)
-	- [Extension Attributes](#extension-attributes)
-	- [Scripts](#scripts)
-	- [Linting](#linting)
+    - [Filename](#filename)
+    - [Product Subfolder](#product-subfolder)
+    - [Parent recipe](#parent-recipe)
+    - [Identifier](#identifier)
+    - [Processing](#processing)
+    - [Policy Template](#policy-template)
+    - [Extension Attributes](#extension-attributes)
+    - [Scripts](#scripts)
+    - [Linting](#linting)
 - [Upgrading from the old jss-recipes](#upgrading-from-the-old-jss-recipes)
+- [Troubleshooting](#troubleshooting)
 - [Getting help](#getting-help)
 
 <!-- /MarkdownTOC -->
@@ -49,20 +50,20 @@ __Software packages are uploaded to distribution points and made available throu
 The following pieces work together to accomplish this workflow:
 
 - JSS recipes use PKG recipes as parents. This ensures that a standard Apple package (pkg) file can be uploaded to the distribution points.
-	- The resulting package file's name includes the software's name and version number (e.g. Firefox-38.0.5.pkg).
-	- The package file's metadata includes any OS version restrictions that govern that product's installation.
+    - The resulting package file's name includes the software's name and version number (e.g. Firefox-38.0.5.pkg).
+    - The package file's metadata includes any OS version restrictions that govern that product's installation.
 - The JSS recipe specifies the category for the package file itself, which is chosen from among a limited set of approved categories. (See the list of categories in the [Style guide](#style-guide) below.) If the category doesn't exist, it will be created.
 - JSSImporter uploads the package file to all configured distribution points.
 - The SmartGroupTemplate.xml file tells JSSImporter to create or update a smart group called [SoftwareName]-update-smart. The criteria of this group are:
-	- the computer has the software in question installed
-	- the version does not match the newest version that AutoPkg found
-	- the computer is a member of a group called "Testing" (which is created and maintained manually by the Casper admin)
+    - the computer has the software in question installed
+    - the version does not match the newest version that AutoPkg found
+    - the computer is a member of a group called "Testing" (which is created and maintained manually by the Casper admin)
 - The PolicyTemplate.xml file tells JSSImporter to create a single Self Service policy for each product, called Install Latest [SoftwareName]. The policy:
-	- installs the latest package file.
-	- is scoped to the smart group mentioned above.
-	- includes a Self Service icon and description.
-	- category is Testing. This groups policies together under the Testing category on the Policies page of the JSS web interface to separate and distinguish them from other policies. If the Testing category doesn't exist, it will be created.
-	- has an execution frequency of "Ongoing" to allow multiple runs should tests fail. However, following a successful installation, the Self Service policy performs a recon run, which will drop the computer out of the smart group, thus preventing further executions until the next update is made available. This also enables reuse of the same policy without needing to "Flush All" the policy logs.
+    - installs the latest package file.
+    - is scoped to the smart group mentioned above.
+    - includes a Self Service icon and description.
+    - category is Testing. This groups policies together under the Testing category on the Policies page of the JSS web interface to separate and distinguish them from other policies. If the Testing category doesn't exist, it will be created.
+    - has an execution frequency of "Ongoing" to allow multiple runs should tests fail. However, following a successful installation, the Self Service policy performs a recon run, which will drop the computer out of the smart group, thus preventing further executions until the next update is made available. This also enables reuse of the same policy without needing to "Flush All" the policy logs.
 - No groups other than the smart group mentioned above are created or modified.
 - In the rare case of needing an extension attribute to determine whether a package is out-of-date, and thus used to determine membership in the smart group, extension attributes will be created and/or updated. A separate [SoftwareName]ExtensionAttribute.xml file is required for this. This is most commonly the case with apps that either don't live in `/Applications` or report different version numbers for `CFBundleShortVersionString` and `CFBundleVersion` (Casper only uses `CFBundleShortVersionString` for inventory).
 
@@ -137,53 +138,53 @@ In the `Input` section of the recipe, the variable should be defined with an ALL
 The `JSSImporter` processor will include at least the following arguments, and values (as specified in the `Input` section:
 
 - `prod_name`
-	- The name used consistently throughout all recipes in the chain.
-	- `prod_name` should use the `NAME` input variable commonly used throughout AutoPkg recipes. This is an exception to the casing rules above.
+    - The name used consistently throughout all recipes in the chain.
+    - `prod_name` should use the `NAME` input variable commonly used throughout AutoPkg recipes. This is an exception to the casing rules above.
 - `jss_inventory_name`
-	- Optional, but required if the `NAME` and the filename of the app bundle differ.
-	- Use spaces in `NAME` if that's how the application is named. It's 2015. Filenames can have spaces.
+    - Optional, but required if the `NAME` and the filename of the app bundle differ.
+    - Use spaces in `NAME` if that's how the application is named. It's 2015. Filenames can have spaces.
 - `category`
-	- Recipes included in this repository use a limited list of package categories:
-		- Computer Science
-		- Digital Media
-		- Games
-		- Management
-		- Print and Scan
-		- Productivity
-		- Science and Math
-		- Utility
-	- Admins may create overrides to specify package categories that aren't included in the standard list above.
+    - Recipes included in this repository use a limited list of package categories:
+        - Computer Science
+        - Digital Media
+        - Games
+        - Management
+        - Print and Scan
+        - Productivity
+        - Science and Math
+        - Utility
+    - Admins may create overrides to specify package categories that aren't included in the standard list above.
 - `policy_category` (Set to `Testing`)
 - `policy_template` (Set to `PolicyTemplate.xml`)
 - `self_service_icon`
-	- Icon should be named the same as the product (e.g. `NetHack.png`).
-	- Icon should be a PNG file.
-	- Icon should be 128 x 128 pixels as per the current recommendations of JAMF.
+    - Icon should be named the same as the product (e.g. `NetHack.png`).
+    - Icon should be a PNG file.
+    - Icon should be 128 x 128 pixels as per the current recommendations of JAMF.
 - `self_service_description`
-	- A short description, minus hyperbolics or sales-speak, describing what the software *does*.
+    - A short description, minus hyperbolics or sales-speak, describing what the software *does*.
 - `groups`
-	- Argument value should be an array exactly as per below:
-	```
-	<key>groups</key>
-	<array>
-		<dict>
-			<key>name</key>
-			<string>%GROUP_NAME%</string>
-			<key>smart</key>
-			<true/>
-			<key>template_path</key>
-			<string>%GROUP_TEMPLATE%</string>
-		</dict>
-	</array>
-	```
-	- `Input` section variables exactly as:
-	```
-	<key>GROUP_NAME</key>
-	<string>%NAME%-update-smart</string>
-	<key>GROUP_TEMPLATE</key>
-	<string>SmartGroupTemplate.xml</string>
-	```
-	- In the case of a product requiring an extension attribute, a different smart group template will be specified.
+    - Argument value should be an array exactly as per below:
+    ```
+    <key>groups</key>
+    <array>
+        <dict>
+            <key>name</key>
+            <string>%GROUP_NAME%</string>
+            <key>smart</key>
+            <true/>
+            <key>template_path</key>
+            <string>%GROUP_TEMPLATE%</string>
+        </dict>
+    </array>
+    ```
+    - `Input` section variables exactly as:
+    ```
+    <key>GROUP_NAME</key>
+    <string>%NAME%-update-smart</string>
+    <key>GROUP_TEMPLATE</key>
+    <string>SmartGroupTemplate.xml</string>
+    ```
+    - In the case of a product requiring an extension attribute, a different smart group template will be specified.
 
 Other arguments are optional and desired only if necessary (`extension_attribute`).
 
@@ -213,12 +214,36 @@ Finally, a check with `plutil -lint <recipe_name>` should pass.
 
 If you're currently subscribed to the old [sheagcraig/jss-recipes](https://github.com/sheagcraig/jss-recipes) repository and would like to smoothly transition to this new autopkg/jss-recipes repository, [we've prepared some instructions here which will assist you with that transition](https://github.com/autopkg/jss-recipes/blob/master/UPGRADE.md).
 
-## Getting help
+## Troubleshooting
+
 Here are some basic steps for determining where to troubleshoot:
-<!-- TODO: Common errors and what they mean? -->
 
-Many of this repositories contributors (and many Casper admins in general) can be found on the [#jamfnation IRC channel](https://webchat.freenode.net/?channels=%23jamfnation), the #jamfnation room within the [MacAdmins Slack team](http://macadmins.org/), or on the [JAMF Nation discussion boards](https://jamfnation.jamfsoftware.com/index.html).
+- If you're using AutoPkgr or another automation framework with autopkg and having trouble with a jss recipe, __first run the recipe in isolation__ and see whether the error persists. For example:
 
-If you find a reproducible bug or error in one of the recipes in this repo, please submit an issue on GitHub.
-<!-- TODO: Link to GitHub issues. -->
+    ```
+    autopkg run Firefox.jss -v
+    ```
 
+    The error or traceback that results from this command will help with further troubleshooting.
+
+- Most of the jss recipes require a parent recipe that lives in another repository. __Make sure you've added all required repos__. Otherwise you'll get an error like this: `Could not find parent recipe for ___.jss`
+
+- Use the latest version of JSSImporter and python-jss unless you know of a specific reason not to. [The latest version of JSSImporter is always available here](https://github.com/sheagcraig/JSSImporter/releases/latest) and installs the latest version of python-jss by default.
+
+- Check your JSS URL and credentials by running these commands and verifying that the resulting output can be used to successfully log in to your JSS web app:
+
+    ```
+    defaults read com.github.autopkg JSS_URL
+    defaults read com.github.autopkg API_USERNAME
+    defaults read com.github.autopkg API_PASSWORD
+    ```
+
+    If these values are not correct, you may need to modify them with the corresponding `defaults write` commands, by editing the values in AutoPkgr, or by editing the `~/Library/Preferences/com.github.autopkg.plist` file manually. (Careful!)
+
+- If you're still having trouble, reach out to somebody using one of the methods below.
+
+## Getting help
+
+Many of this repository's contributors (and many Casper admins in general) can be found on the #jamfnation room within the [MacAdmins Slack team](http://macadmins.org/), on the [JAMF Nation discussion boards](https://jamfnation.jamfsoftware.com/index.html), or in the [#jamfnation IRC channel](https://webchat.freenode.net/?channels=%23jamfnation) on Freenode.
+
+If you find a reproducible bug or error in one of the recipes in this repo, please [check to see](https://github.com/autopkg/jss-recipes/issues/) whether an issue already exists on GitHub, and [submit an issue](https://github.com/autopkg/jss-recipes/issues/new) if not.
