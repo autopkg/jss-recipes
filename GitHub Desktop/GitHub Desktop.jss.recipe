@@ -17,9 +17,9 @@
         <key>GROUP_TEMPLATE</key>
         <string>CFBundleVersionSmartGroupTemplate.xml</string>
         <key>SELF_SERVICE_ICON</key>
-        <string>GitHubDesktop.png</string>
+        <string>GitHub Desktop.png</string>
         <key>NAME</key>
-        <string>GitHub</string>
+        <string>GitHub Desktop</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
         <key>POLICY_TEMPLATE</key>
