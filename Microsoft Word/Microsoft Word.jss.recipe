@@ -43,8 +43,6 @@ VERSION currently only supports 'latest'.
     <string>Testing</string>
     <key>POLICY_TEMPLATE</key>
     <string>%RECIPE_DIR%/PolicyTemplate.xml</string>
-    <key>pkg_path</key>
-    <string>downloads/%NAME%-%VERSION%.pkg</string>
   </dict>
   <key>MinimumVersion</key>
   <string>0.4.2</string>
@@ -72,6 +70,8 @@ VERSION currently only supports 'latest'.
         <string>%POLICY_CATEGORY%</string>
         <key>policy_template</key>
         <string>%POLICY_TEMPLATE%</string>
+        <key>pkg_path</key>
+        <string>%pathname%</string>
         <key>prod_name</key>
         <string>%NAME%</string>
         <key>self_service_description</key>
