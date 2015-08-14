@@ -2,65 +2,86 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Checks for Microsoft OneNote update, packages, and adds to the JSS</string>
-    <key>Identifier</key>
-    <string>com.github.jss-recipes.jss.MicrosoftOneNote</string>
-    <key>Input</key>
+  <key>Comment</key>
+  <string>
+This AutoPkg recipe was created using JSSRecipeCreator:
+https://github.com/sheagcraig/JSSRecipeCreator
+
+It is meant to be used with JSSImporter:
+https://github.com/sheagcraig/JSSImporter
+
+For tips on integrating JSSImporter into your Casper environment, check out Auto Update Magic:
+https://github.com/homebysix/auto-update-magic</string>
+  <key>Description</key>
+  <string>Downloads the latest OneNote 2016 multilingual update pkg,
+and appends the version to the end of the filename.
+
+LOCALE_ID sets the locale for a descriptive text that will be
+extracted from the Microsoft update metadata. See
+https://msdn.microsoft.com/en-us/goglobal/bb964664.aspx
+for more information about locale IDs.
+
+VERSION currently only supports 'latest'.
+ Then, uploads to the JSS.</string>
+  <key>Identifier</key>
+  <string>com.github.jss-recipes.jss.Microsoft OneNote</string>
+  <key>Input</key>
+  <dict>
+    <key>CATEGORY</key>
+    <string>Productivity</string>
+    <key>DESCRIPTION</key>
+    <string>Microsoft OneNote is a computer program for free-form information gathering and multi-user collaboration. It gathers users' notes (handwritten or typed), drawings, screen clippings and audio commentaries.</string>
+    <key>GROUP_NAME</key>
+    <string>%NAME%-update-smart</string>
+    <key>GROUP_TEMPLATE</key>
+    <string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
+    <key>ICON</key>
+    <string>%RECIPE_DIR%/Microsoft OneNote.png</string>
+    <key>NAME</key>
+    <string>Microsoft OneNote.png</string>
+    <key>POLICY_CATEGORY</key>
+    <string>Testing</string>
+    <key>POLICY_TEMPLATE</key>
+    <string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+    <key>pkg_path</key>
+    <string>downloads/%NAME%-%VERSION%.pkg</string>
+  </dict>
+  <key>MinimumVersion</key>
+  <string>0.4.2</string>
+  <key>ParentRecipe</key>
+  <string>com.github.autopkg.download.MSOneNote2016</string>
+  <key>Process</key>
+  <array>
     <dict>
-        <key>NAME</key>
-        <string>Microsoft OneNote</string>
-        <key>CATEGORY</key>
-        <string>Productivity</string>
-        <key>POLICY_CATEGORY</key>
-        <string>Testing</string>
-        <key>POLICY_TEMPLATE</key>
-        <string>PolicyTemplate.xml</string>
-        <key>SELF_SERVICE_ICON</key>
-        <string>Microsoft OneNote.png</string>
-        <key>GROUP_NAME</key>
-        <string>%NAME%-update-smart</string>
-        <key>GROUP_TEMPLATE</key>
-        <string>SmartGroupTemplate.xml</string>
-        <key>SELF_SERVICE_DESCRIPTION</key>
-        <string>Microsoft OneNote is a computer program for free-form information gathering and multi-user collaboration.</string>
+      <key>Arguments</key>
+      <dict>
+        <key>category</key>
+        <string>%CATEGORY%</string>
+        <key>groups</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>%GROUP_NAME%</string>
+            <key>smart</key>
+            <true/>
+            <key>template_path</key>
+            <string>%GROUP_TEMPLATE%</string>
+          </dict>
+        </array>
+        <key>policy_category</key>
+        <string>%POLICY_CATEGORY%</string>
+        <key>policy_template</key>
+        <string>%POLICY_TEMPLATE%</string>
+        <key>prod_name</key>
+        <string>%NAME%</string>
+        <key>self_service_description</key>
+        <string>%DESCRIPTION%</string>
+        <key>self_service_icon</key>
+        <string>%ICON%</string>
+      </dict>
+      <key>Processor</key>
+      <string>JSSImporter</string>
     </dict>
-    <key>MinimumVersion</key>
-    <string>0.4.0</string>
-    <key>ParentRecipe</key>
-    <string>com.github.nmcspadden.pkg.appstore</string>
-    <key>Process</key>
-    <array>
-        <dict>
-            <key>Arguments</key>
-            <dict>
-                <key>prod_name</key>
-                <string>%NAME%</string>
-                <key>category</key>
-                <string>%CATEGORY%</string>
-                <key>policy_category</key>
-                <string>%POLICY_CATEGORY%</string>
-                <key>policy_template</key>
-                <string>%POLICY_TEMPLATE%</string>
-                <key>self_service_icon</key>
-                <string>%SELF_SERVICE_ICON%</string>
-                <key>self_service_description</key>
-                <string>%SELF_SERVICE_DESCRIPTION%</string>
-                <key>groups</key>
-                <array>
-                    <dict>
-                        <key>name</key>
-                        <string>%GROUP_NAME%</string>
-                        <key>smart</key>
-                        <true/>
-                        <key>template_path</key>
-                        <string>%GROUP_TEMPLATE%</string>
-                    </dict>
-                </array>
-            </dict>
-            <key>Processor</key>
-            <string>JSSImporter</string>
-        </dict>
-    </array>
+  </array>
 </dict>
 </plist>
