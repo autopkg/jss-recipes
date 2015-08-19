@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest version of Github and builds a pkg. Then, uploads to the JSS.</string>
+    <string>Downloads the latest version of Github Desktop and builds a pkg. Then, uploads to the JSS.</string>
     <key>Identifier</key>
-    <string>com.github.jss-recipes.jss.GitHub</string>
+    <string>com.github.jss-recipes.jss.GitHubDesktop</string>
     <key>Input</key>
     <dict>
         <key>CATEGORY</key>
@@ -17,9 +17,9 @@
         <key>GROUP_TEMPLATE</key>
         <string>CFBundleVersionSmartGroupTemplate.xml</string>
         <key>SELF_SERVICE_ICON</key>
-        <string>GitHub.png</string>
+        <string>GitHub Desktop.png</string>
         <key>NAME</key>
-        <string>GitHub</string>
+        <string>GitHub Desktop</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
         <key>POLICY_TEMPLATE</key>
@@ -28,7 +28,7 @@
     <key>MinimumVersion</key>
     <string>0.4.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.homebysix.pkg.GitHub</string>
+    <string>com.github.homebysix.pkg.GitHubDesktop</string>
     <key>Process</key>
     <array>
         <dict>
