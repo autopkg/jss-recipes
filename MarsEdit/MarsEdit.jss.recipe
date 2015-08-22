@@ -28,7 +28,7 @@
     <key>MinimumVersion</key>
     <string>0.4.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.homebysix.pkg.MarsEdit</string>
+    <string>com.github.arubdesu.pkg.MarsEdit</string>
     <key>Process</key>
     <array>
         <dict>
