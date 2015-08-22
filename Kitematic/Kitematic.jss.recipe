@@ -21,7 +21,7 @@
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
-        <string>SmartGroupTemplate.xml</string>
+        <string>CFBundleVersionSmartGroupTemplate.xml</string>
         <key>SELF_SERVICE_DESCRIPTION</key>
         <string>The easiest way to use Docker on your Mac.</string>
     </dict>
@@ -48,6 +48,13 @@
                 <string>%SELF_SERVICE_ICON%</string>
                 <key>self_service_description</key>
                 <string>%SELF_SERVICE_DESCRIPTION%</string>
+                <key>extension_attributes</key>
+                <array>
+                    <dict>
+                        <key>ext_attribute_path</key>
+                        <string>CFBundleVersionExtensionAttribute.xml</string>
+                    </dict>
+                </array>
                 <key>groups</key>
                 <array>
                     <dict>
