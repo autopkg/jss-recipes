@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest version of CakeBrew and makes a pkg of it then uploads it to the JSS.</string>
+    <string>Downloads the latest version of Cakebrew and makes a pkg of it then uploads it to the JSS.</string>
     <key>Identifier</key>
-    <string>com.github.jss-recipes.jss.CakeBrew</string>
+    <string>com.github.jss-recipes.jss.Cakebrew</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>CakeBrew</string>
+        <string>Cakebrew</string>
         <key>CATEGORY</key>
         <string>Computer Science</string>
         <key>POLICY_CATEGORY</key>
@@ -17,7 +17,7 @@
         <key>POLICY_TEMPLATE</key>
         <string>PolicyTemplate.xml</string>
         <key>SELF_SERVICE_ICON</key>
-        <string>CakeBrew.png</string>
+        <string>Cakebrew.png</string>
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
@@ -28,7 +28,7 @@
     <key>MinimumVersion</key>
     <string>0.4.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.homebysix.pkg.CakeBrew</string>
+    <string>com.github.homebysix.pkg.Cakebrew</string>
     <key>Process</key>
     <array>
         <dict>
