@@ -70,6 +70,10 @@ VALID_CATEGORIES = (
     "Science and Math",
     "Utility")
 
+ALLOWED_EXTENSION_ATTRIBUTES = (
+    "CFBundleVersionExtensionAttribute.xml"
+)
+
 
 class Error(Exception):
     """Module base exception."""
@@ -768,7 +772,9 @@ def test_extension_attribute_arguments(recipe):
         recipe)["Arguments"].get("extension_attributes")
 
     ext_attr_templates = [ext_attr.get("ext_attribute_path") for ext_attr in
-                          extension_attributes]
+                          extension_attributes if
+                          ext_attr.get("ext_attribute_path") not in
+                          ALLOWED_EXTENSION_ATTRIBUTES]
     template_names_compliant = all((filename.startswith(name) and
                                     filename.endswith("ExtensionAttribute.xml")
                                     for filename in ext_attr_templates))
