@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Copyright (C) 2014 Shea G Craig
+# Copyright (C) 2014-2015 Shea G Craig
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -60,7 +60,7 @@ PROHIBITED_ARGUMENTS = (
     "site_name",
     "site_id")
 
-VALID_CATEGORIES =  (
+VALID_CATEGORIES = (
     "Computer Science",
     "Digital Media",
     "Games",
@@ -137,7 +137,7 @@ class Results(object):
                 if verbose or not result[0]:
                     self._print_result(result)
         else:
-            print "Ok."
+            print "OK"
 
     def report_all(self):
         self.report(verbose=True)
@@ -212,7 +212,7 @@ def validate_recipe(recipe_path, verbose=False):
         test_icon,
         test_lint)
 
-    header = "Testing recipe: %s" % recipe_path
+    header = " Testing recipe: %s " % recipe_path
     print_bar(len(header))
     print header
     print_bar(len(header))
@@ -231,7 +231,7 @@ def validate_recipe(recipe_path, verbose=False):
         # Handle missing plist keys rather than try to test for each
         # bit of a recipe.
         except KeyError as err:
-            result = (False, "'%s' failed with missing Key: '%s'" %
+            result = (False, "'%s' failed with missing key: '%s'" %
                       (test.__name__, err.message))
         except AttributeError as err:
             result = (False, "'%s' failed with missing attribute" %
@@ -604,7 +604,7 @@ def test_policy_category_value(recipe):
     result = False
     description = "POLICY_CATEGORY is 'Testing'."
 
-    result  = (recipe["Input"].get("POLICY_CATEGORY") == "Testing")
+    result = (recipe["Input"].get("POLICY_CATEGORY") == "Testing")
 
     return (result, description)
 
