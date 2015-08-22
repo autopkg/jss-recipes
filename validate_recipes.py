@@ -351,7 +351,8 @@ def test_folder_contents_have_common_prefix(recipe):
     name = recipe["Input"].get("NAME")
     description = "All files have prefix of product (NAME: '%s')." % name
     files = os.listdir(os.path.dirname(recipe.filename))
-    result = all((filename.startswith(name) for filename in files))
+    result = all((filename.startswith(name) or filename == ".DS_Store"
+                  for filename in files))
 
     return (result, description)
 
