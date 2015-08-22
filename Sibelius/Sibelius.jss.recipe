@@ -28,7 +28,7 @@
     <key>MinimumVersion</key>
     <string>0.4.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.homebysix.pkg.Sibelius</string>
+    <string>com.github.jazzace.pkg.Sibelius</string>
     <key>Process</key>
     <array>
         <dict>
