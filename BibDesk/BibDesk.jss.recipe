@@ -23,7 +23,7 @@
         <key>GROUP_TEMPLATE</key>
         <string>SmartGroupTemplate.xml</string>
         <key>SELF_SERVICE_DESCRIPTION</key>
-        <string>Use BibDesk to edit and manage your bibliography. It will keep track of both the bibliographic information and the associated files or web links for you. BibDesk’s services will simplify using your bibliography in other applications and are particularly well suited for LATEX users.</string>
+        <string>Use BibDesk to edit and manage your bibliography. It will keep track of both the bibliographic information and the associated files or web links for you. BibDesk's services will simplify using your bibliography in other applications and are particularly well suited for LATEX users.</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.4.0</string>
