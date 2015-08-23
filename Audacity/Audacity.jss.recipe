@@ -48,6 +48,8 @@
                 <string>%SELF_SERVICE_ICON%</string>
                 <key>self_service_description</key>
                 <string>%SELF_SERVICE_DESCRIPTION%</string>
+                <key>version</key>
+                <string>%version%</string>
                 <key>groups</key>
                 <array>
                     <dict>
