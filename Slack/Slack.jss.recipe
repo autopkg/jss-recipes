@@ -57,6 +57,13 @@
                 <string>%SELF_SERVICE_DESCRIPTION%</string>
                 <key>self_service_icon</key>
                 <string>%SELF_SERVICE_ICON%</string>
+                <key>extension_attributes</key>
+                <array>
+                    <dict>
+                        <key>ext_attribute_path</key>
+                        <string>CFBundleVersionExtensionAttribute.xml</string>
+                    </dict>
+                </array>
             </dict>
             <key>Processor</key>
             <string>JSSImporter</string>
