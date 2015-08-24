@@ -15,7 +15,7 @@
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
-        <string>SmartGroupTemplate.xml</string>
+        <string>CFBundleVersionSmartGroupTemplate.xml</string>
         <key>SELF_SERVICE_ICON</key>
         <string>Slack.png</string>
         <key>NAME</key>
