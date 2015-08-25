@@ -24,25 +24,25 @@ for more information about locale IDs.
 VERSION currently only supports 'latest'.
  Then, uploads to the JSS.</string>
   <key>Identifier</key>
-  <string>com.github.jss-recipes.jss.Microsoft Word</string>
+  <string>com.github.jss-recipes.jss.MicrosoftWord</string>
   <key>Input</key>
   <dict>
     <key>CATEGORY</key>
     <string>Productivity</string>
-    <key>DESCRIPTION</key>
+    <key>SELF_SERVICE_DESCRIPTION</key>
     <string>Microsoft Word is a graphical word processing program that users can type with. It is made by the computer company Microsoft. The purpose of the MS Word is to allow the users to type and save documents.</string>
     <key>GROUP_NAME</key>
     <string>%NAME%-update-smart</string>
     <key>GROUP_TEMPLATE</key>
-    <string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
-    <key>ICON</key>
-    <string>%RECIPE_DIR%/Microsoft Word.png</string>
+    <string>SmartGroupTemplate.xml</string>
+    <key>SELF_SERVICE_ICON</key>
+    <string>Microsoft Word.png</string>
     <key>NAME</key>
     <string>Microsoft Word</string>
     <key>POLICY_CATEGORY</key>
     <string>Testing</string>
     <key>POLICY_TEMPLATE</key>
-    <string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+    <string>PolicyTemplate.xml</string>
   </dict>
   <key>MinimumVersion</key>
   <string>0.4.2</string>
@@ -75,9 +75,9 @@ VERSION currently only supports 'latest'.
         <key>prod_name</key>
         <string>%NAME%</string>
         <key>self_service_description</key>
-        <string>%DESCRIPTION%</string>
+        <string>%SELF_SERVICE_DESCRIPTION%</string>
         <key>self_service_icon</key>
-        <string>%ICON%</string>
+        <string>%SELF_SERVICE_ICON%</string>
       </dict>
       <key>Processor</key>
       <string>JSSImporter</string>

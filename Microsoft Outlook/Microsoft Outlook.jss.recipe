@@ -2,16 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>Comment</key>
-  <string>
-This AutoPkg recipe was created using JSSRecipeCreator:
-https://github.com/sheagcraig/JSSRecipeCreator
-
-It is meant to be used with JSSImporter:
-https://github.com/sheagcraig/JSSImporter
-
-For tips on integrating JSSImporter into your Casper environment, check out Auto Update Magic:
-https://github.com/homebysix/auto-update-magic</string>
   <key>Description</key>
   <string>Downloads the latest Outlook 2016 multilingual update pkg,
 and appends the version to the end of the filename.
@@ -24,25 +14,25 @@ for more information about locale IDs.
 VERSION currently only supports 'latest'.
  Then, uploads to the JSS.</string>
   <key>Identifier</key>
-  <string>com.github.jss-recipes.jss.Microsoft Outlook</string>
+  <string>com.github.jss-recipes.jss.MicrosoftOutlook</string>
   <key>Input</key>
   <dict>
     <key>CATEGORY</key>
     <string>Productivity</string>
-    <key>DESCRIPTION</key>
+    <key>SELF_SERVICE_DESCRIPTION</key>
     <string>Microsoft Outlook is a personal information manager from Microsoft, available as a part of the Microsoft Office suite. Although often used mainly as an email application, it also includes a calendar, task manager, contact manager, note taking, journal, and web browsing.</string>
     <key>GROUP_NAME</key>
     <string>%NAME%-update-smart</string>
     <key>GROUP_TEMPLATE</key>
-    <string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
-    <key>ICON</key>
-    <string>%RECIPE_DIR%/Microsoft Outlook.png</string>
+    <string>SmartGroupTemplate.xml</string>
+    <key>SELF_SERVICE_ICON</key>
+    <string>Microsoft Outlook.png</string>
     <key>NAME</key>
     <string>Microsoft Outlook</string>
     <key>POLICY_CATEGORY</key>
     <string>Testing</string>
     <key>POLICY_TEMPLATE</key>
-    <string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+    <string>PolicyTemplate.xml</string>
   </dict>
   <key>MinimumVersion</key>
   <string>0.4.2</string>
@@ -75,9 +65,9 @@ VERSION currently only supports 'latest'.
         <key>prod_name</key>
         <string>%NAME%</string>
         <key>self_service_description</key>
-        <string>%DESCRIPTION%</string>
+        <string>%SELF_SERVICE_DESCRIPTION%</string>
         <key>self_service_icon</key>
-        <string>%ICON%</string>
+        <string>%SELF_SERVICE_ICON%</string>
       </dict>
       <key>Processor</key>
       <string>JSSImporter</string>
