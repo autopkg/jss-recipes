@@ -22,9 +22,6 @@ Plug-Ins/JavaAppletPlugin.plugin.</string>
         <string>Digital Media</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
-        <!--PlistReader w/o variable injection in AutoPkg requires this-->
-        <key>version</key>
-        <string/>
         <key>POLICY_TEMPLATE</key>
         <string>PolicyTemplate.xml</string>
         <key>SELF_SERVICE_ICON</key>
@@ -35,6 +32,9 @@ Plug-Ins/JavaAppletPlugin.plugin.</string>
         <string>OracleJava7SmartGroupTemplate.xml</string>
         <key>SELF_SERVICE_DESCRIPTION</key>
         <string>Browser plugin to allow execution of Java applets.</string>
+        <!--PlistReader w/o variable injection in AutoPkg requires this-->
+        <key>version</key>
+        <string/>
     </dict>
     <key>MinimumVersion</key>
     <string>0.4.0</string>
