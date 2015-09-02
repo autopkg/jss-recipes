@@ -38,6 +38,8 @@
             <dict>
                 <key>category</key>
                 <string>%CATEGORY%</string>
+                <key>jss_inventory_name</key>
+                <string>%JSS_INVENTORY_NAME%</string>
                 <key>policy_category</key>
                 <string>%POLICY_CATEGORY%</string>
                 <key>policy_template</key>
