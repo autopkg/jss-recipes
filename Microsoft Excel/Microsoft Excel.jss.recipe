@@ -24,7 +24,7 @@ VERSION currently only supports 'latest'.
     <key>GROUP_NAME</key>
     <string>%NAME%-update-smart</string>
     <key>GROUP_TEMPLATE</key>
-    <string>SmartGroupTemplate.xml</string>
+    <string>Microsoft ExcelSmartGroupTemplate.xml</string>
     <key>SELF_SERVICE_ICON</key>
     <string>Microsoft Excel.png</string>
     <key>NAME</key>
