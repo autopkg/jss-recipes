@@ -14,6 +14,8 @@
         <string>Network protocol analyzer.</string>
         <key>SELF_SERVICE_ICON</key>
         <string>WiresharkDev.png</string>
+        <key>JSS_INVENTORY_NAME</key>
+        <string>Wireshark.app</string>
         <key>NAME</key>
         <string>WiresharkDev</string>
         <key>POLICY_CATEGORY</key>
