@@ -845,6 +845,7 @@ def test_icon(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
+    allowed_dimensions = (128, 300)
     result = False
     description = "Icon is a 128x128px PNG file."
     directory = os.path.dirname(recipe.filename)
@@ -855,7 +856,8 @@ def test_icon(recipe):
     icon_path = os.path.join(directory, icon_filename)
     if os.path.exists(icon_path):
         width, height, format = get_image_properties(icon_path)
-        if width == 128 and height == 128 and format.upper() == "PNG":
+        if (width in allowed_dimensions and height in allowed_dimensions and
+              format.upper() == "PNG"):
             result = True
         else:
             description += " (Image is %ix%i of type %s)" % (width, height,
