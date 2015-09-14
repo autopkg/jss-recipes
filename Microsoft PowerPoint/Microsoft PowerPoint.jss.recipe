@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
   <key>Description</key>
-  <string>Downloads the latest Excel 2016 multilingual update pkg,
+  <string>Downloads the latest PowerPoint 2016 multilingual update pkg,
 and appends the version to the end of the filename.
 
 LOCALE_ID sets the locale for a descriptive text that will be
@@ -14,21 +14,21 @@ for more information about locale IDs.
 VERSION currently only supports 'latest'.
  Then, uploads to the JSS.</string>
   <key>Identifier</key>
-  <string>com.github.jss-recipes.jss.MicrosoftOneNote</string>
+  <string>com.github.jss-recipes.jss.MicrosoftPowerPoint</string>
   <key>Input</key>
   <dict>
     <key>CATEGORY</key>
     <string>Productivity</string>
     <key>SELF_SERVICE_DESCRIPTION</key>
-    <string>Microsoft OneNote is a computer program for free-form information gathering and multi-user collaboration. It gathers users' notes (handwritten or typed), drawings, screen clippings and audio commentaries.</string>
+    <string>Microsoft PowerPoint is a slide show presentation program currently developed by Microsoft.</string>
     <key>GROUP_NAME</key>
     <string>%NAME%-update-smart</string>
     <key>GROUP_TEMPLATE</key>
-    <string>Microsoft OneNoteSmartGroupTemplate.xml</string>
+    <string>Microsoft PowerPointSmartGroupTemplate.xml</string>
     <key>SELF_SERVICE_ICON</key>
-    <string>Microsoft OneNote.png</string>
+    <string>Microsoft PowerPoint.png</string>
     <key>NAME</key>
-    <string>Microsoft OneNote</string>
+    <string>Microsoft PowerPoint</string>
     <key>POLICY_CATEGORY</key>
     <string>Testing</string>
     <key>POLICY_TEMPLATE</key>
@@ -37,7 +37,7 @@ VERSION currently only supports 'latest'.
   <key>MinimumVersion</key>
   <string>0.4.2</string>
   <key>ParentRecipe</key>
-  <string>com.github.autopkg.download.MSOneNote2016</string>
+  <string>com.github.autopkg.download.MSPowerPoint2016</string>
   <key>Process</key>
   <array>
     <dict>

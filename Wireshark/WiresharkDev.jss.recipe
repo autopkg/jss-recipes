@@ -3,60 +3,53 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest Oracle Java 7 JRE and builds a new package
-with correct version information.
-
-All Oracle JRE install packages have a version number of 1, so the actual
-plugin version is used to replace the installer version, taken from the
-CFBundleVersion of the bundle at /Library/Internet
-Plug-Ins/JavaAppletPlugin.plugin.</string>
+    <string>Downloads the latest devel version of Wireshark and builds a pkg. Then, uploads to the JSS.</string>
     <key>Identifier</key>
-    <string>com.github.jss-recipes.jss.OracleJava7</string>
+    <string>com.github.jss-recipes.jss.WiresharkDev</string>
     <key>Input</key>
     <dict>
-        <key>NAME</key>
-        <string>OracleJava7</string>
-        <key>PKG_ID</key>
-        <string>com.oracle.jre</string>
         <key>CATEGORY</key>
-        <string>Digital Media</string>
+        <string>Utility</string>
+        <key>SELF_SERVICE_DESCRIPTION</key>
+        <string>Network protocol analyzer.</string>
+        <key>SELF_SERVICE_ICON</key>
+        <string>WiresharkDev.png</string>
+        <key>JSS_INVENTORY_NAME</key>
+        <string>Wireshark.app</string>
+        <key>NAME</key>
+        <string>WiresharkDev</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
         <key>POLICY_TEMPLATE</key>
         <string>PolicyTemplate.xml</string>
-        <key>SELF_SERVICE_ICON</key>
-        <string>OracleJava7.png</string>
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
-        <string>OracleJava7SmartGroupTemplate.xml</string>
-        <key>SELF_SERVICE_DESCRIPTION</key>
-        <string>Browser plugin to allow execution of Java applets.</string>
-        <!--PlistReader w/o variable injection in AutoPkg requires this-->
-        <key>version</key>
-        <string/>
+        <string>SmartGroupTemplate.xml</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.4.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.autopkg.pkg.OracleJava7</string>
+    <string>com.justinrummel.pkg.WiresharkDev</string>
     <key>Process</key>
     <array>
         <dict>
             <key>Arguments</key>
             <dict>
-                <key>prod_name</key>
-                <string>%NAME%</string>
                 <key>category</key>
                 <string>%CATEGORY%</string>
+                <key>jss_inventory_name</key>
+                <string>%JSS_INVENTORY_NAME%</string>
                 <key>policy_category</key>
                 <string>%POLICY_CATEGORY%</string>
                 <key>policy_template</key>
                 <string>%POLICY_TEMPLATE%</string>
-                <key>self_service_icon</key>
-                <string>%SELF_SERVICE_ICON%</string>
+                <key>prod_name</key>
+                <string>%NAME%</string>
                 <key>self_service_description</key>
                 <string>%SELF_SERVICE_DESCRIPTION%</string>
+                <key>self_service_icon</key>
+                <string>%SELF_SERVICE_ICON%</string>
                 <key>groups</key>
                 <array>
                     <dict>
@@ -66,13 +59,6 @@ Plug-Ins/JavaAppletPlugin.plugin.</string>
                         <true/>
                         <key>template_path</key>
                         <string>%GROUP_TEMPLATE%</string>
-                    </dict>
-                </array>
-                <key>extension_attributes</key>
-                <array>
-                    <dict>
-                        <key>ext_attribute_path</key>
-                        <string>OracleJava7ExtensionAttribute.xml</string>
                     </dict>
                 </array>
             </dict>

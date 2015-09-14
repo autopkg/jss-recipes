@@ -31,10 +31,10 @@ Then, uploads to the JSS.</string>
         <key>GROUP_TEMPLATE</key>
         <string>OracleJava8SmartGroupTemplate.xml</string>
         <key>SELF_SERVICE_DESCRIPTION</key>
-        <string></string>
+        <string>Browser plugin to allow execution of Java applets.</string>
         <!--PlistReader w/o variable injection in AutoPkg requires this-->
         <key>version</key>
-        <string>Browser plugin to allow execution of Java applets.</string>
+        <string/>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.9</string>

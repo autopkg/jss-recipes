@@ -643,10 +643,11 @@ def test_icon_name(recipe):
         test and result.
     """
     result = False
-    description = "SELF_SERVICE_ICON name is NAME.png"
+    description = "SELF_SERVICE_ICON name is NAME.png or %NAME%.png."
 
-    result  = (recipe["Input"].get("SELF_SERVICE_ICON") ==
-               recipe["Input"].get("NAME") + ".png")
+    result  = (recipe["Input"].get("SELF_SERVICE_ICON") in
+               (recipe["Input"].get("NAME") + ".png",
+                "%NAME%.png"))
 
     return (result, description)
 
@@ -851,14 +852,19 @@ def test_icon(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
+    allowed_dimensions = (128, 300)
     result = False
     description = "Icon is a 128x128px PNG file."
     directory = os.path.dirname(recipe.filename)
-    icon_path = os.path.join(directory,
-                             recipe["Input"].get("SELF_SERVICE_ICON"))
+    icon_filename = recipe["Input"].get("SELF_SERVICE_ICON")
+    if icon_filename == "%NAME%.png":
+        icon_filename = "%s.png" % recipe["Input"].get("NAME")
+
+    icon_path = os.path.join(directory, icon_filename)
     if os.path.exists(icon_path):
         width, height, format = get_image_properties(icon_path)
-        if width == 128 and height == 128 and format.upper() == "PNG":
+        if (width in allowed_dimensions and height in allowed_dimensions and
+              format.upper() == "PNG"):
             result = True
         else:
             description += " (Image is %ix%i of type %s)" % (width, height,
