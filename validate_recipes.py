@@ -856,7 +856,7 @@ def test_icon(recipe):
     icon_path = os.path.join(directory, icon_filename)
     if os.path.exists(icon_path):
         width, height, format = get_image_properties(icon_path)
-        if (width in allowed_dimensions and height in allowed_dimensions and
+        if (width in allowed_dimensions and height == width and
               format.upper() == "PNG"):
             result = True
         else:
