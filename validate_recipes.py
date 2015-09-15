@@ -70,6 +70,10 @@ VALID_CATEGORIES = (
     "Science and Math",
     "Utility")
 
+ALLOWED_EXTENSION_ATTRIBUTES = (
+    "CFBundleVersionExtensionAttribute.xml"
+)
+
 
 class Error(Exception):
     """Module base exception."""
@@ -351,7 +355,8 @@ def test_folder_contents_have_common_prefix(recipe):
     name = recipe["Input"].get("NAME")
     description = "All files have prefix of product (NAME: '%s')." % name
     files = os.listdir(os.path.dirname(recipe.filename))
-    result = all((filename.startswith(name) for filename in files))
+    result = all((filename.startswith(name) or filename == ".DS_Store"
+                  for filename in files))
 
     return (result, description)
 
@@ -768,7 +773,9 @@ def test_extension_attribute_arguments(recipe):
         recipe)["Arguments"].get("extension_attributes")
 
     ext_attr_templates = [ext_attr.get("ext_attribute_path") for ext_attr in
-                          extension_attributes]
+                          extension_attributes if
+                          ext_attr.get("ext_attribute_path") not in
+                          ALLOWED_EXTENSION_ATTRIBUTES]
     template_names_compliant = all((filename.startswith(name) and
                                     filename.endswith("ExtensionAttribute.xml")
                                     for filename in ext_attr_templates))
@@ -856,7 +863,7 @@ def test_icon(recipe):
     icon_path = os.path.join(directory, icon_filename)
     if os.path.exists(icon_path):
         width, height, format = get_image_properties(icon_path)
-        if (width in allowed_dimensions and height == width and
+        if (width in allowed_dimensions and height in allowed_dimensions and
               format.upper() == "PNG"):
             result = True
         else:
