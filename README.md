@@ -135,7 +135,7 @@ In the `Arguments` section of the `JSSImporter` processor, all values should be 
 
 In the `Input` section of the recipe, the variable should be defined with an ALL_CAPS name set to the values desired (and in many cases, as defined later in the style guide). Following on the previous example, the input variable would be named `POLICY_CATEGORY`, and should have the value `Testing`.
 
-The `JSSImporter` processor will include at least the following arguments, and values (as specified in the `Input` section:
+The `JSSImporter` processor will include at least the following arguments, and values (as specified in the `Input` section):
 
 - `prod_name`
     - The name used consistently throughout all recipes in the chain.
@@ -158,8 +158,9 @@ The `JSSImporter` processor will include at least the following arguments, and v
 - `policy_template` (Set to `PolicyTemplate.xml`)
 - `self_service_icon`
     - Icon should be named the same as the product (e.g. `NetHack.png`).
+	- Icon can be referenced as either `%NAME%.png` or the actual NAME.png (e.g. `NetHack.png`).
     - Icon should be a PNG file.
-    - Icon should be 128 x 128 pixels as per the current recommendations of JAMF.
+    - Icon should be 128 x 128 pixels as per the current recommendations of JAMF, or 300 x 300 pixels to be shared with Munki recipes..
 - `self_service_description`
     - A short description, minus hyperbolics or sales-speak, describing what the software *does*.
 - `groups`

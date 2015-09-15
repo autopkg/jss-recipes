@@ -383,6 +383,11 @@ def test_no_restricted_files_in_folder(recipe):
 
 def test_parent_recipe(recipe):
     """Determine whether parent recipe is in AutoPkg org and not None.
+
+    Uses a GitHub personal access token if one has been generated.
+    This is helpful if you're validating a bunch of recipes at once and
+    hitting the rate limit.
+
     Args:
         recipe: Recipe object.
 
@@ -394,7 +399,11 @@ def test_parent_recipe(recipe):
     result = False
     description = "Parent Recipe is in AutoPkg org."
     if parent:
-        search_results = subprocess.check_output(["autopkg", "search", parent])
+        cmd = ["autopkg", "search", parent]
+        if os.path.exists(os.path.expanduser("~/.autopkg_gh_token")):
+            cmd.insert(2, "--use-token")
+        search_results = subprocess.check_output(cmd)
+
         if ".pkg.recipe" in search_results:
             info_process = subprocess.Popen(["autopkg", "info", parent],
                                             stdin=subprocess.PIPE,
