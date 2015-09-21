@@ -1,77 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest PowerPoint 2016 multilingual update pkg,
+		and appends the version to the end of the filename.
+
+		LOCALE_ID sets the locale for a descriptive text that will be
+		extracted from the Microsoft update metadata. See
+		https://msdn.microsoft.com/en-us/goglobal/bb964664.aspx
+		for more information about locale IDs.
+
+		VERSION currently only supports 'latest'.
+		Then, uploads to the JSS.</string>
+	<key>Identifier</key>
+	<string>com.github.jss-recipes.jss.MicrosoftPowerPoint</string>
+	<key>Input</key>
 	<dict>
-		<key>Description</key>
-		<string>Downloads the latest PowerPoint 2016 multilingual update pkg,
-			and appends the version to the end of the filename.
-
-			LOCALE_ID sets the locale for a descriptive text that will be
-			extracted from the Microsoft update metadata. See
-			https://msdn.microsoft.com/en-us/goglobal/bb964664.aspx
-			for more information about locale IDs.
-
-			VERSION currently only supports 'latest'.
-			Then, uploads to the JSS.</string>
-			<key>Identifier</key>
-			<string>com.github.jss-recipes.jss.MicrosoftPowerPoint</string>
-			<key>Input</key>
+		<key>CATEGORY</key>
+		<string>Productivity</string>
+		<key>SELF_SERVICE_DESCRIPTION</key>
+		<string>Microsoft PowerPoint is a slide show presentation program currently developed by Microsoft.</string>
+		<key>GROUP_NAME</key>
+		<string>%NAME%-update-smart</string>
+		<key>GROUP_TEMPLATE</key>
+		<string>Microsoft PowerPointSmartGroupTemplate.xml</string>
+		<key>SELF_SERVICE_ICON</key>
+		<string>Microsoft PowerPoint.png</string>
+		<key>NAME</key>
+		<string>Microsoft PowerPoint</string>
+		<key>POLICY_CATEGORY</key>
+		<string>Testing</string>
+		<key>POLICY_TEMPLATE</key>
+		<string>PolicyTemplate.xml</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.4.2</string>
+	<key>ParentRecipe</key>
+	<string>com.github.autopkg.download.MSPowerPoint2016</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>FlatPkgUnpacker</string>
+			<key>Arguments</key>
 			<dict>
-				<key>CATEGORY</key>
-				<string>Productivity</string>
-				<key>SELF_SERVICE_DESCRIPTION</key>
-				<string>Microsoft PowerPoint is a slide show presentation program currently developed by Microsoft.</string>
-				<key>GROUP_NAME</key>
-				<string>%NAME%-update-smart</string>
-				<key>GROUP_TEMPLATE</key>
-				<string>Microsoft PowerPointSmartGroupTemplate.xml</string>
-				<key>SELF_SERVICE_ICON</key>
-				<string>Microsoft PowerPoint.png</string>
-				<key>NAME</key>
-				<string>Microsoft PowerPoint</string>
-				<key>POLICY_CATEGORY</key>
-				<string>Testing</string>
-				<key>POLICY_TEMPLATE</key>
-				<string>PolicyTemplate.xml</string>
+				<key>flat_pkg_path</key>
+				<string>%pathname%</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked</string>
+				<key>skip_payload</key>
+				<true/>
+				<key>purge_destination</key>
+				<true/>
 			</dict>
-			<key>MinimumVersion</key>
-			<string>0.4.2</string>
-			<key>ParentRecipe</key>
-			<string>com.github.autopkg.download.MSPowerPoint2016</string>
-			<key>Process</key>
-			<array>
-				<dict>
-					<key>Arguments</key>
-					<dict>
-						<key>category</key>
-						<string>%CATEGORY%</string>
-						<key>groups</key>
-						<array>
-							<dict>
-								<key>name</key>
-								<string>%GROUP_NAME%</string>
-								<key>smart</key>
-								<true/>
-								<key>template_path</key>
-								<string>%GROUP_TEMPLATE%</string>
-							</dict>
-						</array>
-						<key>policy_category</key>
-						<string>%POLICY_CATEGORY%</string>
-						<key>policy_template</key>
-						<string>%POLICY_TEMPLATE%</string>
-						<key>pkg_path</key>
-						<string>%pathname%</string>
-						<key>prod_name</key>
-						<string>%NAME%</string>
-						<key>self_service_description</key>
-						<string>%SELF_SERVICE_DESCRIPTION%</string>
-						<key>self_service_icon</key>
-						<string>%SELF_SERVICE_ICON%</string>
-					</dict>
-					<key>Processor</key>
-					<string>JSSImporter</string>
-				</dict>
-			</array>
 		</dict>
-	</plist>
+		<dict>
+			<key>Processor</key>
+			<string>FileFinder</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pattern</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked/*.pkg/PackageInfo</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>MSOffice2016VersionChecker</string>
+			<key>Arguments</key>
+			<dict>
+				<key>packageinfo_path</key>
+				<string>%found_filename%</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>category</key>
+				<string>%CATEGORY%</string>
+				<key>groups</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>%GROUP_NAME%</string>
+						<key>smart</key>
+						<true/>
+						<key>template_path</key>
+						<string>%GROUP_TEMPLATE%</string>
+					</dict>
+				</array>
+				<key>policy_category</key>
+				<string>%POLICY_CATEGORY%</string>
+				<key>policy_template</key>
+				<string>%POLICY_TEMPLATE%</string>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+				<key>prod_name</key>
+				<string>%NAME%</string>
+				<key>self_service_description</key>
+				<string>%SELF_SERVICE_DESCRIPTION%</string>
+				<key>self_service_icon</key>
+				<string>%SELF_SERVICE_ICON%</string>
+			</dict>
+			<key>Processor</key>
+			<string>JSSImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
