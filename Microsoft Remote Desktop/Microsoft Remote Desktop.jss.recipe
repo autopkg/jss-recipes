@@ -32,39 +32,6 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>FlatPkgUnpacker</string>
-			<key>Arguments</key>
-			<dict>
-				<key>flat_pkg_path</key>
-				<string>%pathname%</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked</string>
-				<key>skip_payload</key>
-				<true/>
-				<key>purge_destination</key>
-				<true/>
-			</dict>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>FileFinder</string>
-			<key>Arguments</key>
-			<dict>
-				<key>pattern</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked/*.pkg/PackageInfo</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>com.github.jss-recipes.MSOffice2016VersionChecker/MSOffice2016VersionChecker</string>
-			<key>Arguments</key>
-			<dict>
-				<key>packageinfo_path</key>
-				<string>%found_filename%</string>
-			</dict>
-		</dict>
-		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>prod_name</key>
