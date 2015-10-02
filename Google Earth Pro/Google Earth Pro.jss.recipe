@@ -24,6 +24,8 @@
 		<string>Google Earth Pro lets you fly anywhere on Earth to view satellite imagery, maps, terrain, 3D buildings, from galaxies in outer space to the canyons of the ocean.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Google Earth Pro.png</string>
+		<key>Comment</key>
+		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
 		<key>version</key>
 		<string></string>
 	</dict>

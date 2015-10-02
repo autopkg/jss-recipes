@@ -24,6 +24,8 @@
 		<string>Open source 3D graphics and animation software.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Blender.png</string>
+		<key>Comment</key>
+		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
 		<key>version</key>
 		<string></string>
 	</dict>
