@@ -8,22 +8,22 @@
     <string>com.github.jss-recipes.jss.NetHack</string>
     <key>Input</key>
     <dict>
-        <key>NAME</key>
-        <string>NetHack</string>
         <key>CATEGORY</key>
         <string>Games</string>
-        <key>POLICY_CATEGORY</key>
-        <string>Testing</string>
-        <key>POLICY_TEMPLATE</key>
-        <string>PolicyTemplate.xml</string>
-        <key>SELF_SERVICE_ICON</key>
-        <string>NetHack.png</string>
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
         <string>SmartGroupTemplate.xml</string>
+        <key>NAME</key>
+        <string>NetHack</string>
+        <key>POLICY_CATEGORY</key>
+        <string>Testing</string>
+        <key>POLICY_TEMPLATE</key>
+        <string>PolicyTemplate.xml</string>
         <key>SELF_SERVICE_DESCRIPTION</key>
         <string>NetHack is a single player dungeon exploration game that runs on a wide variety of computer systems.</string>
+        <key>SELF_SERVICE_ICON</key>
+        <string>NetHack.png</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.5</string>
@@ -34,18 +34,8 @@
         <dict>
             <key>Arguments</key>
             <dict>
-                <key>prod_name</key>
-                <string>%NAME%</string>
                 <key>category</key>
                 <string>%CATEGORY%</string>
-                <key>policy_category</key>
-                <string>%POLICY_CATEGORY%</string>
-                <key>policy_template</key>
-                <string>%POLICY_TEMPLATE%</string>
-                <key>self_service_icon</key>
-                <string>%SELF_SERVICE_ICON%</string>
-                <key>self_service_description</key>
-                <string>%SELF_SERVICE_DESCRIPTION%</string>
                 <key>groups</key>
                 <array>
                     <dict>
@@ -57,6 +47,16 @@
                         <string>%GROUP_TEMPLATE%</string>
                     </dict>
                 </array>
+                <key>policy_category</key>
+                <string>%POLICY_CATEGORY%</string>
+                <key>policy_template</key>
+                <string>%POLICY_TEMPLATE%</string>
+                <key>prod_name</key>
+                <string>%NAME%</string>
+                <key>self_service_description</key>
+                <string>%SELF_SERVICE_DESCRIPTION%</string>
+                <key>self_service_icon</key>
+                <string>%SELF_SERVICE_ICON%</string>
             </dict>
             <key>Processor</key>
             <string>JSSImporter</string>

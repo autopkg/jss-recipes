@@ -8,22 +8,22 @@
     <string>com.github.jss-recipes.jss.Office2011Update-DisabledAllQuit</string>
     <key>Input</key>
     <dict>
-        <key>NAME</key>
-        <string>Office2011Update</string>
         <key>CATEGORY</key>
         <string>Productivity</string>
-        <key>POLICY_CATEGORY</key>
-        <string>Testing</string>
-        <key>POLICY_TEMPLATE</key>
-        <string>PolicyTemplate.xml</string>
-        <key>SELF_SERVICE_ICON</key>
-        <string>Office2011Update.png</string>
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
         <string>Office2011UpdateSmartGroupTemplate.xml</string>
+        <key>NAME</key>
+        <string>Office2011Update</string>
+        <key>POLICY_CATEGORY</key>
+        <string>Testing</string>
+        <key>POLICY_TEMPLATE</key>
+        <string>PolicyTemplate.xml</string>
         <key>SELF_SERVICE_DESCRIPTION</key>
         <string>Updates for MS Office 2011.</string>
+        <key>SELF_SERVICE_ICON</key>
+        <string>Office2011Update.png</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.4.0</string>
@@ -36,22 +36,17 @@
             <string>Office2011UpdateVersioner</string>
         </dict>
         <dict>
-            <key>Processor</key>
-            <string>JSSImporter</string>
             <key>Arguments</key>
             <dict>
-                <key>prod_name</key>
-                <string>%NAME%</string>
                 <key>category</key>
                 <string>%CATEGORY%</string>
-                <key>policy_category</key>
-                <string>%POLICY_CATEGORY%</string>
-                <key>policy_template</key>
-                <string>%POLICY_TEMPLATE%</string>
-                <key>self_service_icon</key>
-                <string>%SELF_SERVICE_ICON%</string>
-                <key>self_service_description</key>
-                <string>%SELF_SERVICE_DESCRIPTION%</string>
+                <key>extension_attributes</key>
+                <array>
+                    <dict>
+                        <key>ext_attribute_path</key>
+                        <string>Office2011UpdateExtensionAttribute.xml</string>
+                    </dict>
+                </array>
                 <key>groups</key>
                 <array>
                     <dict>
@@ -63,14 +58,19 @@
                         <string>%GROUP_TEMPLATE%</string>
                     </dict>
                 </array>
-                <key>extension_attributes</key>
-                <array>
-                    <dict>
-                        <key>ext_attribute_path</key>
-                        <string>Office2011UpdateExtensionAttribute.xml</string>
-                    </dict>
-                </array>
+                <key>policy_category</key>
+                <string>%POLICY_CATEGORY%</string>
+                <key>policy_template</key>
+                <string>%POLICY_TEMPLATE%</string>
+                <key>prod_name</key>
+                <string>%NAME%</string>
+                <key>self_service_description</key>
+                <string>%SELF_SERVICE_DESCRIPTION%</string>
+                <key>self_service_icon</key>
+                <string>%SELF_SERVICE_ICON%</string>
             </dict>
+            <key>Processor</key>
+            <string>JSSImporter</string>
         </dict>
     </array>
 </dict>

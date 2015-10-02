@@ -10,20 +10,20 @@
     <dict>
         <key>CATEGORY</key>
         <string>Productivity</string>
-        <key>SELF_SERVICE_DESCRIPTION</key>
-        <string>Slack is a platform for team communication: everything in one place, instantly searchable, available wherever you go.</string>
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
         <string>CFBundleVersionSmartGroupTemplate.xml</string>
-        <key>SELF_SERVICE_ICON</key>
-        <string>Slack.png</string>
         <key>NAME</key>
         <string>Slack</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
         <key>POLICY_TEMPLATE</key>
         <string>PolicyTemplate.xml</string>
+        <key>SELF_SERVICE_DESCRIPTION</key>
+        <string>Slack is a platform for team communication: everything in one place, instantly searchable, available wherever you go.</string>
+        <key>SELF_SERVICE_ICON</key>
+        <string>Slack.png</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
@@ -36,6 +36,13 @@
             <dict>
                 <key>category</key>
                 <string>%CATEGORY%</string>
+                <key>extension_attributes</key>
+                <array>
+                    <dict>
+                        <key>ext_attribute_path</key>
+                        <string>CFBundleVersionExtensionAttribute.xml</string>
+                    </dict>
+                </array>
                 <key>groups</key>
                 <array>
                     <dict>
@@ -57,13 +64,6 @@
                 <string>%SELF_SERVICE_DESCRIPTION%</string>
                 <key>self_service_icon</key>
                 <string>%SELF_SERVICE_ICON%</string>
-                <key>extension_attributes</key>
-                <array>
-                    <dict>
-                        <key>ext_attribute_path</key>
-                        <string>CFBundleVersionExtensionAttribute.xml</string>
-                    </dict>
-                </array>
             </dict>
             <key>Processor</key>
             <string>JSSImporter</string>

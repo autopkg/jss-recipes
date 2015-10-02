@@ -10,22 +10,22 @@
     <dict>
         <key>CATEGORY</key>
         <string>Digital Media</string>
-        <key>SELF_SERVICE_DESCRIPTION</key>
-        <string>Open source 3D graphics and animation software.</string>
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
         <string>SmartGroupTemplate.xml</string>
-        <key>SELF_SERVICE_ICON</key>
-        <string>Blender.png</string>
         <key>NAME</key>
         <string>Blender</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
         <key>POLICY_TEMPLATE</key>
         <string>PolicyTemplate.xml</string>
+        <key>SELF_SERVICE_DESCRIPTION</key>
+        <string>Open source 3D graphics and animation software.</string>
+        <key>SELF_SERVICE_ICON</key>
+        <string>Blender.png</string>
         <key>version</key>
-        <string></string>
+        <string/>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>

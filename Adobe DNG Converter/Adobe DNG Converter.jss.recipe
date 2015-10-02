@@ -10,20 +10,20 @@
     <dict>
         <key>CATEGORY</key>
         <string>Digital Media</string>
-        <key>SELF_SERVICE_DESCRIPTION</key>
-        <string>Convert proprietary RAW files to the Digital Negative format.</string>
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
         <string>SmartGroupTemplate.xml</string>
-        <key>SELF_SERVICE_ICON</key>
-        <string>Adobe DNG Converter.png</string>
         <key>NAME</key>
         <string>Adobe DNG Converter</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
         <key>POLICY_TEMPLATE</key>
         <string>PolicyTemplate.xml</string>
+        <key>SELF_SERVICE_DESCRIPTION</key>
+        <string>Convert proprietary RAW files to the Digital Negative format.</string>
+        <key>SELF_SERVICE_ICON</key>
+        <string>Adobe DNG Converter.png</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.9</string>

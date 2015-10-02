@@ -10,20 +10,20 @@
     <dict>
         <key>CATEGORY</key>
         <string>Productivity</string>
-        <key>SELF_SERVICE_DESCRIPTION</key>
-        <string>Group chat and instant messaging for teams and small businesses.</string>
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
         <string>SmartGroupTemplate.xml</string>
-        <key>SELF_SERVICE_ICON</key>
-        <string>HipChat.png</string>
         <key>NAME</key>
         <string>HipChat</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
         <key>POLICY_TEMPLATE</key>
         <string>PolicyTemplate.xml</string>
+        <key>SELF_SERVICE_DESCRIPTION</key>
+        <string>Group chat and instant messaging for teams and small businesses.</string>
+        <key>SELF_SERVICE_ICON</key>
+        <string>HipChat.png</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>

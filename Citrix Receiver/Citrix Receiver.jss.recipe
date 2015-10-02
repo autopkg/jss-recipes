@@ -10,22 +10,20 @@
     <dict>
         <key>CATEGORY</key>
         <string>Utility</string>
-        <key>SELF_SERVICE_DESCRIPTION</key>
-        <string>Citrix Receiver is client software that provides access to your XenApp server.</string>
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
         <string>SmartGroupTemplate.xml</string>
-        <key>SELF_SERVICE_ICON</key>
-        <string>Citrix Receiver.png</string>
-        <key>SELF_SERVICE_DESCRIPTION</key>
-        <string>Citrix Receiver is client software that allows universal access to virtual applications and desktops.</string>
         <key>NAME</key>
         <string>Citrix Receiver</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
         <key>POLICY_TEMPLATE</key>
         <string>PolicyTemplate.xml</string>
+        <key>SELF_SERVICE_DESCRIPTION</key>
+        <string>Citrix Receiver is client software that allows universal access to virtual applications and desktops.</string>
+        <key>SELF_SERVICE_ICON</key>
+        <string>Citrix Receiver.png</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.4.0</string>

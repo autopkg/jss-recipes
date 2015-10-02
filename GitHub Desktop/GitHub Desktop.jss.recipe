@@ -10,20 +10,20 @@
     <dict>
         <key>CATEGORY</key>
         <string>Computer Science</string>
-        <key>SELF_SERVICE_DESCRIPTION</key>
-        <string>Dedicated GitHub client app.</string>
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
         <string>CFBundleVersionSmartGroupTemplate.xml</string>
-        <key>SELF_SERVICE_ICON</key>
-        <string>GitHub Desktop.png</string>
         <key>NAME</key>
         <string>GitHub Desktop</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
         <key>POLICY_TEMPLATE</key>
         <string>PolicyTemplate.xml</string>
+        <key>SELF_SERVICE_DESCRIPTION</key>
+        <string>Dedicated GitHub client app.</string>
+        <key>SELF_SERVICE_ICON</key>
+        <string>GitHub Desktop.png</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.4.0</string>
@@ -36,6 +36,13 @@
             <dict>
                 <key>category</key>
                 <string>%CATEGORY%</string>
+                <key>extension_attributes</key>
+                <array>
+                    <dict>
+                        <key>ext_attribute_path</key>
+                        <string>CFBundleVersionExtensionAttribute.xml</string>
+                    </dict>
+                </array>
                 <key>groups</key>
                 <array>
                     <dict>
@@ -45,13 +52,6 @@
                         <true/>
                         <key>template_path</key>
                         <string>%GROUP_TEMPLATE%</string>
-                    </dict>
-                </array>
-                <key>extension_attributes</key>
-                <array>
-                    <dict>
-                        <key>ext_attribute_path</key>
-                        <string>CFBundleVersionExtensionAttribute.xml</string>
                     </dict>
                 </array>
                 <key>policy_category</key>
