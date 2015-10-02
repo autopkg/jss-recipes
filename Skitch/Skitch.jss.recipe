@@ -10,8 +10,6 @@
 	<dict>
 		<key>CATEGORY</key>
 		<string>Productivity</string>
-		<key>Comment</key>
-		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
@@ -28,6 +26,8 @@
 		<string>Get your point across with fewer words using annotation, shapes and sketches, so that your ideas become reality faster.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Skitch.png</string>
+		<key>Comment</key>
+		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
 		<key>version</key>
 		<string></string>
 	</dict>

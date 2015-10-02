@@ -16,8 +16,6 @@ Then, uploads to the JSS.</string>
 	<dict>
 		<key>CATEGORY</key>
 		<string>Digital Media</string>
-		<key>Comment</key>
-		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
@@ -34,6 +32,8 @@ Then, uploads to the JSS.</string>
 		<string>Browser plugin to allow execution of Java applets.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>OracleJava8.png</string>
+		<key>Comment</key>
+		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
 		<key>version</key>
 		<string></string>
 	</dict>

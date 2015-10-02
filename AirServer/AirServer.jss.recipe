@@ -10,8 +10,6 @@
 	<dict>
 		<key>CATEGORY</key>
 		<string>Utility</string>
-		<key>Comment</key>
-		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
@@ -26,6 +24,8 @@
 		<string>Mirror your display and stream content from your iOS devices.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>AirServer.png</string>
+		<key>Comment</key>
+		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
 		<key>version</key>
 		<string></string>
 	</dict>

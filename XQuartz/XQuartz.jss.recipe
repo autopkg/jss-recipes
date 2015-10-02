@@ -10,8 +10,6 @@
 	<dict>
 		<key>CATEGORY</key>
 		<string>Computer Science</string>
-		<key>Comment</key>
-		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
@@ -26,6 +24,8 @@
 		<string>The XQuartz project is an open-source effort to develop a version of the X.Org X Window System that runs on OS X. Together with supporting libraries and applications, it forms the X11.app that Apple has shipped with OS X since version 10.5.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>XQuartz.png</string>
+		<key>Comment</key>
+		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
 		<key>version</key>
 		<string></string>
 	</dict>
