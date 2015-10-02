@@ -58,7 +58,7 @@
                 <key>self_service_icon</key>
                 <string>%SELF_SERVICE_ICON%</string>
                 <key>version</key>
-                <string/>
+                <string></string>
             </dict>
             <key>Processor</key>
             <string>JSSImporter</string>

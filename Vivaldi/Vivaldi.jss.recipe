@@ -27,7 +27,7 @@
         <key>SELF_SERVICE_ICON</key>
         <string>Vivaldi.png</string>
         <key>version</key>
-        <string/>
+        <string></string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.5</string>

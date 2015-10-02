@@ -29,7 +29,7 @@
         <key>SELF_SERVICE_ICON</key>
         <string>SketchUp.png</string>
         <key>version</key>
-        <string/>
+        <string></string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.4.0</string>

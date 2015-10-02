@@ -35,7 +35,7 @@ Then, uploads to the JSS.</string>
         <key>SELF_SERVICE_ICON</key>
         <string>OracleJava8.png</string>
         <key>version</key>
-        <string/>
+        <string></string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.9</string>

@@ -29,7 +29,7 @@ Note: Geogebra 5 changes the package ID. The installer app ignores a previously 
         <key>SELF_SERVICE_ICON</key>
         <string>Geogebra.png</string>
         <key>version</key>
-        <string/>
+        <string></string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.4.0</string>
