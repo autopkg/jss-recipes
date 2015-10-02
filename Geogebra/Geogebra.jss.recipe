@@ -3,11 +3,9 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads latest Geogebra disk image, builds a package, and uploads to the JSS.</string>
-    <!--Geogebra 5 changes the package ID. The installer app ignores a
-         previously installed Geogebra 4 and makes a subfolder to install
-         into. This is not what is desired, thus, a preinstall script will
-         remove old versions.-->
+    <string>Downloads latest Geogebra disk image, builds a package, and uploads to the JSS.
+
+Note: Geogebra 5 changes the package ID. The installer app ignores a previously installed Geogebra 4 and makes a subfolder to install into. This is not what is desired, thus, a preinstall script will remove old versions.</string>
     <key>Identifier</key>
     <string>com.github.jss-recipes.jss.Geogebra</string>
     <key>Input</key>
@@ -18,7 +16,8 @@
         <string>Science and Math</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
-        <!--PlistReader w/o variable injection in AutoPkg requires this-->
+        <key>Comment</key>
+        <string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
         <key>version</key>
         <string/>
         <key>POLICY_TEMPLATE</key>

@@ -16,7 +16,8 @@
         <string>Productivity</string>
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
-        <!--PlistReader w/o variable injection in AutoPkg requires this-->
+        <key>Comment</key>
+        <string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
         <key>version</key>
         <string/>
         <key>POLICY_TEMPLATE</key>

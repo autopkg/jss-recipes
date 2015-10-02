@@ -32,7 +32,8 @@ Then, uploads to the JSS.</string>
         <string>OracleJava8SmartGroupTemplate.xml</string>
         <key>SELF_SERVICE_DESCRIPTION</key>
         <string>Browser plugin to allow execution of Java applets.</string>
-        <!--PlistReader w/o variable injection in AutoPkg requires this-->
+        <key>Comment</key>
+        <string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
         <key>version</key>
         <string/>
     </dict>
