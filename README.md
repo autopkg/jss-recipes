@@ -141,7 +141,7 @@ The `JSSImporter` processor will include at least the following arguments, and v
     - The name used consistently throughout all recipes in the chain.
     - `prod_name` should use the `NAME` input variable commonly used throughout AutoPkg recipes. This is an exception to the casing rules above.
 - `jss_inventory_name`
-    - Optional, but required if the `NAME` and the filename of the app bundle differ.
+    - The filename of the app bundle itself. Optional, but required if it differs from `NAME`.
     - Use spaces in `NAME` if that's how the application is named. It's 2015. Filenames can have spaces.
 - `category`
     - Recipes included in this repository use a limited list of package categories:
