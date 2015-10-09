@@ -133,7 +133,7 @@ All arguments to the JSSImporter processor should be capable of being overridden
 
 In the `Arguments` section of the `JSSImporter` processor, all values should be text-replacement variables; for example, the value of `policy_category` should be: `%POLICY_CATEGORY%`.
 
-In the `Input` section of the recipe, the variable should be defined with an ALL_CAPS name set to the values desired (and in many cases, as defined later in the style guide). Following on the previous example, the input variable would be named `POLICY_CATEGORY`, and should have the value `Testing`.
+In the `Input` section of the recipe, the variable should be defined with an uppercase `NAME` set to the values desired (and in many cases, as defined later in the style guide). Following the previous example, the input variable would be named `POLICY_CATEGORY`, and should have the value `Testing`.
 
 The `JSSImporter` processor will include at least the following arguments, and values (as specified in the `Input` section):
 
