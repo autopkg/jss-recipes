@@ -81,7 +81,7 @@ These recipes are intended to be used with [JSSImporter](https://github.com/shea
 __Compatibility note__: These recipes do not work with Allister Banks' [jss-autopkg-addon](https://github.com/arubdesu/jss-autopkg-addon) fork, and the recipes in his repo will not work with JSSImporter.
 
 ### Parent recipes
-All JSS recipes rely on parent recipes found elsewhere. If you want to run a JSS recipe `SoftwareName.jss.recipe`, then you will need to ensure that the repository hosting it's parent recipe is also included in your AutoPkg configuration with `autopkg repo-add`.
+All JSS recipes rely on parent recipes found elsewhere. If you want to run a JSS recipe `SoftwareName.jss.recipe`, then you will need to ensure that the repository hosting its parent recipe is also included in your AutoPkg configuration with `autopkg repo-add`.
 
 ### App Store apps
 
