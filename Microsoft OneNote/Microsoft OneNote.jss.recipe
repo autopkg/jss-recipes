@@ -19,20 +19,20 @@
 	<dict>
 		<key>CATEGORY</key>
 		<string>Productivity</string>
-		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Microsoft OneNote is a computer program for free-form information gathering and multi-user collaboration. It gathers users' notes (handwritten or typed), drawings, screen clippings and audio commentaries.</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
 		<string>Microsoft OneNoteSmartGroupTemplate.xml</string>
-		<key>SELF_SERVICE_ICON</key>
-		<string>Microsoft OneNote.png</string>
 		<key>NAME</key>
 		<string>Microsoft OneNote</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
+		<key>SELF_SERVICE_DESCRIPTION</key>
+		<string>Microsoft OneNote is a computer program for free-form information gathering and multi-user collaboration. It gathers users' notes (handwritten or typed), drawings, screen clippings and audio commentaries.</string>
+		<key>SELF_SERVICE_ICON</key>
+		<string>Microsoft OneNote.png</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.2</string>
@@ -41,37 +41,37 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>FlatPkgUnpacker</string>
 			<key>Arguments</key>
 			<dict>
-				<key>flat_pkg_path</key>
-				<string>%pathname%</string>
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/unpacked</string>
-				<key>skip_payload</key>
-				<true/>
+				<key>flat_pkg_path</key>
+				<string>%pathname%</string>
 				<key>purge_destination</key>
 				<true/>
+				<key>skip_payload</key>
+				<true/>
 			</dict>
+			<key>Processor</key>
+			<string>FlatPkgUnpacker</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>FileFinder</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pattern</key>
 				<string>%RECIPE_CACHE_DIR%/unpacked/*.pkg/PackageInfo</string>
 			</dict>
+			<key>Processor</key>
+			<string>FileFinder</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>com.github.jss-recipes.MSOffice2016VersionChecker/MSOffice2016VersionChecker</string>
 			<key>Arguments</key>
 			<dict>
 				<key>packageinfo_path</key>
 				<string>%found_filename%</string>
 			</dict>
+			<key>Processor</key>
+			<string>com.github.jss-recipes.MSOffice2016VersionChecker/MSOffice2016VersionChecker</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -89,12 +89,12 @@
 						<string>%GROUP_TEMPLATE%</string>
 					</dict>
 				</array>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
 				<key>policy_category</key>
 				<string>%POLICY_CATEGORY%</string>
 				<key>policy_template</key>
 				<string>%POLICY_TEMPLATE%</string>
-				<key>pkg_path</key>
-				<string>%pathname%</string>
 				<key>prod_name</key>
 				<string>%NAME%</string>
 				<key>self_service_description</key>

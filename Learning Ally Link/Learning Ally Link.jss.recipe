@@ -23,7 +23,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-        <string>Learning Ally, formerly Recording for the Blind and Dyslexic, is committed to making reading accessible for all who learn differently. We provide over 75,000 audiobooks, audio textbooks, and other recorded books to help anyone who experiences difficulty in reading print material succeed. Learning Ally Membership is required to use this app.</string>
+		<string>Learning Ally, formerly Recording for the Blind and Dyslexic, is committed to making reading accessible for all who learn differently. We provide over 75,000 audiobooks, audio textbooks, and other recorded books to help anyone who experiences difficulty in reading print material succeed. Learning Ally Membership is required to use this app.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>%NAME%.png</string>
 	</dict>
