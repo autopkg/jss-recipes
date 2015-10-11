@@ -49,7 +49,7 @@ __Software packages are uploaded to distribution points and made available throu
 
 The following pieces work together to accomplish this workflow:
 
-- JSS recipes use PKG recipes as parents. This ensures that a standard Apple package (pkg) file can be uploaded to the distribution points.
+- JSS recipes use recipes that produce standard Apple package (pkg) files as parents. This ensures that a pkg can be uploaded to the distribution points.
     - The resulting package file's name includes the software's name and version number (e.g. Firefox-38.0.5.pkg).
     - The package file's metadata includes any OS version restrictions that govern that product's installation.
 - The JSS recipe specifies the category for the package file itself, which is chosen from among a limited set of approved categories. (See the list of categories in the [Style guide](#style-guide) below.) If the category doesn't exist, it will be created.
