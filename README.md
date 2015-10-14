@@ -49,7 +49,7 @@ __Software packages are uploaded to distribution points and made available throu
 
 The following pieces work together to accomplish this workflow:
 
-- JSS recipes use PKG recipes as parents. This ensures that a standard Apple package (pkg) file can be uploaded to the distribution points.
+- JSS recipes use recipes that produce standard Apple package (pkg) files as parents. This ensures that a pkg can be uploaded to the distribution points.
     - The resulting package file's name includes the software's name and version number (e.g. Firefox-38.0.5.pkg).
     - The package file's metadata includes any OS version restrictions that govern that product's installation.
 - The JSS recipe specifies the category for the package file itself, which is chosen from among a limited set of approved categories. (See the list of categories in the [Style guide](#style-guide) below.) If the category doesn't exist, it will be created.
@@ -81,7 +81,7 @@ These recipes are intended to be used with [JSSImporter](https://github.com/shea
 __Compatibility note__: These recipes do not work with Allister Banks' [jss-autopkg-addon](https://github.com/arubdesu/jss-autopkg-addon) fork, and the recipes in his repo will not work with JSSImporter.
 
 ### Parent recipes
-All JSS recipes rely on parent recipes found elsewhere. If you want to run a JSS recipe `SoftwareName.jss.recipe`, then you will need to ensure that the repository hosting it's parent recipe is also included in your AutoPkg configuration with `autopkg repo-add`.
+All JSS recipes rely on parent recipes found elsewhere. If you want to run a JSS recipe `SoftwareName.jss.recipe`, then you will need to ensure that the repository hosting its parent recipe is also included in your AutoPkg configuration with `autopkg repo-add`.
 
 ### App Store apps
 
@@ -133,7 +133,7 @@ All arguments to the JSSImporter processor should be capable of being overridden
 
 In the `Arguments` section of the `JSSImporter` processor, all values should be text-replacement variables; for example, the value of `policy_category` should be: `%POLICY_CATEGORY%`.
 
-In the `Input` section of the recipe, the variable should be defined with an ALL_CAPS name set to the values desired (and in many cases, as defined later in the style guide). Following on the previous example, the input variable would be named `POLICY_CATEGORY`, and should have the value `Testing`.
+In the `Input` section of the recipe, the variable should be defined with an uppercase `NAME` set to the values desired (and in many cases, as defined later in the style guide). Following the previous example, the input variable would be named `POLICY_CATEGORY`, and should have the value `Testing`.
 
 The `JSSImporter` processor will include at least the following arguments, and values (as specified in the `Input` section):
 
@@ -141,7 +141,7 @@ The `JSSImporter` processor will include at least the following arguments, and v
     - The name used consistently throughout all recipes in the chain.
     - `prod_name` should use the `NAME` input variable commonly used throughout AutoPkg recipes. This is an exception to the casing rules above.
 - `jss_inventory_name`
-    - Optional, but required if the `NAME` and the filename of the app bundle differ.
+    - The filename of the app bundle itself. Optional, but required if it differs from `NAME`.
     - Use spaces in `NAME` if that's how the application is named. It's 2015. Filenames can have spaces.
 - `category`
     - Recipes included in this repository use a limited list of package categories:

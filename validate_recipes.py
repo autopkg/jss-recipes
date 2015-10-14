@@ -404,7 +404,8 @@ def test_parent_recipe(recipe):
             cmd.insert(2, "--use-token")
         search_results = subprocess.check_output(cmd)
 
-        if ".pkg.recipe" in search_results:
+        expected_parents = (".pkg.recipe", ".download.recipe")
+        if any(exp_par in search_results for exp_par in expected_parents):
             info_process = subprocess.Popen(["autopkg", "info", parent],
                                             stdin=subprocess.PIPE,
                                             stdout=subprocess.PIPE)

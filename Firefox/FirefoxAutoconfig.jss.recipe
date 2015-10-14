@@ -3,32 +3,51 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Slack and makes a pkg of it Then, uploads to the JSS.</string>
+	<string>IMPORTANT: This recipe is meant to be overridden, not run as-is.
+
+For specific instructions, see the parent recipe's description:
+https://github.com/autopkg/gregneagle-recipes/blob/master/Mozilla/FirefoxAutoconfig.pkg.recipe
+
+Input variables have been provided below for your convenience, but are only
+necessary if the value you want differs from the parent pkg recipe.
+	</string>
 	<key>Identifier</key>
-	<string>com.github.jss-recipes.jss.Slack</string>
+	<string>com.github.jss-recipes.jss.FirefoxAutoconfig</string>
 	<key>Input</key>
 	<dict>
+		<key>AUTOCONFIG_DIR</key>
+		<string>Contents/Resources/</string>
+		<key>AUTOCONFIG_FILENAME</key>
+		<string>autoconfig.zip</string>
 		<key>CATEGORY</key>
 		<string>Productivity</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
+		<key>LOCALE</key>
+		<string>en_US</string>
 		<key>NAME</key>
-		<string>Slack</string>
+		<string>Firefox</string>
+		<key>ORG_NAME</key>
+		<string>Customized</string>
+		<key>PKG_ID</key>
+		<string>org.mozilla.firefox.pkg</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
+		<key>RELEASE</key>
+		<string>latest</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Slack is a platform for team communication: everything in one place, instantly searchable, available wherever you go.</string>
+		<string>Mozilla Firefox is a free and open source web browser.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>Slack.png</string>
+		<string>Firefox.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.0</string>
+	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.killahquam.pkg.slack</string>
+	<string>com.github.gregneagle.pkg.FirefoxAutoconfig</string>
 	<key>Process</key>
 	<array>
 		<dict>
