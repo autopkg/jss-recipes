@@ -3,27 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads Firefox disk image and builds a package, then uploads to
-the JSS, including autoconfig resources (typically as generated via the CCK2 tool).
+	<string>IMPORTANT: This recipe is meant to be overridden, not run as-is.
 
-Place the autoconfig.zip  in the same directory as the recipe. You may
-optionally use a different name by setting AUTOCONFIG_FILENAME.
-Firefox 35 and later require an AUTOCONFIG_DIR of "Contents/Resources";
-pre-34 requires "Content/MacOS". Firefox 34 is not supported by this recipe.
-ORG_NAME is inserted into the pkg name to distinguish a vanilla
-"Firefox-35.0.pkg" from "Firefox_PretendCo-35.0.pkg". You might consider setting
-a unique PKG_ID to differentiate your org's "flavor" of Firefox.
+For specific instructions, see the parent recipe's description:
+https://github.com/autopkg/gregneagle-recipes/blob/master/Mozilla/FirefoxAutoconfig.pkg.recipe
 
-Values for RELEASE correspond to directories here:
-    http://download-origin.cdn.mozilla.net/pub/mozilla.org/firefox/releases/
-Some useful values are:
-    'latest', 'latest-10.0esr', 'latest-esr', 'latest-3.6', 'latest-beta'
-LOCALE corresponds to directories at
-    http://download-origin.cdn.mozilla.net/pub/mozilla.org/firefox/releases/$FIREFOX_BUILD/mac/
-Examples include 'en-US', 'de', 'ja-JP-mac', 'sv-SE', and 'zh-TW'
-
-No idea if all Firefox builds are available in all the same localizations,
-so you may need to verify that any particular combination is offered. Then, uploads to the JSS.</string>
+Input variables have been provided below for your convenience, but are only
+necessary if the value you want differs from the parent pkg recipe.
+	</string>
 	<key>Identifier</key>
 	<string>com.github.jss-recipes.jss.FirefoxAutoconfig</string>
 	<key>Input</key>
@@ -53,7 +40,7 @@ so you may need to verify that any particular combination is offered. Then, uplo
 		<key>RELEASE</key>
 		<string>latest</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Web Browser.</string>
+		<string>Mozilla Firefox is a free and open source web browser.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Firefox.png</string>
 	</dict>
