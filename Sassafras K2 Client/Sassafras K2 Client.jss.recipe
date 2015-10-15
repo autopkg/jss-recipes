@@ -28,7 +28,7 @@
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.novaksam.pkg.sassafras-k2client</string>
+	<string>com.github.novaksam.pkg.SassafrasK2Client</string>
 	<key>Process</key>
 	<array>
 		<dict>

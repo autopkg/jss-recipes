@@ -28,7 +28,7 @@
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.novaksam.pkg.EndNote</string>
+	<string>com.github.novaksam.pkg.EndNoteX7</string>
 	<key>Process</key>
 	<array>
 		<dict>
