@@ -1,10 +1,10 @@
 <script>
-    <name>SketchUpPreinstall.sh</name>
-    <category>Testing</category>
-    <filename>SketchUpPreinstall.sh</filename>
-    <info />
-    <notes />
-    <priority>Before</priority>
-    <parameters />
-    <os_requirements />
+	<name>SketchUpPreinstall.sh</name>
+	<category>Testing</category>
+	<filename>SketchUpPreinstall.sh</filename>
+	<info />
+	<notes />
+	<priority>Before</priority>
+	<parameters />
+	<os_requirements />
 </script>
