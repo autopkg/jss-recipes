@@ -22,6 +22,8 @@ Then, uploads to the JSS.</string>
 		<string>OracleJava8SmartGroupTemplate.xml</string>
 		<key>NAME</key>
 		<string>OracleJava8</string>
+		<key>OS_REQUIREMENTS</key>
+		<string>10.11.x,10.10.x,10.9.x</string>
 		<key>PKG_ID</key>
 		<string>com.oracle.jre</string>
 		<key>POLICY_CATEGORY</key>
@@ -66,6 +68,8 @@ Then, uploads to the JSS.</string>
 						<string>%GROUP_TEMPLATE%</string>
 					</dict>
 				</array>
+				<key>os_requirements</key>
+				<string>%OS_REQUIREMENTS%</string>
 				<key>policy_category</key>
 				<string>%POLICY_CATEGORY%</string>
 				<key>policy_template</key>

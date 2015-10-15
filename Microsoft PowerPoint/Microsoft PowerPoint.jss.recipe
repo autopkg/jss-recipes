@@ -25,6 +25,8 @@
 		<string>Microsoft PowerPointSmartGroupTemplate.xml</string>
 		<key>NAME</key>
 		<string>Microsoft PowerPoint</string>
+		<key>OS_REQUIREMENTS</key>
+		<string>10.11.x,10.10.x</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
@@ -89,6 +91,8 @@
 						<string>%GROUP_TEMPLATE%</string>
 					</dict>
 				</array>
+				<key>os_requirements</key>
+				<string>%OS_REQUIREMENTS%</string>
 				<key>pkg_path</key>
 				<string>%pathname%</string>
 				<key>policy_category</key>
