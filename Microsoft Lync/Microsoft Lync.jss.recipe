@@ -5,11 +5,11 @@
 	<key>Description</key>
 	<string>Downloads Microsoft Lync installer and extracts the embedded package, uploads to JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.novaksam.jss.MicrosoftLync</string>
+	<string>com.github.jss-recipes.jss.MicrosoftLync</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
-		<string>Utilities</string>
+		<string>Productivity</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
