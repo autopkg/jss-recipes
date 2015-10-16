@@ -34,18 +34,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>prod_name</key>
-				<string>%NAME%</string>
 				<key>category</key>
 				<string>%CATEGORY%</string>
-				<key>policy_category</key>
-				<string>%POLICY_CATEGORY%</string>
-				<key>policy_template</key>
-				<string>%POLICY_TEMPLATE%</string>
-				<key>self_service_icon</key>
-				<string>%SELF_SERVICE_ICON%</string>
-				<key>self_service_description</key>
-				<string>%SELF_SERVICE_DESCRIPTION%</string>
+				<key>extension_attributes</key>
+				<array>
+					<dict>
+						<key>ext_attribute_path</key>
+						<string>Sassafras K2 ClientExtensionAttribute.xml</string>
+					</dict>
+				</array>
 				<key>groups</key>
 				<array>
 					<dict>
@@ -57,13 +54,16 @@
 						<string>%GROUP_TEMPLATE%</string>
 					</dict>
 				</array>
-				<key>extension_attributes</key>
-				<array>
-					<dict>
-						<key>ext_attribute_path</key>
-						<string>Sassafras K2 ClientExtensionAttribute.xml</string>
-					</dict>
-				</array>
+				<key>policy_category</key>
+				<string>%POLICY_CATEGORY%</string>
+				<key>policy_template</key>
+				<string>%POLICY_TEMPLATE%</string>
+				<key>prod_name</key>
+				<string>%NAME%</string>
+				<key>self_service_description</key>
+				<string>%SELF_SERVICE_DESCRIPTION%</string>
+				<key>self_service_icon</key>
+				<string>%SELF_SERVICE_ICON%</string>
 			</dict>
 			<key>Processor</key>
 			<string>JSSImporter</string>
