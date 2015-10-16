@@ -28,7 +28,7 @@
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.scriptingosx.pkg.CasperSuite</string>
+	<string>com.github.novaksam.pkg.CasperSuite</string>
 	<key>Process</key>
 	<array>
 		<dict>
