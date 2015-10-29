@@ -3,32 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Packages Casper Suite from the local Mac, and uploads it to the JSS.</string>
+	<string>Downloads latest Blackboard Collaborate zip and builds a package, uploads to JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.jss-recipes.jss.CasperSuite</string>
+	<string>com.github.jss-recipes.jss.BlackboardCollaborateLauncher</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
-		<string>Management</string>
+		<string>Utility</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>Casper Suite</string>
+		<string>Blackboard Collaborate Launcher</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Suite of tools for administering the Casper Suite.</string>
+		<string>Blackboard Collaborate provides your institution with the online collaborative learning solutions that provide improved student engagement.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>Casper Suite.png</string>
+		<string>Blackboard Collaborate Launcher.png</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.novaksam.pkg.CasperSuite</string>
+	<string>com.github.novaksam.pkg.BlackboardCollaborateLauncher</string>
 	<key>Process</key>
 	<array>
 		<dict>
