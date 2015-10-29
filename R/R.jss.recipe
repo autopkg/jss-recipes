@@ -13,7 +13,7 @@
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
-		<string>SmartGroupTemplate.xml</string>
+		<string>RSmartGroupTemplate.xml</string>
 		<key>NAME</key>
 		<string>R</string>
 		<key>OS_REQUIREMENTS</key>
