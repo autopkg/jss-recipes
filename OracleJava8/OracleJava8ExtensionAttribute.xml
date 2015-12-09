@@ -1,5 +1,5 @@
 <computer_extension_attribute>
-    <name>OracleJavaVersion</name>
+	<name>OracleJavaVersion</name>
     <description />
     <data_type>String</data_type>
     <input_type>

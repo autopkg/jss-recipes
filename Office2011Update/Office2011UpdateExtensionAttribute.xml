@@ -1,11 +1,11 @@
 <computer_extension_attribute>
-    <name>MSOffice2011OutOfDate</name>
-    <description />
-    <data_type>String</data_type>
-    <input_type>
-        <type>script</type>
-        <platform>Mac</platform>
-        <script>#!/usr/bin/python
+	<name>MSOffice2011OutOfDate</name>
+	<description />
+	<data_type>String</data_type>
+	<input_type>
+		<type>script</type>
+		<platform>Mac</platform>
+		<script>#!/usr/bin/python
 '''Office version extension attribute.
 
 Checks the lowest version number for the main apps if found.
@@ -56,7 +56,7 @@ else:
     result = False
 
 print '&lt;result&gt;%s&lt;/result&gt;' % str(result)</script>
-    </input_type>
-    <inventory_display>Extension Attributes</inventory_display>
-    <recon_display>Extension Attributes</recon_display>
+	</input_type>
+	<inventory_display>Extension Attributes</inventory_display>
+	<recon_display>Extension Attributes</recon_display>
 </computer_extension_attribute>
