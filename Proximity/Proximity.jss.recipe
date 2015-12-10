@@ -2,10 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v1.0.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Checks for updates for R for Mac OS X (also known as "The R Project for Statistical Computing"), packages, and adds to the JSS.</string>
+	<string>Downloads the latest version of Proximity and imports it into your JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.jss-recipes.jss.R</string>
+	<string>com.github.jss-recipes.jss.Proximity</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
@@ -13,24 +15,22 @@
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
-		<string>RSmartGroupTemplate.xml</string>
+		<string>SmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>R</string>
-		<key>OS_REQUIREMENTS</key>
-		<string>10.11.x,10.10.x,10.9.x</string>
+		<string>Proximity</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>R is a free software environment for statistical computing and graphics.</string>
+		<string>Cisco Proximity allows you to control your video system, interact with shared content and share wirelessly.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>R.png</string>
+		<string>%NAME%.png</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.pkg.R</string>
+	<string>com.github.homebysix.pkg.Proximity</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -38,13 +38,6 @@
 			<dict>
 				<key>category</key>
 				<string>%CATEGORY%</string>
-				<key>extension_attributes</key>
-				<array>
-					<dict>
-						<key>ext_attribute_path</key>
-						<string>RExtensionAttribute.xml</string>
-					</dict>
-				</array>
 				<key>groups</key>
 				<array>
 					<dict>
@@ -56,10 +49,6 @@
 						<string>%GROUP_TEMPLATE%</string>
 					</dict>
 				</array>
-				<key>os_requirements</key>
-				<string>%OS_REQUIREMENTS%</string>
-				<key>pkg_path</key>
-				<string>%pathname%</string>
 				<key>policy_category</key>
 				<string>%POLICY_CATEGORY%</string>
 				<key>policy_template</key>
@@ -70,8 +59,6 @@
 				<string>%SELF_SERVICE_DESCRIPTION%</string>
 				<key>self_service_icon</key>
 				<string>%SELF_SERVICE_ICON%</string>
-				<key>version</key>
-				<string>%version%</string>
 			</dict>
 			<key>Processor</key>
 			<string>JSSImporter</string>
