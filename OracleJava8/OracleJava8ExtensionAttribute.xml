@@ -6,8 +6,12 @@
         <type>script</type>
         <platform>Mac</platform>
         <script>#!/bin/bash
+JavaVersion=""
 
-JavaVersion=$(defaults read /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Info.plist CFBundleVersion)
+if [ -f /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Info.plist ]
+	then
+		JavaVersion=$(defaults read /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Info.plist CFBundleVersion)
+fi
 
 echo "&lt;result&gt;$JavaVersion&lt;/result&gt;"
 
