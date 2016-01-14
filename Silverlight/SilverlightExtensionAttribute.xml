@@ -6,8 +6,11 @@
 		<type>script</type>
 		<platform>Mac</platform>
 		<script>#!/bin/bash
-
-SilverlightVersion=$(defaults read /Library/Internet\ Plug-Ins/Silverlight.plugin/Contents/Info.plist CFBundleShortVersionString)
+SilverlightVersion=""
+if [ -f /Library/Internet\ Plug-Ins/Silverlight.plugin/Contents/Info.plist ]
+	then
+		SilverlightVersion=$(defaults read /Library/Internet\ Plug-Ins/Silverlight.plugin/Contents/Info.plist CFBundleShortVersionString)
+fi
 
 echo "&lt;result&gt;$SilverlightVersion&lt;/result&gt;"
 

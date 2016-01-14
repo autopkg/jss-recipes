@@ -7,7 +7,10 @@
 		<platform>Mac</platform>
 		<script>#!/bin/bash
 
-            jss_helper_version=$(awk -F \" '/__version__/{ print $2 }' /usr/local/bin/jss_helper)
+if [ -f /usr/local/bin/jss_helper ]
+	then
+		jss_helper_version=$(awk -F \" '/__version__/{ print $2 }' /usr/local/bin/jss_helper)
+fi
 
 echo "&lt;result&gt;$jss_helper_version&lt;/result&gt;"
 

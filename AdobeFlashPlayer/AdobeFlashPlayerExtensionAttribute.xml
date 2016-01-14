@@ -6,8 +6,11 @@
 		<type>script</type>
 		<platform>Mac</platform>
 		<script>#!/bin/bash
-
-FlashVersion=$(defaults read /Library/Internet\ Plug-Ins/Flash\ Player.plugin/Contents/Info.plist CFBundleShortVersionString)
+FlashVersion=""
+if [ -f /Library/Internet\ Plug-Ins/Flash\ Player.plugin/Contents/Info.plist ]
+	then
+		FlashVersion=$(defaults read /Library/Internet\ Plug-Ins/Flash\ Player.plugin/Contents/Info.plist CFBundleShortVersionString)
+fi
 
 echo "&lt;result&gt;$FlashVersion&lt;/result&gt;"
 
