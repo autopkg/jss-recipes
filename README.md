@@ -245,6 +245,6 @@ Here are some basic steps for determining where to troubleshoot:
 
 ## Getting help
 
-Many of this repository's contributors (and many Casper admins in general) can be found on the #jamfnation room within the [MacAdmins Slack team](http://macadmins.org/), on the [JAMF Nation discussion boards](https://jamfnation.jamfsoftware.com/index.html), or in the [#jamfnation IRC channel](https://webchat.freenode.net/?channels=%23jamfnation) on Freenode.
+Many of this repository's contributors (and many Casper admins in general) can be found on the #jamfnation room within the [MacAdmins Slack team](http://macadmins.org/) or on the [JAMF Nation discussion boards](https://jamfnation.jamfsoftware.com/index.html).
 
 If you find a reproducible bug or error in one of the recipes in this repo, please [check to see](https://github.com/autopkg/jss-recipes/issues/) whether an issue already exists on GitHub, and [submit an issue](https://github.com/autopkg/jss-recipes/issues/new) if not.
