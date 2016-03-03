@@ -13,7 +13,7 @@
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
-		<string>GoogleVoiceAndVideoSmartGroupTemplate.xml</string>
+		<string>Google Voice And Video SmartGroupTemplate.xml</string>
 		<key>NAME</key>
 		<string>GoogleVoiceAndVideo</string>
 		<key>POLICY_CATEGORY</key>
@@ -40,7 +40,7 @@
 				<array>
 					<dict>
 						<key>ext_attribute_path</key>
-						<string>GoogleVoiceAndVideoExtensionAttribute.xml</string>
+						<string>Google Voice And Video Extension Attribute.xml</string>
 					</dict>
 				</array>
 				<key>groups</key>
