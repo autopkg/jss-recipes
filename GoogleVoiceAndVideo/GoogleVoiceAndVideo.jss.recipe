@@ -21,7 +21,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Hangouts, Have voice and video conversations from your computer. This plugin is for Firefox and Safari. </string>
+		<string>A plugin for Firefox and Safari that enables you to connect to Google Hangouts and have voice and video conversations from your computer.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>GoogleVoiceAndVideo.png</string>
 	</dict>
