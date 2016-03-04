@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of MplayerX and makes a pkg of it then uploads it to the JSS.</string>
+	<string>Downloads the latest version of UnRarX and makes a pkg of it then uploads it to the JSS.</string>
 	<key>Identifier</key>
 	<string>com.github.jss-recipes.jss.UnRarX</string>
 	<key>Input</key>
