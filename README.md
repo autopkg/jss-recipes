@@ -23,6 +23,7 @@ A collection of [AutoPkg](https://autopkg.github.io/autopkg/) recipes that helps
     - [Extension Attributes](#extension-attributes)
     - [Scripts](#scripts)
     - [Linting](#linting)
+- [Contributing](#contributing)
 - [Upgrading from the old jss-recipes](#upgrading-from-the-old-jss-recipes)
 - [Troubleshooting](#troubleshooting)
 - [Getting help](#getting-help)
@@ -210,6 +211,10 @@ Script's arguments should be specified in the `JSSImporter/Arguments` section on
 Finally, a check with `plutil -lint <recipe_name>` should pass.
 
 ---
+
+## Contributing
+
+Pull requests are welcome! We've outlined the basic process of contributing [here](CONTRIBUTING.md).
 
 ## Upgrading from the old jss-recipes
 
