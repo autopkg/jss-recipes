@@ -9,7 +9,7 @@
 AIRVersion=""
 if [ -f /Library/Frameworks/Adobe\ AIR.framework/Resources/Info.plist ]
 	then
-		AIRVersion=$(defaults read /Library/Frameworks/Adobe\ AIR.framework/Resources/Info.plist CFBundleShortVersionString)
+		AIRVersion=$(defaults read /Library/Frameworks/Adobe\ AIR.framework/Resources/Info.plist CFBundleVersion)
 fi
 
 echo "&lt;result&gt;$AIRVersion&lt;/result&gt;"
