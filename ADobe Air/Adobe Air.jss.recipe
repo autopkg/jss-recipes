@@ -40,7 +40,7 @@
 				<array>
 					<dict>
 						<key>ext_attribute_path</key>
-						<string>Adobe AIRPlayerExtensionAttribute.xml</string>
+						<string>Adobe AIRExtensionAttribute.xml</string>
 					</dict>
 				</array>
 				<key>groups</key>
