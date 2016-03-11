@@ -23,7 +23,7 @@
 		<key>SELF_SERVICE_DESCRIPTION</key>
 		<string>Adobe Air is a runtime that combines HTML, JavaScript, Adobe Flash, Flex Technologies, and ActionScript to play rich Adobe Air Internet Applications.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>Adobe\ Air.png</string>
+		<string>Adobe\ AIR.png</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
