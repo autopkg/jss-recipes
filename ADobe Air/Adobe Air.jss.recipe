@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Adobe AIr and makes a pkg of it then uploads it to the JSS.</string>
+	<string>Downloads the latest version of Adobe AIR and makes a pkg of it then uploads it to the JSS.</string>
 	<key>Identifier</key>
 	<string>com.github.jss-recipes.jss.AdobeAIR</string>
 	<key>Input</key>
@@ -13,7 +13,7 @@
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
-		<string>SmartGroupTemplate.xml</string>
+		<string>Adobe AIRSmartGroupTemplate.xml</string>
 		<key>NAME</key>
 		<string>Adobe Air</string>
 		<key>POLICY_CATEGORY</key>
@@ -21,7 +21,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Adobe Air is a runtime that combines HTML, JavaScript, Adobe Flash, Flex Technologies, and ActionScript to play rich Adobe Air Internet Applications.</string>
+		<string>Adobe AIR is a runtime that combines HTML, JavaScript, Adobe Flash, Flex Technologies, and ActionScript to play rich Adobe AIR Internet Applications.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Adobe AIR.png</string>
 	</dict>
@@ -36,6 +36,13 @@
 			<dict>
 				<key>category</key>
 				<string>%CATEGORY%</string>
+				<key>extension_attributes</key>
+				<array>
+					<dict>
+						<key>ext_attribute_path</key>
+						<string>Adobe AIRPlayerExtensionAttribute.xml</string>
+					</dict>
+				</array>
 				<key>groups</key>
 				<array>
 					<dict>
@@ -57,8 +64,6 @@
 				<string>%SELF_SERVICE_DESCRIPTION%</string>
 				<key>self_service_icon</key>
 				<string>%SELF_SERVICE_ICON%</string>
-				<key>version</key>
-				<string>%version%</string>
 			</dict>
 			<key>Processor</key>
 			<string>JSSImporter</string>
