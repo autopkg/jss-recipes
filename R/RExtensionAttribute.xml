@@ -8,7 +8,10 @@
 		<script>#!/bin/bash
 
 ExtensionVersion=""
-ExtensionVersion=$(defaults read  /Library/Frameworks/R.framework/Versions/Current/Resources/Info.plist  CFBundleVersion)
+if [ -f /Library/Frameworks/R.framework/Versions/Current/Resources/Info.plist ]
+	then
+		ExtensionVersion=$(defaults read  /Library/Frameworks/R.framework/Versions/Current/Resources/Info.plist  CFBundleVersion)
+fi
 
 if [ "$ExtensionVersion" == "" ]
 	then

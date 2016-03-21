@@ -1,13 +1,17 @@
 <computer_extension_attribute>
-    <name>OracleJavaVersion</name>
+	<name>OracleJavaVersion</name>
     <description />
     <data_type>String</data_type>
     <input_type>
         <type>script</type>
         <platform>Mac</platform>
         <script>#!/bin/bash
+JavaVersion=""
 
-JavaVersion=$(defaults read /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Info.plist CFBundleVersion)
+if [ -f /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Info.plist ]
+	then
+		JavaVersion=$(defaults read /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Info.plist CFBundleVersion)
+fi
 
 echo "&lt;result&gt;$JavaVersion&lt;/result&gt;"
 

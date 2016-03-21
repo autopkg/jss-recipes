@@ -23,6 +23,7 @@ A collection of [AutoPkg](https://autopkg.github.io/autopkg/) recipes that helps
     - [Extension Attributes](#extension-attributes)
     - [Scripts](#scripts)
     - [Linting](#linting)
+- [Contributing](#contributing)
 - [Upgrading from the old jss-recipes](#upgrading-from-the-old-jss-recipes)
 - [Troubleshooting](#troubleshooting)
 - [Getting help](#getting-help)
@@ -211,6 +212,10 @@ Finally, a check with `plutil -lint <recipe_name>` should pass.
 
 ---
 
+## Contributing
+
+Pull requests are welcome! We've outlined the basic process of contributing [here](CONTRIBUTING.md).
+
 ## Upgrading from the old jss-recipes
 
 If you're currently subscribed to the old [sheagcraig/jss-recipes](https://github.com/sheagcraig/jss-recipes) repository and would like to smoothly transition to this new autopkg/jss-recipes repository, [we've prepared some instructions here which will assist you with that transition](https://github.com/autopkg/jss-recipes/blob/master/UPGRADE.md).
@@ -245,6 +250,6 @@ Here are some basic steps for determining where to troubleshoot:
 
 ## Getting help
 
-Many of this repository's contributors (and many Casper admins in general) can be found on the #jamfnation room within the [MacAdmins Slack team](http://macadmins.org/), on the [JAMF Nation discussion boards](https://jamfnation.jamfsoftware.com/index.html), or in the [#jamfnation IRC channel](https://webchat.freenode.net/?channels=%23jamfnation) on Freenode.
+Many of this repository's contributors (and many Casper admins in general) can be found on the #jamfnation room within the [MacAdmins Slack team](http://macadmins.org/) or on the [JAMF Nation discussion boards](https://jamfnation.jamfsoftware.com/index.html).
 
 If you find a reproducible bug or error in one of the recipes in this repo, please [check to see](https://github.com/autopkg/jss-recipes/issues/) whether an issue already exists on GitHub, and [submit an issue](https://github.com/autopkg/jss-recipes/issues/new) if not.

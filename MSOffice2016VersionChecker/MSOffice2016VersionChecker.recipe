@@ -4,7 +4,7 @@
 <dict>
 	<key>Description</key>
 	<string>This is a stub recipe that can be used as a reference when referring to the MSOffice2016VersionChecker shared processor.
-    </string>
+	</string>
 	<key>Identifier</key>
 	<string>com.github.jss-recipes.MSOffice2016VersionChecker</string>
 	<key>Input</key>
