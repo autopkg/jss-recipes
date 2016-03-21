@@ -2,35 +2,35 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v1.0.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Adobe Reader and makes a pkg of it then uploads it to the JSS.</string>
+	<string>Downloads the latest version of Masergy Communicator and imports it into your JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.jss-recipes.jss.AdobeReader</string>
+	<string>com.github.jss-recipes.jss.MasergyCommunicator</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
-		<string>Digital Media</string>
+		<string>Productivity</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>Adobe Reader</string>
-		<key>OS_REQUIREMENTS</key>
-		<string>10.11.x,10.10.x,10.9.x,10.8.x</string>
+		<string>MasergyCommunicator</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Views, prints, and comments on PDF documents.</string>
+		<string>Update for Masergy Communicator.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>Adobe Reader.png</string>
+		<string>MasergyCommunicator.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>0.5.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.autopkg.pkg.AdobeReader</string>
+	<string>com.rderewianko.pkg.MasergyCommunicator</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -49,8 +49,6 @@
 						<string>%GROUP_TEMPLATE%</string>
 					</dict>
 				</array>
-				<key>os_requirements</key>
-				<string>%OS_REQUIREMENTS%</string>
 				<key>policy_category</key>
 				<string>%POLICY_CATEGORY%</string>
 				<key>policy_template</key>

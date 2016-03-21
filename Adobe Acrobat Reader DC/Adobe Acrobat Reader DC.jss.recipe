@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Adobe Reader and makes a pkg of it then uploads it to the JSS.</string>
+	<string>Downloads the latest version of Adobe Acrobat Reader DC and makes a pkg of it then uploads it to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.jss-recipes.jss.AdobeReader</string>
+	<string>com.github.jss-recipes.jss.AdobeReaderDC</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
@@ -15,22 +15,22 @@
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>Adobe Reader</string>
+		<string>Adobe Acrobat Reader DC</string>
 		<key>OS_REQUIREMENTS</key>
-		<string>10.11.x,10.10.x,10.9.x,10.8.x</string>
+		<string>10.11.x,10.10.x,10.9.x</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Views, prints, and comments on PDF documents.</string>
+		<string>Views, prints, and comments on PDF documents, and connects to Adobe Document Cloud.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>Adobe Reader.png</string>
+		<string>Adobe Acrobat Reader DC.png</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.autopkg.pkg.AdobeReader</string>
+	<string>com.github.autopkg.pkg.AdobeReaderDC</string>
 	<key>Process</key>
 	<array>
 		<dict>
