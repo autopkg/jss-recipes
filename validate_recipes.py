@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Copyright (C) 2014-2015 Shea G Craig
+# Copyright (C) 2014-2016 Shea G Craig
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -864,7 +864,7 @@ def test_icon(recipe):
     """
     allowed_dimensions = (128, 300)
     result = False
-    description = "Icon is a 128x128px PNG file."
+    description = "Icon is a 128x128 or 300x300 PNG file."
     directory = os.path.dirname(recipe.filename)
     icon_filename = recipe["Input"].get("SELF_SERVICE_ICON")
     if icon_filename == "%NAME%.png":
