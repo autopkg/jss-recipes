@@ -3,32 +3,34 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads latest Silverlight installer, copies the package to the build directory with an appended version number, and uploads to the JSS.</string>
+	<string>Downloads the latest version of Papers and imports it into your JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.jss-recipes.jss.Silverlight</string>
+	<string>com.github.jss-recipes.jss.Papers</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
-		<string>Digital Media</string>
+		<string>Productivity</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
-		<string>SilverlightSmartGroupTemplate.xml</string>
+		<string>SmartGroupTemplate.xml</string>
+		<key>JSS_INVENTORY_NAME</key>
+		<string>Papers.app</string>
 		<key>NAME</key>
-		<string>Silverlight</string>
+		<string>Papers</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string></string>
+		<string>Your personal library of scientific resources.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>Silverlight.png</string>
+		<string>%NAME%.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>0.6.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.autopkg.pkg.Silverlight</string>
+	<string>com.github.homebysix.pkg.Papers</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -36,13 +38,6 @@
 			<dict>
 				<key>category</key>
 				<string>%CATEGORY%</string>
-				<key>extension_attributes</key>
-				<array>
-					<dict>
-						<key>ext_attribute_path</key>
-						<string>SilverlightExtensionAttribute.xml</string>
-					</dict>
-				</array>
 				<key>groups</key>
 				<array>
 					<dict>
@@ -54,6 +49,8 @@
 						<string>%GROUP_TEMPLATE%</string>
 					</dict>
 				</array>
+				<key>jss_inventory_name</key>
+				<string>%JSS_INVENTORY_NAME%</string>
 				<key>policy_category</key>
 				<string>%POLICY_CATEGORY%</string>
 				<key>policy_template</key>
@@ -64,8 +61,6 @@
 				<string>%SELF_SERVICE_DESCRIPTION%</string>
 				<key>self_service_icon</key>
 				<string>%SELF_SERVICE_ICON%</string>
-				<key>version</key>
-				<string>%version%</string>
 			</dict>
 			<key>Processor</key>
 			<string>JSSImporter</string>

@@ -3,32 +3,34 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads latest Silverlight installer, copies the package to the build directory with an appended version number, and uploads to the JSS.</string>
+	<string>Downloads the latest version of ChefDK, makes a pkg of it, and uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.jss-recipes.jss.Silverlight</string>
+	<string>com.github.jss-recipes.jss.ChefDK</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
-		<string>Digital Media</string>
+		<string>Computer Science</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
-		<string>SilverlightSmartGroupTemplate.xml</string>
+		<string>ChefDKSmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>Silverlight</string>
+		<string>ChefDK</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string></string>
+		<string>The Chef Development Kit contains everything you need to start using Chef, along with the tools essential to managing the code that runs your business.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>Silverlight.png</string>
+		<string>ChefDK.png</string>
+		<key>version</key>
+		<string></string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.autopkg.pkg.Silverlight</string>
+	<string>com.github.kitzy.pkg.ChefDK</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -40,7 +42,7 @@
 				<array>
 					<dict>
 						<key>ext_attribute_path</key>
-						<string>SilverlightExtensionAttribute.xml</string>
+						<string>ChefDKExtensionAttribute.xml</string>
 					</dict>
 				</array>
 				<key>groups</key>
@@ -64,8 +66,6 @@
 				<string>%SELF_SERVICE_DESCRIPTION%</string>
 				<key>self_service_icon</key>
 				<string>%SELF_SERVICE_ICON%</string>
-				<key>version</key>
-				<string>%version%</string>
 			</dict>
 			<key>Processor</key>
 			<string>JSSImporter</string>
