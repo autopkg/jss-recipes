@@ -23,7 +23,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string></string>
+		<string>Apple's entry level video editing tool.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>iMovie.png</string>
 	</dict>

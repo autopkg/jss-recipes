@@ -23,7 +23,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string></string>
+		<string>Designed for video editors, Motion 5 lets you customize Final Cut Pro titles, transitions, and effects.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Motion.png</string>
 	</dict>

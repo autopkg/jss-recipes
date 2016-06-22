@@ -23,7 +23,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string></string>
+		<string>Apple's photo organizer and basic editor.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>iPhoto.png</string>
 	</dict>
