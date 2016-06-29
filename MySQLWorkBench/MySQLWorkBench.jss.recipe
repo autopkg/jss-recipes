@@ -36,6 +36,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>version</key>
+				<string>%version%</string>
 				<key>category</key>
 				<string>%CATEGORY%</string>
 				<key>groups</key>
