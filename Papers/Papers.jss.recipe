@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads Adobe Acrobat Pro Updater and extracts the embedded package, uploads to JSS.</string>
+	<string>Downloads the latest version of Papers and imports it into your JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.jss-recipes.jss.AdobeAcrobatPro</string>
+	<string>com.github.jss-recipes.jss.Papers</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
@@ -14,21 +14,23 @@
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
+		<key>JSS_INVENTORY_NAME</key>
+		<string>Papers.app</string>
 		<key>NAME</key>
-		<string>Adobe Acrobat Pro</string>
+		<string>Papers</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Adobe Acrobat XI Pro is a popular PDF editor and converter developed by Adobe.</string>
+		<string>Your personal library of scientific resources.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>Adobe Acrobat Pro.png</string>
+		<string>%NAME%.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>0.6.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.novaksam.pkg.AdobeAcrobatProXUpdate</string>
+	<string>com.github.homebysix.pkg.Papers</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -47,6 +49,8 @@
 						<string>%GROUP_TEMPLATE%</string>
 					</dict>
 				</array>
+				<key>jss_inventory_name</key>
+				<string>%JSS_INVENTORY_NAME%</string>
 				<key>policy_category</key>
 				<string>%POLICY_CATEGORY%</string>
 				<key>policy_template</key>

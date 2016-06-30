@@ -23,6 +23,7 @@ A collection of [AutoPkg](https://autopkg.github.io/autopkg/) recipes that helps
     - [Extension Attributes](#extension-attributes)
     - [Scripts](#scripts)
     - [Linting](#linting)
+- [Contributing](#contributing)
 - [Upgrading from the old jss-recipes](#upgrading-from-the-old-jss-recipes)
 - [Troubleshooting](#troubleshooting)
 - [Getting help](#getting-help)
@@ -142,7 +143,7 @@ The `JSSImporter` processor will include at least the following arguments, and v
     - `prod_name` should use the `NAME` input variable commonly used throughout AutoPkg recipes. This is an exception to the casing rules above.
 - `jss_inventory_name`
     - The filename of the app bundle itself. Optional, but required if it differs from `NAME`.
-    - Use spaces in `NAME` if that's how the application is named. It's 2015. Filenames can have spaces.
+    - Use spaces in `NAME` if that's how the application is named. It's 2016. Filenames can have spaces.
 - `category`
     - Recipes included in this repository use a limited list of package categories:
         - Computer Science
@@ -210,6 +211,10 @@ Script's arguments should be specified in the `JSSImporter/Arguments` section on
 Finally, a check with `plutil -lint <recipe_name>` should pass.
 
 ---
+
+## Contributing
+
+Pull requests are welcome! We've outlined the basic process of contributing [here](CONTRIBUTING.md).
 
 ## Upgrading from the old jss-recipes
 
