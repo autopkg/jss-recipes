@@ -3,41 +3,43 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of MySQLWorkBench and makes a pkg of it then uploads it to the JSS.</string>
+	<string>Downloads the latest version of MacVim and imports it into your JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.jss-recipes.jss.MySQLWorkBench</string>
+	<string>com.github.jss-recipes.jss.MacVim</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
-		<string>Computer Science</string>
+		<string>Productivity</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>MySQLWorkBench</string>
-		<key>OS_REQUIREMENTS</key>
-		<string>10.11.x,10.10.x,10.9.x</string>
+		<string>MacVim</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>MySQL Workbench is a unified visual tool for database architects, developers, and DBAs.</string>
+		<string>MacVim supports multiple windows with tabbed editing and a host of other features such as:  
+* bindings to standard OS X keyboard shortcuts  
+* transparent backgrounds  
+* full-screen mode  
+* multibyte editing with OS X input methods and automatic font substitution  
+* ODB editor support, and more.  
+Most importantly, MacVim brings you the full power of Vim 7.4 to Mac OS X.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>MySQLWorkBench.png</string>
+		<string>%NAME%.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>0.6.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.autopkg.cgerke-recipes.pkg.MySQLWorkBench</string>
+	<string>com.github.jleggat.MacVim.pkg</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>version</key>
-				<string>%version%</string>
 				<key>category</key>
 				<string>%CATEGORY%</string>
 				<key>groups</key>
@@ -51,8 +53,6 @@
 						<string>%GROUP_TEMPLATE%</string>
 					</dict>
 				</array>
-				<key>os_requirements</key>
-				<string>%OS_REQUIREMENTS%</string>
 				<key>policy_category</key>
 				<string>%POLICY_CATEGORY%</string>
 				<key>policy_template</key>
