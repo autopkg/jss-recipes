@@ -1,0 +1,25 @@
+<computer_extension_attribute>
+	<name>SaveHollywoodVersion</name>
+	<description />
+	<data_type>String</data_type>
+	<input_type>
+		<type>script</type>
+		<platform>Mac</platform>
+		<script>#!/bin/sh
+
+PRODUCT_PATH="/Library/Screen Savers/SaveHollywood.saver"
+
+if [ -f "$PRODUCT_PATH/Contents/Info.plist" ]; then
+    RESULT=$(defaults read "$PRODUCT_PATH/Contents/Info.plist" CFBundleShortVersionString)
+else
+    RESULT=""
+fi
+
+echo "&lt;result&gt;$RESULT&lt;/result&gt;"
+
+exit 0
+		</script>
+	</input_type>
+	<inventory_display>Extension Attributes</inventory_display>
+	<recon_display>Extension Attributes</recon_display>
+</computer_extension_attribute>
