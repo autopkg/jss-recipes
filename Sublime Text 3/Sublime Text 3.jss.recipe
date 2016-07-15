@@ -3,32 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Checks for ClamXav update, packages, and adds to the JSS</string>
+	<string>Downloads the latest version of Sublime Text 3, makes a pkg of it, and uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.jss-recipes.jss.ClamXav</string>
+	<string>com.github.jss-recipes.jss.SublimeText3</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
-		<string>Utility</string>
+		<string>Computer Science</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>ClamXav</string>
+		<string>Sublime Text 3</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Antivirus tool based on ClamAV.</string>
+		<string>Powerful and fast text editor and development environment.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>ClamXav.png</string>
+		<string>Sublime Text 3.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>0.6.1</string>
 	<key>ParentRecipe</key>
-	<string>com.github.nmcspadden.pkg.appstore</string>
+	<string>com.justinrummel.pkg.SublimeText3</string>
 	<key>Process</key>
 	<array>
 		<dict>

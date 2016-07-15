@@ -32,7 +32,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Microsoft OneNote is a computer program for free-form information gathering and multi-user collaboration. It gathers users' notes (handwritten or typed), drawings, screen clippings and audio commentaries.</string>
+		<string>Microsoft OneNote allows free-form information gathering and multi-user collaboration. It gathers users' notes (handwritten or typed), drawings, screen clippings and audio commentaries.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Microsoft OneNote.png</string>
 	</dict>

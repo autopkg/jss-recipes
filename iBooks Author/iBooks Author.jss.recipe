@@ -23,7 +23,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string></string>
+		<string>Apple's tool for creating iBooks that can be read on iPad.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>iBooks Author.png</string>
 	</dict>

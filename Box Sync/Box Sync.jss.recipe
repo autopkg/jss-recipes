@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Checks for ClamXav update, packages, and adds to the JSS</string>
+	<string>Downloads the latest version of Box Sync, makes a pkg of it, and uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.jss-recipes.jss.ClamXav</string>
+	<string>com.github.jss-recipes.jss.BoxSync</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
@@ -15,20 +15,20 @@
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>ClamXav</string>
+		<string>Box Sync</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Antivirus tool based on ClamAV.</string>
+		<string>Keep your files in sync with Box.com's cloud storage service.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>ClamXav.png</string>
+		<string>Box Sync.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>0.6.1</string>
 	<key>ParentRecipe</key>
-	<string>com.github.nmcspadden.pkg.appstore</string>
+	<string>com.github.hansen-m.pkg.boxsync</string>
 	<key>Process</key>
 	<array>
 		<dict>

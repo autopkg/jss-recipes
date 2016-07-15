@@ -32,7 +32,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Microsoft Word is a graphical word processing program that users can type with. It is made by the computer company Microsoft. The purpose of the MS Word is to allow the users to type and save documents.</string>
+		<string>Microsoft Word is a popular and powerful word processing app.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Microsoft Word.png</string>
 	</dict>

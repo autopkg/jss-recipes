@@ -21,7 +21,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string></string>
+		<string>Microsoft's tool for connecting to PCs using the RDP protocol.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Microsoft Remote Desktop.png</string>
 	</dict>

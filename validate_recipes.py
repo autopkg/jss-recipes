@@ -43,7 +43,7 @@ from Foundation import (NSData,
 # pylint: enable=no-name-in-module
 
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 REQUIRED_ARGUMENTS = (
     "self_service_description",
@@ -204,6 +204,7 @@ def validate_recipe(recipe_path, verbose=False):
         test_argument_values,
         test_no_prohibited_arguments,
         test_input_section,
+        test_description_value,
         test_category_value,
         test_policy_category_value,
         test_policy_template_value,
@@ -584,6 +585,24 @@ def test_input_section(recipe):
 
     if valid_required_keys and valid_optional_keys:
         result = True
+
+    return (result, description)
+
+
+def test_description_value(recipe):
+    """Test for valid Self Service description.
+
+    Args:
+        recipe: Recipe object.
+
+    Returns:
+        Tuple of Bool: Failure or success, and a string describing the
+        test and result.
+    """
+    result = False
+    description = "SELF_SERVICE_DESCRIPTION is not blank."
+
+    result = (recipe["Input"].get("SELF_SERVICE_DESCRIPTION") not in ("", " "))
 
     return (result, description)
 

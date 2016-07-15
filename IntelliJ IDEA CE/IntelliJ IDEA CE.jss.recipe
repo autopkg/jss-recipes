@@ -3,32 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Checks for ClamXav update, packages, and adds to the JSS</string>
+	<string>Downloads the latest version of IntelliJ IDEA CE, makes a pkg of it, and uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.jss-recipes.jss.ClamXav</string>
+	<string>com.github.jss-recipes.jss.IntelliJIDEACE</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
-		<string>Utility</string>
+		<string>Computer Science</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>ClamXav</string>
+		<string>IntelliJ IDEA CE</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Antivirus tool based on ClamAV.</string>
+		<string>IntelliJ IDEA Community Edition is the open source version of IntelliJ IDEA, a premier IDE (Integrated Development Environment) for Java, Groovy and other programming languages such as Scala or Clojure. It can be downloaded at no cost and is open for contributions by community members. The product is built on top of the IntelliJ Platform, which is fully open source.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>ClamXav.png</string>
+		<string>IntelliJ IDEA CE.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>0.6.1</string>
 	<key>ParentRecipe</key>
-	<string>com.github.nmcspadden.pkg.appstore</string>
+	<string>com.github.rtrouton.pkg.IntelliJ-CE</string>
 	<key>Process</key>
 	<array>
 		<dict>
