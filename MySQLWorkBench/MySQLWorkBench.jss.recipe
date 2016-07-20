@@ -36,8 +36,6 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>version</key>
-				<string>%version%</string>
 				<key>category</key>
 				<string>%CATEGORY%</string>
 				<key>groups</key>
@@ -63,6 +61,8 @@
 				<string>%SELF_SERVICE_DESCRIPTION%</string>
 				<key>self_service_icon</key>
 				<string>%SELF_SERVICE_ICON%</string>
+				<key>version</key>
+				<string>%version%</string>
 			</dict>
 			<key>Processor</key>
 			<string>JSSImporter</string>

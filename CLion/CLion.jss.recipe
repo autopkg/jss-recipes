@@ -21,7 +21,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-    <string>Trust CLion to take care of the routine while you focus on the important things. Knowing your code through and through, it can boost your productivity with smart and relevant code completion, instant navigation and reliable refactorings.</string>
+		<string>Trust CLion to take care of the routine while you focus on the important things. Knowing your code through and through, it can boost your productivity with smart and relevant code completion, instant navigation and reliable refactorings.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>CLion.png</string>
 		<key>Comment</key>
