@@ -13,7 +13,7 @@
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
-		<string>SmartGroupTemplate.xml</string>
+		<string>CFBundleVersionSmartGroupTemplate.xml</string>
 		<key>NAME</key>
 		<string>Box Sync</string>
 		<key>POLICY_CATEGORY</key>
@@ -36,6 +36,13 @@
 			<dict>
 				<key>category</key>
 				<string>%CATEGORY%</string>
+				<key>extension_attributes</key>
+				<array>
+					<dict>
+						<key>ext_attribute_path</key>
+						<string>CFBundleVersionExtensionAttribute.xml</string>
+					</dict>
+				</array>
 				<key>groups</key>
 				<array>
 					<dict>
