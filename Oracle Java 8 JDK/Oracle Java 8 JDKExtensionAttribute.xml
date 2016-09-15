@@ -7,7 +7,7 @@
 		<platform>Mac</platform>
 		<script>#!/bin/bash
 
-OracleJava8JDKVersion=$(ls /Library/Java/JavaVirtualMachines | grep "jdk" | grep "1.8" | sed 's/.jdk//' | sed 's/jdk//' | sed -n '$p')
+OracleJava8JDKVersion=$(ls /Library/Java/JavaVirtualMachines | grep "jdk" | grep "1.8" | sed 's/.jdk//' | sed 's/jdk//' | sort -r | sed -n '$p')
 
 if [ "$OracleJava8JDKVersion" != "" ]; then
     echo "&lt;result&gt;$OracleJava8JDKVersion&lt;/result&gt;"
