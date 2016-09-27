@@ -23,7 +23,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Network protocol analyzer.</string>
+		<string>Wireshark is a free and open source packet analyzer. It is used for network troubleshooting, analysis, software and communications protocol development, and education.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>WiresharkDev.png</string>
 	</dict>
