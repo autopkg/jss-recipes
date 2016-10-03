@@ -3,7 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of OmniGraffle and makes a pkg of it then uploads it to the JSS.</string>
+	<string>Downloads the specified version of OmniGraffle and makes a pkg of it then uploads it to the JSS.
+
+To get the most current version of OmniGraffle, override these two input variables:
+- NAME (e.g. OmniGraffle6)
+- OS_REQUIREMENTS (e.g. 10.12.x,10.11.x,10.10.x)</string>
 	<key>Identifier</key>
 	<string>com.github.jss-recipes.jss.OmniGraffle</string>
 	<key>Input</key>
