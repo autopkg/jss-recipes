@@ -23,7 +23,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string></string>
+		<string>App that allows you to read Amazon Kindle books on your Mac.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Kindle.png</string>
 	</dict>
