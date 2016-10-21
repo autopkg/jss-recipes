@@ -881,9 +881,10 @@ def test_icon(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    allowed_dimensions = (128, 300)
+    allowed_dimensions = (128, 300, 512)
     result = False
-    description = "Icon is a 128x128 or 300x300 PNG file."
+    description = ("Icon is a PNG file measuring 128x128, 300x300, or "
+                   "512x512 pixels.")
     directory = os.path.dirname(recipe.filename)
     icon_filename = recipe["Input"].get("SELF_SERVICE_ICON")
     if icon_filename == "%NAME%.png":
