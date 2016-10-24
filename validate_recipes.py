@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Copyright (C) 2014-2015 Shea G Craig
+# Copyright (C) 2014-2016 Shea G Craig
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@ from Foundation import (NSData,
 # pylint: enable=no-name-in-module
 
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 REQUIRED_ARGUMENTS = (
     "self_service_description",
@@ -204,6 +204,7 @@ def validate_recipe(recipe_path, verbose=False):
         test_argument_values,
         test_no_prohibited_arguments,
         test_input_section,
+        test_description_value,
         test_category_value,
         test_policy_category_value,
         test_policy_template_value,
@@ -588,6 +589,24 @@ def test_input_section(recipe):
     return (result, description)
 
 
+def test_description_value(recipe):
+    """Test for valid Self Service description.
+
+    Args:
+        recipe: Recipe object.
+
+    Returns:
+        Tuple of Bool: Failure or success, and a string describing the
+        test and result.
+    """
+    result = False
+    description = "SELF_SERVICE_DESCRIPTION is not blank."
+
+    result = (recipe["Input"].get("SELF_SERVICE_DESCRIPTION") not in ("", " "))
+
+    return (result, description)
+
+
 def test_category_value(recipe):
     """Test for valid category.
 
@@ -862,9 +881,10 @@ def test_icon(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    allowed_dimensions = (128, 300)
+    allowed_dimensions = (128, 300, 512)
     result = False
-    description = "Icon is a 128x128px PNG file."
+    description = ("Icon is a PNG file measuring 128x128, 300x300, or "
+                   "512x512 pixels.")
     directory = os.path.dirname(recipe.filename)
     icon_filename = recipe["Input"].get("SELF_SERVICE_ICON")
     if icon_filename == "%NAME%.png":

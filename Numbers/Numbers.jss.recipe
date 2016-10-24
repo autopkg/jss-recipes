@@ -23,7 +23,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string></string>
+		<string>Apple's spreadsheet tool.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Numbers.png</string>
 	</dict>
