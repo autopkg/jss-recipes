@@ -23,7 +23,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Development environment for creating apps for the Mac, iPhone, iPad, and other Apple devices.</string>
+		<string>Xcode is an integrated development environment for creating applications for iPhone, iPad, Mac, Apple Watch, and Apple TV.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Xcode.png</string>
 	</dict>

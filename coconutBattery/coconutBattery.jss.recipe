@@ -16,12 +16,14 @@
 		<string>SmartGroupTemplate.xml</string>
 		<key>NAME</key>
 		<string>coconutBattery</string>
+		<key>OS_REQUIREMENTS</key>
+		<string>10.12.x,10.11.x</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Displays info about your laptop battery.</string>
+		<string>coconutBattery displays live information about the battery in your Mac notebook, including age, charge count, and health.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>coconutBattery.png</string>
 	</dict>

@@ -23,7 +23,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Adds export options to Final Cut Pro X.</string>
+		<string>Compressor is a companion application to Final Cut Pro X, with customizable output settings during video export.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Compressor.png</string>
 	</dict>
