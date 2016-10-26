@@ -25,7 +25,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Virtualization tool for running Windows apps without rebooting.</string>
+		<string>Parallels Desktop is a hardware virtualization tool for running Windows on your Mac without rebooting.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>%NAME%.png</string>
 	</dict>

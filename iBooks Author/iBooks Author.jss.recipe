@@ -23,7 +23,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Apple's tool for creating iBooks that can be read on iPad.</string>
+		<string>iBooks Author is a publishing application used to create iBooks that can be read on iOS and macOS.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>iBooks Author.png</string>
 	</dict>

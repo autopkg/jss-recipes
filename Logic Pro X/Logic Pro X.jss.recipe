@@ -23,7 +23,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Logic Pro is a digital audio workstation and MIDI sequencer software application for the Mac OS X platform.</string>
+		<string>Logic Pro X is a professional-grade audio production application, with a built-in collection of software instruments, effects, and loops for music creation.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Logic Pro X.png</string>
 	</dict>

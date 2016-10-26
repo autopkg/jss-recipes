@@ -23,7 +23,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Apple's presentation tool.</string>
+		<string>Keynote is a productivity application for creating presentations, with built-in real-time collaboration via macOS, iOS, and iWork for iCloud.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Keynote.png</string>
 	</dict>

@@ -23,7 +23,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Final Cut Pro X (pronounced "Final Cut Pro Ten") is a video editing application for OS X from Apple Inc.</string>
+		<string>Final Cut Pro X is a professional-grade video production application, with built-in media organization and 4K video support.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Final Cut Pro.png</string>
 	</dict>
