@@ -16,12 +16,14 @@
 		<string>SmartGroupTemplate.xml</string>
 		<key>NAME</key>
 		<string>Microsoft Remote Desktop</string>
+		<key>OS_REQUIREMENTS</key>
+		<string>10.12.x,10.11.x,10.10.x,10.9.x</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Microsoft's tool for connecting to PCs using the RDP protocol.</string>
+		<string>Microsoft Remote Desktop is a tool for connecting to a remote PC using the RDP protocol.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Microsoft Remote Desktop.png</string>
 	</dict>
