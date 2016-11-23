@@ -3,32 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Cakebrew and makes a pkg of it then uploads it to the JSS.</string>
+	<string>Downloads the latest version of Resilio Sync and makes a pkg of it then uploads it to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.jss-recipes.jss.Cakebrew</string>
+	<string>com.github.jss-recipes.jss.ResilioSync</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
-		<string>Computer Science</string>
+		<string>Productivity</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>Cakebrew</string>
+		<string>Resilio Sync</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>A GUI app that lets you easily manage your Homebrew formulas.</string>
+		<string>Sync files without the cloud, using peer-to-peer connections.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>Cakebrew.png</string>
+		<string>Resilio Sync.png</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.pkg.Cakebrew</string>
+	<string>com.github.homebysix.pkg.ResilioSync</string>
 	<key>Process</key>
 	<array>
 		<dict>
