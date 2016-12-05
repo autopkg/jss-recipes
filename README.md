@@ -247,6 +247,12 @@ Here are some basic steps for determining where to troubleshoot:
 
     If these values are not correct, you may need to modify them with the corresponding `defaults write` commands, by editing the values in AutoPkgr, or by editing the `~/Library/Preferences/com.github.autopkg.plist` file manually. (Careful!)
 
+- Reading the Description of a given recipe may provide clues as to why it's failing to run. For example, the Audacity.jss recipe requires a PKG variable in order to work. If you don't provide one (via a recipe override or `-p` switch), you will see an error like this one:
+
+    > Error in com.github.jss-recipes.jss.Audacity: Processor: PackageRequired: Error: This recipe requires a package or disk image to be pre-downloaded and supplied to autopkg ("-p" command-line switch). This is likely due to required login credentials to download the software.
+
+- Additional software may be required to run JSSImporter on macOS Sierra. (See https://github.com/sheagcraig/JSSImporter/issues/96#issuecomment-264287122.)
+
 - If you're still having trouble, reach out to somebody using one of the methods below.
 
 ## Getting help
