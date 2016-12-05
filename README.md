@@ -1,6 +1,6 @@
 # JSS Recipes
 
-A collection of [AutoPkg](https://autopkg.github.io/autopkg/) recipes that helps [Casper Suite](http://www.jamfsoftware.com/products/casper-suite/) administrators use [JSSImporter](https://github.com/sheagcraig/JSSImporter/releases) to automate their software testing workflow.
+A collection of [AutoPkg](https://autopkg.github.io/autopkg/) recipes that helps [Jamf Pro](https://www.jamf.com/products/jamf-pro/) administrators use [JSSImporter](https://github.com/sheagcraig/JSSImporter/releases) to automate their software testing workflow.
 
 ## Table of Contents
 
@@ -32,13 +32,13 @@ A collection of [AutoPkg](https://autopkg.github.io/autopkg/) recipes that helps
 
 ## Introduction
 
-__This repository of recipes strives to represent a collective expression of best-practices in automated software patch management for administrators of the Casper Suite.__
+__This repository of recipes strives to represent a collective expression of best-practices in automated software patch management for administrators of Jamf Pro (Casper Suite).__
 
 Let us unpack that statement!
 
 First and foremost, the contributors of this repository aim to agree upon a __standard software testing workflow__ that mirrors community-supported standards in use by other deployment frameworks. While it is possible to upload and deploy software in many ways using JSSImporter, the workflow reflected in these recipes will be safe, consistent, and sane.
 
-Next, we aim to promote this standard workflow by __peer-reviewing all recipes__ in this repository. This process will ensure that the recipes can be relied upon to faithfully realize the standard workflow, and admins will be able to extend and override these recipes with predictable and consistent results.
+Next, we aim to promote this standard workflow by __peer-reviewing all recipes__ in this repository. This process will ensure that the recipes can be relied upon to faithfully realize the standard workflow, and administrators will be able to extend and override these recipes with predictable and consistent results.
 
 We strive to __include the most common apps__ expected to be part of the AutoPkg domain, including but not limited to those of the "standard" [Recipes repo](https://github.com/autopkg/recipes).
 
@@ -58,7 +58,7 @@ The following pieces work together to accomplish this workflow:
 - The SmartGroupTemplate.xml file tells JSSImporter to create or update a smart group called [SoftwareName]-update-smart. The criteria of this group are:
     - the computer has the software in question installed
     - the version does not match the newest version that AutoPkg found
-    - the computer is a member of a group called "Testing" (which is created and maintained manually by the Casper admin)
+    - the computer is a member of a group called "Testing" (which is created and maintained manually by the Jamf admin)
 - The PolicyTemplate.xml file tells JSSImporter to create a single Self Service policy for each product, called Install Latest [SoftwareName]. The policy:
     - installs the latest package file.
     - is scoped to the smart group mentioned above.
@@ -66,11 +66,11 @@ The following pieces work together to accomplish this workflow:
     - category is Testing. This groups policies together under the Testing category on the Policies page of the JSS web interface to separate and distinguish them from other policies. If the Testing category doesn't exist, it will be created.
     - has an execution frequency of "Ongoing" to allow multiple runs should tests fail. However, following a successful installation, the Self Service policy performs a recon run, which will drop the computer out of the smart group, thus preventing further executions until the next update is made available. This also enables reuse of the same policy without needing to "Flush All" the policy logs.
 - No groups other than the smart group mentioned above are created or modified.
-- In the rare case of needing an extension attribute to determine whether a package is out-of-date, and thus used to determine membership in the smart group, extension attributes will be created and/or updated. A separate [SoftwareName]ExtensionAttribute.xml file is required for this. This is most commonly the case with apps that either don't live in `/Applications` or report different version numbers for `CFBundleShortVersionString` and `CFBundleVersion` (Casper only uses `CFBundleShortVersionString` for inventory).
+- In the rare case of needing an extension attribute to determine whether a package is out-of-date, and thus used to determine membership in the smart group, extension attributes will be created and/or updated. A separate [SoftwareName]ExtensionAttribute.xml file is required for this. This is most commonly the case with apps that either don't live in `/Applications` or report different version numbers for `CFBundleShortVersionString` and `CFBundleVersion` (Jamf only uses `CFBundleShortVersionString` for inventory).
 
 The cumulative effect of all this is that software managed with AutoPkg and JSSImporter will be uploaded and configured for deployment only to computers which have clearance to install it, and will require user interaction to install.
 
-Users familiar with the recommendations developed by the [Munki](https://munki.org/munki) community will immediately recognize the notion of a Testing->Production pipeline of software. In brief, the idea is that machines in "Production" (the vast majority of managed machines) use only the software which has been vetted and tested to work. The next smaller group, "Testing", includes computers and users who can be counted on to make use of and report back on software updates, to help prove that updates are safe to deliver. \*(If a preliminary "Development" level is also desired, consider using AutoPkg "install" recipes on test Macs).
+Users familiar with the recommendations developed by the [Munki](https://munki.org/munki) community will immediately recognize the notion of a Testing&nbsp;→&nbsp;Production pipeline of software. In brief, the idea is that machines in "Production" (the vast majority of managed machines) use only the software which has been vetted and tested to work. The next smaller group, "Testing", includes computers and users who can be counted on to make use of and report back on software updates, to help prove that updates are safe to deliver. \*(If a preliminary "Development" level is also desired, consider using AutoPkg "install" recipes on test Macs).
 
 It is the viewpoint of this repo's collaborators that AutoPkg/JSSImporter is best used to facilitate the *testing* of software updates, *not to deploy them to production*, and as such, we focus on making that task more streamlined, error-free, and automated. However, one of the further goals of the [Style guide](#style-guide) is to provide maximum "overridability" of these recipes so that admins choosing to deviate from this workflow can rely on consistent behavior of *all* JSS recipes.
 
@@ -91,6 +91,7 @@ Some of these recipes are for applications distributed through the Mac App Store
 Furthermore, you need to have the apps installed on the machine you are running AutoPkg on in order for AutoPkg to build the package file. If you don't _own_ a copy of Final Cut Pro, for example, you will not be able to run the FinalCutPro.jss recipe.
 
 To add these:
+
 ```
 # Add Nick's repository.
 autopkg repo-add nmcspadden-recipes
@@ -103,7 +104,7 @@ Obviously, make sure you meet the licensing requirements for any App Store apps 
 
 ### Testing group
 
-By default, JSS recipes are scoped to a smart group which requires membership in a group called "Testing." It is up to you, the Casper administrator, to create and maintain the Testing group as you see fit.
+By default, JSS recipes are scoped to a smart group which requires membership in a group called "Testing." It is up to you, the Jamf administrator, to create and maintain the Testing group as you see fit.
 
 This group could include anything from a handful of IT coworkers to an entire class of devices, and can be either a smart or static group. If it's a smart group, any number of subgroups may be included for finer control.
 
@@ -194,9 +195,9 @@ Other arguments are optional and desired only if necessary (`extension_attribute
 The recipe must use this repo's standard `PolicyTemplate.xml` for its policy template.
 
 ### Extension Attributes
-While the Casper Suite can include internet plugins, or other arbitrary paths in its inventory collection, it is not the *default* behavior. Therefore, for apps that live outside of the `/Applications` folder, an extension attribute should be included to manage group inclusion. This way, recipes from this repo will work immediately for admins who have not set up inventory collection beyond the default. Examples of this can be seen in the repository for more information (examples include Adobe Flash Player and Silverlight).
+While Jamf Pro can include internet plugins or other arbitrary paths in its inventory collection, it is not the *default* behavior. Therefore, for apps that live outside of the `/Applications` folder, an extension attribute should be included to manage group inclusion. This way, recipes from this repo will work immediately for admins who have not set up inventory collection beyond the default. Examples of this can be seen in the repository for more information (examples include Adobe Flash Player and Silverlight).
 
-Also, Casper's inventory uses an app's `CFBundleShortVersionString` for version bookkeeping. However, some apps use that as a shortened version, and rather put the full version number in `CFBundleVersion` in their `Info.plist`. For example, Skype, according to Casper, may be version 7.10, but in fact the full version number is 7.10.0.776. For testing purposes, obviously 7.10 will not work, so an extension attribute is required.
+Also, Jamf Pro's inventory uses an app's `CFBundleShortVersionString` for version bookkeeping. However, some apps use that as a shortened version, and rather put the full version number in `CFBundleVersion` in their `Info.plist`. For example, Skype, according to Jamf, may be version 7.10, but in fact the full version number is 7.10.0.776. For testing purposes, obviously 7.10 will not work, so an extension attribute is required.
 
 For these purposes, a generic extension attribute and smart group template are provided at `CFBundleVersionExtensionAttribute.xml` and `CFBundleVersionSmartGroupTemplate.xml` and should be used unless further scripting is required to accurately target the product.
 
@@ -250,6 +251,6 @@ Here are some basic steps for determining where to troubleshoot:
 
 ## Getting help
 
-Many of this repository's contributors (and many Casper admins in general) can be found on the #jamfnation room within the [MacAdmins Slack team](http://macadmins.org/) or on the [JAMF Nation discussion boards](https://jamfnation.jamfsoftware.com/index.html).
+Many of this repository's contributors (and many Jamf admins in general) can be found on the #jamfnation room within the [MacAdmins Slack team](http://macadmins.org/) or on the [JAMF Nation discussion boards](https://jamfnation.jamfsoftware.com/index.html).
 
 If you find a reproducible bug or error in one of the recipes in this repo, please [check to see](https://github.com/autopkg/jss-recipes/issues/) whether an issue already exists on GitHub, and [submit an issue](https://github.com/autopkg/jss-recipes/issues/new) if not.
