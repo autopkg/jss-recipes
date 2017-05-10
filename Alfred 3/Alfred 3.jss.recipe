@@ -3,34 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Creates a pkg using the Audacity disk image, then uploads it to the JSS.
-
-NOTE: Because Audacity cannot be automatically downloaded due to Fosshub's TOS, a PKG variable must be provided that points to the path of a locally downloaded Audacity dmg. We recommend creating a recipe override that provides this PKG variable.</string>
+	<string>Downloads the latest version of Alfred 3 and makes a pkg of it then uploads it to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.jss-recipes.jss.Audacity</string>
+	<string>com.github.jss-recipes.jss.Alfred3</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
-		<string>Digital Media</string>
+		<string>Utility</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>Audacity</string>
+		<string>Alfred 3</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Audacity is a free, easy-to-use, multi-track audio editor and recorder for Windows, Mac OS X, GNU/Linux and other operating systems.</string>
+		<string>Alfred is a productivity application for Mac OS X, which aims to save you time in searching your local computer and the web.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>Audacity.png</string>
+		<string>Alfred 3.png</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.scriptingosx.pkg.audacity</string>
+	<string>io.github.hjuutilainen.pkg.Alfred3</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -59,8 +57,6 @@ NOTE: Because Audacity cannot be automatically downloaded due to Fosshub's TOS, 
 				<string>%SELF_SERVICE_DESCRIPTION%</string>
 				<key>self_service_icon</key>
 				<string>%SELF_SERVICE_ICON%</string>
-				<key>version</key>
-				<string>%version%</string>
 			</dict>
 			<key>Processor</key>
 			<string>JSSImporter</string>
