@@ -57,6 +57,15 @@
 				<string>%SELF_SERVICE_DESCRIPTION%</string>
 				<key>self_service_icon</key>
 				<string>%SELF_SERVICE_ICON%</string>
+				<key>scripts</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>spotify-fix-permissions-postinstall.sh</string>
+						<key>template_path</key>
+						<string>SpotifyScriptTemplate.xml</string>
+					</dict>
+				</array>
 			</dict>
 			<key>Processor</key>
 			<string>JSSImporter</string>
