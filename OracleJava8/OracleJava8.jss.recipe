@@ -23,7 +23,7 @@ Then, uploads to the JSS.</string>
 		<key>NAME</key>
 		<string>OracleJava8</string>
 		<key>OS_REQUIREMENTS</key>
-		<string>10.12.x,10.11.x,10.10.x,10.9.x,10.8.5,10.8.4,10.8.3,10.7.5,10.7.4,10.7.3</string>
+		<string>10.13.x,10.12.x,10.11.x,10.10.x,10.9.x,10.8.5,10.8.4,10.8.3,10.7.5,10.7.4,10.7.3</string>
 		<key>PKG_ID</key>
 		<string>com.oracle.jre</string>
 		<key>POLICY_CATEGORY</key>
