@@ -1,0 +1,10 @@
+<script>
+	<name>spotify-fix-permissions-postinstall.sh</name>
+	<category>Testing</category>
+	<filename>spotify-fix-permissions-postinstall.sh</filename>
+	<info />
+	<notes />
+	<priority>After</priority>
+	<parameters />
+	<os_requirements />
+</script>
