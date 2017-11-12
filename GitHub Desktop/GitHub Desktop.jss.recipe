@@ -3,7 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Github Desktop and builds a pkg. Then, uploads to the JSS.</string>
+	<string>Downloads the latest version of Github Desktop and builds a pkg. Then, uploads to the JSS.
+
+If you prefer to deploy the older, pre-Electron version of GitHub Desktop, include DOWNLOAD_URL in your override and set to this URL:
+https://central.github.com/mac/latest
+    </string>
 	<key>Identifier</key>
 	<string>com.github.jss-recipes.jss.GitHubDesktop</string>
 	<key>Input</key>
@@ -13,7 +17,7 @@
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
-		<string>CFBundleVersionSmartGroupTemplate.xml</string>
+		<string>SmartGroupTemplate.xml</string>
 		<key>NAME</key>
 		<string>GitHub Desktop</string>
 		<key>OS_REQUIREMENTS</key>
@@ -23,7 +27,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Dedicated GitHub client app.</string>
+		<string>Desktop app made by GitHub for seamless contribution to git projects.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>GitHub Desktop.png</string>
 	</dict>
@@ -38,13 +42,6 @@
 			<dict>
 				<key>category</key>
 				<string>%CATEGORY%</string>
-				<key>extension_attributes</key>
-				<array>
-					<dict>
-						<key>ext_attribute_path</key>
-						<string>CFBundleVersionExtensionAttribute.xml</string>
-					</dict>
-				</array>
 				<key>groups</key>
 				<array>
 					<dict>
