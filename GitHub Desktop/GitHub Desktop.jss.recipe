@@ -3,11 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Github Desktop and builds a pkg. Then, uploads to the JSS.
-
-If you prefer to deploy the older, pre-Electron version of GitHub Desktop, include DOWNLOAD_URL in your override and set to this URL:
-https://central.github.com/mac/latest
-    </string>
+	<string>Downloads the latest version of Github Desktop and builds a pkg. Then, uploads to the JSS.</string>
 	<key>Identifier</key>
 	<string>com.github.jss-recipes.jss.GitHubDesktop</string>
 	<key>Input</key>
