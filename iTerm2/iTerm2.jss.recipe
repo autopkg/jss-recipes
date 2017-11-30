@@ -15,7 +15,7 @@
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
 		<key>JSS_INVENTORY_NAME</key>
-		<string>iTerm</string>
+		<string>iTerm.app</string>
 		<key>NAME</key>
 		<string>iTerm2</string>
 		<key>POLICY_CATEGORY</key>
