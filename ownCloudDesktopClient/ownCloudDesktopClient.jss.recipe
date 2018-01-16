@@ -15,13 +15,13 @@
         <key>POLICY_CATEGORY</key>
         <string>Testing</string>
         <key>POLICY_TEMPLATE</key>
-        <string>Policy.xml</string>
+        <string>PolicyTemplate.xml</string>
         <key>SELF_SERVICE_ICON</key>
         <string>ownCloudDesktopClient.png</string>
         <key>GROUP_NAME</key>
         <string>%NAME%-update-smart</string>
         <key>GROUP_TEMPLATE</key>
-        <string>SmartGroup.xml</string>
+        <string>SmartGroupTemplate.xml</string>
         <key>SELF_SERVICE_DESCRIPTION</key>
         <string>ownCloud is a self-hosted file sync and share server. It provides access to your data through a web interface (owncloud.ripe.net), sync clients or WebDAV while providing a platform to view, sync and share across devices easily.</string>
     </dict>
