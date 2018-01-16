@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads the latest ownCloudDesktopClient and creates a package. Then, uploads to the JSS.</string>
     <key>Identifier</key>
-    <string>com.github.charliwest.jss-recipes.jss.ownCloudDesktopClient</string>
+    <string>com.github.jss-recipes.jss.ownCloudDesktopClient</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
