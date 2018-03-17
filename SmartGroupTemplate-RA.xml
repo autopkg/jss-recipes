@@ -1,0 +1,6 @@
+<computer_group>
+    <name>All Managed Computers</name>
+    <is_smart>true</is_smart>
+    <criteria>
+    </criteria>
+</computer_group>
