@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Yammer and makes a pkg. Then, uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.lashomb.jss.Yammer</string>
+	<string>com.github.jss-recipes.jss.Yammer</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
