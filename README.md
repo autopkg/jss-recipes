@@ -147,7 +147,8 @@ The `JSSImporter` processor will include at least the following arguments, and v
     - Use spaces in `NAME` if that's how the application is named. It's 2016. Filenames can have spaces.
 - `category`
     - Recipes included in this repository use a limited list of package categories:
-        - Computer Science
+        - Productivity
+	- Computer Science
         - Digital Media
         - Games
         - Management
