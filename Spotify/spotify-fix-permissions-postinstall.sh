@@ -23,4 +23,6 @@ for EXECUTABLE in $(/usr/bin/find "${SPOTIFY_PATH}" -perm -u=x -type f); do
     fi
 done
 
+/bin/chmod -R go+rX "${SPOTIFY_PATH}"
+
 exit 0
