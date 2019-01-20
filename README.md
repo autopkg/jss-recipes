@@ -209,6 +209,8 @@ Likewise, scripts should only be included when absolutely necessary for package 
 
 Script's arguments should be specified in the `JSSImporter/Arguments` section only, as they are not intended to be overridden.
 
+Script template filenames should have the product name as a prefix, e.g. `NetHackScriptTemplate.xml`. The scripts referenced by the template should follow the same pattern, e.g. `NetHackPostinstall.sh`.
+
 ### Linting
 Finally, a check with `plutil -lint <recipe_name>` should pass.
 
