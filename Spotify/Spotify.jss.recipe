@@ -61,7 +61,7 @@
 				<array>
 					<dict>
 						<key>name</key>
-						<string>spotify-fix-permissions-postinstall.sh</string>
+						<string>SpotifyPostinstall.sh</string>
 						<key>template_path</key>
 						<string>SpotifyScriptTemplate.xml</string>
 					</dict>
