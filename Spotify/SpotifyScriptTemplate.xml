@@ -1,7 +1,7 @@
 <script>
-	<name>spotify-fix-permissions-postinstall.sh</name>
+	<name>SpotifyPostinstall.sh</name>
 	<category>Testing</category>
-	<filename>spotify-fix-permissions-postinstall.sh</filename>
+	<filename>SpotifyPostinstall.sh</filename>
 	<info />
 	<notes />
 	<priority>After</priority>
