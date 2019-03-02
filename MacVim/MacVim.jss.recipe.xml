@@ -21,12 +21,12 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>MacVim supports multiple windows with tabbed editing and a host of other features such as:  
-* bindings to standard OS X keyboard shortcuts  
-* transparent backgrounds  
-* full-screen mode  
-* multibyte editing with OS X input methods and automatic font substitution  
-* ODB editor support, and more.  
+		<string>MacVim supports multiple windows with tabbed editing and a host of other features such as:
+* bindings to standard OS X keyboard shortcuts
+* transparent backgrounds
+* full-screen mode
+* multibyte editing with OS X input methods and automatic font substitution
+* ODB editor support, and more.
 Most importantly, MacVim brings you the full power of Vim 7.4 to Mac OS X.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>%NAME%.png</string>
