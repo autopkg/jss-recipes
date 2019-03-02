@@ -24,30 +24,26 @@ __all__ = ["Office2011UpdateVersioner"]
 
 class Office2011UpdateVersioner(Processor):
     """Uses the pkginfo data from update provider to derive version."""
+
     description = __doc__
 
     input_variables = {
         "additional_pkginfo": {
             "required": True,
-            "description":
-                "Some pkginfo fields extracted from the Microsoft metadata.",
-        },
+            "description": "Some pkginfo fields extracted from the Microsoft metadata.",
+        }
     }
-    output_variables = {
-        "version": {
-            "description": "Update version.",
-        },
-    }
-
+    output_variables = {"version": {"description": "Update version."}}
 
     def main(self):
         """Get information about an update"""
-        version_info = [item["CFBundleVersion"] for item in
-                        self.env["additional_pkginfo"]["installs"] if
-                        type(item) is dict and
-                        "CFBundleVersion" in item.keys()]
+        version_info = [
+            item["CFBundleVersion"]
+            for item in self.env["additional_pkginfo"]["installs"]
+            if type(item) is dict and "CFBundleVersion" in item.keys()
+        ]
         version = version_info[0]
-        self.env['version'] = version
+        self.env["version"] = version
 
 
 if __name__ == "__main__":
