@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Copyright (C) 2014-2016 Shea G Craig
+# Copyright (C) 2014-2019 Shea G Craig
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,17 +16,7 @@
 
 """validate_recipes.py
 
-usage: validate_recipes.py [-h] [-v] recipe [recipe ...]
-
-Test recipes for compliance with the jss-recipe style guide.
-
-positional arguments:
-  recipe         Path to a recipe to validate, or to a folder, to recursively
-                 test all contained recipes.
-
-optional arguments:
-  -h, --help     show this help message and exit
-  -v, --verbose  Display results of all tests.
+Test recipes for compliance with the jss-recipes style guide.
 """
 
 
@@ -38,15 +28,15 @@ import sys
 # pylint: disable=no-name-in-module
 from Foundation import (
     NSData,
-    NSPropertyListSerialization,
     NSPropertyListMutableContainersAndLeaves,
+    NSPropertyListSerialization,
     NSPropertyListXMLFormat_v1_0,
 )
 
 # pylint: enable=no-name-in-module
 
 
-__version__ = "1.0.1"
+__version__ = "1.1.0"
 
 REQUIRED_ARGUMENTS = (
     "self_service_description",
@@ -72,6 +62,15 @@ VALID_CATEGORIES = (
 )
 
 ALLOWED_EXTENSION_ATTRIBUTES = "CFBundleVersionExtensionAttribute.xml"
+
+# Recipes that are skipped during validation.
+EXEMPTED_RECIPES = [
+    "com.github.jss-recipes.MSOffice2016VersionChecker",  # stub recipe
+    "com.github.jss-recipes.jss.MicrosoftOneNote",  # extra processors for versioning
+    "com.github.jss-recipes.jss.MicrosoftOutlook",  # extra processors for versioning
+    "com.github.jss-recipes.jss.MicrosoftWord",  # extra processors for versioning
+    "com.github.jss-recipes.jss.MicrosoftExcel",  # extra processors for versioning
+]
 
 
 class Error(Exception):
@@ -153,17 +152,16 @@ class Results(object):
 def get_argument_parser():
     """Build and return argparser for this app."""
     parser = argparse.ArgumentParser(
-        description="Test recipes for compliance " "with the jss-recipe style guide."
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
     )
     parser.add_argument(
         "recipe",
         nargs="+",
-        help="Path to a recipe to "
-        "validate, or to a folder, to recursively test all "
+        help="Path to a recipe to validate, or to a folder, to recursively test all "
         "contained recipes.",
     )
     parser.add_argument(
-        "-v", "--verbose", help="Display results of all " "tests.", action="store_true"
+        "-v", "--verbose", help="Display results of all tests.", action="store_true"
     )
     return parser
 
@@ -231,6 +229,9 @@ def validate_recipe(recipe_path, verbose=False):
 
     if os.path.exists(recipe_path):
         recipe = get_recipe(recipe_path)
+        if recipe["Identifier"] in EXEMPTED_RECIPES:
+            print("Recipe is exempted from validation.")
+            return
     else:
         print("File not found.")
         sys.exit(1)
@@ -426,7 +427,7 @@ def test_parent_recipe(recipe):
             info_results = info_process.communicate("n")
 
             if "Didn't find a recipe for" in info_results[0]:
-                description += " (ParentRecipe repo not available. Add and " "retry.)"
+                description += " (ParentRecipe repo not available. Add and retry.)"
             else:
                 # Assume that since it found something, it's good.
                 result = True
@@ -821,7 +822,7 @@ def test_extension_attributes(recipe):
         result = True
     else:
         description += (
-            " (WARNING: Extension attributes only allowed when " "absolutely necessary."
+            " (WARNING: Extension attributes only allowed when absolutely necessary."
         )
         result, description = test_extension_attribute_arguments(recipe)
     return (result, description)
@@ -886,7 +887,7 @@ def test_scripts(recipe):
     if not scripts:
         result = True
     else:
-        description += " (WARNING: Scripts only allowed when absolutely " "necessary."
+        description += " (WARNING: Scripts only allowed when absolutely necessary."
         result, description = test_scripts_arguments(recipe)
     return (result, description)
 
@@ -903,7 +904,7 @@ def test_scripts_arguments(recipe):
     result = False
     name = recipe["Input"].get("NAME")
     description = (
-        "WARNING: Recipe has scripts. Scripts arguments meet " "style guidelines."
+        "WARNING: Recipe has scripts. Scripts arguments meet style guidelines."
     )
 
     scripts = get_jssimporter(recipe)["Arguments"].get("scripts")
@@ -943,7 +944,7 @@ def test_icon(recipe):
     """
     allowed_dimensions = (128, 300, 512)
     result = False
-    description = "Icon is a PNG file measuring 128x128, 300x300, or " "512x512 pixels."
+    description = "Icon is a PNG file measuring 128x128, 300x300, or 512x512 pixels."
     directory = os.path.dirname(recipe.filename)
     icon_filename = recipe["Input"].get("SELF_SERVICE_ICON")
     if icon_filename == "%NAME%.png":
@@ -1017,6 +1018,7 @@ def main():
     args = parser.parse_args()
 
     for recipes_arg in args.recipe:
+        # TODO: Allow multiple filenames, instead of either filename or dirname.
         recipes = get_recipes(recipes_arg)
     for recipe in recipes:
         validate_recipe(recipe, args.verbose)
