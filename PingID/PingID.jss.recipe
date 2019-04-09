@@ -47,8 +47,6 @@
 						<string>%GROUP_TEMPLATE%</string>
 					</dict>
 				</array>
-				<key>version</key>
-				<string>%version%</string>
 				<key>policy_category</key>
 				<string>%POLICY_CATEGORY%</string>
 				<key>policy_template</key>
@@ -59,6 +57,8 @@
 				<string>%SELF_SERVICE_DESCRIPTION%</string>
 				<key>self_service_icon</key>
 				<string>%SELF_SERVICE_ICON%</string>
+				<key>version</key>
+				<string>%version%</string>
 			</dict>
 			<key>Processor</key>
 			<string>JSSImporter</string>

@@ -8,16 +8,16 @@
 	<string>com.github.jss-recipes.jss.Zoom</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>Zoom</string>
-		<key>JSS_INVENTORY_NAME</key>
-		<string>zoom.us.app</string>
 		<key>CATEGORY</key>
 		<string>Productivity</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
+		<key>JSS_INVENTORY_NAME</key>
+		<string>zoom.us.app</string>
+		<key>NAME</key>
+		<string>Zoom</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
@@ -36,10 +36,6 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>prod_name</key>
-        			<string>%NAME%</string>
-        			<key>jss_inventory_name</key>
-        			<string>%JSS_INVENTORY_NAME%</string>
 				<key>category</key>
 				<string>%CATEGORY%</string>
 				<key>groups</key>
@@ -53,10 +49,14 @@
 						<string>%GROUP_TEMPLATE%</string>
 					</dict>
 				</array>
+				<key>jss_inventory_name</key>
+				<string>%JSS_INVENTORY_NAME%</string>
 				<key>policy_category</key>
 				<string>%POLICY_CATEGORY%</string>
 				<key>policy_template</key>
 				<string>%POLICY_TEMPLATE%</string>
+				<key>prod_name</key>
+				<string>%NAME%</string>
 				<key>self_service_description</key>
 				<string>%SELF_SERVICE_DESCRIPTION%</string>
 				<key>self_service_icon</key>
