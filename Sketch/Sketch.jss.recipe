@@ -19,7 +19,7 @@
 		<key>NAME</key>
 		<string>Sketch</string>
 		<key>OS_REQUIREMENTS</key>
-		<string>10.14.x,10.13.6,10.13.5,10.13.4</string>
+		<string>10.15.x,10.14.x,10.13.6,10.13.5,10.13.4</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
