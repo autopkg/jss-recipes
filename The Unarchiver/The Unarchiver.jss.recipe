@@ -21,7 +21,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>he Unarchiver is a much more capable replacement for "Archive Utility.app", the built-in archive unpacker program on Mac OS X.</string>
+		<string>The Unarchiver is a much more capable replacement for "Archive Utility.app", the built-in archive unpacker program on Mac OS X.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>The Unarchiver.png</string>
 	</dict>
