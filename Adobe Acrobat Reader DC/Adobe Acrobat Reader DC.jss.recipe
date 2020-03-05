@@ -36,17 +36,6 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
-				<key>source_pkg</key>
-				<string>%pkg_path%</string>
-			</dict>
-			<key>Processor</key>
-			<string>PkgCopier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>category</key>
 				<string>%CATEGORY%</string>
 				<key>groups</key>
