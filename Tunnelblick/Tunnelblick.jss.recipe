@@ -24,6 +24,10 @@
 		<string>GUI for OpenVPN.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Tunnelblick.png</string>
+		<key>Comment</key>
+		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
+		<key>version</key>
+		<string></string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>

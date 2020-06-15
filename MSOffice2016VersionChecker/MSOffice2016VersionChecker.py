@@ -30,14 +30,10 @@ class MSOffice2016VersionChecker(Processor):
     input_variables = {
         "packageinfo_path": {
             "required": True,
-            "description": "The path to the PackageInfo file."
+            "description": "The path to the PackageInfo file.",
         }
     }
-    output_variables = {
-        "version": {
-            "description": "The actual version of the app."
-        }
-    }
+    output_variables = {"version": {"description": "The actual version of the app."}}
     description = __doc__
 
     def main(self):

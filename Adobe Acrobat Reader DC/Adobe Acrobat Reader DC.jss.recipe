@@ -17,7 +17,7 @@
 		<key>NAME</key>
 		<string>Adobe Acrobat Reader DC</string>
 		<key>OS_REQUIREMENTS</key>
-		<string>10.11.x,10.10.x,10.9.x</string>
+		<string>10.15.x,10.14.x,10.13.x,10.12.x</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
@@ -33,17 +33,6 @@
 	<string>com.github.autopkg.pkg.AdobeReaderDC</string>
 	<key>Process</key>
 	<array>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
-				<key>source_pkg</key>
-				<string>%pkg_path%</string>
-			</dict>
-			<key>Processor</key>
-			<string>PkgCopier</string>
-		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>

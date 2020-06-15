@@ -23,7 +23,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>MainStage is a music application developed by Apple Inc. designed for use in live performance.</string>
+		<string>MainStage is a music production application designed for use in live performance, which includes flexible hardware control and a collection of plug-ins and sounds compatible with Logic Pro X.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>MainStage 3.png</string>
 	</dict>

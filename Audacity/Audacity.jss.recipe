@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Audacity and makes a pkg of it then uploads it to the JSS.</string>
+	<string>Creates a pkg using the Audacity disk image, then uploads it to the JSS.
+
+NOTE: Because Audacity cannot be automatically downloaded due to Fosshub's TOS, a PKG variable must be provided that points to the path of a locally downloaded Audacity dmg. We recommend creating a recipe override that provides this PKG variable.</string>
 	<key>Identifier</key>
 	<string>com.github.jss-recipes.jss.Audacity</string>
 	<key>Input</key>

@@ -21,14 +21,14 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>he Unarchiver is a much more capable replacement for "Archive Utility.app", the built-in archive unpacker program on Mac OS X.</string>
+		<string>The Unarchiver is a much more capable replacement for "Archive Utility.app", the built-in archive unpacker program on Mac OS X.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>The Unarchiver.png</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.nmcspadden.pkg.appstore</string>
+	<string>com.github.autopkg.pkg.TheUnarchiver</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -47,6 +47,8 @@
 						<string>%GROUP_TEMPLATE%</string>
 					</dict>
 				</array>
+				<key>pkg_path</key>
+				<string>%pkg_path%</string>
 				<key>policy_category</key>
 				<string>%POLICY_CATEGORY%</string>
 				<key>policy_template</key>

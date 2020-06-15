@@ -17,13 +17,13 @@
 		<key>NAME</key>
 		<string>Xcode</string>
 		<key>OS_REQUIREMENTS</key>
-		<string>10.11.x,10.10.x</string>
+		<string>10.13.X,10.12.x,10.11.x,10.10.x</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>The Xcode IDE is at the center of the Apple development experience. Tightly integrated with the Cocoa and Cocoa Touch frameworks, Xcode is an incredibly productive environment for building apps for Mac, iPhone, iPad, Apple Watch, and Apple TV.</string>
+		<string>Xcode is an integrated development environment for creating applications for iPhone, iPad, Mac, Apple Watch, and Apple TV.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Xcode.png</string>
 	</dict>

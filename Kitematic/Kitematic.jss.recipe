@@ -28,7 +28,7 @@
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.pkg.Kitematic</string>
+	<string>com.github.jps3.pkg.Kitematic</string>
 	<key>Process</key>
 	<array>
 		<dict>

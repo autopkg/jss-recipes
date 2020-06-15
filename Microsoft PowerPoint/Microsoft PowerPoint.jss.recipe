@@ -26,13 +26,13 @@
 		<key>NAME</key>
 		<string>Microsoft PowerPoint</string>
 		<key>OS_REQUIREMENTS</key>
-		<string>10.11.x,10.10.x</string>
+		<string>10.14.x,10.13.x,10.12.x,10.11.x,10.10.x</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Microsoft PowerPoint is a slide show presentation program currently developed by Microsoft.</string>
+		<string>Microsoft PowerPoint allows the creation and presentation of professional slide decks.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Microsoft PowerPoint.png</string>
 	</dict>

@@ -23,7 +23,7 @@
 		<key>POLICY_TRIGGER</key>
 		<string>Install_MicrosoftLync</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Install the latest version of %NAME%.</string>
+		<string>Microsoft's business messaging app, now replaced by Skype for Business.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Microsoft Lync.png</string>
 	</dict>

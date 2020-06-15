@@ -53,6 +53,15 @@
 				<string>%POLICY_TEMPLATE%</string>
 				<key>prod_name</key>
 				<string>%NAME%</string>
+				<key>scripts</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>SpotifyPostinstall.sh</string>
+						<key>template_path</key>
+						<string>SpotifyScriptTemplate.xml</string>
+					</dict>
+				</array>
 				<key>self_service_description</key>
 				<string>%SELF_SERVICE_DESCRIPTION%</string>
 				<key>self_service_icon</key>

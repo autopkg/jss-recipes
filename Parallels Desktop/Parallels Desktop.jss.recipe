@@ -15,22 +15,22 @@
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
 		<key>MAJOR_VERSION</key>
-		<string>11</string>
+		<string>15</string>
 		<key>NAME</key>
 		<string>Parallels Desktop</string>
 		<key>OS_REQUIREMENTS</key>
-		<string>10.11.x,10.10.x</string>
+		<string>10.15.x,10.14.x,10.13.x,10.12.x</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Virtualization tool for running Windows apps without rebooting.</string>
+		<string>Parallels Desktop is a hardware virtualization tool for running Windows on your Mac without rebooting.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>%NAME%.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>0.6.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.pkg.ParallelsDesktop</string>
 	<key>Process</key>

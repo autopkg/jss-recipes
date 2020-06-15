@@ -26,13 +26,13 @@
 		<key>NAME</key>
 		<string>Microsoft Excel</string>
 		<key>OS_REQUIREMENTS</key>
-		<string>10.11.x,10.10.x</string>
+		<string>10.14.x,10.13.x,10.12.x,10.11.x,10.10.x</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Microsoft Excel is a spreadsheet application developed by Microsoft. It features calculation, graphing tools, pivot tables, and a macro programming language called Visual Basic for Applications.</string>
+		<string>Microsoft Excel is a spreadsheet application featuring calculation, graphing tools, PivotTables, and a macro programming language called Visual Basic for Applications.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Microsoft Excel.png</string>
 	</dict>

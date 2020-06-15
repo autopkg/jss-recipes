@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Copyright (C) 2014-2016 Shea G Craig
+# Copyright (C) 2014-2019 Shea G Craig
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,17 +16,7 @@
 
 """validate_recipes.py
 
-usage: validate_recipes.py [-h] [-v] recipe [recipe ...]
-
-Test recipes for compliance with the jss-recipe style guide.
-
-positional arguments:
-  recipe         Path to a recipe to validate, or to a folder, to recursively
-                 test all contained recipes.
-
-optional arguments:
-  -h, --help     show this help message and exit
-  -v, --verbose  Display results of all tests.
+Test recipes for compliance with the jss-recipes style guide.
 """
 
 
@@ -36,29 +26,29 @@ import subprocess
 import sys
 
 # pylint: disable=no-name-in-module
-from Foundation import (NSData,
-                        NSPropertyListSerialization,
-                        NSPropertyListMutableContainersAndLeaves,
-                        NSPropertyListXMLFormat_v1_0)
+from Foundation import (
+    NSData,
+    NSPropertyListMutableContainersAndLeaves,
+    NSPropertyListSerialization,
+    NSPropertyListXMLFormat_v1_0,
+)
+
 # pylint: enable=no-name-in-module
 
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 REQUIRED_ARGUMENTS = (
     "self_service_description",
     "category",
     "policy_template",
     "self_service_icon",
-    "policy_category")
+    "policy_category",
+)
 
-OPTIONAL_ARGUMENTS = (
-    "jss_inventory_name",
-    "os_requirements")
+OPTIONAL_ARGUMENTS = ("jss_inventory_name", "os_requirements")
 
-PROHIBITED_ARGUMENTS = (
-    "site_name",
-    "site_id")
+PROHIBITED_ARGUMENTS = ("site_name", "site_id")
 
 VALID_CATEGORIES = (
     "Computer Science",
@@ -68,20 +58,30 @@ VALID_CATEGORIES = (
     "Print and Scan",
     "Productivity",
     "Science and Math",
-    "Utility")
-
-ALLOWED_EXTENSION_ATTRIBUTES = (
-    "CFBundleVersionExtensionAttribute.xml"
+    "Utility",
 )
+
+ALLOWED_EXTENSION_ATTRIBUTES = "CFBundleVersionExtensionAttribute.xml"
+
+# Recipes that are skipped during validation.
+EXEMPTED_RECIPES = [
+    "com.github.jss-recipes.MSOffice2016VersionChecker",  # stub recipe
+    "com.github.jss-recipes.jss.MicrosoftOneNote",  # extra processors for versioning
+    "com.github.jss-recipes.jss.MicrosoftOutlook",  # extra processors for versioning
+    "com.github.jss-recipes.jss.MicrosoftWord",  # extra processors for versioning
+    "com.github.jss-recipes.jss.MicrosoftExcel",  # extra processors for versioning
+]
 
 
 class Error(Exception):
     """Module base exception."""
+
     pass
 
 
 class PlistParseError(Error):
     """Error parsing a plist file."""
+
     pass
 
 
@@ -110,13 +110,12 @@ class Plist(dict):
             PlistParseError: Error in reading plist file.
         """
         # pylint: disable=unused-variable
-        info, pformat, error = (
-            NSPropertyListSerialization.propertyListWithData_options_format_error_(
-                NSData.dataWithContentsOfFile_(os.path.expanduser(path)),
-                NSPropertyListMutableContainersAndLeaves,
-                None,
-                None
-            ))
+        info, pformat, error = NSPropertyListSerialization.propertyListWithData_options_format_error_(
+            NSData.dataWithContentsOfFile_(os.path.expanduser(path)),
+            NSPropertyListMutableContainersAndLeaves,
+            None,
+            None,
+        )
         # pylint: enable=unused-variable
         if info is None:
             if error is None:
@@ -141,24 +140,29 @@ class Results(object):
                 if verbose or not result[0]:
                     self._print_result(result)
         else:
-            print "OK"
+            print("OK")
 
     def report_all(self):
         self.report(verbose=True)
 
     def _print_result(self, line):
-        print "Test: %s Result: %s" % (line[1], line[0])
+        print("Test: %s Result: %s" % (line[1], line[0]))
 
 
 def get_argument_parser():
     """Build and return argparser for this app."""
-    parser = argparse.ArgumentParser(description="Test recipes for compliance "
-                                     "with the jss-recipe style guide.")
-    parser.add_argument("recipe", nargs="+", help="Path to a recipe to "
-                        "validate, or to a folder, to recursively test all "
-                        "contained recipes.")
-    parser.add_argument("-v", "--verbose", help="Display results of all "
-                        "tests.", action="store_true")
+    parser = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+    parser.add_argument(
+        "recipe",
+        nargs="+",
+        help="Path to a recipe to validate, or to a folder, to recursively test all "
+        "contained recipes.",
+    )
+    parser.add_argument(
+        "-v", "--verbose", help="Display results of all tests.", action="store_true"
+    )
     return parser
 
 
@@ -204,6 +208,7 @@ def validate_recipe(recipe_path, verbose=False):
         test_argument_values,
         test_no_prohibited_arguments,
         test_input_section,
+        test_description_value,
         test_category_value,
         test_policy_category_value,
         test_policy_template_value,
@@ -214,17 +219,21 @@ def validate_recipe(recipe_path, verbose=False):
         test_extension_attributes,
         test_scripts,
         test_icon,
-        test_lint)
+        test_lint,
+    )
 
     header = " Testing recipe: %s " % recipe_path
     print_bar(len(header))
-    print header
+    print(header)
     print_bar(len(header))
 
     if os.path.exists(recipe_path):
         recipe = get_recipe(recipe_path)
+        if recipe["Identifier"] in EXEMPTED_RECIPES:
+            print("Recipe is exempted from validation.")
+            return
     else:
-        print "File not found."
+        print("File not found.")
         sys.exit(1)
 
     results = Results()
@@ -235,11 +244,12 @@ def validate_recipe(recipe_path, verbose=False):
         # Handle missing plist keys rather than try to test for each
         # bit of a recipe.
         except KeyError as err:
-            result = (False, "'%s' failed with missing key: '%s'" %
-                      (test.__name__, err.message))
+            result = (
+                False,
+                "'%s' failed with missing key: '%s'" % (test.__name__, err.message),
+            )
         except AttributeError as err:
-            result = (False, "'%s' failed with missing attribute" %
-                      test.__name__)
+            result = (False, "'%s' failed with missing attribute" % test.__name__)
         results.add_result(result)
 
     if verbose:
@@ -355,8 +365,9 @@ def test_folder_contents_have_common_prefix(recipe):
     name = recipe["Input"].get("NAME")
     description = "All files have prefix of product (NAME: '%s')." % name
     files = os.listdir(os.path.dirname(recipe.filename))
-    result = all((filename.startswith(name) or filename == ".DS_Store"
-                  for filename in files))
+    result = all(
+        (filename.startswith(name) or filename == ".DS_Store" for filename in files)
+    )
 
     return (result, description)
 
@@ -372,11 +383,12 @@ def test_no_restricted_files_in_folder(recipe):
     """
     result = None
     restricted_files = ["PolicyTemplate.xml", "SmartGroupTemplate.xml"]
-    description = ("None of the restricted templates %s are in recipe's "
-                   "folder." % restricted_files)
+    description = (
+        "None of the restricted templates %s are in recipe's "
+        "folder." % restricted_files
+    )
     files = os.listdir(os.path.dirname(recipe.filename))
-    result = all(restricted_file not in files for restricted_file in
-                 restricted_files)
+    result = all(restricted_file not in files for restricted_file in restricted_files)
 
     return (result, description)
 
@@ -406,15 +418,16 @@ def test_parent_recipe(recipe):
 
         expected_parents = (".pkg.recipe", ".download.recipe")
         if any(exp_par in search_results for exp_par in expected_parents):
-            info_process = subprocess.Popen(["autopkg", "info", parent],
-                                            stdin=subprocess.PIPE,
-                                            stdout=subprocess.PIPE)
+            info_process = subprocess.Popen(
+                ["autopkg", "info", parent],
+                stdin=subprocess.PIPE,
+                stdout=subprocess.PIPE,
+            )
             # Send an "n" in case it didn't find anything.
             info_results = info_process.communicate("n")
 
             if "Didn't find a recipe for" in info_results[0]:
-                description += (" (ParentRecipe repo not available. Add and "
-                                "retry.)")
+                description += " (ParentRecipe repo not available. Add and retry.)"
             else:
                 # Assume that since it found something, it's good.
                 result = True
@@ -437,14 +450,17 @@ def test_identifier(recipe):
     if name:
         # The identifier may not have spaces.
         name = name.replace(" ", "")
-    description = ("Recipe identifier follows convention. "
-                   "('com.github.jss-recipes.jss.%s')" % name)
+    description = (
+        "Recipe identifier follows convention. "
+        "('com.github.jss-recipes.jss.%s')" % name
+    )
     result = False
 
     identifier = recipe.get("Identifier")
     if identifier and name:
-        if (str(identifier).startswith("com.github.jss-recipes.jss.") and
-            str(identifier).rsplit(".", 1)[1].startswith(name)):
+        if str(identifier).startswith("com.github.jss-recipes.jss.") and str(
+            identifier
+        ).rsplit(".", 1)[1].startswith(name):
             result = True
 
     return (result, description)
@@ -476,8 +492,11 @@ def test_single_processor(recipe):
 
 def get_jssimporter(recipe):
     """Return the JSSImporter processor section or None."""
-    processors = [processor for processor in recipe["Process"] if
-                  processor.get("Processor") == "JSSImporter"]
+    processors = [
+        processor
+        for processor in recipe["Process"]
+        if processor.get("Processor") == "JSSImporter"
+    ]
     if len(processors) == 1:
         result = processors.pop()
     else:
@@ -495,20 +514,33 @@ def test_argument_values(recipe):
         test and result.
     """
     result = False
-    description = ("All required and optional arguments to JSSImporter are "
-                   "%ALL_CAPS% replacement variables, and are present.")
+    description = (
+        "All required and optional arguments to JSSImporter are "
+        "%ALL_CAPS% replacement variables, and are present."
+    )
 
-    required_argument_values = (get_jssimporter(recipe)["Arguments"].get(
-        argument) for argument in REQUIRED_ARGUMENTS)
-    optional_argument_values = (get_jssimporter(recipe)["Arguments"].get(
-        argument) for argument in OPTIONAL_ARGUMENTS)
+    required_argument_values = (
+        get_jssimporter(recipe)["Arguments"].get(argument)
+        for argument in REQUIRED_ARGUMENTS
+    )
+    optional_argument_values = (
+        get_jssimporter(recipe)["Arguments"].get(argument)
+        for argument in OPTIONAL_ARGUMENTS
+    )
 
-    valid_required_values = all((val and val.isupper() and val.startswith("%")
-                                 and val.endswith("%") for val in
-                                 required_argument_values))
-    valid_optional_values = all((val.isupper() and val.startswith("%") and
-                                 val.endswith("%") for val in
-                                 required_argument_values if val))
+    valid_required_values = all(
+        (
+            val and val.isupper() and val.startswith("%") and val.endswith("%")
+            for val in required_argument_values
+        )
+    )
+    valid_optional_values = all(
+        (
+            val.isupper() and val.startswith("%") and val.endswith("%")
+            for val in required_argument_values
+            if val
+        )
+    )
     if valid_required_values and valid_optional_values:
         result = True
 
@@ -527,8 +559,10 @@ def test_name_prod_name(recipe):
     result = False
     description = "NAME is set, and prod_name is %NAME%."
 
-    if ("NAME" in recipe["Input"] and
-        get_jssimporter(recipe)["Arguments"].get("prod_name") == "%NAME%"):
+    if (
+        "NAME" in recipe["Input"]
+        and get_jssimporter(recipe)["Arguments"].get("prod_name") == "%NAME%"
+    ):
         result = True
 
     return (result, description)
@@ -547,8 +581,9 @@ def test_no_prohibited_arguments(recipe):
     description = "No prohibited arguments."
 
     arguments = get_jssimporter(recipe)["Arguments"]
-    if all((not prohibited_arg in arguments for prohibited_arg in
-            PROHIBITED_ARGUMENTS)):
+    if all(
+        (not prohibited_arg in arguments for prohibited_arg in PROHIBITED_ARGUMENTS)
+    ):
         result = True
 
     return (result, description)
@@ -569,21 +604,44 @@ def test_input_section(recipe):
         test and result.
     """
     result = False
-    description = ("All required and optional arguments to JSSImporter are "
-                   "set in 'Input' section with ALL_CAPS keys.")
+    description = (
+        "All required and optional arguments to JSSImporter are "
+        "set in 'Input' section with ALL_CAPS keys."
+    )
 
-    required_input_keys = (recipe["Input"].get(argument.upper()) for argument
-                           in REQUIRED_ARGUMENTS)
+    required_input_keys = (
+        recipe["Input"].get(argument.upper()) for argument in REQUIRED_ARGUMENTS
+    )
     # Optional key must be present in JSSImporter args also!
-    optional_input_keys = (recipe["Input"].get(argument.upper()) for argument
-                           in OPTIONAL_ARGUMENTS if
-                           get_jssimporter(recipe)["Arguments"].get(argument))
+    optional_input_keys = (
+        recipe["Input"].get(argument.upper())
+        for argument in OPTIONAL_ARGUMENTS
+        if get_jssimporter(recipe)["Arguments"].get(argument)
+    )
 
     valid_required_keys = all((key is not None for key in required_input_keys))
     valid_optional_keys = all((key is not None for key in optional_input_keys))
 
     if valid_required_keys and valid_optional_keys:
         result = True
+
+    return (result, description)
+
+
+def test_description_value(recipe):
+    """Test for valid Self Service description.
+
+    Args:
+        recipe: Recipe object.
+
+    Returns:
+        Tuple of Bool: Failure or success, and a string describing the
+        test and result.
+    """
+    result = False
+    description = "SELF_SERVICE_DESCRIPTION is not blank."
+
+    result = recipe["Input"].get("SELF_SERVICE_DESCRIPTION") not in ("", " ")
 
     return (result, description)
 
@@ -619,7 +677,7 @@ def test_policy_category_value(recipe):
     result = False
     description = "POLICY_CATEGORY is 'Testing'."
 
-    result = (recipe["Input"].get("POLICY_CATEGORY") == "Testing")
+    result = recipe["Input"].get("POLICY_CATEGORY") == "Testing"
 
     return (result, description)
 
@@ -655,9 +713,10 @@ def test_icon_name(recipe):
     result = False
     description = "SELF_SERVICE_ICON name is NAME.png or %NAME%.png."
 
-    result  = (recipe["Input"].get("SELF_SERVICE_ICON") in
-               (recipe["Input"].get("NAME") + ".png",
-                "%NAME%.png"))
+    result = recipe["Input"].get("SELF_SERVICE_ICON") in (
+        recipe["Input"].get("NAME") + ".png",
+        "%NAME%.png",
+    )
 
     return (result, description)
 
@@ -702,14 +761,17 @@ def test_group_template(recipe):
     else:
         # Check to see if there is an extension attribute, requiring a
         # custom group template.
-        has_ext_attrs = get_jssimporter(recipe)["Arguments"].get(
-            "extension_attributes")
-        if has_ext_attrs and group_template in [name + required_template,
-                                                cfbundletemplate]:
+        has_ext_attrs = get_jssimporter(recipe)["Arguments"].get("extension_attributes")
+        if has_ext_attrs and group_template in [
+            name + required_template,
+            cfbundletemplate,
+        ]:
             result = True
-            description = ("GROUP_TEMPLATE is '%s' (Properly formed "
-                           "extension-attribute-supporting smart group "
-                           "template provided." % (name + required_template))
+            description = (
+                "GROUP_TEMPLATE is '%s' (Properly formed "
+                "extension-attribute-supporting smart group "
+                "template provided." % (name + required_template)
+            )
 
     return (result, description)
 
@@ -736,8 +798,7 @@ def test_groups_argument(recipe):
         group_smart_compliant = group["smart"] == True
         group_template_compliant = group["template_path"] == "%GROUP_TEMPLATE%"
 
-        if all((group_name_compliant, group_smart_compliant,
-                group_template_compliant)):
+        if all((group_name_compliant, group_smart_compliant, group_template_compliant)):
             result = True
 
     return (result, description)
@@ -754,13 +815,15 @@ def test_extension_attributes(recipe):
     """
     result = False
     description = "Recipe has no extension attributes."
-    extension_attributes = get_jssimporter(
-        recipe)["Arguments"].get("extension_attributes")
+    extension_attributes = get_jssimporter(recipe)["Arguments"].get(
+        "extension_attributes"
+    )
     if not extension_attributes:
         result = True
     else:
-        description += (" (WARNING: Extension attributes only allowed when "
-                        "absolutely necessary.")
+        description += (
+            " (WARNING: Extension attributes only allowed when absolutely necessary."
+        )
         result, description = test_extension_attribute_arguments(recipe)
     return (result, description)
 
@@ -776,22 +839,33 @@ def test_extension_attribute_arguments(recipe):
     """
     result = False
     name = recipe["Input"].get("NAME")
-    description = ("WARNING: Recipe has extension attributes. Extension "
-                   "attributes meet style guidelines.")
+    description = (
+        "WARNING: Recipe has extension attributes. Extension "
+        "attributes meet style guidelines."
+    )
 
-    extension_attributes = get_jssimporter(
-        recipe)["Arguments"].get("extension_attributes")
+    extension_attributes = get_jssimporter(recipe)["Arguments"].get(
+        "extension_attributes"
+    )
 
-    ext_attr_templates = [ext_attr.get("ext_attribute_path") for ext_attr in
-                          extension_attributes if
-                          ext_attr.get("ext_attribute_path") not in
-                          ALLOWED_EXTENSION_ATTRIBUTES]
-    template_names_compliant = all((filename.startswith(name) and
-                                    filename.endswith("ExtensionAttribute.xml")
-                                    for filename in ext_attr_templates))
+    ext_attr_templates = [
+        ext_attr.get("ext_attribute_path")
+        for ext_attr in extension_attributes
+        if ext_attr.get("ext_attribute_path") not in ALLOWED_EXTENSION_ATTRIBUTES
+    ]
+    template_names_compliant = all(
+        (
+            filename.startswith(name) and filename.endswith("ExtensionAttribute.xml")
+            for filename in ext_attr_templates
+        )
+    )
     directory = os.path.dirname(recipe.filename)
-    templates_exist = all((os.path.isfile(os.path.join(directory, filename))
-                           for filename in ext_attr_templates))
+    templates_exist = all(
+        (
+            os.path.isfile(os.path.join(directory, filename))
+            for filename in ext_attr_templates
+        )
+    )
 
     result = template_names_compliant and templates_exist
 
@@ -809,13 +883,11 @@ def test_scripts(recipe):
     """
     result = False
     description = "Recipe has no scripts."
-    scripts = get_jssimporter(
-        recipe)["Arguments"].get("scripts")
+    scripts = get_jssimporter(recipe)["Arguments"].get("scripts")
     if not scripts:
         result = True
     else:
-        description += (" (WARNING: Scripts only allowed when absolutely "
-                        "necessary.")
+        description += " (WARNING: Scripts only allowed when absolutely necessary."
         result, description = test_scripts_arguments(recipe)
     return (result, description)
 
@@ -831,24 +903,32 @@ def test_scripts_arguments(recipe):
     """
     result = False
     name = recipe["Input"].get("NAME")
-    description = ("WARNING: Recipe has scripts. Scripts arguments meet "
-                   "style guidelines.")
+    description = (
+        "WARNING: Recipe has scripts. Scripts arguments meet style guidelines."
+    )
 
     scripts = get_jssimporter(recipe)["Arguments"].get("scripts")
 
     script_templates = [script.get("template_path") for script in scripts]
-    template_names_compliant = all((filename.startswith(name) and
-                                    filename.endswith("ScriptTemplate.xml") for
-                                    filename in script_templates))
+    template_names_compliant = all(
+        (
+            filename.startswith(name) and filename.endswith("ScriptTemplate.xml")
+            for filename in script_templates
+        )
+    )
     directory = os.path.dirname(recipe.filename)
-    templates_exist = all((os.path.isfile(os.path.join(directory, filename))
-                           for filename in script_templates))
+    templates_exist = all(
+        (
+            os.path.isfile(os.path.join(directory, filename))
+            for filename in script_templates
+        )
+    )
     script_names = [script.get("name") for script in scripts]
-    script_names_compliant = all((filename.startswith(name) for filename in
-                                  script_names))
+    script_names_compliant = all(
+        (filename.startswith(name) for filename in script_names)
+    )
 
-    result = (template_names_compliant and templates_exist and
-              script_names_compliant)
+    result = template_names_compliant and templates_exist and script_names_compliant
 
     return (result, description)
 
@@ -862,9 +942,9 @@ def test_icon(recipe):
         Tuple of Bool: Failure or success, and a string describing the
         test and result.
     """
-    allowed_dimensions = (128, 300)
+    allowed_dimensions = (128, 300, 512)
     result = False
-    description = "Icon is a 128x128 or 300x300 PNG file."
+    description = "Icon is a PNG file measuring 128x128, 300x300, or 512x512 pixels."
     directory = os.path.dirname(recipe.filename)
     icon_filename = recipe["Input"].get("SELF_SERVICE_ICON")
     if icon_filename == "%NAME%.png":
@@ -873,12 +953,10 @@ def test_icon(recipe):
     icon_path = os.path.join(directory, icon_filename)
     if os.path.exists(icon_path):
         width, height, format = get_image_properties(icon_path)
-        if (width in allowed_dimensions and height == width and
-              format.upper() == "PNG"):
+        if width in allowed_dimensions and height == width and format.upper() == "PNG":
             result = True
         else:
-            description += " (Image is %ix%i of type %s)" % (width, height,
-                                                             format)
+            description += " (Image is %ix%i of type %s)" % (width, height, format)
     else:
         description += " (Icon not found)"
 
@@ -894,8 +972,16 @@ def get_image_properties(path):
     Returns:
         Tuple of (int: width, int: height, and string: image format)
     """
-    args = ["/usr/bin/sips", "-g", "pixelWidth", "-g", "pixelHeight", "-g",
-            "format", path]
+    args = [
+        "/usr/bin/sips",
+        "-g",
+        "pixelWidth",
+        "-g",
+        "pixelHeight",
+        "-g",
+        "format",
+        path,
+    ]
     output = subprocess.check_output(args).splitlines()
     width = int(output[1].rsplit()[-1])
     height = int(output[2].rsplit()[-1])
@@ -924,7 +1010,7 @@ def test_lint(recipe):
 
 def print_bar(length=79):
     """Print a line of '-'s."""
-    print length * "-"
+    print(length * "-")
 
 
 def main():
@@ -932,6 +1018,7 @@ def main():
     args = parser.parse_args()
 
     for recipes_arg in args.recipe:
+        # TODO: Allow multiple filenames, instead of either filename or dirname.
         recipes = get_recipes(recipes_arg)
     for recipe in recipes:
         validate_recipe(recipe, args.verbose)
