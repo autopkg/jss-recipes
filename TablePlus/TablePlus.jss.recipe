@@ -21,7 +21,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>TablePlus update</string>
+		<string>Modern, native, and friendly GUI tool for relational databases. Supports MySQL, PostgreSQL, SQLite and more.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>TablePlus.png</string>
 	</dict>
