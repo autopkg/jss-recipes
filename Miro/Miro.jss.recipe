@@ -2,12 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of CraftManager and imports it into your JSS.</string>
+	<string>Downloads the latest version of Miro and makes a pkg of it, then uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.jss-recipes.jss.CraftManager</string>
+	<string>com.github.jss-recipes.jss.Miro</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
@@ -17,20 +15,22 @@
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>CraftManager</string>
+		<string>Miro</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Used in conjunction with Craft Sync on your Mac, Craft Manager lets you publish prototypes directly from within Sketch or Photoshop, and it gives you quick access to your team’s prototypes right from your desktop.</string>
+		<string>The online collaborative whiteboard platform to bring teams together, anytime, anywhere.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>%NAME%.png</string>
+		<string>Miro.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>0.2.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.foigus.pkg.CraftManager</string>
+	<string>com.github.dataJAR-recipes.download.Miro</string>
+	<key>ParentRecipe</key>
+	<string>com.github.dataJAR-recipes.pkg.Miro</string>
 	<key>Process</key>
 	<array>
 		<dict>
