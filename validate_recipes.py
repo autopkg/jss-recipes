@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""validate_recipes.py
+"""validate_recipes.py.
 
 Test recipes for compliance with the jss-recipes style guide.
 """
@@ -22,6 +22,7 @@ Test recipes for compliance with the jss-recipes style guide.
 
 import argparse
 import os
+import re
 import subprocess
 import sys
 
@@ -36,7 +37,7 @@ from Foundation import (
 # pylint: enable=no-name-in-module
 
 
-__version__ = "1.1.0"
+__version__ = "1.2.0"
 
 REQUIRED_ARGUMENTS = (
     "self_service_description",
@@ -110,7 +111,11 @@ class Plist(dict):
             PlistParseError: Error in reading plist file.
         """
         # pylint: disable=unused-variable
-        info, pformat, error = NSPropertyListSerialization.propertyListWithData_options_format_error_(
+        (
+            info,
+            pformat,
+            error,
+        ) = NSPropertyListSerialization.propertyListWithData_options_format_error_(
             NSData.dataWithContentsOfFile_(os.path.expanduser(path)),
             NSPropertyListMutableContainersAndLeaves,
             None,
@@ -218,6 +223,7 @@ def validate_recipe(recipe_path, verbose=False):
         test_groups_argument,
         test_extension_attributes,
         test_scripts,
+        test_os_requirements,
         test_icon,
         test_lint,
     )
@@ -889,6 +895,30 @@ def test_scripts(recipe):
     else:
         description += " (WARNING: Scripts only allowed when absolutely necessary."
         result, description = test_scripts_arguments(recipe)
+    return (result, description)
+
+
+def test_os_requirements(recipe):
+    """Determine whether OS requirements are in the expected format.
+    Args:
+        recipe: Recipe object.
+
+    Returns:
+        Tuple of Bool: Failure or success, and a string describing the
+        test and result.
+    """
+    result = False
+    description = "OS_REQUIREMENTS is a comma-delimited list of macOS versions."
+    requirements = recipe["Input"].get("OS_REQUIREMENTS")
+    vers_pattern = r"^[\d\.Xx]+$"
+    if requirements:
+        req_versions = requirements.split(",")
+        if all((re.match(vers_pattern, v) for v in req_versions)):
+            result = True
+    else:
+        # OS_REQUIREMENTS is optional, so pass test if missing.
+        result = True
+
     return (result, description)
 
 
