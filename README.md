@@ -147,8 +147,7 @@ The `JSSImporter` processor will include at least the following arguments, and v
     - Use spaces in `NAME` if that's how the application is named. It's 2016. Filenames can have spaces.
 - `category`
     - Recipes included in this repository use a limited list of package categories:
-        - Productivity
-	- Computer Science
+        - Computer Science
         - Digital Media
         - Games
         - Management
@@ -161,7 +160,7 @@ The `JSSImporter` processor will include at least the following arguments, and v
 - `policy_template` (Set to `PolicyTemplate.xml`)
 - `self_service_icon`
     - Icon should be named the same as the product (e.g. `NetHack.png`).
-	- Icon can be referenced as either `%NAME%.png` or the actual NAME.png (e.g. `NetHack.png`).
+        - Icon can be referenced as either `%NAME%.png` or the actual NAME.png (e.g. `NetHack.png`).
     - Icon should be a PNG file.
     - Icon should be 128 x 128 pixels as per the current recommendations of JAMF, or 300 x 300 pixels to be shared with Munki recipes..
 - `self_service_description`
