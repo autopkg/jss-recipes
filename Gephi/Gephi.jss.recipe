@@ -28,8 +28,6 @@
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.joshua-d-miller.download.gephi</string>
-	<key>ParentRecipe</key>
 	<string>com.github.joshua-d-miller.pkg.gephi</string>
 	<key>Process</key>
 	<array>
