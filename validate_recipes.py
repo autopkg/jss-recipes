@@ -37,7 +37,7 @@ from Foundation import (
 # pylint: enable=no-name-in-module
 
 
-__version__ = "1.2.0"
+__version__ = "1.3.0"
 
 REQUIRED_ARGUMENTS = (
     "self_service_description",
@@ -70,6 +70,7 @@ EXEMPTED_RECIPES = [
     "com.github.jss-recipes.jss.MicrosoftOneNote",  # extra processors for versioning
     "com.github.jss-recipes.jss.MicrosoftOutlook",  # extra processors for versioning
     "com.github.jss-recipes.jss.MicrosoftWord",  # extra processors for versioning
+    "com.github.jss-recipes.jss.MicrosoftPowerPoint",  # extra processors for versioning
     "com.github.jss-recipes.jss.MicrosoftExcel",  # extra processors for versioning
 ]
 
@@ -235,8 +236,14 @@ def validate_recipe(recipe_path, verbose=False):
 
     if os.path.exists(recipe_path):
         recipe = get_recipe(recipe_path)
+        # Skip exempted recipes.
         if recipe["Identifier"] in EXEMPTED_RECIPES:
             print("Recipe is exempted from validation.")
+            return
+        # Skip deprecated recipes.
+        proc_names = [x.get("Processor") for x in recipe.get("Process", [{}])]
+        if "DeprecationWarning" in proc_names:
+            print("Recipe is deprecated.")
             return
     else:
         print("File not found.")
