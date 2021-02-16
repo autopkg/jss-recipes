@@ -37,7 +37,7 @@ from Foundation import (
 # pylint: enable=no-name-in-module
 
 
-__version__ = "1.2.0"
+__version__ = "1.3.0"
 
 REQUIRED_ARGUMENTS = (
     "self_service_description",
