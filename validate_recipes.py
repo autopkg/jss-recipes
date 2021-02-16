@@ -70,6 +70,7 @@ EXEMPTED_RECIPES = [
     "com.github.jss-recipes.jss.MicrosoftOneNote",  # extra processors for versioning
     "com.github.jss-recipes.jss.MicrosoftOutlook",  # extra processors for versioning
     "com.github.jss-recipes.jss.MicrosoftWord",  # extra processors for versioning
+    "com.github.jss-recipes.jss.MicrosoftPowerPoint",  # extra processors for versioning
     "com.github.jss-recipes.jss.MicrosoftExcel",  # extra processors for versioning
 ]
 
