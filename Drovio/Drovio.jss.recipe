@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of USE Together and imports it into your JSS.</string>
+	<string>Downloads the latest version of Drovio and imports it into your JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.jss-recipes.jss.USETogether</string>
+	<string>com.github.jss-recipes.jss.Drovio</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
@@ -15,7 +15,7 @@
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>USETogether</string>
+		<string>Drovior</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
@@ -28,7 +28,7 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.rderewianko.autopkg.pkg.USETogether</string>
+	<string>com.rderewianko.autopkg.pkg.drovio</string>
 	<key>Process</key>
 	<array>
 		<dict>
