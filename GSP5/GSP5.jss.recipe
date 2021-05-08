@@ -32,7 +32,7 @@
 	<key>MinimumVersion</key>
 	<string>0.2.5</string>
 	<key>ParentRecipe</key>
-	<string>com.github.sheagcraig.pkg.GSP5</string>
+	<string>com.github.homebysix.pkg.GSP5</string>
 	<key>Process</key>
 	<array>
 		<dict>

@@ -28,7 +28,7 @@
 	<key>MinimumVersion</key>
 	<string>0.2.5</string>
 	<key>ParentRecipe</key>
-	<string>com.github.sheagcraig.pkg.OpenEmu</string>
+	<string>com.github.homebysix.pkg.OpenEmu</string>
 	<key>Process</key>
 	<array>
 		<dict>
