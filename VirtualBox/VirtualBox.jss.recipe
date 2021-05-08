@@ -28,7 +28,7 @@
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.sheagcraig.pkg.VirtualBox</string>
+	<string>com.github.homebysix.pkg.VirtualBox</string>
 	<key>Process</key>
 	<array>
 		<dict>
