@@ -28,7 +28,7 @@
 	<key>MinimumVersion</key>
 	<string>0.2.9</string>
 	<key>ParentRecipe</key>
-	<string>com.github.sheagcraig.pkg.AdobeDNGConverter</string>
+	<string>com.github.homebysix.pkg.AdobeDNGConverter</string>
 	<key>Process</key>
 	<array>
 		<dict>
