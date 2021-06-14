@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the current release version of Caffeine and builds a package. Then, uploads to the JSS.</string>
+	<string>Downloads the current release version of Duo Device Health and builds a package. Then, uploads to the JSS.</string>
 	<key>Identifier</key>
 	<string>com.github.jss-recipes.jss.DuoDeviceHealth</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
-		<string>Security</string>
+		<string>Utility</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
@@ -23,7 +23,7 @@
 		<key>SELF_SERVICE_DESCRIPTION</key>
 		<string>Duo helps you control access to your applications through the policy system by restricting access when devices do not meet particular security requirements.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>DuoDeviceHealth.png</string>
+		<string>Duo Device Health.png</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>
