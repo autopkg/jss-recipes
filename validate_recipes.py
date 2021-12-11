@@ -37,7 +37,7 @@ from Foundation import (
 # pylint: enable=no-name-in-module
 
 
-__version__ = "1.3.0"
+__version__ = "1.3.1"
 
 REQUIRED_ARGUMENTS = (
     "self_service_description",
@@ -808,7 +808,7 @@ def test_groups_argument(recipe):
     if groups_len_compliant:
         group = groups_args[0]
         group_name_compliant = group["name"] == "%GROUP_NAME%"
-        group_smart_compliant = group["smart"] == True
+        group_smart_compliant = group["smart"] is True
         group_template_compliant = group["template_path"] == "%GROUP_TEMPLATE%"
 
         if all((group_name_compliant, group_smart_compliant, group_template_compliant)):
