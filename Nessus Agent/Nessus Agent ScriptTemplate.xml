@@ -1,7 +1,7 @@
 <script>
-    <name>NessusAgentPostInstall.sh</name>
+    <name>Nessus Agent PostInstall.sh</name>
     <category>Testing</category>
-    <filename>NessusAgentPostInstall.sh</filename>
+    <filename>Nessus Agent PostInstall.sh</filename>
     <info />
     <notes />
     <priority>After</priority>
