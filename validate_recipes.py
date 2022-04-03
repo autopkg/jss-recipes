@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/local/bin/managed_python3
 # Copyright (C) 2014-2019 Shea G Craig
 #
 # This program is free software: you can redistribute it and/or modify
@@ -37,7 +37,7 @@ from Foundation import (
 # pylint: enable=no-name-in-module
 
 
-__version__ = "1.3.1"
+__version__ = "1.4.0"
 
 REQUIRED_ARGUMENTS = (
     "self_service_description",
@@ -207,7 +207,7 @@ def validate_recipe(recipe_path, verbose=False):
         test_is_in_subfolder,
         test_folder_contents_have_common_prefix,
         test_no_restricted_files_in_folder,
-        test_parent_recipe,
+        # test_parent_recipe, # Disabling 4/2/2022 due to search unreliability
         test_identifier,
         test_single_processor,
         test_name_prod_name,
@@ -288,7 +288,7 @@ def get_recipe(recipe_path):
     except PlistParseError as err:
         recipe = err.message
     except ValueError:
-        recipe = u"File does not exist."
+        recipe = "File does not exist."
 
     return recipe
 
@@ -337,7 +337,7 @@ def test_recipe_parsing(recipe):
     description = "Recipe parses correctly."
     if not recipe:
         description += " (Recipe file not found!)"
-    elif isinstance(recipe, unicode):
+    elif isinstance(recipe, str):
         # There was a parsing error. Print the message and finish.
         description += " (%s)" % recipe
     else:
@@ -1019,7 +1019,8 @@ def get_image_properties(path):
         "format",
         path,
     ]
-    output = subprocess.check_output(args).splitlines()
+    proc = subprocess.run(args, check=False, capture_output=True, text=True)
+    output = proc.stdout.splitlines()
     width = int(output[1].rsplit()[-1])
     height = int(output[2].rsplit()[-1])
     format = output[3].rsplit()[-1]
@@ -1038,8 +1039,8 @@ def test_lint(recipe):
     result = False
     description = "Recipe file passes plutil -lint test."
     args = ["/usr/bin/plutil", "-lint", recipe.filename]
-    output = subprocess.check_output(args)
-    if output.rsplit()[-1] == "OK":
+    proc = subprocess.run(args, check=False, capture_output=True, text=True)
+    if proc.stdout.rsplit()[-1] == "OK":
         result = True
 
     return (result, description)
