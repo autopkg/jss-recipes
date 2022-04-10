@@ -35,7 +35,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>warning_message</key>
-				<string>USETogether has been renamed to Drovio. Please transition to using the "com.github.jss-recipes.jss.Drovio" recipe instead.</string>
+				<string>The recipes in the jss-recipes repository will stop working in a future version of Jamf planned for late 2022. Please consider switching your JSSImporter workflows to JamfUploader instead. Details: https://grahamrpugh.com/2022/02/16/jssimporter-jamf-pro-api-token-auth.html</string>
 			</dict>
 			<key>Processor</key>
 			<string>DeprecationWarning</string>

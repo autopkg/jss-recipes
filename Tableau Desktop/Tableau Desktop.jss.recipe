@@ -10,6 +10,8 @@
 	<dict>
 		<key>CATEGORY</key>
 		<string>Science and Math</string>
+		<key>Comment</key>
+		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
@@ -26,8 +28,6 @@
 		<string>Tableau Desktop is data visualization software that lets you see and understand data in minutes.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Tableau Desktop.png</string>
-		<key>Comment</key>
-		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
 		<key>version</key>
 		<string></string>
 	</dict>
@@ -37,6 +37,15 @@
 	<string>com.github.gmarnin.pkg.tableau-desktop</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>The recipes in the jss-recipes repository will stop working in a future version of Jamf planned for late 2022. Please consider switching your JSSImporter workflows to JamfUploader instead. Details: https://grahamrpugh.com/2022/02/16/jssimporter-jamf-pro-api-token-auth.html</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>

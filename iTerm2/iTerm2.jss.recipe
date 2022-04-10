@@ -10,6 +10,8 @@
 	<dict>
 		<key>CATEGORY</key>
 		<string>Computer Science</string>
+		<key>Comment</key>
+		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
@@ -26,8 +28,6 @@
 		<string>iTerm2 is a replacement for Terminal.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>iTerm2.png</string>
-		<key>Comment</key>
-		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
 		<key>version</key>
 		<string></string>
 	</dict>
@@ -37,6 +37,15 @@
 	<string>io.github.hjuutilainen.pkg.iTerm2</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>The recipes in the jss-recipes repository will stop working in a future version of Jamf planned for late 2022. Please consider switching your JSSImporter workflows to JamfUploader instead. Details: https://grahamrpugh.com/2022/02/16/jssimporter-jamf-pro-api-token-auth.html</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>

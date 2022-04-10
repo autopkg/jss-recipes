@@ -10,6 +10,8 @@
 	<dict>
 		<key>CATEGORY</key>
 		<string>Computer Science</string>
+		<key>Comment</key>
+		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
@@ -24,8 +26,6 @@
 		<string>Trust CLion to take care of the routine while you focus on the important things. Knowing your code through and through, it can boost your productivity with smart and relevant code completion, instant navigation and reliable refactorings.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>CLion.png</string>
-		<key>Comment</key>
-		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
 		<key>version</key>
 		<string></string>
 	</dict>
@@ -35,6 +35,15 @@
 	<string>com.github.chilcote.pkg.CLion</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>The recipes in the jss-recipes repository will stop working in a future version of Jamf planned for late 2022. Please consider switching your JSSImporter workflows to JamfUploader instead. Details: https://grahamrpugh.com/2022/02/16/jssimporter-jamf-pro-api-token-auth.html</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
