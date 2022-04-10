@@ -26,6 +26,8 @@
 		<string>GPG Suite.png</string>
 		<key>version</key>
 		<string></string>
+		<key>version-Comment</key>
+		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string.</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
