@@ -40,6 +40,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>warning_message</key>
+				<string>The recipes in the jss-recipes repository will stop working in a future version of Jamf planned for late 2022. Please consider switching your JSSImporter workflows to JamfUploader instead. Details: https://grahamrpugh.com/2022/02/16/jssimporter-jamf-pro-api-token-auth.html</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>category</key>
 				<string>%CATEGORY%</string>
 				<key>groups</key>
@@ -57,6 +66,8 @@
 				<string>%POLICY_CATEGORY%</string>
 				<key>policy_template</key>
 				<string>%POLICY_TEMPLATE%</string>
+				<key>prod_name</key>
+				<string>%NAME%</string>
 				<key>scripts</key>
 				<array>
 					<dict>
@@ -66,8 +77,6 @@
 						<string>Nessus Agent ScriptTemplate.xml</string>
 					</dict>
 				</array>
-				<key>prod_name</key>
-				<string>%NAME%</string>
 				<key>self_service_description</key>
 				<string>%SELF_SERVICE_DESCRIPTION%</string>
 				<key>self_service_icon</key>

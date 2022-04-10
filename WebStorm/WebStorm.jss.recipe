@@ -24,10 +24,10 @@
 		<string>WebStorm brings you smart coding assistance for JavaScript and compiled-to-JavaScript languages, Node.js, HTML and CSS. Enjoy code completion, powerful navigation features, on-the-fly error detection, and refactorings for all of these languages.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>WebStorm.png</string>
-		<key>Comment</key>
-		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
 		<key>version</key>
 		<string></string>
+		<key>version-Comment</key>
+		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string.</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
@@ -35,6 +35,15 @@
 	<string>com.github.chilcote.pkg.WebStorm</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>The recipes in the jss-recipes repository will stop working in a future version of Jamf planned for late 2022. Please consider switching your JSSImporter workflows to JamfUploader instead. Details: https://grahamrpugh.com/2022/02/16/jssimporter-jamf-pro-api-token-auth.html</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>

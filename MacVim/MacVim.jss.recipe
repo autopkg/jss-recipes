@@ -3,35 +3,46 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads Adobe Flash Player installer and extracts the embedded package, uploads to JSS.</string>
+	<string>Downloads the latest version of MacVim and imports it into your JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.jss-recipes.jss.AdobeFlashPlayer</string>
+	<string>com.github.jss-recipes.jss.MacVim</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
-		<string>Digital Media</string>
+		<string>Productivity</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
-		<string>AdobeFlashPlayerSmartGroupTemplate.xml</string>
+		<string>SmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>AdobeFlashPlayer</string>
+		<string>MacVim</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Adobe Flash Player is freeware software for using content created on the Adobe Flash platform, including viewing multimedia, executing rich Internet applications, and streaming video and audio.</string>
+		<string>MacVim supports multiple windows with tabbed editing and a host of other features such as:
+* bindings to standard OS X keyboard shortcuts
+* transparent backgrounds
+* full-screen mode
+* multibyte editing with OS X input methods and automatic font substitution
+* ODB editor support, and more.
+Most importantly, MacVim brings you the full power of Vim 7.4 to Mac OS X.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>AdobeFlashPlayer.png</string>
+		<string>%NAME%.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.1</string>
+	<string>0.6.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.autopkg.pkg.FlashPlayerExtractPackage</string>
+	<string>com.github.jleggat.MacVim.pkg</string>
 	<key>Process</key>
 	<array>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>The recipes in the jss-recipes repository will stop working in a future version of Jamf planned for late 2022. Please consider switching your JSSImporter workflows to JamfUploader instead. Details: https://grahamrpugh.com/2022/02/16/jssimporter-jamf-pro-api-token-auth.html</string>
+			</dict>
 			<key>Processor</key>
 			<string>DeprecationWarning</string>
 		</dict>
@@ -40,13 +51,6 @@
 			<dict>
 				<key>category</key>
 				<string>%CATEGORY%</string>
-				<key>extension_attributes</key>
-				<array>
-					<dict>
-						<key>ext_attribute_path</key>
-						<string>AdobeFlashPlayerExtensionAttribute.xml</string>
-					</dict>
-				</array>
 				<key>groups</key>
 				<array>
 					<dict>

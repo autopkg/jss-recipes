@@ -26,10 +26,10 @@
 		<string>Skype is a freemium voice over IP service and instant messaging client, currently developed by Microsoft-owned Skype Technologies.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Skype.png</string>
-		<key>Comment</key>
-		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string, as below.</string>
 		<key>version</key>
 		<string></string>
+		<key>version-Comment</key>
+		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string.</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
@@ -37,6 +37,15 @@
 	<string>com.github.autopkg.pkg.Skype</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>The recipes in the jss-recipes repository will stop working in a future version of Jamf planned for late 2022. Please consider switching your JSSImporter workflows to JamfUploader instead. Details: https://grahamrpugh.com/2022/02/16/jssimporter-jamf-pro-api-token-auth.html</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
@@ -62,6 +71,8 @@
 				</array>
 				<key>os_requirements</key>
 				<string>%OS_REQUIREMENTS%</string>
+				<key>pkg_path</key>
+				<string>%pkg_path%</string>
 				<key>policy_category</key>
 				<string>%POLICY_CATEGORY%</string>
 				<key>policy_template</key>
@@ -72,8 +83,6 @@
 				<string>%SELF_SERVICE_DESCRIPTION%</string>
 				<key>self_service_icon</key>
 				<string>%SELF_SERVICE_ICON%</string>
-				<key>pkg_path</key>
-				<string>%pkg_path%</string>
 			</dict>
 			<key>Processor</key>
 			<string>JSSImporter</string>
