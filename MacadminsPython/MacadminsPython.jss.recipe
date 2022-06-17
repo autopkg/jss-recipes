@@ -3,7 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest MacAdmins Python 3 framework pkg (recommended) and uploads it to the JSS.</string>
+	<string>Downloads the latest MacAdmins Python 3 framework pkg (recommended) and uploads it to the JSS.
+		
+In order to get the latest pre-release, set the Input variable INCLUDE_PRERELEASES to a non-empty
+string (such as 'True'; this is the default). If you just want the latest full release instead, 
+INCLUDE_PRERELEASES must be set to an empty string.
+	</string>
 	<key>Identifier</key>
 	<string>com.github.jss-recipes.jss.MacadminsPython</string>
 	<key>Input</key>
@@ -24,6 +29,8 @@
 		<string>A Python 3 framework that currently installs to /Library/ManagedFrameworks/Python/Python3.framework.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>MacadminsPython.png</string>
+		<key>INCLUDE_PRERELEASES</key>
+		<string></string>
 		<key>version</key>
 		<string></string>
 		<key>version-Comment</key>
