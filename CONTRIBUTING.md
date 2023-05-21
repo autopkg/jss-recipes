@@ -1,5 +1,7 @@
 # How to contribute to jss-recipes
 
+**NOTE: The recipes in the jss-recipes repository will stop working in a future version of Jamf.** Please consider switching your JSSImporter workflows to JamfUploader instead. Details: https://grahamrpugh.com/2022/02/16/jssimporter-jamf-pro-api-token-auth.html
+
 1. Sign in with your GitHub.com account, if you're not already.
 
 2. Click the __Fork__ button above.
