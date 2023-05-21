@@ -30,7 +30,7 @@ For major version 16, set the PLATFORM_ARCH in your override to either "intel" o
 		<string>%NAME%.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.pkg.ParallelsDesktop</string>
 	<key>Process</key>

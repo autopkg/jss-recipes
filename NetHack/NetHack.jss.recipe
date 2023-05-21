@@ -26,7 +26,7 @@
 		<string>NetHack.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.5</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.sheagcraig.pkg.NetHack</string>
 	<key>Process</key>

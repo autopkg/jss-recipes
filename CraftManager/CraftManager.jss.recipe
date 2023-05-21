@@ -28,7 +28,7 @@
 		<string>%NAME%.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.foigus.pkg.CraftManager</string>
 	<key>Process</key>

@@ -26,7 +26,7 @@
 		<string>Kitematic.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.jps3.pkg.Kitematic</string>
 	<key>Process</key>

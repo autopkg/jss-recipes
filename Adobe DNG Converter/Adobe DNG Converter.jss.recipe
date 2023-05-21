@@ -26,7 +26,7 @@
 		<string>Adobe DNG Converter.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.9</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.pkg.AdobeDNGConverter</string>
 	<key>Process</key>

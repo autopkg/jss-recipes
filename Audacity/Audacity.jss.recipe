@@ -28,7 +28,7 @@ NOTE: Because Audacity cannot be automatically downloaded due to Fosshub's TOS, 
 		<string>Audacity.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.scriptingosx.pkg.audacity</string>
 	<key>Process</key>

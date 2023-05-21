@@ -32,7 +32,7 @@ To get the most current version of OmniFocus, override these two input variables
 		<string>OmniFocus.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.autopkg.pkg.omnigroupproduct</string>
 	<key>Process</key>

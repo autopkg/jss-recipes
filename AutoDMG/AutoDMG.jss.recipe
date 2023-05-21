@@ -26,7 +26,7 @@
 		<string>AutoDMG.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.9</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.scriptingosx.pkg.AutoDMG</string>
 	<key>Process</key>

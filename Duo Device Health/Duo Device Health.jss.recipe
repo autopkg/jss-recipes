@@ -26,7 +26,7 @@
 		<string>Duo Device Health.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.keeleysam.recipes.pkg.DuoDeviceHealth</string>
 	<key>Process</key>

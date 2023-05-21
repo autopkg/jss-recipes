@@ -26,7 +26,7 @@
 		<string>Blackboard Collaborate Launcher.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.novaksam.pkg.BlackboardCollaborateLauncher</string>
 	<key>Process</key>

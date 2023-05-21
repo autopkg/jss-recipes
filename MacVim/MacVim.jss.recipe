@@ -32,7 +32,7 @@ Most importantly, MacVim brings you the full power of Vim 7.4 to Mac OS X.</stri
 		<string>%NAME%.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.jleggat.MacVim.pkg</string>
 	<key>Process</key>

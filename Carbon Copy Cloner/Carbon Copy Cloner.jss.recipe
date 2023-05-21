@@ -26,7 +26,7 @@
 		<string>Carbon Copy Cloner.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.keeleysam.recipes.pkg.CarbonCopyCloner</string>
 	<key>Process</key>

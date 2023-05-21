@@ -28,7 +28,7 @@
 		<string>%NAME%.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.rderewianko.pkg.Console</string>
 	<key>Process</key>

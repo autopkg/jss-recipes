@@ -26,7 +26,7 @@
 		<string>TorBrowser.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.pkg.TorBrowserBundle</string>
 	<key>Process</key>

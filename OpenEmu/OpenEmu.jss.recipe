@@ -26,7 +26,7 @@
 		<string>OpenEmu.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.5</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.pkg.OpenEmu</string>
 	<key>Process</key>

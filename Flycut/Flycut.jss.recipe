@@ -26,7 +26,7 @@
 		<string>Flycut.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.darkomen78.pkg.Flycut</string>
 	<key>Process</key>

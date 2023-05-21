@@ -32,7 +32,7 @@
 		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string.</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.autopkg.pkg.Skype</string>
 	<key>Process</key>

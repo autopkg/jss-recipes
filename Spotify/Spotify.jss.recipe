@@ -26,7 +26,7 @@
 		<string>Spotify.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.pkg.Spotify</string>
 	<key>Process</key>

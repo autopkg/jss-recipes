@@ -37,7 +37,7 @@
 		<string>Microsoft Word.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.2</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.autopkg.download.MSWord2016</string>
 	<key>Process</key>

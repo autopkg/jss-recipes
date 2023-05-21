@@ -45,7 +45,7 @@ necessary if the value you want differs from the parent pkg recipe.
 		<string>Firefox.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.gregneagle.pkg.FirefoxAutoconfig</string>
 	<key>Process</key>

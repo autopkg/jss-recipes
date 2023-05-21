@@ -26,7 +26,7 @@
 		<string>Box Sync.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.hansen-m.pkg.boxsync</string>
 	<key>Process</key>

@@ -28,7 +28,7 @@
 		<string>MasergyCommunicator.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.rderewianko.pkg.MasergyCommunicator</string>
 	<key>Process</key>

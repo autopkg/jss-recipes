@@ -28,7 +28,7 @@
 		<string>coconutBattery.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.pkg.coconutBattery</string>
 	<key>Process</key>

@@ -4,9 +4,9 @@
 <dict>
 	<key>Description</key>
 	<string>Downloads the latest MacAdmins Python 3 framework pkg (recommended) and uploads it to the JSS.
-		
+
 In order to get the latest pre-release, set the Input variable INCLUDE_PRERELEASES to a non-empty
-string (such as 'True'; this is the default). If you just want the latest full release instead, 
+string (such as 'True'; this is the default). If you just want the latest full release instead,
 INCLUDE_PRERELEASES must be set to an empty string.
 	</string>
 	<key>Identifier</key>
@@ -37,7 +37,7 @@ INCLUDE_PRERELEASES must be set to an empty string.
 		<string>Note: PlistReader without variable injection in AutoPkg requires setting "version" input key to an empty string.</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.jazzace.download.MacadminsPython</string>
 	<key>Process</key>

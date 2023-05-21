@@ -37,7 +37,7 @@
 		<string>Microsoft Outlook.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.2</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.autopkg.download.MSOutlook2016</string>
 	<key>Process</key>
