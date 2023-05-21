@@ -1,6 +1,6 @@
 repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.0.1
+  rev: v4.4.0
   hooks:
   - id: check-added-large-files
     args: [--maxkb=100]
@@ -14,11 +14,11 @@ repos:
   - id: trailing-whitespace
     args: [--markdown-linebreak-ext=md]
 - repo: https://github.com/python/black
-  rev: 21.5b1
+  rev: 23.3.0
   hooks:
   - id: black
 - repo: https://github.com/homebysix/pre-commit-macadmin
-  rev: v1.10.1
+  rev: v1.12.4
   hooks:
   - id: check-autopkg-recipes
   - id: forbid-autopkg-overrides

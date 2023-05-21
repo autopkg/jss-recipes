@@ -26,7 +26,7 @@
 		<string>Resilio Sync.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.pkg.ResilioSync</string>
 	<key>Process</key>
@@ -35,7 +35,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>warning_message</key>
-				<string>The recipes in the jss-recipes repository will stop working in a future version of Jamf planned for late 2022. Please consider switching your JSSImporter workflows to JamfUploader instead. Details: https://grahamrpugh.com/2022/02/16/jssimporter-jamf-pro-api-token-auth.html</string>
+				<string>The recipes in the jss-recipes repository will stop working in a future version of Jamf. Please consider switching your JSSImporter workflows to JamfUploader instead. Details: https://grahamrpugh.com/2022/02/16/jssimporter-jamf-pro-api-token-auth.html</string>
 			</dict>
 			<key>Processor</key>
 			<string>DeprecationWarning</string>
