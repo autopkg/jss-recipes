@@ -43,7 +43,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>warning_message</key>
-				<string>The recipes in the jss-recipes repository will stop working in a future version of Jamf. Please consider switching your JSSImporter workflows to JamfUploader instead. Details: https://grahamrpugh.com/2022/02/16/jssimporter-jamf-pro-api-token-auth.html</string>
+				<string>The recipes in the jss-recipes repository will be removed after January 1, 2024. Please consider switching your JSSImporter workflows to JamfUploader instead. Details: https://grahamrpugh.com/2022/02/16/jssimporter-jamf-pro-api-token-auth.html</string>
 			</dict>
 			<key>Processor</key>
 			<string>DeprecationWarning</string>

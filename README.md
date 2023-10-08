@@ -1,12 +1,12 @@
-# JSS Recipes
+# JSS Recipes <!-- omit in toc -->
 
 A collection of [AutoPkg](https://autopkg.github.io/autopkg/) recipes that helps [Jamf Pro](https://www.jamf.com/products/jamf-pro/) administrators use [JSSImporter](https://github.com/sheagcraig/JSSImporter/releases) to automate their software testing workflow.
 
-## Deprecation Warning
+## Deprecation Warning <!-- omit in toc -->
 
-**The recipes in the jss-recipes repository will stop working in a future version of Jamf.** Please consider switching your JSSImporter workflows to JamfUploader instead. Details: https://grahamrpugh.com/2022/02/16/jssimporter-jamf-pro-api-token-auth.html
+**The recipes in the jss-recipes repository will be removed after January 1, 2024.** Please consider switching your JSSImporter workflows to JamfUploader instead. Details: https://grahamrpugh.com/2022/02/16/jssimporter-jamf-pro-api-token-auth.html
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
 <!-- MarkdownTOC autolink=true depth=4 bracket=round -->
 
